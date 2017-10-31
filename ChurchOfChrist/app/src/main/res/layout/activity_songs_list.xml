@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="ru.app.churchofchrist.christiansongs.ChristianSongsActivity">
+
+    <include layout="@layout/toolbar" /><!-- Добавляем Toolbar в макет. -->
+
+    <!-- Список, отображающий песни. -->
+
+
+    <ListView
+        android:id="@+id/list_songs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="#b5b5b5"
+        android:dividerHeight="1dp"
+        android:listSelector="@drawable/list_selector" />
+
+
+
+</LinearLayout>

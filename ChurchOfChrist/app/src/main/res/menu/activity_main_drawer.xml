@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Меню, используемое в DrawerLayout. -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/basic_christ"
+            android:icon="@drawable/ic_drawer_ox"
+            android:title="@string/basic_christ" />
+        <item
+            android:id="@+id/songbook"
+            android:icon="@drawable/ic_action_songbook"
+            android:title="@string/songbook" />
+         <item
+            android:id="@+id/notepad"
+            android:icon="@drawable/ic_action_icons8"
+            android:title="@string/notepad" />
+        <item
+            android:id="@+id/bible"
+            android:icon="@drawable/ms_icon"
+            android:title="@string/bible" />
+    </group>
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_contacts"
+                android:icon="@drawable/ic_drawer_contacts"
+                android:title="Обратная связь" />
+            <item
+                android:id="@+id/nav_info"
+                android:icon="@drawable/ic_drawer_info"
+                android:title="О приложении" />
+        </menu>
+    </item>
+</menu>

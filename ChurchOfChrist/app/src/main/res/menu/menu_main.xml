@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ru.app.churchofchrist.notepad.MainActivity">
+
+    <!--<item
+        android:id="@+id/main_about"
+        android:icon="@android:drawable/ic_dialog_alert"
+        android:orderInCategory="1"
+        android:title="@string/main_about"
+        app:showAsAction="never" />-->
+    <item
+        android:id="@+id/main_sort"
+        android:icon="@drawable/ic_sort_white_48dp"
+        android:orderInCategory="4"
+        android:title="@string/main_sort"
+        app:showAsAction="always" />
+
+</menu>

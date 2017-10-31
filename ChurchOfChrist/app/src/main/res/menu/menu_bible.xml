@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Меню, используемое в DrawerLayout. -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!--<item
+        android:title="Перевод"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/offsinod"
+                android:icon="@drawable/ic_action_1876"
+                android:title="Синодальный" />
+            <item
+                android:id="@+id/offsovr"
+                android:icon="@drawable/ic_action_2015"
+                android:title="Современный" />
+        </menu>
+    </item>-->
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/search_bible"
+            android:icon="@drawable/ic_action_search"
+            android:title="Поиск"
+            app:showAsAction="always" />
+        <item
+            android:id="@+id/random_bible"
+            android:icon="@drawable/ic_action_shuffle"
+            android:title="Случайный отрывок"
+            app:showAsAction="ifRoom" />
+        <item
+            android:id="@+id/zamet_bible"
+            android:icon="@drawable/ic_action_zamet"
+            android:title="Блокнот"
+            app:showAsAction="ifRoom" />
+
+    </group>
+
+
+</menu>
