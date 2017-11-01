@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ChurchOfChrist.iml" filepath="$PROJECT_DIR$/ChurchOfChrist.iml" />
-      <module fileurl="file://F:\Project\icocru\ChurchOfChrist\ChurchOfChrist.iml" filepath="F:\Project\icocru\ChurchOfChrist\ChurchOfChrist.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://F:\Project\icocru\ChurchOfChrist\app\app.iml" filepath="F:\Project\icocru\ChurchOfChrist\app\app.iml" />
     </modules>
   </component>
 </project>
