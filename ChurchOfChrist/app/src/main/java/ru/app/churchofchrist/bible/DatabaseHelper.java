@@ -12,7 +12,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    private static String DB_NAME = "bible_int.db";
+    private static String DB_NAME = "bible_nrt.db";
     private static String DB_PATH = "";
     private static final int DB_VERSION = 1;
 
@@ -57,7 +57,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             try {
                 copyDBFile();
             } catch (IOException mIOException) {
-                throw new Error("ErrorCopyingDataBase");
+                //throw new Error("ErrorCopyingDataBase");
             }
         }
     }
