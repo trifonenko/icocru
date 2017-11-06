@@ -2,129 +2,119 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ru.app.churchofchrist">
 
-    <uses-permission android:name="android.permission.INTERNET" /><!-- Разрешение на Интернет -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /><!-- Разрешение на получения статуса соединения -->
-
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Разрешение на Интернет -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Разрешение на получения статуса соединения -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar.MainActivity">
-
-        </activity>
-
+            android:theme="@style/AppTheme.NoActionBar.MainActivity"></activity>
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".PlansActivity"
             android:label="@string/title_activity_plans"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".NewsActivity"
             android:label="@string/title_activity_news"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".ox.OxActivity"
             android:label="@string/ox"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".ox.OxDetail1Activity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity android:name=".ox.AnotherActivity">
             <intent-filter>
                 <data
                     android:host="AnotherActivityHost"
                     android:scheme="activity-run" />
+
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ContactsActivity"
             android:label="Контакты"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".InfoActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".christiansongs.ChristianSongsActivity"
             android:label="@string/songbook"
             android:theme="@style/AppThemeChristianSongs.NoActionBar" />
 
-        <!--<activity
+        <!--
+            <activity
             android:name=".scripture.ScriptureActivity"
             android:label="@string/scripture"
-            android:theme="@style/AppThemeChristianSongs.NoActionBar" />-->
+            android:theme="@style/AppThemeChristianSongs.NoActionBar" />
+        -->
         <activity
             android:name=".BibleActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/bible"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppThemeBible.NoActionBar">
+
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
         <activity
             android:name=".BibleActivity2"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/bible"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppThemeBible.NoActionBar">
+
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
         <activity
             android:name=".christiansongs.DetailSongActivity"
             android:parentActivityName=".christiansongs.ChristianSongsActivity"
             android:theme="@style/AppThemeChristianSongs.NoActionBar">
+
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".christiansongs.ChristianSongsActivity" />
         </activity>
-
         <activity
             android:name=".scripture.DetailScriptureActivity"
             android:theme="@style/AppThemeChristianSongs.NoActionBar" />
-
-
         <activity
             android:name=".notepad.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".notepad.NoteActivity"
             android:label="@string/note"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
-
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".bible.BibleActivity"></activity>
     </application>
+
 </manifest>

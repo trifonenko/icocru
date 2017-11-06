@@ -10,10 +10,6 @@
     <string name="executing_task">Загружаем...</string>
 
 
-
-
-
-
     <string name="header">Заголовок</string>
     <string name="main_about">О приложении</string>
     <string name="main_rateApp">Оценить</string>
@@ -52,12 +48,6 @@
     <string name="note_color_theme">Цветная тема</string>
 
 
-
-
-
-
-
-
     <!-- Пункты меню activity_main_drawer. -->
     <string name="basic_christ">Основы христианства</string>
     <string name="songbook">Христианские песни</string>
@@ -68,9 +58,9 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string-array name="perevod">
-    <item>НРП</item>
-    <item>SYNOD</item>
-</string-array>
+        <item>НРП</item>
+        <item>SYNOD</item>
+    </string-array>
     <string-array name="perevod2">
         <item>SYNOD</item>
         <item>НРП</item>
