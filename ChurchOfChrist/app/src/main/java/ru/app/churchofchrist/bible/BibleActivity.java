@@ -50,7 +50,7 @@ public class BibleActivity extends AppCompatActivity {
                 Cursor cursor = mDb.rawQuery("SELECT * FROM books", null);
                 cursor.moveToFirst();
                 while (!cursor.isAfterLast()) {
-                    product += cursor.getString(3) + " \n ";
+                    product += cursor.getString(3) + "\n";
                     cursor.moveToNext();
                 }
                 cursor.close();

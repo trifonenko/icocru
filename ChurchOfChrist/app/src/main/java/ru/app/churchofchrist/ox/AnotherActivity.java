@@ -788,6 +788,9 @@ public class AnotherActivity extends Activity {
             case "1-е Царств 16:7":
                 builder.setMessage(R.string.excerpt_1ts_16_17);
                 break;
+            case "От Матфея 11:12":
+                builder.setMessage(R.string.excerpt_mf_11_12);
+                break;
 
 
         }
