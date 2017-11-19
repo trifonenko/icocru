@@ -7,6 +7,8 @@
     android:orientation="vertical"
     tools:context="ru.app.churchofchrist.bible.BibleActivity">
 
+    <include layout="@layout/toolbar_bible" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"

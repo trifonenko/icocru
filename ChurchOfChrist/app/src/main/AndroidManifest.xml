@@ -114,7 +114,13 @@
             android:name=".notepad.NoteActivity"
             android:label="@string/note"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".bible.BibleActivity"></activity>
+
+        <activity
+            android:name=".bible.BibleActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+
     </application>
 
 </manifest>
