@@ -29,9 +29,7 @@ public class SongsTextFragment extends Fragment {
         super.onStart();
         View view = getView();
         if (view != null) {
-            TextView songName = (TextView) view.findViewById(R.id.song_name);
             Song song = Song.getArraySongs()[(int) songId];
-            songName.setText(song.getName());
             TextView songText = (TextView) view.findViewById(R.id.song_text);
             songText.setText(song.getText());
         }

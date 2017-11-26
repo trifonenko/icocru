@@ -259,15 +259,6 @@ class Song {
         this.linkVideo = linkVideo;
     }
 
-    //Возвращает список имен песен.
-    static String[] getArrayListNameSongs() {
-        String[] arrayListNameSongs = new String[arraySongs.length];
-        for (int i = 0; i < arrayListNameSongs.length; i++) {
-            arrayListNameSongs[i] = arraySongs[i].getName();
-        }
-        return arrayListNameSongs;
-    }
-
     public String getName() {
         return name;
     }
@@ -278,13 +269,5 @@ class Song {
 
     static Song[] getArraySongs() {
         return arraySongs;
-    }
-
-    int getChordsResId() {
-        return chordsResId;
-    }
-
-    int getLinkVideo() {
-        return linkVideo;
     }
 }

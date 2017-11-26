@@ -9,14 +9,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import ru.app.churchofchrist.R;
-
 /**
- * Фрагмент, отображающий список песен.
+ * Список песен.
  */
 public class SongsListFragment extends ListFragment {
 
-    static interface SongListListener {
+    interface SongListListener {
         void onItemClicked(long id);
     }
 
@@ -24,9 +22,9 @@ public class SongsListFragment extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        String[] names = new String[Song.getArrayListNameSongs().length];
+        String[] names = new String[Song.getArraySongs().length];
         for (int i = 0; i < names.length; i++) {
-            names[i] = Song.getArrayListNameSongs()[i];
+            names[i] = Song.getArraySongs()[i].getName();
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(inflater.getContext(), android.R.layout.simple_list_item_1, names);
         setListAdapter(adapter);
