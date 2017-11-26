@@ -13,8 +13,8 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-import ru.app.churchofchrist.christiansongs.ChristianSongsActivity;
 import ru.app.churchofchrist.ox.OxActivity;
+import ru.app.churchofchrist.songs.SongsActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -354,7 +354,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent2 = new Intent(MainActivity.this, InfoActivity.class);
             startActivity(intent2);
         } else if (id == R.id.songbook) {
-            Intent intent3 = new Intent(MainActivity.this, ChristianSongsActivity.class);
+            Intent intent3 = new Intent(MainActivity.this, SongsActivity.class);
             startActivity(intent3);
         } else if (id == R.id.notepad) {
             Intent intent4 = new Intent(MainActivity.this, ru.app.churchofchrist.notepad.MainActivity.class);

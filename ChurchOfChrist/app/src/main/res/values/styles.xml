@@ -7,7 +7,7 @@
         <item name="android:textColor">#515151</item>
     </style>
 
-    <style name="AppThemeChristianSongs" parent="AppTheme">
+    <style name="AppThemeSongs" parent="AppTheme">
         <item name="colorPrimary">@color/colorPrimaryChristianSongs</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkChristianSongs</item>
         <item name="colorAccent">@color/colorAccentChristianSongs</item>
@@ -24,7 +24,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppThemeChristianSongs.NoActionBar">
+    <style name="AppThemeSongs.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

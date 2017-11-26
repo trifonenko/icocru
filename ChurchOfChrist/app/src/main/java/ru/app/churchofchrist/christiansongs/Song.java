@@ -11,7 +11,7 @@ class Song {
     private int chordsResId;//Аккорды.
     private String linkAudio;//Ссылка на аудио;
     private int linkVideo;//Ссылка на видео;
-    private static Song[] arraySongs = {
+    private static final Song[] arraySongs = {
             new Song("001. Аллилуйя", R.string.text_song_a001, R.string.text_song_a001acc, R.string.text_song_a001vid),
             new Song("002. Аллилуйя, Аллилуйя", R.string.text_song_a002, R.string.text_song_no_acc, R.string.text_song_no_vid),
             new Song("003. Аллилуйя # Hallelujah Леонарда Коэна", R.string.text_song_a003, R.string.text_song_a003acc, R.string.text_song_a003vid),

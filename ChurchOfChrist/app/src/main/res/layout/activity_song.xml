@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="ru.app.churchofchrist.christiansongs.ChristianSongsActivity">
+    tools:context="ru.app.churchofchrist.songs.SongsActivity">
 
     <include layout="@layout/toolbar" />
 
-    <!-- Список, отображающий песни. -->
-    <ListView
-        android:id="@+id/list_songs"
+    <fragment
+        android:id="@+id/list_frag"
+        class="ru.app.churchofchrist.songs.SongsListFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

@@ -10,7 +10,7 @@
         <item
             android:id="@+id/songbook"
             android:icon="@drawable/ic_action_songbook"
-            android:title="@string/songbook" />
+            android:title="@string/songs" />
          <item
             android:id="@+id/notepad"
             android:icon="@drawable/ic_action_icons8"
