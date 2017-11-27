@@ -28,7 +28,6 @@ public class SongTextActivity extends AppCompatActivity {
 
         SongsTextFragment workoutDetailFragment = (SongsTextFragment) getFragmentManager().findFragmentById(R.id.detail_frag);
         int workoutId = (int) getIntent().getExtras().get(EXTRA_WORKOUT_ID);
-        getSupportActionBar().setTitle(Song.getArraySongs()[workoutId].getName());
         workoutDetailFragment.setSongId(workoutId);
     }
 }

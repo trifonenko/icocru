@@ -6,10 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.FrameLayout;
 
 import ru.app.churchofchrist.R;
 
 public class SongsActivity extends AppCompatActivity implements SongsListFragment.SongListListener {
+
+    private View fragmentContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,21 +28,27 @@ public class SongsActivity extends AppCompatActivity implements SongsListFragmen
                 finish();
             }
         });
+
+        fragmentContainer = findViewById(R.id.fragment_container);
+        if (fragmentContainer != null) {
+            if (savedInstanceState == null) {
+                onItemClicked(0);
+            }
+        }
     }
 
     @Override
     public void onItemClicked(long id) {
-        View fragmentContainer = findViewById(R.id.fragment_container);
         if (fragmentContainer != null) {
-        SongsTextFragment songsTextFragment = new SongsTextFragment();
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
-        songsTextFragment.setSongId(id);
-        ft.replace(R.id.fragment_container, songsTextFragment);
-        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-        ft.commit();
+            SongsTextFragment songsTextFragment = new SongsTextFragment();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            songsTextFragment.setSongId(id);
+            ft.replace(R.id.fragment_container, songsTextFragment);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
         } else {
             Intent intent = new Intent(this, SongTextActivity.class);
-            intent.putExtra(SongTextActivity.EXTRA_WORKOUT_ID, (int)id);
+            intent.putExtra(SongTextActivity.EXTRA_WORKOUT_ID, (int) id);
             startActivity(intent);
         }
     }

@@ -126,6 +126,7 @@
             android:theme="@style/AppThemeSongs.NoActionBar" />
         <activity
             android:name=".songs.SongTextActivity"
+            android:label="@string/songs"
             android:theme="@style/AppThemeSongs.NoActionBar" />
         <!-- * * * -->
 

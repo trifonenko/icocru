@@ -270,4 +270,8 @@ class Song {
     static Song[] getArraySongs() {
         return arraySongs;
     }
+
+    public int getChordsResId() {
+        return chordsResId;
+    }
 }
