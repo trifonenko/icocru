@@ -4,9 +4,12 @@
     <color name="colorPrimaryDark">#007bb3</color>
     <color name="colorAccent">#795548</color>
 
-    <color name="colorPrimaryChristianSongs">#C0392B</color>
-    <color name="colorPrimaryDarkChristianSongs">#96281B</color>
-    <color name="colorAccentChristianSongs">#049372</color>
+    <!-- Песни. -->
+    <color name="colorPrimarySongs">#D64541</color>
+    <color name="colorPrimaryDarkSongs">#C0392B</color>
+    <color name="colorAccentSongs">#049372</color>
+    <color name="colorBackgroundSongs">#e7e7e7</color>
+    <!-- * * * -->
 
     <color name="colorPrimaryBible">#30879d</color>
     <color name="colorPrimaryDarkBible">#30879d</color>

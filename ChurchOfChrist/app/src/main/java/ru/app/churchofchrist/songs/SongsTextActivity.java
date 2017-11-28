@@ -7,7 +7,7 @@ import android.view.View;
 
 import ru.app.churchofchrist.R;
 
-public class SongTextActivity extends AppCompatActivity {
+public class SongsTextActivity extends AppCompatActivity {
 
     public static final String EXTRA_WORKOUT_ID = "id";
 

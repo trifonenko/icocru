@@ -62,7 +62,7 @@
         <activity
             android:name=".christiansongs.ChristianSongsActivity"
             android:label="@string/songs"
-            android:theme="@style/AppThemeSongs.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <!--
             <activity
@@ -97,7 +97,7 @@
         <activity
             android:name=".christiansongs.DetailSongActivity"
             android:parentActivityName=".christiansongs.ChristianSongsActivity"
-            android:theme="@style/AppThemeSongs.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
@@ -106,7 +106,7 @@
         </activity>
         <activity
             android:name=".scripture.DetailScriptureActivity"
-            android:theme="@style/AppThemeSongs.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".notepad.MainActivity"
             android:label="@string/app_name"
@@ -123,11 +123,11 @@
         <activity
             android:name=".songs.SongsActivity"
             android:label="@string/songs"
-            android:theme="@style/AppThemeSongs.NoActionBar" />
+            android:theme="@style/ThemeSongs" />
         <activity
-            android:name=".songs.SongTextActivity"
+            android:name=".songs.SongsTextActivity"
             android:label="@string/songs"
-            android:theme="@style/AppThemeSongs.NoActionBar" />
+            android:theme="@style/ThemeSongs" />
         <!-- * * * -->
 
     </application>

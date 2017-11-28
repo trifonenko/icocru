@@ -1,17 +1,22 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColor">#515151</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppThemeSongs" parent="AppTheme">
-        <item name="colorPrimary">@color/colorPrimaryChristianSongs</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDarkChristianSongs</item>
-        <item name="colorAccent">@color/colorAccentChristianSongs</item>
+    <!-- Песни. -->
+    <style name="ThemeSongs" parent="AppTheme">
+        <item name="colorPrimary">@color/colorPrimarySongs</item>
+        <item name="colorPrimaryDark">@color/colorPrimarySongs</item>
+        <item name="colorAccent">@color/colorAccentSongs</item>
+        <item name="android:windowBackground">@color/colorBackgroundSongs</item>
     </style>
+    <!-- * * * -->
 
     <style name="AppThemeBible" parent="AppTheme">
         <item name="colorPrimary">@color/colorPrimaryBible</item>
@@ -20,11 +25,6 @@
     </style>
 
     <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="AppThemeSongs.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

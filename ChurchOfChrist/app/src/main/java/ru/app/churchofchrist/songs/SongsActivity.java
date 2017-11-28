@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.FrameLayout;
 
 import ru.app.churchofchrist.R;
 
@@ -47,8 +46,8 @@ public class SongsActivity extends AppCompatActivity implements SongsListFragmen
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
         } else {
-            Intent intent = new Intent(this, SongTextActivity.class);
-            intent.putExtra(SongTextActivity.EXTRA_WORKOUT_ID, (int) id);
+            Intent intent = new Intent(this, SongsTextActivity.class);
+            intent.putExtra(SongsTextActivity.EXTRA_WORKOUT_ID, (int) id);
             startActivity(intent);
         }
     }
