@@ -353,7 +353,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_info) {
             Intent intent2 = new Intent(MainActivity.this, InfoActivity.class);
             startActivity(intent2);
-        } else if (id == R.id.songbook) {
+        } else if (id == R.id.songs) {
             Intent intent3 = new Intent(MainActivity.this, SongsActivity.class);
             startActivity(intent3);
         } else if (id == R.id.notepad) {
