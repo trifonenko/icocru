@@ -63,4 +63,6 @@
         <item name="cardBackgroundColor">#ffffff</item>
     </style>
 
+    <style name="Theme.AppCompat.Light"></style>
+
 </resources>
