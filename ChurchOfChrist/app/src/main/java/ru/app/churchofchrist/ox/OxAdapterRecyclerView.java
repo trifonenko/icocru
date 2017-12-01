@@ -16,8 +16,8 @@ class OxAdapterRecyclerView extends RecyclerView.Adapter<OxAdapterRecyclerView.V
     private String[] titles;
 
     private Listener listener;
-    static interface Listener {
-        public void onClick(int position);
+    interface Listener {
+        void onClick(int position);
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
@@ -46,7 +46,7 @@ class OxAdapterRecyclerView extends RecyclerView.Adapter<OxAdapterRecyclerView.V
     @Override
     public void onBindViewHolder(OxAdapterRecyclerView.ViewHolder holder, final int position) {
         CardView cardView = holder.cardView;
-        TextView textView = (TextView)cardView.findViewById(R.id.name_title);
+        TextView textView = cardView.findViewById(R.id.name_title);
         textView.setText(titles[position]);
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override

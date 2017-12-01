@@ -25,7 +25,6 @@ import java.util.ArrayList;
 
 import ru.app.churchofchrist.R;
 
-
 public class FragmentFavorites extends Fragment implements Updateable{
 
     RecyclerView recyclerView2;
@@ -50,7 +49,7 @@ public class FragmentFavorites extends Fragment implements Updateable{
 
         View rootView = inflater.inflate(R.layout.fragment_favorites, container, false);
 
-        recyclerView2 = (RecyclerView) rootView.findViewById(R.id.recyclerView2);
+        recyclerView2 = rootView.findViewById(R.id.recyclerView2);
 
         itemTouchHelper().attachToRecyclerView(recyclerView2); // Смахивание
 

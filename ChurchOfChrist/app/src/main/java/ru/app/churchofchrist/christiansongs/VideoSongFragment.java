@@ -48,7 +48,7 @@ public class VideoSongFragment extends Fragment /*implements View.OnClickListene
     public void onStart() {
         super.onStart();
         View view = getView();
-        TextView textVideo = (TextView) view.findViewById(R.id.text_video);
+        TextView textVideo = view.findViewById(R.id.text_video);
 
         for (int i = 0; i < Song.getArraySongs().length; i++) {
             if (songName.equals(Song.getArraySongs()[i].getName())) {

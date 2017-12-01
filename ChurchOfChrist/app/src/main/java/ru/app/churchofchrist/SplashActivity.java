@@ -17,9 +17,9 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        TextView text = (TextView) findViewById(R.id.text);
-        TextView text2 = (TextView) findViewById(R.id.text2);
-        ImageView image = (ImageView) findViewById(R.id.imageView3);
+        TextView text = findViewById(R.id.text);
+        TextView text2 = findViewById(R.id.text2);
+        ImageView image = findViewById(R.id.imageView3);
         Typeface CF2 = Typeface.createFromAsset(getAssets(), "fonts/CODE Light.otf");
         Typeface CF = Typeface.createFromAsset(getAssets(), "fonts/CODE Bold.otf");
         text.setTypeface(CF);

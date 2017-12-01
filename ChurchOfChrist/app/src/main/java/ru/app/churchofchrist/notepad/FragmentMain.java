@@ -49,7 +49,7 @@ public class FragmentMain extends Fragment implements Updateable{
 
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-        recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
+        recyclerView = rootView.findViewById(R.id.recyclerView);
 
         itemTouchHelper().attachToRecyclerView(recyclerView); // Смахивание
 

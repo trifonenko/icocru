@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="ru.app.churchofchrist">
 
     <uses-permission android:name="android.permission.INTERNET" /> <!-- Разрешение на Интернет -->
@@ -45,7 +46,8 @@
             <intent-filter>
                 <data
                     android:host="AnotherActivityHost"
-                    android:scheme="activity-run" />
+                    android:scheme="activity-run"
+                    tools:ignore="AppLinkUrlError" />
 
                 <action android:name="android.intent.action.VIEW" />
 
@@ -125,7 +127,7 @@
             android:label="@string/songs"
             android:theme="@style/ThemeSongs" />
         <activity
-            android:name=".songs.SongsTextActivity"
+            android:name=".songs.SongsDetailActivity"
             android:label="@string/songs"
             android:theme="@style/ThemeSongs" />
         <!-- * * * -->

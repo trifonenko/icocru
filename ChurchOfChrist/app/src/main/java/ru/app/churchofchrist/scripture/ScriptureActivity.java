@@ -30,7 +30,7 @@ public class ScriptureActivity extends AppCompatActivity {
         setContentView(R.layout.activity_scripture);
 
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -40,7 +40,7 @@ public class ScriptureActivity extends AppCompatActivity {
             }
         });
 
-        listSongs = (ListView) findViewById(R.id.list_scripture);
+        listSongs = findViewById(R.id.list_scripture);
         ArrayAdapter<String> adapterListSongs = new ArrayAdapter<>(this, R.layout.scripture_item_list, Song.getArrayListNameSongs());
         listSongs.setAdapter(adapterListSongs);
         listSongs.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -76,7 +76,7 @@ public class ScriptureActivity extends AppCompatActivity {
                         songsListArray.add(item);
                     }
                 }
-                listSongs = (ListView) findViewById(R.id.list_scripture);
+                listSongs = findViewById(R.id.list_scripture);
                 ArrayAdapter<String> adapterListSongs = new ArrayAdapter<>(ScriptureActivity.this, R.layout.scripture_item_list, songsListArray);
                 listSongs.setAdapter(adapterListSongs);
                 return true;

@@ -21,7 +21,8 @@
             android:paddingLeft="6dp"
             android:paddingRight="6dp"
             android:paddingTop="6dp"
-            android:text="ССЫЛКА НА ВИДЕО В YOUTUBE" />
+            android:text="ССЫЛКА НА ВИДЕО В YOUTUBE"
+            android:focusable="true" />
 
 
     </ScrollView>

@@ -27,7 +27,7 @@ public class NewsActivity extends AppCompatActivity {
             }
         });*/
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);//устанавливаем на панель инструментов навигационную кнопку назад
         //вешаем обработчик на навигационную кнопку назад, при нажатии которой действующая активность закрывается
@@ -38,7 +38,7 @@ public class NewsActivity extends AppCompatActivity {
             }
         });
 
-        webView = (WebView) findViewById(R.id.webViewNews);
+        webView = findViewById(R.id.webViewNews);
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);

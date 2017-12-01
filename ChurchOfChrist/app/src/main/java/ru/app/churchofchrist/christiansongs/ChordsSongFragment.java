@@ -28,7 +28,7 @@ public class ChordsSongFragment extends Fragment {
     public void onStart() {
         super.onStart();
         View view = getView();
-        TextView textSong = (TextView) view.findViewById(R.id.text_chords);
+        TextView textSong = view.findViewById(R.id.text_chords);
 
         for (int i = 0; i < Song.getArraySongs().length; i++) {
             if (songName.equals(Song.getArraySongs()[i].getName())) {

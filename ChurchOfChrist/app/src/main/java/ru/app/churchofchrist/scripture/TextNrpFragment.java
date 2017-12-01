@@ -34,7 +34,7 @@ public class TextNrpFragment extends Fragment {
     public void onStart() {
         super.onStart();
         View view = getView();
-        TextView textSong = (TextView) view.findViewById(R.id.text_song);
+        TextView textSong = view.findViewById(R.id.text_song);
 
         for (int i = 0; i < Song.getArraySongs().length; i++) {
             if (songName.equals(Song.getArraySongs()[i].getName())) {

@@ -34,7 +34,6 @@ import java.util.Locale;
 
 import ru.app.churchofchrist.R;
 
-
 public class NoteActivity extends AppCompatActivity {
 
     final String LOG_TAG = "MYLOG";
@@ -68,7 +67,7 @@ public class NoteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar2);
+        Toolbar toolbar = findViewById(R.id.toolbar2);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);//устанавливаем на панель инструментов навигационную кнопку назад
         //вешаем обработчик на навигационную кнопку назад, при нажатии которой действующая активность закрывается
@@ -79,7 +78,7 @@ public class NoteActivity extends AppCompatActivity {
             }
         });
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         // Нажатие кнопки
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,11 +90,11 @@ public class NoteActivity extends AppCompatActivity {
 
         dbHelper = MainActivity.appDBHelper;
 
-        constr1 = (ConstraintLayout) findViewById(R.id.constr1);
-        editText1 = (EditText) findViewById(R.id.editText1);
-        editText2 = (EditText) findViewById(R.id.editText2);
+        constr1 = findViewById(R.id.constr1);
+        editText1 = findViewById(R.id.editText1);
+        editText2 = findViewById(R.id.editText2);
 
-        spinner1 = (Spinner) findViewById(R.id.spinner1);
+        spinner1 = findViewById(R.id.spinner1);
         // Кастомный адаптер
         SpinnerAdapter spinnerAdapter = new SpinnerAdapter(this, R.layout.item_color, colorList);
         spinner1.setAdapter(spinnerAdapter);
@@ -464,7 +463,7 @@ public class NoteActivity extends AppCompatActivity {
             LayoutInflater inflater = getLayoutInflater();
             View row = inflater.inflate(R.layout.item_color, parent, false);
 
-            LinearLayout linearLayout = (LinearLayout) row.findViewById(R.id.itemColor);
+            LinearLayout linearLayout = row.findViewById(R.id.itemColor);
 
             switch (colorList[position]) {
                 case "color0": linearLayout.setBackgroundResource(R.color.color0); break;

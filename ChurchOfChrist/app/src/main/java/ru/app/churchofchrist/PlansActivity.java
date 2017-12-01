@@ -18,7 +18,7 @@ public class PlansActivity extends AppCompatActivity {
 
         setTitle("Планы Церкви");
 
-        TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
+        TabHost tabHost = findViewById(R.id.tabHost);
 
         tabHost.setup();
 
@@ -40,7 +40,7 @@ public class PlansActivity extends AppCompatActivity {
 
         tabHost.setCurrentTab(0);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);//устанавливаем на панель инструментов навигационную кнопку назад
         //вешаем обработчик на навигационную кнопку назад, при нажатии которой действующая активность закрывается
@@ -53,9 +53,9 @@ public class PlansActivity extends AppCompatActivity {
         /*CollapsingToolbarLayout c = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
         c.setExpandedTitleColor(ContextCompat.getColor(this, R.color.colorStatusBar));*/
 
-        WebView webViewV = (WebView) findViewById(R.id.webViewPlansVostok);
-        WebView webViewZ = (WebView) findViewById(R.id.webViewPlansZapad);
-        WebView webViewU = (WebView) findViewById(R.id.webViewPlansUg);
+        WebView webViewV = findViewById(R.id.webViewPlansVostok);
+        WebView webViewZ = findViewById(R.id.webViewPlansZapad);
+        WebView webViewU = findViewById(R.id.webViewPlansUg);
 
         WebSettings webSettingsV = webViewV.getSettings();
         WebSettings webSettingsZ = webViewZ.getSettings();

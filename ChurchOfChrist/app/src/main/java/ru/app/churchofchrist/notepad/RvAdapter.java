@@ -14,7 +14,6 @@ import java.util.ArrayList;
 
 import ru.app.churchofchrist.R;
 
-
 public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ViewHolder> {
 
     private Activity activity;
@@ -92,9 +91,9 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ViewHolder> {
         ViewHolder(View itemView) {
             super(itemView);
 
-            textViewTheme = (TextView) itemView.findViewById(R.id.textViewTheme);
-            textViewDate = (TextView) itemView.findViewById(R.id.textViewDate);
-            cardViewColor = (CardView) itemView.findViewById(R.id.cardView);
+            textViewTheme = itemView.findViewById(R.id.textViewTheme);
+            textViewDate = itemView.findViewById(R.id.textViewDate);
+            cardViewColor = itemView.findViewById(R.id.cardView);
         }
 
     }

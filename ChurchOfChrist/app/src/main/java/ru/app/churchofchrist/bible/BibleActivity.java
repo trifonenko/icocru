@@ -13,7 +13,9 @@ import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 
 import java.io.IOException;
+
 import ru.app.churchofchrist.R;
+
 
 public class BibleActivity extends AppCompatActivity {
 
@@ -30,7 +32,7 @@ public class BibleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nrt_bible);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
@@ -50,8 +52,8 @@ public class BibleActivity extends AppCompatActivity {
             throw mSQLException;
         }
 
-        button = (Button) findViewById(R.id.button);
-        textView = (TextView) findViewById(R.id.textView);
+        button = findViewById(R.id.button);
+        textView = findViewById(R.id.textView);
 
         String product = "";
 
@@ -67,7 +69,7 @@ public class BibleActivity extends AppCompatActivity {
         }
         cursor.close();
 
-        Spinner listBooks = (Spinner) findViewById(R.id.list_books);
+        Spinner listBooks = findViewById(R.id.list_books);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, books);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         listBooks.setAdapter(adapter);

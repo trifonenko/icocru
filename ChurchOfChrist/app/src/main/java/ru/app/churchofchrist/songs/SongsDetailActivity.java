@@ -7,7 +7,7 @@ import android.view.View;
 
 import ru.app.churchofchrist.R;
 
-public class SongsTextActivity extends AppCompatActivity {
+public class SongsDetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_WORKOUT_ID = "id";
 
@@ -16,7 +16,7 @@ public class SongsTextActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_song_text);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

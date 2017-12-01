@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="ru.app.churchofchrist.ox.OxDetail2Activity">
+    tools:context="ru.app.churchofchrist.ox.OxDetail1Activity">
 
     <include layout="@layout/toolbar" />
 

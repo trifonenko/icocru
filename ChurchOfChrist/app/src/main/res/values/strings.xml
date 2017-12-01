@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ICOC RU Церковь Христа</string><!-- Имя приложения. -->
     <string name="action_settings">Настройки</string>
@@ -7,7 +8,7 @@
     <string name="bible">БИБЛИЯ</string>
     <string name="notepad">Блокнот</string>
     <string name="random_song">Случайная песня</string>
-    <string name="executing_task">Загружаем...</string>
+    <string name="executing_task">Загружаем…</string>
 
 
     <string name="header">Заголовок</string>
@@ -4725,7 +4726,6 @@ o	Поделитесь о своём опыте служения. Когда, к
     <string name="title_activity_jesus__god">Иисус - Господь</string>
     <string name="title_activity_article">Описание смерти Христа</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="text_song_no_acc">
         К сожалению,\n

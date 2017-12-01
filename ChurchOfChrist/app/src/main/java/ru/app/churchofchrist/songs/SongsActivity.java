@@ -18,7 +18,7 @@ public class SongsActivity extends AppCompatActivity implements SongsListFragmen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_song);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -46,8 +46,8 @@ public class SongsActivity extends AppCompatActivity implements SongsListFragmen
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
         } else {
-            Intent intent = new Intent(this, SongsTextActivity.class);
-            intent.putExtra(SongsTextActivity.EXTRA_WORKOUT_ID, (int) id);
+            Intent intent = new Intent(this, SongsDetailActivity.class);
+            intent.putExtra(SongsDetailActivity.EXTRA_WORKOUT_ID, (int) id);
             startActivity(intent);
         }
     }

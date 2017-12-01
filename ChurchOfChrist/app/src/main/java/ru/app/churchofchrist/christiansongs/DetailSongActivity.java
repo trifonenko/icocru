@@ -27,7 +27,7 @@ public class DetailSongActivity extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         String songName = (String) getIntent().getExtras().get(SONG_NAME);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(songName);
         toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);//устанавливаем на панель инструментов навигационную кнопку назад
         //вешаем обработчик на навигационную кнопку назад, при нажатии которой действующая активность закрывается
@@ -38,10 +38,10 @@ public class DetailSongActivity extends AppCompatActivity {
             }
         });
 
-        ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
+        ViewPager viewPager = findViewById(R.id.view_pager);
         setupViewPager(viewPager);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
         setSupportActionBar(toolbar);
         tabLayout.setupWithViewPager(viewPager);
         TextSongFragment fragment1 = (TextSongFragment) adapter.getItem(0);

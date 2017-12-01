@@ -41,7 +41,8 @@
                 android:textAllCaps="false"
                 android:textColor="@android:color/black"
                 android:textIsSelectable="true"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:gravity="end" />
 
             <TextView
                 android:layout_width="match_parent"

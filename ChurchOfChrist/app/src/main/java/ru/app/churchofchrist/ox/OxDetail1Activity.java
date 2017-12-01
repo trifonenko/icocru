@@ -60,7 +60,7 @@ public class OxDetail1Activity extends AppCompatActivity {
             pos = position4;
         }
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);//Объект Toolbar.
+        Toolbar toolbar = findViewById(R.id.toolbar);//Объект Toolbar.
         setSupportActionBar(toolbar);
 
         toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);//Кнопка "back" на Toolbar, активируется установкой иконки.
@@ -71,7 +71,7 @@ public class OxDetail1Activity extends AppCompatActivity {
             }
         });
 
-        lessonContent = (TextView) findViewById(R.id.tvContent);//Объект TextView, выводящий текст урока.
+        lessonContent = findViewById(R.id.tvContent);//Объект TextView, выводящий текст урока.
         //lessonContent.setLinksClickable(true);??????????????
         lessonContent.setMovementMethod(new LinkMovementMethod());//Способ навигации по элементу.
 
@@ -424,9 +424,9 @@ public class OxDetail1Activity extends AppCompatActivity {
                         }
                     });
 
-            final TextView text = (TextView) view.findViewById(R.id.textView);
+            final TextView text = view.findViewById(R.id.textView);
             text.setText(String.valueOf(temp));
-            SeekBar seekBar = (SeekBar) view.findViewById(R.id.seekBar);
+            SeekBar seekBar = view.findViewById(R.id.seekBar);
             seekBar.setProgress(temp - 10);
             seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 @Override

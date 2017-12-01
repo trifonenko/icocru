@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -60,7 +61,7 @@ public class BibleActivity extends AppCompatActivity {
             }
         });*/
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);//устанавливаем на панель инструментов навигационную кнопку назад
@@ -78,7 +79,7 @@ public class BibleActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_dropdown_item, perevod);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
-        Spinner spinner = (Spinner) findViewById(R.id.perevod);
+        Spinner spinner = findViewById(R.id.perevod);
         spinner.setAdapter(adapter);
         // заголовок
         spinner.setPrompt("Перевод");
@@ -115,7 +116,7 @@ public class BibleActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, R.layout.spinner_dropdown_item, knigi);
         adapter2.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
-        Spinner spinner2 = (Spinner) findViewById(R.id.knigi);
+        Spinner spinner2 = findViewById(R.id.knigi);
         spinner2.setAdapter(adapter2);
         // заголовок
         spinner2.setPrompt("Книги");
@@ -466,7 +467,7 @@ public class BibleActivity extends AppCompatActivity {
         });
 
 
-        webView = (WebView) findViewById(R.id.webViewBible);
+        webView = findViewById(R.id.webViewBible);
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setSavePassword(true);
@@ -647,7 +648,9 @@ public class BibleActivity extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        onNavigateUp();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            onNavigateUp();
+        }
     }
 
 }

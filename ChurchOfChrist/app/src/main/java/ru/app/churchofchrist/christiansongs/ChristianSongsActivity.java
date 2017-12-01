@@ -29,7 +29,7 @@ public class ChristianSongsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_songs_list);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -39,7 +39,7 @@ public class ChristianSongsActivity extends AppCompatActivity {
             }
         });
 
-        listSongs = (ListView) findViewById(R.id.list_songs);//Устанавливаем связь с созданным ListView:
+        listSongs = findViewById(R.id.list_songs);//Устанавливаем связь с созданным ListView:
         //Задаем адаптер, через который выполняется связка массива слов и ListView:
         ArrayAdapter<String> adapterListSongs = new ArrayAdapter<>(this, R.layout.christiansong_item_list, Song.getArrayListNameSongs());
         listSongs.setAdapter(adapterListSongs);//Настраиваем для нашего ListView показ массива с адаптера:
@@ -77,7 +77,7 @@ public class ChristianSongsActivity extends AppCompatActivity {
                         songsListArray.add(item);
                     }
                 }
-                listSongs = (ListView) findViewById(R.id.list_songs);
+                listSongs = findViewById(R.id.list_songs);
                 ArrayAdapter<String> adapterListSongs = new ArrayAdapter<>(ChristianSongsActivity.this, R.layout.christiansong_item_list, songsListArray);
                 listSongs.setAdapter(adapterListSongs);
                 return true;
