@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ICOC RU Церковь Христа</string><!-- Имя приложения. -->
+    <string name="app_name">Церковь Христа</string><!-- Имя приложения. -->
     <string name="action_settings">Настройки</string>
     <string name="search_songs">Поиск</string>
     <string name="ox">Основы христианства</string>

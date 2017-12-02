@@ -30,10 +30,17 @@ public class SongsListFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_songs_list, container,false);
-        mSongsRecyclerView = (RecyclerView) view.findViewById(R.id.songs_recycler_view);
-        mSongsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        return view;
+        RecyclerView pizzaRecycler = (RecyclerView)inflater.inflate(R.layout.fragment_songs_list, container, false);
+        String[] pizzaNames = new String[Song.getArraySongs().length];
+        for (int i = 0; i < pizzaNames.length; i++) {
+            pizzaNames[i] = Song.getArraySongs()[i].getName();
+        }
+
+        SongsListAdapter adapter = new SongsListAdapter(pizzaNames);
+        pizzaRecycler.setAdapter(adapter);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        pizzaRecycler.setLayoutManager(layoutManager);
+        return pizzaRecycler;
     }
 
     @Override
@@ -47,28 +54,6 @@ public class SongsListFragment extends Fragment {
         public CrimeHolder(View itemView) {
             super(itemView);
             mTitleTextView = (TextView) itemView;
-        }
-    }
-
-    private class CrimeAdapter extends RecyclerView.Adapter<CrimeHolder> {
-        private List<Song> mCrimes;
-        public CrimeAdapter(List<Song> crimes) {
-            mCrimes = crimes;
-        }
-
-        @Override
-        public CrimeHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            return null;
-        }
-
-        @Override
-        public void onBindViewHolder(CrimeHolder holder, int position) {
-
-        }
-
-        @Override
-        public int getItemCount() {
-            return 0;
         }
     }
 

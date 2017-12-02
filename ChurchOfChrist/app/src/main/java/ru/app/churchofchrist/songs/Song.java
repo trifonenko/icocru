@@ -6,6 +6,7 @@ class Song {
     private String name;//Название.
     private int textResId;//Текст.
     private int chordsResId;//Аккорды.
+    private int id;//Идентификатор.
     private int linkVideo;//Ссылка на видео;
     private static final Song[] arraySongs = {
             new Song("001. Аллилуйя", R.string.text_song_a001, R.string.text_song_a001acc, R.string.text_song_a001vid),
@@ -273,5 +274,9 @@ class Song {
 
     public int getChordsResId() {
         return chordsResId;
+    }
+
+    public int getLinkVideo() {
+        return linkVideo;
     }
 }
