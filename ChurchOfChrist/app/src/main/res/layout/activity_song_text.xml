@@ -10,6 +10,7 @@
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/detail_frag"
+        android:layout_margin="4dp"
         class="ru.app.churchofchrist.songs.SongsTextFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

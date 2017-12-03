@@ -1,6 +1,7 @@
 package ru.app.churchofchrist.songs;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -30,7 +31,7 @@ public class SongsListFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        RecyclerView pizzaRecycler = (RecyclerView)inflater.inflate(R.layout.fragment_songs_list, container, false);
+        RecyclerView pizzaRecycler = (RecyclerView) inflater.inflate(R.layout.fragment_songs_list, container, false);
         String[] pizzaNames = new String[Song.getArraySongs().length];
         for (int i = 0; i < pizzaNames.length; i++) {
             pizzaNames[i] = Song.getArraySongs()[i].getName();
@@ -40,6 +41,13 @@ public class SongsListFragment extends Fragment {
         pizzaRecycler.setAdapter(adapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         pizzaRecycler.setLayoutManager(layoutManager);
+        adapter.setListener(new SongsListAdapter.Listener() {
+            public void onClick(int position) {
+                if (listener != null) {
+                    listener.onItemClicked(position);
+                }
+            }
+        });
         return pizzaRecycler;
     }
 
@@ -48,19 +56,4 @@ public class SongsListFragment extends Fragment {
         super.onAttach(context);
         this.listener = (SongListListener) context;
     }
-
-    private class CrimeHolder extends RecyclerView.ViewHolder {
-        public TextView mTitleTextView;
-        public CrimeHolder(View itemView) {
-            super(itemView);
-            mTitleTextView = (TextView) itemView;
-        }
-    }
-
-    //@Override
-   // public void onListItemClick(ListView l, View v, int position, long id){
-        //if (listener != null) {
-            //listener.onItemClicked(id);
-       // }
-    //}
 }
