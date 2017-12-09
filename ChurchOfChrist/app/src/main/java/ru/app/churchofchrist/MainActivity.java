@@ -360,7 +360,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent4 = new Intent(MainActivity.this, ru.app.churchofchrist.notepad.MainActivity.class);
             startActivity(intent4);
         } else if (id == R.id.bible) {
-            Intent intent5 = new Intent(MainActivity.this, ru.app.churchofchrist.bible.BibleActivity.class);
+            Intent intent5 = new Intent(MainActivity.this, BibleActivity2.class);
             startActivity(intent5);
         }
 

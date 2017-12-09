@@ -13,7 +13,7 @@
     <!-- Песни. -->
     <style name="ThemeSongs" parent="AppTheme">
         <item name="colorPrimary">@color/colorPrimarySongs</item>
-        <item name="colorPrimaryDark">@color/colorPrimarySongs</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkSongs</item>
         <item name="colorAccent">@color/colorAccentSongs</item>
         <item name="android:windowBackground">@color/colorBackgroundSongs</item>
     </style>
