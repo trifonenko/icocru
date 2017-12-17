@@ -15,6 +15,8 @@ import android.view.ViewGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.util.List;
+
 import ru.app.churchofchrist.R;
 
 /**
@@ -43,17 +45,14 @@ public class SongsTextFragment extends Fragment {
         super.onStart();
         View view = getView();
         if (view != null) {
-            Song song = Song.getArraySongs()[(int) songId];
+            SongsLab songsLab = SongsLab.getInstance(getActivity());
+            List<Song> songs = songsLab.getSongs();
+            //Song song = Song.getArraySongs()[(int) songId];
             TextView songName = view.findViewById(R.id.song_name);
-            songName.setText(song.getName());
+            songName.setText(songs.get((int) songId).getName());
             songText = view.findViewById(R.id.song_text);
-            songText.setText(song.getText());
-
-
-
-                songText.setTextSize((float) temp);//Размер текста песни.
-
-
+            songText.setText(songs.get((int) songId).getText());
+            songText.setTextSize((float) temp);//Размер текста песни.
         }
     }
 

@@ -41,15 +41,14 @@ public class SongsListAdapter extends RecyclerView.Adapter<SongsListAdapter.View
 
     @Override
     public SongsListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        CardView cv = (CardView) LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.recycler_view_songs_list, parent, false);
+        CardView cv = (CardView) LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_songs_list, parent, false);
         return new ViewHolder(cv);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         CardView cardView = holder.cardView;
-        TextView textView = (TextView)cardView.findViewById(R.id.song_name_list);
+        TextView textView = cardView.findViewById(R.id.song_name_list);
         textView.setText(captions[position]);
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override

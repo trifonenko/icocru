@@ -32,9 +32,13 @@ public class SongsListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         RecyclerView pizzaRecycler = (RecyclerView) inflater.inflate(R.layout.fragment_songs_list, container, false);
-        String[] pizzaNames = new String[Song.getArraySongs().length];
-        for (int i = 0; i < pizzaNames.length; i++) {
-            pizzaNames[i] = Song.getArraySongs()[i].getName();
+
+        SongsLab songsLab = SongsLab.getInstance(getActivity());
+        List<Song> songs = songsLab.getSongs();
+        String[] pizzaNames = new String[songs.size()];
+
+        for (int i = 0; i < songs.size(); i++) {
+            pizzaNames[i] = songs.get(i).getName();
         }
 
         SongsListAdapter adapter = new SongsListAdapter(pizzaNames);

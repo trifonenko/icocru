@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
 import ru.app.churchofchrist.R;
 
 /**
@@ -30,9 +32,11 @@ public class SongsChordFragment extends Fragment {
         View view = getView();
         TextView textSong = view.findViewById(R.id.text_chords);
 
-        for (int i = 0; i < Song.getArraySongs().length; i++) {
-            if (songName.equals(Song.getArraySongs()[i].getName())) {
-                textSong.setText(Song.getArraySongs()[i].getChordsResId());
+        SongsLab songsLab = SongsLab.getInstance(getActivity());
+        List<Song> songs = songsLab.getSongs();
+        for (int i = 0; i < songs.size(); i++) {
+            if (songName.equals(songs.get(i).getName())) {
+                //textSong.setText(songs.get(i).getChordsResId());
                 break;
             }
         }
