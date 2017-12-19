@@ -36,7 +36,7 @@
                 android:layout_below="@+id/textView4"
                 android:layout_marginLeft="6dp"
                 android:layout_marginRight="6dp"
-                android:text="Версия 1.1.0"
+                android:text="Версия 1.1.1"
                 android:textAlignment="textEnd"
                 android:textAllCaps="false"
                 android:textColor="@android:color/black"
