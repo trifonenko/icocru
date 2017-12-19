@@ -61,10 +61,6 @@
         <activity
             android:name=".InfoActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".christiansongs.ChristianSongsActivity"
-            android:label="@string/songs"
-            android:theme="@style/AppTheme.NoActionBar" />
 
         <!--
             <activity
@@ -96,19 +92,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity
-            android:name=".christiansongs.DetailSongActivity"
-            android:parentActivityName=".christiansongs.ChristianSongsActivity"
-            android:theme="@style/AppTheme.NoActionBar">
 
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".christiansongs.ChristianSongsActivity" />
-        </activity>
-        <activity
-            android:name=".scripture.DetailScriptureActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".notepad.MainActivity"
             android:label="@string/app_name"
