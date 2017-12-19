@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/bibl2" />
+                android:src="@drawable/glav" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -38,7 +38,7 @@
                 android:layout_height="35dp"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="17dp"
+                android:layout_marginTop="45dp"
                 android:text="СЛУЧАЙНЫЙ СТИХ ИЗ БИБЛИИ"
                 android:textColor="@android:color/background_light"
                 android:textSize="18sp"
