@@ -22,7 +22,7 @@ import ru.app.churchofchrist.R;
 /**
  * Фрагмент, для отображения детализации песен.
  */
-public class SongsTextFragment extends Fragment {
+public class SongsDetailFragment extends Fragment {
 
     private long songId;//Идентификатор песни, выбранной пользователем.
     int temp = 14;

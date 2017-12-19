@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Синглетный класс.
@@ -29,7 +28,7 @@ public class SongsLab {
 
     }
 
-    public static SongsLab getInstance(Context context) {
+    static SongsLab getInstance(Context context) {
         if (sSongsLab == null) {
             sSongsLab = new SongsLab(context);
         }
@@ -46,9 +45,5 @@ public class SongsLab {
         }
         cursor.close();
         return songs;
-    }
-
-    public Song getSong(UUID id) {
-        return null;
     }
 }

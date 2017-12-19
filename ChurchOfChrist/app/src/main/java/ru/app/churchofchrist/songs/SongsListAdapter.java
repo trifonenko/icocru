@@ -1,12 +1,11 @@
 package ru.app.churchofchrist.songs;
 
-import android.content.Intent;
+import android.annotation.SuppressLint;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import ru.app.churchofchrist.R;
@@ -19,23 +18,23 @@ public class SongsListAdapter extends RecyclerView.Adapter<SongsListAdapter.View
 
     private String[] captions;
     private Listener listener;
-    public static interface Listener {
-        public void onClick(int position);
+    public interface Listener {
+        void onClick(int position);
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
         private CardView cardView;
-        public ViewHolder(CardView v) {
+        ViewHolder(CardView v) {
             super(v);
             cardView = v;
         }
     }
 
-    public SongsListAdapter(String[] captions){
+    SongsListAdapter(String[] captions){
         this.captions = captions;
     }
 
-    public void setListener(Listener listener){
+    void setListener(Listener listener){
         this.listener = listener;
     }
 
@@ -46,7 +45,7 @@ public class SongsListAdapter extends RecyclerView.Adapter<SongsListAdapter.View
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         CardView cardView = holder.cardView;
         TextView textView = cardView.findViewById(R.id.song_name_list);
         textView.setText(captions[position]);

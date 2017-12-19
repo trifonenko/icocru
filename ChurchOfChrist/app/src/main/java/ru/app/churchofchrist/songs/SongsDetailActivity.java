@@ -26,7 +26,7 @@ public class SongsDetailActivity extends AppCompatActivity {
             }
         });
 
-        SongsTextFragment workoutDetailFragment = (SongsTextFragment) getFragmentManager().findFragmentById(R.id.detail_frag);
+        SongsDetailFragment workoutDetailFragment = (SongsDetailFragment) getFragmentManager().findFragmentById(R.id.detail_frag);
         int workoutId = (int) getIntent().getExtras().get(EXTRA_WORKOUT_ID);
         workoutDetailFragment.setSongId(workoutId);
     }
