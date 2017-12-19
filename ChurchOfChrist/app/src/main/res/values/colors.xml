@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#024e67</color>
-    <color name="colorPrimaryDark">#012f33</color>
+    <color name="colorPrimary">#2b8cb0</color>
+    <color name="colorPrimaryDark">#007bb3</color>
     <color name="colorAccent">#795548</color>
 
     <!-- Песни. -->
