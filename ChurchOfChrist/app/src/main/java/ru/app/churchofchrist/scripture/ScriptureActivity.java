@@ -40,7 +40,7 @@ public class ScriptureActivity extends AppCompatActivity {
             }
         });
 
-        listSongs = findViewById(R.id.list_scripture);
+        /*listSongs = findViewById(R.id.list_scripture);
         ArrayAdapter<String> adapterListSongs = new ArrayAdapter<>(this, R.layout.scripture_item_list, Song.getArrayListNameSongs());
         listSongs.setAdapter(adapterListSongs);
         listSongs.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -56,7 +56,7 @@ public class ScriptureActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu_christian_songs, menu);
+        menuInflater.inflate(R.menu.menu_songs, menu);
 
         MenuItem searchItem = menu.findItem(R.id.search_songs);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
@@ -101,5 +101,5 @@ public class ScriptureActivity extends AppCompatActivity {
         Intent intent = new Intent(ScriptureActivity.this, DetailScriptureActivity.class);
         intent.putExtra(DetailScriptureActivity.SONG_NAME, nameSong);
         startActivity(intent);
-    }
+    */}
 }

@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
 import ru.app.churchofchrist.R;
 
 /**
@@ -19,7 +21,7 @@ public class SongsListAdapter extends RecyclerView.Adapter<SongsListAdapter.View
     private String[] captions;
     private Listener listener;
     public interface Listener {
-        void onClick(int position);
+        void onClick(CharSequence songName);
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
@@ -34,6 +36,7 @@ public class SongsListAdapter extends RecyclerView.Adapter<SongsListAdapter.View
         this.captions = captions;
     }
 
+
     void setListener(Listener listener){
         this.listener = listener;
     }
@@ -47,13 +50,14 @@ public class SongsListAdapter extends RecyclerView.Adapter<SongsListAdapter.View
     @Override
     public void onBindViewHolder(ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         CardView cardView = holder.cardView;
-        TextView textView = cardView.findViewById(R.id.song_name_list);
+        final TextView textView = cardView.findViewById(R.id.song_name_list);
         textView.setText(captions[position]);
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                CharSequence songName = textView.getText();
                 if (listener != null) {
-                    listener.onClick(position);
+                    listener.onClick(songName);
                 }
             }
         });
