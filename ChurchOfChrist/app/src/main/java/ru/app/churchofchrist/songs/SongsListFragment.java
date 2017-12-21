@@ -70,7 +70,7 @@ public class SongsListFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_search, menu);
         MenuItem searchItem = menu.findItem(R.id.search);
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+        SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setMaxWidth(10000);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
