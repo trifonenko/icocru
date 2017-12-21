@@ -40,7 +40,7 @@ public class AnsverLab {
         Cursor cursor = mDatabase.rawQuery("SELECT * FROM ansver", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            ansver.add(new Ansver(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3)));
+            ansver.add(new Ansver(cursor.getInt(0), cursor.getString(1), cursor.getString(2)));
             cursor.moveToNext();
         }
         cursor.close();
