@@ -4,13 +4,11 @@ class Ansver {
     private int id;//Идентификатор.
     private String name;//Название.
     private String text;//Текст.
-    private String autor;//Текст.
 
-    Ansver(int id, String name, String text, String autor) {
+    Ansver(int id, String name, String text) {
         this.id = id;
         this.name = name;
         this.text = text;
-        this.autor = autor;
     }
 
     public int getId() {
@@ -23,9 +21,5 @@ class Ansver {
 
     public String getText() {
         return text;
-    }
-
-    public String getAutor() {
-        return autor;
     }
 }
