@@ -362,6 +362,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.bible) {
             Intent intent5 = new Intent(MainActivity.this, BibleActivity2.class);
             startActivity(intent5);
+        } else if (id == R.id.ansver) {
+            Intent intent6 = new Intent(MainActivity.this, ru.app.churchofchrist.ansver.AnsverActivity.class);
+            startActivity(intent6);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

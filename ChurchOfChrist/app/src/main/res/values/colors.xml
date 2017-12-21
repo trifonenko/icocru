@@ -10,6 +10,12 @@
     <color name="colorAccentSongs">#049372</color>
     <color name="colorBackgroundSongs">#e7e7e7</color>
     <!-- * * * -->
+    <!-- Песни. -->
+    <color name="colorPrimaryAnsver">#D64541</color>
+    <color name="colorPrimaryDarkAnsver">#C0392B</color>
+    <color name="colorAccentAnsver">#049372</color>
+    <color name="colorBackgroundAnsver">#e7e7e7</color>
+    <!-- * * * -->
 
     <color name="colorPrimaryBible">#30879d</color>
     <color name="colorPrimaryDarkBible">#30879d</color>

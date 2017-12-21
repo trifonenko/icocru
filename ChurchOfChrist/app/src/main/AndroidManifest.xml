@@ -116,6 +116,17 @@
             android:theme="@style/ThemeSongs" />
         <!-- * * * -->
 
+        <!-- Вопросы. -->
+        <activity
+            android:name=".ansver.AnsverActivity"
+            android:label="@string/ansver"
+            android:theme="@style/ThemeAnsver" />
+        <activity
+            android:name=".ansver.AnsverDetailActivity"
+            android:label="@string/ansver"
+            android:theme="@style/ThemeAnsver" />
+        <!-- * * * -->
+
     </application>
 
 </manifest>

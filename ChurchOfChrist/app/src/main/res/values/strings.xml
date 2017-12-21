@@ -52,6 +52,7 @@
     <!-- Пункты меню activity_main_drawer. -->
     <string name="basic_christ">Основы христианства</string>
     <string name="songs">Песни</string>
+    <string name="ansver">Вопрос-Ответ</string>
     <string name="plans_church">Планы церкви</string>
     <string name="good_news">Хорошие новости</string>
 

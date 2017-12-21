@@ -18,6 +18,14 @@
         <item name="android:windowBackground">@color/colorBackgroundSongs</item>
     </style>
     <!-- * * * -->
+    <!-- Вопрос-Ответ. -->
+    <style name="ThemeAnsver" parent="AppTheme">
+        <item name="colorPrimary">@color/colorPrimaryAnsver</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkAnsver</item>
+        <item name="colorAccent">@color/colorAccentAnsver</item>
+        <item name="android:windowBackground">@color/colorBackgroundAnsver</item>
+    </style>
+    <!-- * * * -->
 
     <style name="AppThemeBible" parent="AppTheme">
         <item name="colorPrimary">@color/colorPrimaryBible</item>
