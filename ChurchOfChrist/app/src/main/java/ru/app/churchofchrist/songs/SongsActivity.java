@@ -44,23 +44,23 @@ public class SongsActivity extends AppCompatActivity implements SongsListFragmen
         fragmentContainer = findViewById(R.id.fragment_container);
         if (fragmentContainer != null) {
             if (savedInstanceState == null) {
-                onItemClicked("Беда приходит к нам");
+                onItemClicked(1);
             }
         }
     }
 
     @Override
-    public void onItemClicked(CharSequence songName) {
+    public void onItemClicked(int songId) {
         if (fragmentContainer != null) {
             SongsDetailFragment songsDetailFragment = new SongsDetailFragment();
             FragmentTransaction ft = getFragmentManager().beginTransaction();
-            songsDetailFragment.setSongId(songName);
+            songsDetailFragment.setSongId(songId);
             ft.replace(R.id.fragment_container, songsDetailFragment);
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
         } else {
             Intent intent = new Intent(this, SongsDetailActivity.class);
-            intent.putExtra(SongsDetailActivity.EXTRA_WORKOUT_ID, songName);
+            intent.putExtra(SongsDetailActivity.EXTRA_WORKOUT_ID, songId);
             startActivity(intent);
         }
     }

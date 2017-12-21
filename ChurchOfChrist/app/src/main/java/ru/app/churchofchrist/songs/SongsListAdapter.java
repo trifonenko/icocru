@@ -22,7 +22,7 @@ public class SongsListAdapter extends RecyclerView.Adapter<SongsListAdapter.View
     private Listener listener;
 
     public interface Listener {
-        void onClick(CharSequence songName);
+        void onClick(int songId);
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
@@ -47,17 +47,20 @@ public class SongsListAdapter extends RecyclerView.Adapter<SongsListAdapter.View
         return new ViewHolder(cv);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         CardView cardView = holder.cardView;
-        final TextView textView = cardView.findViewById(R.id.song_name_list);
-        textView.setText(mSongs.get(position).getName());
+        final TextView text = cardView.findViewById(R.id.song_name_list);
+        final TextView id = cardView.findViewById(R.id.song_id);
+        id.setText("" + mSongs.get(position).getId());
+        text.setText(mSongs.get(position).getName());
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CharSequence songName = textView.getText();
+                CharSequence songName = text.getText();
                 if (listener != null) {
-                    listener.onClick(songName);
+                    listener.onClick(mSongs.get(position).getId() - 1);
                 }
             }
         });

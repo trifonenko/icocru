@@ -25,7 +25,7 @@ import ru.app.churchofchrist.R;
 public class SongsListFragment extends Fragment {
 
     interface SongListListener {
-        void onItemClicked(CharSequence songName);
+        void onItemClicked(int songId);
     }
 
     private SongListListener listener;
@@ -46,9 +46,9 @@ public class SongsListFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         mSongsRecyclerView.setLayoutManager(layoutManager);
         adapter.setListener(new SongsListAdapter.Listener() {
-            public void onClick(CharSequence songName) {
+            public void onClick(int songId) {
                 if (listener != null) {
-                    listener.onItemClicked(songName);
+                    listener.onItemClicked(songId);
                 }
             }
         });
@@ -88,9 +88,9 @@ public class SongsListFragment extends Fragment {
                 LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
                 mSongsRecyclerView.setLayoutManager(layoutManager);
                 adapter.setListener(new SongsListAdapter.Listener() {
-                    public void onClick(CharSequence songName) {
+                    public void onClick(int songId) {
                         if (listener != null) {
-                            listener.onItemClicked(songName);
+                            listener.onItemClicked(songId);
                         }
                     }
                 });

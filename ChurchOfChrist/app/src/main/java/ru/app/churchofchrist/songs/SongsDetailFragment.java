@@ -24,7 +24,7 @@ import ru.app.churchofchrist.R;
  */
 public class SongsDetailFragment extends Fragment {
 
-    private CharSequence ssongName;//Идентификатор песни, выбранной пользователем.
+    private int songId;//Идентификатор песни, выбранной пользователем.
     int temp = 14;
     public static final String APP_PREFERENCES = "mysettingss";
     TextView songText;
@@ -35,7 +35,7 @@ public class SongsDetailFragment extends Fragment {
         temp = sharedPref.getInt("temp", temp);
         setHasOptionsMenu(true);
         if (savedInstanceState != null) {
-            ssongName = savedInstanceState.getString("ssongName");
+            songId = savedInstanceState.getInt("songId");
         }
         return inflater.inflate(R.layout.fragment_songs_text, container, false);
     }
@@ -47,16 +47,10 @@ public class SongsDetailFragment extends Fragment {
         if (view != null) {
             SongsLab songsLab = SongsLab.getInstance(getActivity());
             List<Song> songs = songsLab.getSongs();
-            //Song song = Song.getArraySongs()[(int) songId];
             TextView songName = view.findViewById(R.id.song_name);
-            songName.setText(ssongName);
+            songName.setText(songs.get(songId).getName());
             songText = view.findViewById(R.id.song_text);
-            for (int i = 0; i < songs.size(); i++) {
-                if ((songs.get(i).getName()).equals(ssongName)) {
-                    songText.setText(songs.get(i).getText());
-                }
-            }
-            //
+            songText.setText(songs.get(songId).getText());
             songText.setTextSize((float) temp);//Размер текста песни.
         }
     }
@@ -72,11 +66,11 @@ public class SongsDetailFragment extends Fragment {
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
-        savedInstanceState.putString("ssongName", (String) ssongName);
+        savedInstanceState.putInt("songId", songId);
     }
 
-    public void setSongId(CharSequence songName) {
-        this.ssongName = songName;
+    public void setSongId(int songId) {
+        this.songId = songId;
     }
 
     @Override
