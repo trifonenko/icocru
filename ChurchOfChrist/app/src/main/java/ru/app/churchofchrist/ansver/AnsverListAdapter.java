@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
 import ru.app.churchofchrist.R;
 
 /**
@@ -16,8 +18,9 @@ import ru.app.churchofchrist.R;
 
 public class AnsverListAdapter extends RecyclerView.Adapter<AnsverListAdapter.ViewHolder> {
 
-    private String[] captions;
+    private List<Ansver> mAnsver;
     private Listener listener;
+
     public interface Listener {
         void onClick(CharSequence ansverName);
     }
@@ -30,8 +33,7 @@ public class AnsverListAdapter extends RecyclerView.Adapter<AnsverListAdapter.Vi
         }
     }
 
-    AnsverListAdapter(String[] captions){
-        this.captions = captions;
+    AnsverListAdapter(List<Ansver> ansver) {this.mAnsver = ansver;
     }
 
 
@@ -49,7 +51,7 @@ public class AnsverListAdapter extends RecyclerView.Adapter<AnsverListAdapter.Vi
     public void onBindViewHolder(ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         CardView cardView = holder.cardView;
         final TextView textView = cardView.findViewById(R.id.ansver_name_list);
-        textView.setText(captions[position]);
+        textView.setText(mAnsver.get(position).getName());
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,7 +64,5 @@ public class AnsverListAdapter extends RecyclerView.Adapter<AnsverListAdapter.Vi
     }
 
     @Override
-    public int getItemCount() {
-        return captions.length;
-    }
+    public int getItemCount() {return mAnsver.size();}
 }

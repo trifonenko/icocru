@@ -3,7 +3,6 @@ package ru.app.churchofchrist.ansver;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -40,13 +39,8 @@ public class AnsverListFragment extends Fragment {
 
         AnsverLab ansverLab = AnsverLab.getInstance(getActivity());
         ansver = ansverLab.getAnsver();
-        String[] names = new String[ansver.size()];
+        AnsverListAdapter adapter = new AnsverListAdapter(ansver);
 
-        for (int i = 0; i < ansver.size(); i++) {
-            names[i] = ansver.get(i).getName();
-        }
-
-        AnsverListAdapter adapter = new AnsverListAdapter(names);
         mAnsverRecyclerView.setAdapter(adapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         mAnsverRecyclerView.setLayoutManager(layoutManager);
@@ -68,9 +62,9 @@ public class AnsverListFragment extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_search_ansver, menu);
-        MenuItem searchItem = menu.findItem(R.id.search_ansver);
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+        inflater.inflate(R.menu.menu_search, menu);
+        MenuItem searchItem = menu.findItem(R.id.search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setMaxWidth(10000);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -80,20 +74,15 @@ public class AnsverListFragment extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                mAnsverRecyclerView.getAdapter().notifyDataSetChanged();
-                ArrayList<String> ansverListArray = new ArrayList<>();
+                List<Ansver> ansverFilter = new ArrayList<>();
 
                 for (Ansver item : ansver) {
                     if (item.getName().toLowerCase().contains(newText.toLowerCase())) {
-                        ansverListArray.add(item.getName());
+                        ansverFilter.add(item);
                     }
                 }
-                String[] names = new String[ansverListArray.size()];
-                for (int i = 0; i < ansverListArray.size(); i++) {
-                    names[i] = ansverListArray.get(i);
-                }
 
-                AnsverListAdapter adapter = new AnsverListAdapter(names);
+                AnsverListAdapter adapter = new AnsverListAdapter(ansverFilter);
                 mAnsverRecyclerView.setAdapter(adapter);
                 LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
                 mAnsverRecyclerView.setLayoutManager(layoutManager);
