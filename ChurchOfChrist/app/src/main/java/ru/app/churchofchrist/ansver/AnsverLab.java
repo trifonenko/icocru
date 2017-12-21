@@ -42,6 +42,7 @@ public class AnsverLab {
         while (!cursor.isAfterLast()) {
             ansver.add(new Ansver(cursor.getInt(0), cursor.getString(1), cursor.getString(2)));
             cursor.moveToNext();
+
         }
         cursor.close();
         return ansver;
