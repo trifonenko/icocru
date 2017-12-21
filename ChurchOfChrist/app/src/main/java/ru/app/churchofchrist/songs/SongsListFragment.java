@@ -40,13 +40,8 @@ public class SongsListFragment extends Fragment {
 
         SongsLab songsLab = SongsLab.getInstance(getActivity());
         songs = songsLab.getSongs();
-        String[] names = new String[songs.size()];
 
-        for (int i = 0; i < songs.size(); i++) {
-            names[i] = songs.get(i).getName();
-        }
-
-        SongsListAdapter adapter = new SongsListAdapter(names);
+        SongsListAdapter adapter = new SongsListAdapter(songs);
         mSongsRecyclerView.setAdapter(adapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         mSongsRecyclerView.setLayoutManager(layoutManager);
@@ -80,20 +75,15 @@ public class SongsListFragment extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                mSongsRecyclerView.getAdapter().notifyDataSetChanged();
-                ArrayList<String> songsListArray = new ArrayList<>();
+                List<Song> songsFilter = new ArrayList<>();
 
                 for (Song item : songs) {
                     if (item.getName().toLowerCase().contains(newText.toLowerCase())) {
-                        songsListArray.add(item.getName());
+                        songsFilter.add(item);
                     }
                 }
-                String[] names = new String[songsListArray.size()];
-                for (int i = 0; i < songsListArray.size(); i++) {
-                    names[i] = songsListArray.get(i);
-                }
 
-                SongsListAdapter adapter = new SongsListAdapter(names);
+                SongsListAdapter adapter = new SongsListAdapter(songsFilter);
                 mSongsRecyclerView.setAdapter(adapter);
                 LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
                 mSongsRecyclerView.setLayoutManager(layoutManager);

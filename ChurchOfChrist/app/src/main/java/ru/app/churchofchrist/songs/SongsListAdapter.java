@@ -18,8 +18,9 @@ import ru.app.churchofchrist.R;
 
 public class SongsListAdapter extends RecyclerView.Adapter<SongsListAdapter.ViewHolder> {
 
-    private String[] captions;
+    private List<Song> mSongs;
     private Listener listener;
+
     public interface Listener {
         void onClick(CharSequence songName);
     }
@@ -32,10 +33,9 @@ public class SongsListAdapter extends RecyclerView.Adapter<SongsListAdapter.View
         }
     }
 
-    SongsListAdapter(String[] captions){
-        this.captions = captions;
+    SongsListAdapter(List<Song> songs) {
+        this.mSongs = songs;
     }
-
 
     void setListener(Listener listener){
         this.listener = listener;
@@ -51,7 +51,7 @@ public class SongsListAdapter extends RecyclerView.Adapter<SongsListAdapter.View
     public void onBindViewHolder(ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         CardView cardView = holder.cardView;
         final TextView textView = cardView.findViewById(R.id.song_name_list);
-        textView.setText(captions[position]);
+        textView.setText(mSongs.get(position).getName());
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,6 +65,6 @@ public class SongsListAdapter extends RecyclerView.Adapter<SongsListAdapter.View
 
     @Override
     public int getItemCount() {
-        return captions.length;
+        return mSongs.size();
     }
 }
