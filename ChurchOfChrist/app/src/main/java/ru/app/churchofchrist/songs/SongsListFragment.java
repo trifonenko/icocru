@@ -68,7 +68,7 @@ public class SongsListFragment extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_songs, menu);
+        inflater.inflate(R.menu.menu_search_songs, menu);
         MenuItem searchItem = menu.findItem(R.id.search_songs);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
         searchView.setMaxWidth(10000);
@@ -107,15 +107,5 @@ public class SongsListFragment extends Fragment {
                 return true;
             }
         });
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.search_songs:
-                break;
-
-        }
-        return super.onOptionsItemSelected(item);
     }
 }
