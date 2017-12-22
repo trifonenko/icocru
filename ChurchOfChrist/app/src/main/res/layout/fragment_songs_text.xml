@@ -11,10 +11,19 @@
         android:layout_marginBottom="4dp"
         card_view:cardCornerRadius="@dimen/card_corner_radius">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/song_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:padding="5dp"
+            android:textColor="#196c00" />
+
+        <LinearLayout
+            android:layout_marginLeft="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="25dp">
 
             <TextView
                 android:id="@+id/song_name"
@@ -48,6 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:padding="10dp"
                 android:text=""
                 app:autoSizeMaxTextSize="24sp" />
         </ScrollView>
