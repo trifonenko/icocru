@@ -78,7 +78,7 @@ public class SongsListFragment extends Fragment {
                 List<Song> songsFilter = new ArrayList<>();
 
                 for (Song item : songs) {
-                    if (item.getName().toLowerCase().contains(newText.toLowerCase())) {
+                    if ((item.getId() + " " + item.getName().toLowerCase()).contains(newText.toLowerCase())) {
                         songsFilter.add(item);
                     }
                 }
