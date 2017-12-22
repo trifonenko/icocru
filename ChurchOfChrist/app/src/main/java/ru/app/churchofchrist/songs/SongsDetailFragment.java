@@ -139,6 +139,6 @@ public class SongsDetailFragment extends Fragment {
     private void onRunSong(int num) {
         songName.setText(songs.get(num).getName());
         songText.setText(songs.get(num).getText());
-        songTextId.setText(songId + "");
+        songTextId.setText(songs.get(num).getId() + "");
     }
 }
