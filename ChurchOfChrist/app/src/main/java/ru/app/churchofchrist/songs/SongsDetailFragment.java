@@ -53,6 +53,8 @@ public class SongsDetailFragment extends Fragment {
             songs = songsLab.getSongs();
             songName = view.findViewById(R.id.song_name);
             songText = view.findViewById(R.id.song_text);
+            TextView songTextId = view.findViewById(R.id.song_id);
+            songTextId.setText(songId + "");
             onRunSong(songId);
             songText.setTextSize((float) temp);//Размер текста песни.
         }
