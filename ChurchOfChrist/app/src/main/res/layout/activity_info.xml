@@ -49,7 +49,7 @@
                 android:layout_height="50dp"
                 android:layout_marginLeft="6dp"
                 android:layout_marginRight="6dp"
-                android:text="Copyright (c) ICOC RU Church of Christ 2017. All rights reserved"
+                android:text="Copyright (c) ICOC RU Church of Christ 2017-2018. All rights reserved"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textIsSelectable="true"
@@ -68,41 +68,15 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="437dp"
                 android:layout_marginLeft="6dp"
                 android:layout_marginRight="6dp"
+                android:autoLink="web"
                 android:text="@string/name_razr"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@android:color/black"
                 android:textIsSelectable="true" />
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginLeft="6dp"
-                android:layout_marginRight="6dp"
-                android:text="@string/info"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="@android:color/black"
-                android:textIsSelectable="true"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_marginLeft="6dp"
-                android:layout_marginRight="6dp"
-                android:text="2-е Тимофею 3:16-17. Все Писание вдохновлено Богом и полезно для научения, обличения, исправления, для наставления в праведности, чтобы Божий человек был полностью готов для любого доброго дела."
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="@android:color/black"
-                android:textIsSelectable="true"
-                android:textSize="14sp"
-                android:textStyle="italic" />
 
         </LinearLayout>
     </ScrollView>
