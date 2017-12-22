@@ -57,8 +57,6 @@ public class SongsDetailFragment extends Fragment {
             songName = view.findViewById(R.id.song_name);
             songText = view.findViewById(R.id.song_text);
             songTextId = view.findViewById(R.id.song_id);
-            onRunSong(songId);
-            songText.setTextSize((float) temp);//Размер текста песни.
             SwitchCompat compat = view.findViewById(R.id.switcht);
             compat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
@@ -70,7 +68,8 @@ public class SongsDetailFragment extends Fragment {
                     }
                 }
             });
-
+            onRunSong(songId);
+            songText.setTextSize((float) temp);//Размер текста песни.
         }
     }
 
@@ -148,6 +147,7 @@ public class SongsDetailFragment extends Fragment {
 
     @SuppressLint("SetTextI18n")
     private void onRunSong(int num) {
+        songId = num;
         songName.setText(songs.get(num).getName());
         songText.setText(songs.get(num).getText());
         songTextId.setText(songs.get(num).getId() + "");
