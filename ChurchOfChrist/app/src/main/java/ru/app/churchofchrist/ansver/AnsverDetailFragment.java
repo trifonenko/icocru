@@ -29,8 +29,9 @@ public class AnsverDetailFragment extends Fragment {
     private int ansverId;//Идентификатор песни, выбранной пользователем.
     int temp = 14;
     public static final String APP_PREFERENCES = "mysettingss";
-    private TextView ansverName;
     private TextView ansverText;
+    private TextView ansverName;
+    private TextView ansverTextId;
     private List<Ansver> ansver;
 
     @Override
@@ -53,10 +54,10 @@ public class AnsverDetailFragment extends Fragment {
             ansver = ansverLab.getAnsver();
             ansverName = view.findViewById(R.id.ansver_name);
             ansverText = view.findViewById(R.id.ansver_text);
-            TextView ansverTextId = view.findViewById(R.id.ansver_id);
-            ansverTextId.setText(ansverId + "");
+            ansverTextId = view.findViewById(R.id.ansver_id);
             onRunAnsver(ansverId);
             ansverText.setTextSize((float) temp);//Размер текста песни.
+
         }
     }
 
@@ -131,8 +132,11 @@ public class AnsverDetailFragment extends Fragment {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @SuppressLint("SetTextI18n")
     private void onRunAnsver(int num) {
         ansverName.setText(ansver.get(num).getName());
         ansverText.setText(ansver.get(num).getText());
+        ansverTextId.setText(ansver.get(num).getId() + "");
     }
 }
