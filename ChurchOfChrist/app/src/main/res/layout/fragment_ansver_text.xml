@@ -1,5 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
@@ -11,11 +12,26 @@
         card_view:cardCornerRadius="@dimen/card_corner_radius">
 
         <TextView
+            android:id="@+id/ansver_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textColor="#196c00" />
+
+        <LinearLayout
+            android:layout_marginLeft="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="25dp">
+        <TextView
             android:id="@+id/ansver_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:textSize="20sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        </LinearLayout>
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -34,8 +50,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:autoLink="web"
+                android:autoSizeMaxTextSize="24sp"
+                android:padding="10dp"
                 android:text=""
-                android:autoSizeMaxTextSize="24sp" />
+                android:textIsSelectable="true" />
         </ScrollView>
     </android.support.v7.widget.CardView>
 

@@ -53,6 +53,8 @@ public class AnsverDetailFragment extends Fragment {
             ansver = ansverLab.getAnsver();
             ansverName = view.findViewById(R.id.ansver_name);
             ansverText = view.findViewById(R.id.ansver_text);
+            TextView ansverTextId = view.findViewById(R.id.ansver_id);
+            ansverTextId.setText(ansverId + "");
             onRunAnsver(ansverId);
             ansverText.setTextSize((float) temp);//Размер текста песни.
         }
