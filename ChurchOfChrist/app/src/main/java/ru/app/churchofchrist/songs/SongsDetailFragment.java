@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.SwitchCompat;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -31,6 +32,7 @@ public class SongsDetailFragment extends Fragment {
     public static final String APP_PREFERENCES = "mysettingss";
     private TextView songText;
     private TextView songName;
+    private TextView songTextId;
     private List<Song> songs;
 
     @Override
@@ -53,10 +55,11 @@ public class SongsDetailFragment extends Fragment {
             songs = songsLab.getSongs();
             songName = view.findViewById(R.id.song_name);
             songText = view.findViewById(R.id.song_text);
-            TextView songTextId = view.findViewById(R.id.song_id);
-            songTextId.setText(songId + "");
+            songTextId = view.findViewById(R.id.song_id);
             onRunSong(songId);
             songText.setTextSize((float) temp);//Размер текста песни.
+            SwitchCompat compat = view.findViewById(R.id.switcht);
+
         }
     }
 
@@ -132,8 +135,10 @@ public class SongsDetailFragment extends Fragment {
         return super.onOptionsItemSelected(item);
     }
 
+    @SuppressLint("SetTextI18n")
     private void onRunSong(int num) {
         songName.setText(songs.get(num).getName());
         songText.setText(songs.get(num).getText());
+        songTextId.setText(songId + "");
     }
 }
