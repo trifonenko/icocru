@@ -40,18 +40,7 @@ public class SongsListFragment extends Fragment {
 
         SongsLab songsLab = SongsLab.getInstance(getActivity());
         songs = songsLab.getSongs();
-
-        SongsListAdapter adapter = new SongsListAdapter(songs);
-        mSongsRecyclerView.setAdapter(adapter);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        mSongsRecyclerView.setLayoutManager(layoutManager);
-        adapter.setListener(new SongsListAdapter.Listener() {
-            public void onClick(int songId) {
-                if (listener != null) {
-                    listener.onItemClicked(songId);
-                }
-            }
-        });
+        onRunSong(songs);
         return mSongsRecyclerView;
     }
 
@@ -82,19 +71,22 @@ public class SongsListFragment extends Fragment {
                         songsFilter.add(item);
                     }
                 }
-
-                SongsListAdapter adapter = new SongsListAdapter(songsFilter);
-                mSongsRecyclerView.setAdapter(adapter);
-                LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
-                mSongsRecyclerView.setLayoutManager(layoutManager);
-                adapter.setListener(new SongsListAdapter.Listener() {
-                    public void onClick(int songId) {
-                        if (listener != null) {
-                            listener.onItemClicked(songId);
-                        }
-                    }
-                });
+                onRunSong(songsFilter);
                 return true;
+            }
+        });
+    }
+
+    private void onRunSong(List<Song> songs) {
+        SongsListAdapter adapter = new SongsListAdapter(songs);
+        mSongsRecyclerView.setAdapter(adapter);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        mSongsRecyclerView.setLayoutManager(layoutManager);
+        adapter.setListener(new SongsListAdapter.Listener() {
+            public void onClick(int songId) {
+                if (listener != null) {
+                    listener.onItemClicked(songId);
+                }
             }
         });
     }
