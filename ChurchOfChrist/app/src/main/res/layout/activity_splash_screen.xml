@@ -16,7 +16,7 @@
         android:layout_gravity="center_vertical|center_horizontal"
         android:layout_marginBottom="84dp"
         android:gravity="center_vertical|center_horizontal"
-        android:text="ICOC"
+        android:text="@string/icoc_splash"
         android:textColor="#000000"
         android:textSize="84sp" />
 
@@ -27,7 +27,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="bottom|center_horizontal"
-        android:text="v.1.1.1"
+        android:text="@string/version"
         android:textColor="#000000" />
 
     <TextView
@@ -38,7 +38,7 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="177dp"
-        android:text="RU"
+        android:text="@string/ru_splash"
         android:textColor="#000000"
         android:textSize="84sp" />
 

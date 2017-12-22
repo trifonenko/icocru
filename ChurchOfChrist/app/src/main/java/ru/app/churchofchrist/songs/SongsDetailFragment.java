@@ -1,5 +1,6 @@
 package ru.app.churchofchrist.songs;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
@@ -86,7 +87,7 @@ public class SongsDetailFragment extends Fragment {
             case R.id.action_settings:
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 LayoutInflater inf = getActivity().getLayoutInflater();
-                View view = inf.inflate(R.layout.dialog, null);
+                @SuppressLint("InflateParams") View view = inf.inflate(R.layout.dialog, null);
                 builder.setView(view)
                         .setTitle("Размер шрифта")
                         .setPositiveButton("ОК", new DialogInterface.OnClickListener() {

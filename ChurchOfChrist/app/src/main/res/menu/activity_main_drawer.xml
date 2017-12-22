@@ -29,11 +29,11 @@
             <item
                 android:id="@+id/nav_contacts"
                 android:icon="@drawable/ic_drawer_contacts"
-                android:title="Обратная связь" />
+                android:title="@string/obrat_svyz" />
             <item
                 android:id="@+id/nav_info"
                 android:icon="@drawable/ic_drawer_info"
-                android:title="О приложении" />
+                android:title="@string/info_app" />
         </menu>
     </item>
 </menu>

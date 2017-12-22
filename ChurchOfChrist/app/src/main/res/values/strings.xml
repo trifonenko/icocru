@@ -4764,4 +4764,18 @@ o	Поделитесь о своём опыте служения. Когда, к
         Гордон Фергюсон - евангелист, автор 12 книг. Директор тихоокеанской школы служения. www.gftm.org\n\n
         Даглас Джакоби - основатель Афинского института служителей, сертификат ААСС, автор 18 книг. www.douglasjacoby.com\n
         </string>
+    <string name="cont_text">Спасибо за ваше желание помочь в разработке данного приложения. Пожалуйста, присылайте ваши комментарии и предложения на наш почтовый ящик или в группу Вконтакте. Спасибо!</string>
+    <string name="vk">VK: vk.com/icocru</string>
+    <string name="email">Email: nskcoc@gmail.com</string>
+    <string name="icoc_ru">ICOC RU Церковь Христа</string>
+    <string name="version">Версия 1.1.1</string>
+    <string name="copyright">Copyright (c) ICOC RU Church of Christ 2017-2018. All rights reserved</string>
+    <string name="razrab">В разработке учавствовали:</string>
+    <string name="obrat_svyz">Обратная связь</string>
+    <string name="info_app">О приложении</string>
+    <string name="icoc_splash">ICOC</string>
+    <string name="ru_splash">RU</string>
+    <string name="random_stih">СЛУЧАЙНЫЙ СТИХ ИЗ БИБЛИИ</string>
+    <string name="nrp">НРП</string>
+    <string name="coordinat">Координаты</string>
 </resources>

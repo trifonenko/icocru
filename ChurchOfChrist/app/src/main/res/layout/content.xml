@@ -39,7 +39,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="45dp"
-                android:text="СЛУЧАЙНЫЙ СТИХ ИЗ БИБЛИИ"
+                android:text="@string/random_stih"
                 android:textColor="@android:color/background_light"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -53,7 +53,7 @@
                 android:layout_below="@+id/icon"
                 android:gravity="end"
                 android:padding="3dp"
-                android:text="НРП"
+                android:text="@string/nrp"
                 android:textColor="?attr/colorControlNormal"
                 android:textSize="10sp"
                 android:textStyle="bold" />
@@ -67,7 +67,7 @@
                 android:layout_below="@+id/icon"
                 android:padding="3dp"
                 android:layout_toEndOf="@+id/icon"
-                android:text="Координаты"
+                android:text="@string/coordinat"
                 android:textAlignment="textStart"
                 android:textColor="@android:color/black"
                 android:textIsSelectable="true"

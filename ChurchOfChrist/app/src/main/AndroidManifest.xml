@@ -73,7 +73,8 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/bible"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppThemeBible.NoActionBar">
+            android:theme="@style/AppThemeBible.NoActionBar"
+            tools:targetApi="jelly_bean">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
@@ -85,7 +86,8 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/bible"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppThemeBible.NoActionBar">
+            android:theme="@style/AppThemeBible.NoActionBar"
+            tools:targetApi="jelly_bean">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data

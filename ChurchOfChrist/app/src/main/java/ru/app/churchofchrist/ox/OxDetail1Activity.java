@@ -1,5 +1,6 @@
 package ru.app.churchofchrist.ox;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -414,7 +415,7 @@ public class OxDetail1Activity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             LayoutInflater inflater = getLayoutInflater();
-            View view = inflater.inflate(R.layout.dialog, null);
+            @SuppressLint("InflateParams") View view = inflater.inflate(R.layout.dialog, null);
             builder.setView(view)
                     .setTitle("Размер шрифта")
                     .setPositiveButton("ОК", new DialogInterface.OnClickListener() {
