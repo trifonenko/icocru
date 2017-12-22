@@ -14,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -59,6 +60,16 @@ public class SongsDetailFragment extends Fragment {
             onRunSong(songId);
             songText.setTextSize((float) temp);//Размер текста песни.
             SwitchCompat compat = view.findViewById(R.id.switcht);
+            compat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    if (b) {
+                        songText.setText(songs.get(songId).getChords());
+                    } else {
+                        songText.setText(songs.get(songId).getText());
+                    }
+                }
+            });
 
         }
     }

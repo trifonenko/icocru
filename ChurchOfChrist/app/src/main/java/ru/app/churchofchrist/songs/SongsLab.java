@@ -40,7 +40,7 @@ public class SongsLab {
         Cursor cursor = mDatabase.rawQuery("SELECT * FROM songs", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            songs.add(new Song(cursor.getInt(0), cursor.getString(1), cursor.getString(2)));
+            songs.add(new Song(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(4)));
             cursor.moveToNext();
         }
         cursor.close();

@@ -4,11 +4,13 @@ class Song {
     private int id;//Идентификатор.
     private String name;//Название.
     private String text;//Текст.
+    private String chords;//Аккорды.
 
-    Song(int id, String name, String text) {
+    Song(int id, String name, String text, String chords) {
         this.id = id;
         this.name = name;
         this.text = text;
+        this.chords = chords;
     }
 
     public int getId() {
@@ -21,5 +23,9 @@ class Song {
 
     public String getText() {
         return text;
+    }
+
+    public String getChords() {
+        return chords;
     }
 }
