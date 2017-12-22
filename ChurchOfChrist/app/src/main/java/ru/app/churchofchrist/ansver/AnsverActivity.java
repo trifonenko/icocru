@@ -37,23 +37,23 @@ public class AnsverActivity extends AppCompatActivity implements AnsverListFragm
         fragmentContainer = findViewById(R.id.fragment_container);
         if (fragmentContainer != null) {
             if (savedInstanceState == null) {
-                onItemClicked("Беда приходит к нам");
+                onItemClicked(1);
             }
         }
     }
 
     @Override
-    public void onItemClicked(CharSequence ansverName) {
+    public void onItemClicked(int ansverId) {
         if (fragmentContainer != null) {
             AnsverDetailFragment ansverDetailFragment = new AnsverDetailFragment();
             FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ansverDetailFragment.setAnsverId(ansverName);
+            ansverDetailFragment.setAnsverId(ansverId);
             ft.replace(R.id.fragment_container, ansverDetailFragment);
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
         } else {
             Intent intent = new Intent(this, AnsverDetailActivity.class);
-            intent.putExtra(AnsverDetailActivity.EXTRA_WORKOUT_ID, ansverName);
+            intent.putExtra(AnsverDetailActivity.EXTRA_WORKOUT_ID, ansverId);
             startActivity(intent);
         }
     }

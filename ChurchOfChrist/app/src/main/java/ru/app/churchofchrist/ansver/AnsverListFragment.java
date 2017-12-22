@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ru.app.churchofchrist.R;
+import ru.app.churchofchrist.songs.SongsListAdapter;
 
 /**
  * Список песен.
@@ -24,7 +25,7 @@ import ru.app.churchofchrist.R;
 public class AnsverListFragment extends Fragment {
 
     interface AnsverListListener {
-        void onItemClicked(CharSequence ansverName);
+        void onItemClicked(int ansverId);
     }
 
     private AnsverListListener listener;
@@ -39,18 +40,7 @@ public class AnsverListFragment extends Fragment {
 
         AnsverLab ansverLab = AnsverLab.getInstance(getActivity());
         ansver = ansverLab.getAnsver();
-        AnsverListAdapter adapter = new AnsverListAdapter(ansver);
-
-        mAnsverRecyclerView.setAdapter(adapter);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        mAnsverRecyclerView.setLayoutManager(layoutManager);
-        adapter.setListener(new AnsverListAdapter.Listener() {
-            public void onClick(CharSequence ansverName) {
-                if (listener != null) {
-                    listener.onItemClicked(ansverName);
-                }
-            }
-        });
+        onRunAnsver(ansver);
         return mAnsverRecyclerView;
     }
 
@@ -77,26 +67,28 @@ public class AnsverListFragment extends Fragment {
                 List<Ansver> ansverFilter = new ArrayList<>();
 
                 for (Ansver item : ansver) {
-                    if (item.getName().toLowerCase().contains(newText.toLowerCase())) {
+                    if ((item.getId() + " " + item.getName().toLowerCase()).contains(newText.toLowerCase())) {
                         ansverFilter.add(item);
                     }
                 }
-
-                AnsverListAdapter adapter = new AnsverListAdapter(ansverFilter);
-                mAnsverRecyclerView.setAdapter(adapter);
-                LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
-                mAnsverRecyclerView.setLayoutManager(layoutManager);
-                adapter.setListener(new AnsverListAdapter.Listener() {
-                    public void onClick(CharSequence ansverName) {
-                        if (listener != null) {
-                            listener.onItemClicked(ansverName);
-                        }
-                    }
-                });
+                onRunAnsver(ansverFilter);
                 return true;
             }
 
 
+        });
+    }
+    private void onRunAnsver(List<Ansver> ansver) {
+        AnsverListAdapter adapter = new AnsverListAdapter(ansver);
+        mAnsverRecyclerView.setAdapter(adapter);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        mAnsverRecyclerView.setLayoutManager(layoutManager);
+        adapter.setListener(new AnsverListAdapter.Listener() {
+            public void onClick(int ansverId) {
+                if (listener != null) {
+                    listener.onItemClicked(ansverId);
+                }
+            }
         });
     }
 }

@@ -22,7 +22,7 @@ public class AnsverListAdapter extends RecyclerView.Adapter<AnsverListAdapter.Vi
     private Listener listener;
 
     public interface Listener {
-        void onClick(CharSequence ansverName);
+        void onClick(int ansverId);
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
@@ -47,17 +47,20 @@ public class AnsverListAdapter extends RecyclerView.Adapter<AnsverListAdapter.Vi
         return new ViewHolder(cv);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         CardView cardView = holder.cardView;
-        final TextView textView = cardView.findViewById(R.id.ansver_name_list);
-        textView.setText(mAnsver.get(position).getName());
+        final TextView text = cardView.findViewById(R.id.ansver_name_list);
+        final TextView id = cardView.findViewById(R.id.ansver_id);
+        id.setText("" + mAnsver.get(position).getId());
+        text.setText(mAnsver.get(position).getName());
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CharSequence ansverName = textView.getText();
+                CharSequence ansverName = text.getText();
                 if (listener != null) {
-                    listener.onClick(ansverName);
+                    listener.onClick(mAnsver.get(position).getId() - 1);
                 }
             }
         });

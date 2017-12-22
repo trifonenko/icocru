@@ -16,6 +16,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.Random;
 
 import ru.app.churchofchrist.R;
 
@@ -24,10 +25,12 @@ import ru.app.churchofchrist.R;
  */
 public class AnsverDetailFragment extends Fragment {
 
-    private CharSequence sansverName;//Идентификатор песни, выбранной пользователем.
+    private int ansverId;//Идентификатор песни, выбранной пользователем.
     int temp = 14;
     public static final String APP_PREFERENCES = "mysettingss";
-    TextView ansverText;
+    private TextView ansverName;
+    private TextView ansverText;
+    private List<Ansver> ansver;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -35,7 +38,7 @@ public class AnsverDetailFragment extends Fragment {
         temp = sharedPref.getInt("temp", temp);
         setHasOptionsMenu(true);
         if (savedInstanceState != null) {
-            sansverName = savedInstanceState.getString("sansverName");
+            ansverId = savedInstanceState.getInt("ansverId");
         }
         return inflater.inflate(R.layout.fragment_ansver_text, container, false);
     }
@@ -46,17 +49,10 @@ public class AnsverDetailFragment extends Fragment {
         View view = getView();
         if (view != null) {
             AnsverLab ansverLab = AnsverLab.getInstance(getActivity());
-            List<Ansver> ansver = ansverLab.getAnsver();
-            //Ansver ansver = Ansver.getArrayAnsver()[(int) ansverId];
-            TextView ansverName = view.findViewById(R.id.ansver_name);
-            ansverName.setText(sansverName);
+            ansver = ansverLab.getAnsver();
+            ansverName = view.findViewById(R.id.ansver_name);
             ansverText = view.findViewById(R.id.ansver_text);
-            for (int i = 0; i < ansver.size(); i++) {
-                if ((ansver.get(i).getName()).equals(sansverName)) {
-                    ansverText.setText(ansver.get(i).getText());
-                }
-            }
-            //
+            onRunAnsver(ansverId);
             ansverText.setTextSize((float) temp);//Размер текста песни.
         }
     }
@@ -72,11 +68,11 @@ public class AnsverDetailFragment extends Fragment {
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
-        savedInstanceState.putString("sansverName", (String) sansverName);
+        savedInstanceState.putInt("ansverId", ansverId);
     }
 
-    public void setAnsverId(CharSequence ansverName) {
-        this.sansverName = ansverName;
+    public void setAnsverId(int ansverId) {
+        this.ansverId = ansverId;
     }
 
     @Override
@@ -124,7 +120,16 @@ public class AnsverDetailFragment extends Fragment {
                 AlertDialog alert = builder.create();
                 alert.show();
                 break;
+            case R.id.random_ansver:
+                Random random = new Random();
+                int randomNum = random.nextInt(ansver.size());
+                onRunAnsver(randomNum);
+                break;
         }
         return super.onOptionsItemSelected(item);
+    }
+    private void onRunAnsver(int num) {
+        ansverName.setText(ansver.get(num).getName());
+        ansverText.setText(ansver.get(num).getText());
     }
 }
