@@ -4,39 +4,20 @@
     <string name="action_settings">Настройки</string>
     <string name="search">Поиск</string>
     <string name="ox">Основы христианства</string>
-    <string name="scripture">Полезные отрывки</string>
     <string name="bible">БИБЛИЯ</string>
     <string name="notepad">Блокнот</string>
     <string name="random_song">Случайная песня</string>
-    <string name="executing_task">Загружаем…</string>
 
 
     <string name="header">Заголовок</string>
-    <string name="main_about">О приложении</string>
-    <string name="main_rateApp">Оценить</string>
     <string name="note">Заметка</string>
     <string name="note_delete">Удаление</string>
-    <string name="about_content">
-        \n
-        Это блокнот.
-    </string>
-    <string name="now">Сейчас</string>
-    <string name="rate_app">Оценить приложение</string>
-    <string name="later">Позже</string>
 
     <!--Оценка-->
-    <string name="r_first">Нравится ли Вам приложение?</string>
     <string name="r_yes">Да</string>
     <string name="r_no">Нет</string>
-    <string name="r_second_positive">Хотите поставить оценку в Google Play?</string>
-    <string name="r_second_negative">Напишите, что именно Вам не нравится.</string>
-    <string name="r_second_send">Написать</string>
-    <string name="r_second_exit">Выйти</string>
-    <string name="r_second_theme">Отзыв о приложении</string>
     <string name="delete_dialog">Действительно удалить?</string>
     <string name="note_text_size">Размер текста</string>
-    <string name="not_save_dialog">Запись не будет сохранена</string>
-    <string name="comeback_dialog">Вернуться к списку?</string>
     <string name="two_click">Нажмите еще раз, чтобы выйти</string>
     <string name="main_sort">Упорядочить</string>
     <string name="sort_0">По порядку добавления</string>
@@ -45,7 +26,6 @@
     <string name="sort_3">По цвету</string>
     <string name="main_list">Основной список</string>
     <string name="favorites_list">Избранное</string>
-    <string name="more_apps">Еще приложения</string>
     <string name="note_color_theme">Цветная тема</string>
 
 
@@ -68,74 +48,7 @@
         <item>НРП</item>
     </string-array>
 
-    <string-array name="book">
-        <item>Бытие</item>
-        <item>Исход</item>
-        <item>Левит</item>
-        <item>Числа</item>
-        <item>Второзаконие</item>
-        <item>Иисус Навин</item>
-        <item>Судья</item>
-        <item>Руфь</item>
-        <item>1 Царств</item>
-        <item>2 Царств</item>
-        <item>3 Царств</item>
-        <item>4 Царств</item>
-        <item>1 Летопись</item>
-        <item>2 Летопись</item>
-        <item>Ездра</item>
-        <item>Неемии</item>
-        <item>Есфирь</item>
-        <item>Иов</item>
-        <item>Псалтирь</item>
-        <item>Притчи</item>
-        <item>Екклесиаст</item>
-        <item>Песня Песней</item>
-        <item>Исаия</item>
-        <item>Иеремия</item>
-        <item>Плач Иеремии</item>
-        <item>Иезекииль</item>
-        <item>Даниил</item>
-        <item>Осия</item>
-        <item>Иоиль</item>
-        <item>Амос</item>
-        <item>Авдий</item>
-        <item>Иона</item>
-        <item>Михей</item>
-        <item>Наум</item>
-        <item>Аввакум</item>
-        <item>Софония</item>
-        <item>Аггей</item>
-        <item>Захария</item>
-        <item>Малахия</item>
-        <item>Матфей</item>
-        <item>Марк</item>
-        <item>Лука</item>
-        <item>Иоанн</item>
-        <item>Деяния</item>
-        <item>Иаков</item>
-        <item>1 Петра</item>
-        <item>2 Петра</item>
-        <item>1 Иоанна</item>
-        <item>2 Иоанна</item>
-        <item>3 Иоанна</item>
-        <item>Иуда</item>
-        <item>Римлянам</item>
-        <item>1 Коринфянам</item>
-        <item>2 Коринфянам</item>
-        <item>Галатам</item>
-        <item>Ефесянам</item>
-        <item>Филиппийцам</item>
-        <item>Колоссянам</item>
-        <item>1 Фессалоники</item>
-        <item>2 Фессалоники</item>
-        <item>1 Тимофею</item>
-        <item>2 Тимофею</item>
-        <item>Титу</item>
-        <item>Филимону</item>
-        <item>Евреям</item>
-        <item>Откровение</item>
-    </string-array>
+
 
     <!-- Отрывки из Библии. -->
     <string name="excerpt_bt_01_01">
@@ -1920,29 +1833,9 @@
 19.и если кто отнимет что-нибудь из этой пророческой книги, у того и Бог отнимет его долю от дерева жизни и от Святого Города, описанных в этой книге.
     </string><!-- Откровение 22:18-19 -->
 
-    <!-- Полезные отрывки. -->
-    <string name="nrp_nav_01_08">
-        <b>Иисус Навин 1:8 НРП</b>\n\n
-        8.Всегда помни, что написано в этой книге законов. Изучай её день и ночь, чтобы исполнять всё, что в ней написано. Поступая так, ты будешь мудр и преуспеешь во всех своих делах.
-    </string><!-- Иисус Навин 1:8 -->
-    <string name="sin_nav_01_08">
-        <b>Иисус Навин 1:8 SYNOD</b>\n\n
-        8.Да не отходит сия книга закона от уст твоих; но поучайся в ней день и ночь, дабы в точности исполнять все, что в ней написано: тогда ты будешь успешен в путях твоих и будешь поступать благоразумно.\n\n
-    </string><!-- Иисус Навин 1:8 -->
 
     <!-- Тексты Первые принципы. -->
-    <string-array name="titles_basic_christ">
-        <item>Библия - Слово Бога</item>
-        <item>Бог - Отец</item>
-        <item>Иисус</item>
-        <item>Крест Христа</item>
-        <item>Что значит быть учеником</item>
-        <item>Свет и тьма</item>
-        <item>Спасение и Святой Дух</item>
-        <item>Церковь</item>
-        <item>Иисус - Господь</item>
-        <item>Описание смерти Христа</item>
-    </string-array>
+
     <string name="basic_christ_001" formatted="false"><![CDATA[
         <br><font color="#007BB3" align="center"><b><big>Как Вы думаете, что есть Библия?</big></b></font><br><br>
         <blockquote>Слово <i>«библия»</i> происходит от греческого слова <i>«biblion»</i>, что означает <i>«книга»</i> или <i>«письмо»</i>.</blockquote>
@@ -2314,18 +2207,6 @@
     ]]></string><!-- Описание смерти Христа. -->
 
     <!-- Тексты Характер Иисуса. -->
-    <string-array name="titles_teens_christ">
-        <item>Честность</item>
-        <item>Скромность</item>
-        <item>Милость</item>
-        <item>Чистота</item>
-        <item>Уважение</item>
-        <item>Праведность</item>
-        <item>Личное стремление к Богу</item>
-        <item>Каков твой Отец</item>
-        <item>Кому ты стремишся угодить</item>
-        <item>Отношения в семье</item>
-    </string-array>
     <string name="teens_christ_001" formatted="false"><![CDATA[
             <br><i>Ведущему занятие:</i><br>
             <blockquote>
@@ -2922,13 +2803,6 @@
     ]]></string><!-- Отношения в семье. -->
 
     <!-- Тексты Восстановление. -->
-    <string-array name="titles_vost_christ">
-        <item>Пребудьте во Мне</item>
-        <item>Единство</item>
-        <item>Покаяние</item>
-        <item>Вспомни свою первую любовь</item>
-        <item>Отношения</item>
-    </string-array>
     <string name="vost_christ_001" formatted="false"><![CDATA[
     <br><b>Введение:</b><br><br>
             <i>Начните с молитвы (ее ведет пастырь/лидер Домашней Церкви).<br><br>
@@ -3213,13 +3087,6 @@
     ]]></string><!-- Отношения -->
 
     <!-- Тексты Молодые ученики. -->
-    <string-array name="titles_yong_christ">
-        <item>Пребудьте во Мне</item>
-        <item>Единство</item>
-        <item>Покаяние</item>
-        <item>Вспомни свою первую любовь</item>
-        <item>Отношения</item>
-    </string-array>
     <string name="yong_christ_001" formatted="false"><![CDATA[
     Иметь личные отношения с Создателем вселенной – это удивительная возможность, но это не происходит само собой.<br><br>
     Очень часто мы можем быть надменными, наполненными гордостью и невежеством, думая что мы знаем что является правильным. И когда это происходит, мы не даем себя учить.<br><br>
@@ -4710,24 +4577,9 @@ o	Поделитесь о своём опыте служения. Когда, к
             Проведите время чтения Библии весело, фокусируясь на духовном.<br>
     ]]></string><!-- Христианская семья: родители и дети -->
 
-
-    <string name="title_activity_menu">MenuActivity</string>
-    <string name="title_activity_och">OchActivity</string>
-    <string name="title_activity_detail_och">DetailActivityOch</string>
     <string name="title_activity_plans">Планы Церкви</string>
     <string name="title_activity_news">Хорошие новости</string>
-    <string name="title_activity_bible">Библия - Слово Бога</string>
-    <string name="title_activity_god">Бог - Отец</string>
-    <string name="title_activity_jesus">Иисус</string>
-    <string name="title_activity_cross">Крест Христа</string>
-    <string name="title_activity_student__christ">Что значит быть учеником Христа</string>
-    <string name="title_activity_light">Свет и тьма</string>
-    <string name="title_activity_spirit">Спасение и Святой Дух</string>
-    <string name="title_activity_church">Церковь</string>
-    <string name="title_activity_jesus__god">Иисус - Господь</string>
-    <string name="title_activity_article">Описание смерти Христа</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="text_song_no_acc">
         К сожалению,\n
         к этой песне аккордов в нашей базе нет.\n
@@ -4743,15 +4595,6 @@ o	Поделитесь о своём опыте служения. Когда, к
         email: <b>nskcoc@gmail.com</b>
     </string><!-- Нет видео. -->
 
-
-
-    <string name="info">
-        Теперь нет необходимости носить с собой бумажную литературу, все необходимые материалы есть в мобильном приложении:
-        Песни с аккордами и видео, Основы Христианства включая (Первые Принципы, Характер Иисуса (подростки), Восстановление и Молодые ученики),
-        Библию с аудио, Записную книжку.
-        В планах еще много идей для удобства жизни Христианина в современном мире.
-        Будем благодарны за отзывы и комментарии, а также за молитву.
-    </string>
     <string name="name_razr">
         Сергей Гапонов\n
         Алексей Трифоненко\n
@@ -4769,7 +4612,7 @@ o	Поделитесь о своём опыте служения. Когда, к
     <string name="email">Email: nskcoc@gmail.com</string>
     <string name="icoc_ru">ICOC RU Церковь Христа</string>
     <string name="version">Версия 1.1.1</string>
-    <string name="copyright">Copyright (c) ICOC RU Church of Christ 2017-2018. All rights reserved</string>
+    <string name="copyright">Copyright © ICOC RU Church of Christ 2017–2018. All rights reserved</string>
     <string name="razrab">В разработке учавствовали:</string>
     <string name="obrat_svyz">Обратная связь</string>
     <string name="info_app">О приложении</string>
@@ -4778,4 +4621,6 @@ o	Поделитесь о своём опыте служения. Когда, к
     <string name="random_stih">СЛУЧАЙНЫЙ СТИХ ИЗ БИБЛИИ</string>
     <string name="nrp">НРП</string>
     <string name="coordinat">Координаты</string>
+    <string name="random_otr">Случайный отрывок</string>
+    <string name="synod">SYNOD</string>
 </resources>

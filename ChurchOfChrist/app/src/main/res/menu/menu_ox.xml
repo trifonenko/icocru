@@ -2,13 +2,12 @@
 
 <!-- Меню, используемое в DrawerLayout. -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <group android:checkableBehavior="none">
         <item
             android:id="@+id/zamet_ox"
             android:icon="@drawable/ic_action_zamet"
-            android:title="Блокнот"
+            android:title="@string/notepad"
             app:showAsAction="always" />
 
     </group>

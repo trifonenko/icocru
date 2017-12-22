@@ -22,20 +22,10 @@
     <color name="colorAccentBible">#049372</color>
 
     <color name="colorStatusBar">#00ffffff</color><!-- Цвет StatusBar в MainActivity. -->
-    <color name="colorBgDetailSongActivity">#21c0392b</color><!-- Цвет фона DetailSongActivity. -->
-    <color name="colorBgSplashScreen">#ffffff</color><!-- Цвет фона для SplashScreen. -->
-
-    <color name="light_blue">#AFEEEE</color>
-    <color name="middle_blue">#6495ED</color>
-    <color name="deep_blue">#0000FF</color>
 
     <color name="md_teal_500_primary">#009688</color>
     <color name="md_teal_700">#00796B</color>
     <color name="md_teal_900">#004D40</color>
-
-    <color name="colorPrimary2">#002953</color>
-    <color name="colorPrimaryDark2">#001f3f</color>
-    <color name="colorAccent2">#ff851b</color>
 
     <color name="colorPrimaryText">#212121</color>
     <color name="colorSecondaryText">#757575</color>

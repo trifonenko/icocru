@@ -70,7 +70,7 @@ public class BibleActivity extends AppCompatActivity {
         cursor.close();
 
         Spinner listBooks = findViewById(R.id.list_books);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, books);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, books);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         listBooks.setAdapter(adapter);
 

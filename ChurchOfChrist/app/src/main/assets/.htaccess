@@ -39,7 +39,7 @@ deny from all
 </files>
 
 # BEGIN LBCWpFastestCache
-<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|x-html|css|xml|js|woff|woff2|ttf|svg|eot)(\.gz)?$">
+<FilesMatch """\.(ico|pdf|flv|jpg|jpeg|png|gif|swf|x-html|css|xml|js|woff|woff2|ttf|svg|eot)(\.gz)?$""">
 <IfModule mod_expires.c>
 ExpiresActive On
 ExpiresDefault A0

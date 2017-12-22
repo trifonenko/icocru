@@ -10,6 +10,6 @@
     <item
         android:id="@+id/zamet_ox"
         android:icon="@drawable/ic_action_zamet"
-        android:title="Блокнот"
+        android:title="@string/notepad"
         app:showAsAction="always" />
 </menu>

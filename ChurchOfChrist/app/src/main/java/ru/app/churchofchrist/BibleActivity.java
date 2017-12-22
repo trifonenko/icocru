@@ -1,5 +1,6 @@
 package ru.app.churchofchrist;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -37,6 +38,7 @@ public class BibleActivity extends AppCompatActivity {
     String[] perevod = {"РБО 2015г. Современный", "РБО 1876г. Синодальный"};
     String[] knigi = {"Бытие", "Исход", "Левит", "Числа", "Второзаконие", "Иисус Навин", "Судьи", "Руфь", "1 Царств", "2 Царств", "3 Царств", "4 Царств", "1 Паралипоменон", "2 Паралипоменон", "Ездра", "Неемии", "Есфирь", "Иов", "Псалтирь", "Притчи", "Екклесиаст", "Песня Песней", "Исаия", "Иеремия", "Плач Иеремии", "Иезекииль", "Даниил", "Осия", "Иоиль", "Амос", "Авдий", "Иона", "Михей", "Наум", "Аввакум", "Софония", "Аггей", "Захария", "Малахия", "Матфей", "Марк", "Лука", "Иоанн", "Деяния", "Иаков", "1 Петра", "2 Петра", "1 Иоанна", "2 Иоанна", "3 Иоанна", "Иуда", "Римлянам", "1 Коринфянам", "2 Коринфянам", "Галатам", "Ефесянам", "Филиппийцам", "Колоссянам", "1 Фессалоникийцам", "2 Фессалоникийцам", "1 Тимофею", "2 Тимофею", "Титу", "Филимону", "Евреям", "Откровение"};
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +50,7 @@ public class BibleActivity extends AppCompatActivity {
         ConnectionDetector cd;
 
         //Создаем пример класса connection detector:
-        cd = new ConnectionDetector(getApplicationContext());
+        /*cd = new ConnectionDetector(getApplicationContext());*/
 
 
         // иниизиализируем кнопку
@@ -76,7 +78,7 @@ public class BibleActivity extends AppCompatActivity {
         // элементу WebView в файле activity_bible.xml:
 
         // адаптер
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_dropdown_item, perevod);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_dropdown_item, perevod);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
         Spinner spinner = findViewById(R.id.perevod);
@@ -95,13 +97,13 @@ public class BibleActivity extends AppCompatActivity {
                         /*Intent intent2 = new Intent(BibleActivity.this, BibleActivity2.class);
                         startActivity(intent2);*/
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("НРП");
+                        ((TextView) parent.getChildAt(0)).setText(R.string.nrp);
                         break;
                     case 1:
                         Intent intent3 = new Intent(BibleActivity.this, BibleActivity2.class);
                         startActivity(intent3);
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("SYNOD");
+                        ((TextView) parent.getChildAt(0)).setText(R.string.synod);
                         break;
                 }
             }
@@ -113,7 +115,7 @@ public class BibleActivity extends AppCompatActivity {
         });
 
         // адаптер
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, R.layout.spinner_dropdown_item, knigi);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, R.layout.spinner_dropdown_item, knigi);
         adapter2.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
         Spinner spinner2 = findViewById(R.id.knigi);
@@ -602,7 +604,7 @@ public class BibleActivity extends AppCompatActivity {
         public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
      /*остановка загрузки и отображение страницы error.html из папки “assets”*/
             view.stopLoading();
-            view.loadUrl(String.format("file:///android_asset/error.html"));
+            view.loadUrl("file:///android_asset/error.html");
         }
 
     }

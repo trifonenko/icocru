@@ -1,12 +1,5 @@
 package ru.app.churchofchrist;
 
-/**
- * Created by Trifonenko on 28.09.2017.
- */
-
-/**
- * Created by echessa on 1/13/17.
- */
 public final class Config {
 
     private Config() {
