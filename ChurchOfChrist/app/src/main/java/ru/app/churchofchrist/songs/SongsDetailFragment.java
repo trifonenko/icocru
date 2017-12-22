@@ -16,6 +16,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.Random;
 
 import ru.app.churchofchrist.R;
 
@@ -27,7 +28,9 @@ public class SongsDetailFragment extends Fragment {
     private int songId;//Идентификатор песни, выбранной пользователем.
     int temp = 14;
     public static final String APP_PREFERENCES = "mysettingss";
-    TextView songText;
+    private TextView songText;
+    private TextView songName;
+    private List<Song> songs;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -46,11 +49,10 @@ public class SongsDetailFragment extends Fragment {
         View view = getView();
         if (view != null) {
             SongsLab songsLab = SongsLab.getInstance(getActivity());
-            List<Song> songs = songsLab.getSongs();
-            TextView songName = view.findViewById(R.id.song_name);
-            songName.setText(songs.get(songId).getName());
+            songs = songsLab.getSongs();
+            songName = view.findViewById(R.id.song_name);
             songText = view.findViewById(R.id.song_text);
-            songText.setText(songs.get(songId).getText());
+            onRunSong(songId);
             songText.setTextSize((float) temp);//Размер текста песни.
         }
     }
@@ -118,7 +120,17 @@ public class SongsDetailFragment extends Fragment {
                 AlertDialog alert = builder.create();
                 alert.show();
                 break;
+            case R.id.random_song:
+                Random random = new Random();
+                int randomNum = random.nextInt(songs.size());
+                onRunSong(randomNum);
+                break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void onRunSong(int num) {
+        songName.setText(songs.get(num).getName());
+        songText.setText(songs.get(num).getText());
     }
 }
