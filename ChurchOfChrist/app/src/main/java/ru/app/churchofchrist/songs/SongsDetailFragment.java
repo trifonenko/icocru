@@ -35,6 +35,7 @@ public class SongsDetailFragment extends Fragment {
     private TextView songName;
     private TextView songTextId;
     private List<Song> songs;
+    private SwitchCompat compat;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -57,7 +58,7 @@ public class SongsDetailFragment extends Fragment {
             songName = view.findViewById(R.id.song_name);
             songText = view.findViewById(R.id.song_text);
             songTextId = view.findViewById(R.id.song_id);
-            SwitchCompat compat = view.findViewById(R.id.switcht);
+            compat = view.findViewById(R.id.switcht);
             compat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -140,6 +141,7 @@ public class SongsDetailFragment extends Fragment {
                 Random random = new Random();
                 int randomNum = random.nextInt(songs.size());
                 onRunSong(randomNum);
+                compat.setChecked(false);
                 break;
         }
         return super.onOptionsItemSelected(item);
