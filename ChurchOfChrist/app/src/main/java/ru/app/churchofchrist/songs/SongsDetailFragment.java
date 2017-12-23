@@ -45,7 +45,7 @@ public class SongsDetailFragment extends Fragment {
         if (savedInstanceState != null) {
             songId = savedInstanceState.getInt("songId");
         }
-        return inflater.inflate(R.layout.fragment_songs_text, container, false);
+        return inflater.inflate(R.layout.fragment_songs_detail, container, false);
     }
 
     @Override
@@ -58,7 +58,7 @@ public class SongsDetailFragment extends Fragment {
             songName = view.findViewById(R.id.song_name);
             songText = view.findViewById(R.id.song_text);
             songTextId = view.findViewById(R.id.song_id);
-            compat = view.findViewById(R.id.switcht);
+            compat = view.findViewById(R.id.chords_switch);
             compat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
