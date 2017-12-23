@@ -30,7 +30,7 @@ public class SongsDetailFragment extends Fragment {
 
     private int songId;//Идентификатор песни, выбранной пользователем.
     int temp = 14;
-    public static final String APP_PREFERENCES = "mysettingss";
+    //public static final String APP_PREFERENCES = "mysettingss";
     private TextView songText;
     private TextView songName;
     private TextView songTextId;
