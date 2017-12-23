@@ -31,8 +31,7 @@
                 android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="song_id" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/song_name"
@@ -40,8 +39,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/song_id"
-                app:layout_constraintTop_toBottomOf="@+id/song_id"
-                tools:text="song_name" />
+                app:layout_constraintTop_toBottomOf="@+id/song_id" />
 
             <android.support.v7.widget.SwitchCompat
                 android:id="@+id/chords_switch"
