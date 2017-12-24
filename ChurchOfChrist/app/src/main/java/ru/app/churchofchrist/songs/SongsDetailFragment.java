@@ -138,7 +138,7 @@ public class SongsDetailFragment extends Fragment {
                 break;
             case R.id.random_song:
                 Random random = new Random();
-                int randomNum = random.nextInt(songs.size());
+                int randomNum = random.nextInt(songs.size() - 1);
                 onRunSong(randomNum);
                 compat.setChecked(false);
                 break;

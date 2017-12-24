@@ -126,7 +126,7 @@ public class AnsverDetailFragment extends Fragment {
                 break;
             case R.id.random_ansver:
                 Random random = new Random();
-                int randomNum = random.nextInt(ansver.size());
+                int randomNum = random.nextInt(ansver.size() - 1);
                 onRunAnsver(randomNum);
                 break;
         }
