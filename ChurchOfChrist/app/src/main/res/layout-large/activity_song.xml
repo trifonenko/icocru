@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- Songs. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -15,7 +17,7 @@
         android:orientation="horizontal">
 
         <fragment
-            android:id="@+id/list_frag"
+            android:id="@+id/fragment_songs_list"
             class="ru.app.churchofchrist.songs.SongsListFragment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -24,8 +26,8 @@
         <FrameLayout
             android:id="@+id/fragment_container"
             android:layout_width="0dp"
-            android:layout_margin="4dp"
             android:layout_height="wrap_content"
+            android:layout_margin="4dp"
             android:layout_weight="1" />
     </LinearLayout>
 

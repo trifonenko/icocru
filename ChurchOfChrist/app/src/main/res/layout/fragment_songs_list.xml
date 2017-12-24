@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- Songs. -->
 <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/recycler_songs_list"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="2dp"
+    android:padding="4dp"
     android:scrollbars="vertical" />
 

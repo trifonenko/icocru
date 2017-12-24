@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- Songs. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="ru.app.churchofchrist.songs.SongsActivity">
+    tools:context="ru.app.churchofchrist.songs.SongsDetailActivity">
 
     <include layout="@layout/toolbar" />
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/detail_frag"
+        android:id="@+id/fragment_songs_detail"
         class="ru.app.churchofchrist.songs.SongsDetailFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

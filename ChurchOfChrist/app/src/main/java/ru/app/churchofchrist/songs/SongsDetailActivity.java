@@ -14,7 +14,7 @@ public class SongsDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_song_text);
+        setContentView(R.layout.activity_song_detail);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -26,7 +26,7 @@ public class SongsDetailActivity extends AppCompatActivity {
             }
         });
 
-        SongsDetailFragment workoutDetailFragment = (SongsDetailFragment) getFragmentManager().findFragmentById(R.id.detail_frag);
+        SongsDetailFragment workoutDetailFragment = (SongsDetailFragment) getFragmentManager().findFragmentById(R.id.fragment_songs_detail);
         int workoutId = (int) getIntent().getExtras().get(EXTRA_WORKOUT_ID);
         workoutDetailFragment.setSongId(workoutId);
     }
