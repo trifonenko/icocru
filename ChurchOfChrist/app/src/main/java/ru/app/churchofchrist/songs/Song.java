@@ -25,7 +25,7 @@ class Song {
         return text;
     }
 
-    public String getChords() {
+    String getChords() {
         return chords;
     }
 }

@@ -29,8 +29,7 @@ import ru.app.churchofchrist.R;
 public class SongsDetailFragment extends Fragment {
 
     private int songId;//Идентификатор песни, выбранной пользователем.
-    int temp = 14;
-    //public static final String APP_PREFERENCES = "mysettingss";
+    private int temp = 14;
     private TextView songText;
     private TextView songName;
     private TextView songTextId;

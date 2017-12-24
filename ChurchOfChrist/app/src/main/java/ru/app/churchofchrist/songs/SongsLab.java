@@ -25,7 +25,6 @@ public class SongsLab {
             throw new Error("UnableToUpdateDatabase");
         }
         mDatabase = new DatabaseHelper(context).getWritableDatabase();
-
     }
 
     static SongsLab getInstance(Context context) {

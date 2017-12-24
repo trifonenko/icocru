@@ -27,6 +27,7 @@ public class SongsListAdapter extends RecyclerView.Adapter<SongsListAdapter.View
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         private CardView cardView;
+
         ViewHolder(CardView v) {
             super(v);
             cardView = v;
@@ -37,7 +38,7 @@ public class SongsListAdapter extends RecyclerView.Adapter<SongsListAdapter.View
         this.mSongs = songs;
     }
 
-    void setListener(Listener listener){
+    void setListener(Listener listener) {
         this.listener = listener;
     }
 
@@ -58,7 +59,6 @@ public class SongsListAdapter extends RecyclerView.Adapter<SongsListAdapter.View
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CharSequence songName = text.getText();
                 if (listener != null) {
                     listener.onClick(mSongs.get(position).getId() - 1);
                 }

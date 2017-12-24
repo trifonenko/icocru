@@ -2,34 +2,21 @@ package ru.app.churchofchrist.songs;
 
 import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
 import ru.app.churchofchrist.R;
 
 public class SongsActivity extends AppCompatActivity implements SongsListFragment.SongListListener {
 
     private View fragmentContainer;
-    private List<Song> mSongs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_song);
-
-        SongsLab mSongsLab = SongsLab.getInstance(this);
-        mSongs = mSongsLab.getSongs();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
