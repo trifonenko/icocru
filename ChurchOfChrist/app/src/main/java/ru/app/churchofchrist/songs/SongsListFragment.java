@@ -15,6 +15,8 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import ru.app.churchofchrist.R;
 
@@ -52,7 +54,7 @@ public class SongsListFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_search, menu);
-        MenuItem searchItem = menu.findItem(R.id.search);
+        final MenuItem searchItem = menu.findItem(R.id.search);
         SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setMaxWidth(10000);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -64,10 +66,9 @@ public class SongsListFragment extends Fragment {
             @Override
             public boolean onQueryTextChange(String newText) {
                 List<Song> songsFilter = new ArrayList<>();
-
-                for (Song item : songs) {
-                    if ((item.getId() + " " + item.getName().toLowerCase()).contains(newText.toLowerCase())) {
-                        songsFilter.add(item);
+                for (Song song : songs) {
+                    if (searchSongs(song, newText)) {
+                        songsFilter.add(song);
                     }
                 }
                 onRunSong(songsFilter);
@@ -88,5 +89,17 @@ public class SongsListFragment extends Fragment {
                 }
             }
         });
+    }
+
+    //Поиск песен по списку имен.
+    private boolean searchSongs(Song song, String newText) {
+        String regex = "\\s|,|!|\\(|\\)|\\.|-|_";//Регулярное выражение.
+        String songName = song.getName();
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcherNewText = pattern.matcher(newText);
+        newText = (matcherNewText.replaceAll("")).toLowerCase();
+        Matcher matcherSongName = pattern.matcher(songName);
+        songName = (matcherSongName.replaceAll("")).toLowerCase();
+        return songName.contains(newText);
     }
 }
