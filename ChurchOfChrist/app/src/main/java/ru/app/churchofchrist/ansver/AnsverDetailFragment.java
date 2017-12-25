@@ -27,7 +27,7 @@ import ru.app.churchofchrist.R;
 public class AnsverDetailFragment extends Fragment {
 
     private int ansverId;//Идентификатор песни, выбранной пользователем.
-    int temp = 14;
+    private int temp = 14;
     public static final String APP_PREFERENCES = "mysettingss";
     private TextView ansverText;
     private TextView ansverName;
