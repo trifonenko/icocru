@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="70dp"
+    android:layout_height="60dp"
     android:layout_marginTop="2dp"
     card_view:cardCornerRadius="@dimen/card_corner_radius">
 
@@ -23,6 +23,6 @@
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="40dp"
         tools:ignore="RtlHardcoded"
-        android:textSize="16sp" />
+        android:textSize="14sp" />
 
 </android.support.v7.widget.CardView>

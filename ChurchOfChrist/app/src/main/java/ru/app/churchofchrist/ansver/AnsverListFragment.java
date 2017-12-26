@@ -15,9 +15,10 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import ru.app.churchofchrist.R;
-import ru.app.churchofchrist.songs.SongsListAdapter;
 
 /**
  * Список песен.
@@ -53,7 +54,7 @@ public class AnsverListFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_search, menu);
-        MenuItem searchItem = menu.findItem(R.id.search);
+        final MenuItem searchItem = menu.findItem(R.id.search);
         SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setMaxWidth(10000);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -66,9 +67,9 @@ public class AnsverListFragment extends Fragment {
             public boolean onQueryTextChange(String newText) {
                 List<Ansver> ansverFilter = new ArrayList<>();
 
-                for (Ansver item : ansver) {
-                    if ((item.getId() + " " + item.getName().toLowerCase()).contains(newText.toLowerCase())) {
-                        ansverFilter.add(item);
+                for (Ansver ansver : ansver) {
+                    if (searchAnsver(ansver, newText)) {
+                        ansverFilter.add(ansver);
                     }
                 }
                 onRunAnsver(ansverFilter);
@@ -90,5 +91,16 @@ public class AnsverListFragment extends Fragment {
                 }
             }
         });
+    }
+    //Поиск песен по списку имен.
+    private boolean searchAnsver(Ansver ansver, String newText) {
+        String regex = "\\s|,|!|\\(|\\)|\\.|-|_";//Регулярное выражение.
+        String ansverName = ansver.getName();
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcherNewText = pattern.matcher(newText);
+        newText = (matcherNewText.replaceAll("")).toLowerCase();
+        Matcher matcherAnsverName = pattern.matcher(ansverName);
+        ansverName = (matcherAnsverName.replaceAll("")).toLowerCase();
+        return ansverName.contains(newText);
     }
 }
