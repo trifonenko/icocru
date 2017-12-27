@@ -27,7 +27,7 @@
 
             <ImageView
                 android:id="@+id/icon"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
@@ -57,7 +57,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Случайный отрывок" />
+                        android:text="Случайный стих из Библии" />
 
                     <TextView
                         android:id="@+id/coordinates_verse"
@@ -83,7 +83,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:scrollbars="vertical"
-                    android:text="Отрывок"
+                    android:text="Стих"
                     android:textAlignment="viewStart"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
