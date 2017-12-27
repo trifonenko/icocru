@@ -324,6 +324,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int randomNum = random.nextInt(numVerse);
         randomVerse.setText(String.valueOf(randomVerseArray[randomNum]));
         coordinatesVerse.setText(String.valueOf(coordinatesVerseArray[randomNum]));
+
         /* End random verse. */
 
     }
