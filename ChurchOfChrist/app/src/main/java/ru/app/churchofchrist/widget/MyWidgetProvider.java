@@ -13,6 +13,7 @@ public class MyWidgetProvider extends AppWidgetProvider {
         ComponentName thisWidget = new ComponentName(context, MyWidgetProvider.class);
         int[] allWidgetIds = appWidgetManager.getAppWidgetIds(thisWidget);
 
+
         // Постройте намерение вызвать службу
         Intent intent = new Intent(context.getApplicationContext(), UpdateWidgetService.class);
         intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, allWidgetIds);
@@ -20,4 +21,5 @@ public class MyWidgetProvider extends AppWidgetProvider {
         // Обновление виджетов через службу
         context.startService(intent);
     }
+
 }
