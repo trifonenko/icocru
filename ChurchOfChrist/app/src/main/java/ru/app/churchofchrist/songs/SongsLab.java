@@ -15,6 +15,7 @@ import java.util.List;
 public class SongsLab {
     private static SongsLab sSongsLab;
     private SQLiteDatabase mDatabase;
+    private List<Song> favoritesSongs;
 
 
     private SongsLab(Context context) {
@@ -25,6 +26,7 @@ public class SongsLab {
             throw new Error("UnableToUpdateDatabase");
         }
         mDatabase = new DatabaseHelper(context).getWritableDatabase();
+        favoritesSongs = new ArrayList<>();
     }
 
     static SongsLab getInstance(Context context) {
@@ -44,5 +46,13 @@ public class SongsLab {
         }
         cursor.close();
         return songs;
+    }
+
+    public List<Song> getFavoritesSongs() {
+        return favoritesSongs;
+    }
+
+    public void setAddFavoriteSong(Song song) {
+        favoritesSongs.add(song);
     }
 }

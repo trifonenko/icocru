@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.SwitchCompat;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 import java.util.Random;
@@ -52,7 +54,7 @@ public class SongsDetailFragment extends Fragment {
         super.onStart();
         View view = getView();
         if (view != null) {
-            SongsLab songsLab = SongsLab.getInstance(getActivity());
+            final SongsLab songsLab = SongsLab.getInstance(getActivity());
             songs = songsLab.getSongs();
             songName = view.findViewById(R.id.song_name);
             songText = view.findViewById(R.id.song_text);
@@ -70,6 +72,17 @@ public class SongsDetailFragment extends Fragment {
             });
             onRunSong(songId);
             songText.setTextSize((float) temp);//Размер текста песни.
+
+            FloatingActionButton fab = view.findViewById(R.id.floating_button);
+            fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    songsLab.setAddFavoriteSong(songs.get(songId));
+                    Toast toast = Toast.makeText(getActivity(),
+                            songs.get(songId).getName(), Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+            });
         }
     }
 

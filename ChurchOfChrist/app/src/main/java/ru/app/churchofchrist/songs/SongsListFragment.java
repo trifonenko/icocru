@@ -91,9 +91,8 @@ public class SongsListFragment extends Fragment {
         });
     }
 
-    //Поиск песен по списку имен.
     private boolean searchSongs(Song song, String newText) {
-        String regex = "\\s|,|!|\\(|\\)|\\.|-|_";//Регулярное выражение.
+        String regex = "\\s|,|!|\\(|\\)|\\.|-|_";
         String songName = song.getName();
         Pattern pattern = Pattern.compile(regex);
         Matcher matcherNewText = pattern.matcher(newText);
