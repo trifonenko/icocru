@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 import ru.app.churchofchrist.R;
@@ -59,5 +60,15 @@ public class SongsActivity extends AppCompatActivity implements SongsListFragmen
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_songs_activity, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.favorites_songs:
+                Intent intent = new Intent(this, SongsFavoritesActivity.class);
+                startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
