@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Церковь Христа</string><!-- Имя приложения. -->
+    <string name="app_name">Церковь Христа</string>
     <string name="action_settings">Настройки</string>
     <string name="search">Поиск</string>
     <string name="ox">Основы христианства</string>
     <string name="bible">БИБЛИЯ</string>
     <string name="notepad">Блокнот</string>
+
+    <!-- Songs. -->
     <string name="random_song">Случайная песня</string>
     <string name="chords">Аккорды</string>
+    <string name="favorites_songs">Избранные песни</string>
 
 
     <string name="header">Заголовок</string>
@@ -48,7 +51,6 @@
         <item>SYNOD</item>
         <item>НРП</item>
     </string-array>
-
 
 
     <!-- Отрывки из Библии. -->

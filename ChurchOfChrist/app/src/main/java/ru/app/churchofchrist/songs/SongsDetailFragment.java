@@ -106,7 +106,7 @@ public class SongsDetailFragment extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_fragment_song_detail, menu);
+        inflater.inflate(R.menu.menu_songs_detail_fragment, menu);
     }
 
     @Override

@@ -8,7 +8,7 @@
 
     <item
         android:id="@+id/random_song"
-        android:orderInCategory="2"
+        android:orderInCategory="3"
         android:icon="@drawable/ic_action_shuffle"
         android:title="@string/random_song"
         app:showAsAction="ifRoom" />

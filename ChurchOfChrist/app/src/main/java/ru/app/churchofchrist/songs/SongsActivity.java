@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 
 import ru.app.churchofchrist.R;
@@ -50,5 +52,12 @@ public class SongsActivity extends AppCompatActivity implements SongsListFragmen
             intent.putExtra(SongsDetailActivity.EXTRA_WORKOUT_ID, songId);
             startActivity(intent);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_songs_activity, menu);
+        return true;
     }
 }
