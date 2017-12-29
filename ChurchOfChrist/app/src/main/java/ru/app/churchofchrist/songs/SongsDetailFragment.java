@@ -1,9 +1,11 @@
 package ru.app.churchofchrist.songs;
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.design.widget.FloatingActionButton;
@@ -37,15 +39,22 @@ public class SongsDetailFragment extends Fragment {
     private TextView songTextId;
     private List<Song> songs;
     private SwitchCompat compat;
+    private DBHelperFavSongs mDBHelperFavSongs;
+    private SQLiteDatabase mDatabase;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
         temp = sharedPref.getInt("temp", temp);
+
         setHasOptionsMenu(true);
+
         if (savedInstanceState != null) {
             songId = savedInstanceState.getInt("songId");
         }
+
+        mDBHelperFavSongs = DBHelperFavSongs.getInstance(getActivity());
+
         return inflater.inflate(R.layout.fragment_songs_detail, container, false);
     }
 
@@ -77,7 +86,9 @@ public class SongsDetailFragment extends Fragment {
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    songsLab.setAddFavoriteSong(songs.get(songId));
+                    mDatabase = mDBHelperFavSongs.getWritableDatabase();
+                    insertFavSong(mDatabase, songs.get(songId).getId(), songs.get(songId).getName(), songs.get(songId).getText(), songs.get(songId).getChords());
+                    //songsLab.setAddFavoriteSong(songs.get(songId));
                     Toast toast = Toast.makeText(getActivity(),
                             songs.get(songId).getName(), Toast.LENGTH_SHORT);
                     toast.show();
@@ -165,5 +176,15 @@ public class SongsDetailFragment extends Fragment {
         songName.setText(songs.get(num).getName());
         songText.setText(songs.get(num).getText());
         songTextId.setText(songs.get(num).getId() + "");
+    }
+
+    //Метод для записи данных в таблицу FAV_SONGS бд.
+    private static void insertFavSong(SQLiteDatabase db, int id, String name, String text, String chords) {
+        ContentValues songValues = new ContentValues();
+        songValues.put("ID", id);
+        songValues.put("NAME", name);
+        songValues.put("TEXT", text);
+        songValues.put("CHORDS", chords);
+        db.insert("FAV_SONGS", null, songValues);
     }
 }

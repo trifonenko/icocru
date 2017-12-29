@@ -15,8 +15,7 @@ import java.util.List;
 public class SongsLab {
     private static SongsLab sSongsLab;
     private SQLiteDatabase mDatabase;
-    private List<Song> favoritesSongs;
-
+    private SQLiteDatabase mDatabaseFav;
 
     private SongsLab(Context context) {
         DatabaseHelper helper = new DatabaseHelper(context);
@@ -26,7 +25,7 @@ public class SongsLab {
             throw new Error("UnableToUpdateDatabase");
         }
         mDatabase = new DatabaseHelper(context).getWritableDatabase();
-        favoritesSongs = new ArrayList<>();
+        mDatabaseFav = DBHelperFavSongs.getInstance(context).getWritableDatabase();
     }
 
     static SongsLab getInstance(Context context) {
@@ -48,11 +47,16 @@ public class SongsLab {
         return songs;
     }
 
-    public List<Song> getFavoritesSongs() {
+    List<Song> getFavoritesSongs() {
+        List<Song> favoritesSongs = new ArrayList<>();
+        Cursor cursor = mDatabaseFav.rawQuery("SELECT * FROM FAV_SONGS", null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            favoritesSongs.add(new Song(cursor.getInt(1), cursor.getString(2), cursor.getString(3), cursor.getString(4)));
+            cursor.moveToNext();
+        }
+        cursor.close();
         return favoritesSongs;
     }
 
-    public void setAddFavoriteSong(Song song) {
-        favoritesSongs.add(song);
-    }
 }
