@@ -89,8 +89,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) {
-
+    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        sqLiteDatabase.execSQL("CREATE TABLE FAV_SONGS ("
+                + "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + "ID INTEGER, "
+                + "NAME TEXT, "
+                + "TEXT TEXT, "
+                + "CHORDS TEXT);");
     }
 
     @Override
