@@ -94,7 +94,7 @@ public class SongsListFragment extends Fragment {
 
     private boolean searchSongs(Song song, String newText) {
         String regex = "\\s|,|!|\\(|\\)|\\.|-|_";
-        String songName = song.getName() + song.getId();
+        String songName = song.getId() + song.getName();
         Pattern pattern = Pattern.compile(regex);
         Matcher matcherNewText = pattern.matcher(newText);
         newText = (matcherNewText.replaceAll("")).toLowerCase();
