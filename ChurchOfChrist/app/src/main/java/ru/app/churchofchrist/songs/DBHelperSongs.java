@@ -1,6 +1,5 @@
 package ru.app.churchofchrist.songs;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -12,32 +11,35 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class DatabaseHelper extends SQLiteOpenHelper {
-    private static String DB_NAME = "songs.db";
-    private static String DB_PATH = "";
-    private static final int DB_VERSION = 2;
+public class DBHelperSongs extends SQLiteOpenHelper {
 
+    private static String DB_PATH = "";
+
+    private String mDbName;
     private SQLiteDatabase mDataBase;
     private final Context mContext;
     private boolean mNeedUpdate = false;
 
-    @SuppressLint("SdCardPath")
-    DatabaseHelper(Context context) {
-        super(context, DB_NAME, null, DB_VERSION);
-        if (android.os.Build.VERSION.SDK_INT >= 17)
-            DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
-        else
-            DB_PATH = "/data/data/" + context.getPackageName() + "/databases/";
+    DBHelperSongs(Context context, String dbName, int dbVersion) {
+        super(context, dbName, null, dbVersion);
+
+        this.mDbName = dbName;
         this.mContext = context;
 
-        copyDataBase();
+        if (dbName.equals("songs.db")) {
+            if (android.os.Build.VERSION.SDK_INT >= 17)
+                 DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
+            else
+                DB_PATH = "/data/data/" + context.getPackageName() + "/databases/";
 
-        this.getReadableDatabase();
+            copyDataBase();
+            this.getReadableDatabase();
+        }
     }
 
     void updateDataBase() throws IOException {
         if (mNeedUpdate) {
-            File dbFile = new File(DB_PATH + DB_NAME);
+            File dbFile = new File(DB_PATH + mDbName);
             if (dbFile.exists())
                 dbFile.delete();
 
@@ -48,7 +50,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     private boolean checkDataBase() {
-        File dbFile = new File(DB_PATH + DB_NAME);
+        File dbFile = new File(DB_PATH + mDbName);
         return dbFile.exists();
     }
 
@@ -65,8 +67,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     private void copyDBFile() throws IOException {
-        InputStream mInput = mContext.getAssets().open(DB_NAME);
-        OutputStream mOutput = new FileOutputStream(DB_PATH + DB_NAME);
+        InputStream mInput = mContext.getAssets().open(mDbName);
+        OutputStream mOutput = new FileOutputStream(DB_PATH + mDbName);
         byte[] mBuffer = new byte[1024];
         int mLength;
         while ((mLength = mInput.read(mBuffer)) > 0)
@@ -77,7 +79,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public boolean openDataBase() throws SQLException {
-        mDataBase = SQLiteDatabase.openDatabase(DB_PATH + DB_NAME, null, SQLiteDatabase.CREATE_IF_NECESSARY);
+        mDataBase = SQLiteDatabase.openDatabase(DB_PATH + mDbName, null, SQLiteDatabase.CREATE_IF_NECESSARY);
         return mDataBase != null;
     }
 

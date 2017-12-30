@@ -18,14 +18,15 @@ public class SongsLab {
     private SQLiteDatabase mDatabaseFav;
 
     private SongsLab(Context context) {
-        DatabaseHelper helper = new DatabaseHelper(context);
+        DBHelperSongs helperSongs = new DBHelperSongs(context, "songs.db", 2);
+        DBHelperSongs helperFavSongs = new DBHelperSongs(context, "db_songs", 1);
         try {
-            helper.updateDataBase();
+            helperSongs.updateDataBase();
         } catch (IOException mIOException) {
             throw new Error("UnableToUpdateDatabase");
         }
-        mDatabase = new DatabaseHelper(context).getWritableDatabase();
-        mDatabaseFav = DBHelperFavSongs.getInstance(context).getWritableDatabase();
+        mDatabase = helperSongs.getWritableDatabase();
+        mDatabaseFav = helperFavSongs.getWritableDatabase();
     }
 
     static SongsLab getInstance(Context context) {

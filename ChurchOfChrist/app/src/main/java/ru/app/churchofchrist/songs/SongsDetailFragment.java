@@ -39,7 +39,7 @@ public class SongsDetailFragment extends Fragment {
     private TextView songTextId;
     private List<Song> songs;
     private SwitchCompat compat;
-    private DBHelperFavSongs mDBHelperFavSongs;
+    private DBHelperSongs mDBHelperFavSongs;
     private SQLiteDatabase mDatabase;
 
     @Override
@@ -53,7 +53,7 @@ public class SongsDetailFragment extends Fragment {
             songId = savedInstanceState.getInt("songId");
         }
 
-        mDBHelperFavSongs = DBHelperFavSongs.getInstance(getActivity());
+        mDBHelperFavSongs = new DBHelperSongs(getActivity(), "db_songs", 1);
 
         return inflater.inflate(R.layout.fragment_songs_detail, container, false);
     }
