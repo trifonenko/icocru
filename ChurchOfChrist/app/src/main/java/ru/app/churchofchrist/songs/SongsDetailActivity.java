@@ -1,5 +1,6 @@
 package ru.app.churchofchrist.songs;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -10,6 +11,7 @@ import ru.app.churchofchrist.R;
 public class SongsDetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_WORKOUT_ID = "id";
+    public static final String fav = "fav";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -14,6 +14,9 @@ import ru.app.churchofchrist.R;
 
 public class SongsActivity extends AppCompatActivity implements SongsListFragment.SongListListener {
 
+    public static final String fav = "fav";
+    public static boolean f = false;
+
     private View fragmentContainer;
 
     @Override
@@ -37,11 +40,20 @@ public class SongsActivity extends AppCompatActivity implements SongsListFragmen
                 onItemClicked(1);
             }
         }
+
+        Intent intent = getIntent();
+        if (fragmentContainer != null) {
+            if (intent != null) {
+                int w = intent.getIntExtra(fav, 1);
+                onItemClicked(w);
+            }
+        }
     }
 
     @Override
     public void onItemClicked(int songId) {
         if (fragmentContainer != null) {
+            f = true;
             SongsDetailFragment songsDetailFragment = new SongsDetailFragment();
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             songsDetailFragment.setSongId(songId);
