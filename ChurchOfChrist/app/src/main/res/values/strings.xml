@@ -11,6 +11,7 @@
     <string name="random_song">Случайная песня</string>
     <string name="chords">Аккорды</string>
     <string name="favorites_songs">Избранные песни</string>
+    <string name="delete_all">Удалить все</string>
 
 
     <string name="header">Заголовок</string>
@@ -4629,4 +4630,5 @@ o	Поделитесь о своём опыте служения. Когда, к
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

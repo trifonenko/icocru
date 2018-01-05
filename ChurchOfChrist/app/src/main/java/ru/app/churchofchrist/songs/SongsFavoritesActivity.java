@@ -1,11 +1,15 @@
 package ru.app.churchofchrist.songs;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 import java.util.List;
@@ -15,6 +19,10 @@ import ru.app.churchofchrist.R;
 public class SongsFavoritesActivity extends AppCompatActivity {
 
     public static boolean i = false;
+    private RecyclerView recyclerView;
+    private List<Song> songsFav;
+    private SQLiteDatabase sqLiteDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +40,11 @@ public class SongsFavoritesActivity extends AppCompatActivity {
         });
 
         SongsLab lab = SongsLab.getInstance(this);
-        List<Song> songsFav = lab.getFavoritesSongs();
+        songsFav = lab.getFavoritesSongs();
+        DBHelperSongs helperSongs = new DBHelperSongs(this, "db_songs", 1);
+        sqLiteDatabase = helperSongs.getWritableDatabase();
 
-        RecyclerView recyclerView = findViewById(R.id.recycler_songs_fav);
+        recyclerView = findViewById(R.id.recycler_songs_fav);
         SongsListAdapter adapter = new SongsListAdapter(songsFav);
         recyclerView.setAdapter(adapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -54,5 +64,28 @@ public class SongsFavoritesActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_songs_favorites_activity, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.delete_all:
+                for (int i = 0; i < songsFav.size(); i++) {
+                    sqLiteDatabase.delete("FAV_SONGS", "ID = ?", new String[]{String.valueOf(songsFav.get(i).getId())});
+                }
+                songsFav.clear();
+                sqLiteDatabase.close();
+                SongsListAdapter adapter = new SongsListAdapter(songsFav);
+                recyclerView.setAdapter(adapter);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
