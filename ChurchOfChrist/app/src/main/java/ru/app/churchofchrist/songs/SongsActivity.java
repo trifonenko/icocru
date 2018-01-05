@@ -15,6 +15,7 @@ import ru.app.churchofchrist.R;
 public class SongsActivity extends AppCompatActivity implements SongsListFragment.SongListListener {
 
     private View fragmentContainer;
+    public static boolean sSongId = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +34,20 @@ public class SongsActivity extends AppCompatActivity implements SongsListFragmen
 
         fragmentContainer = findViewById(R.id.fragment_container);
         if (fragmentContainer != null) {
+            sSongId = true;
             if (savedInstanceState == null) {
                 onItemClicked(0);
             }
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (SongsFavoritesActivity.i) {
+            Intent intent = getIntent();
+            int ii = intent.getIntExtra(SongsDetailActivity.SONG_ID, 1);
+            onItemClicked(ii);
         }
     }
 

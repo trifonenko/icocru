@@ -14,6 +14,8 @@ import ru.app.churchofchrist.R;
 
 public class SongsFavoritesActivity extends AppCompatActivity {
 
+    public static boolean i = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +42,8 @@ public class SongsFavoritesActivity extends AppCompatActivity {
         adapter.setListener(new SongsListAdapter.Listener() {
             @Override
             public void onClick(int songId) {
-                if (true) {
+                if (SongsActivity.sSongId) {
+                    i = true;
                     Intent intent = new Intent(SongsFavoritesActivity.this, SongsActivity.class);
                     intent.putExtra(SongsDetailActivity.SONG_ID, songId);
                     startActivity(intent);
@@ -49,7 +52,7 @@ public class SongsFavoritesActivity extends AppCompatActivity {
                     intent.putExtra(SongsDetailActivity.SONG_ID, songId);
                     startActivity(intent);
                 }
-                }
-            });
-        }
+            }
+        });
     }
+}
