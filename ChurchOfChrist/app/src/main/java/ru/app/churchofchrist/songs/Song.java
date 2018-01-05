@@ -13,15 +13,15 @@ class Song {
         this.chords = chords;
     }
 
-    public int getId() {
+    int getId() {
         return id;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public String getText() {
+    String getText() {
         return text;
     }
 

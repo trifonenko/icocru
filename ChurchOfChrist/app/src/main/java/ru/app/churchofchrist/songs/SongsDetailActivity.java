@@ -1,17 +1,17 @@
 package ru.app.churchofchrist.songs;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import java.util.Random;
+
 import ru.app.churchofchrist.R;
 
 public class SongsDetailActivity extends AppCompatActivity {
 
-    public static final String EXTRA_WORKOUT_ID = "id";
-    public static final String fav = "fav";
+    public static final String SONG_ID = "id";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +28,8 @@ public class SongsDetailActivity extends AppCompatActivity {
             }
         });
 
-        SongsDetailFragment workoutDetailFragment = (SongsDetailFragment) getFragmentManager().findFragmentById(R.id.fragment_songs_detail);
-        int workoutId = (int) getIntent().getExtras().get(EXTRA_WORKOUT_ID);
-        workoutDetailFragment.setSongId(workoutId);
+        SongsDetailFragment songsDetailFragment = (SongsDetailFragment) getFragmentManager().findFragmentById(R.id.fragment_songs_detail);
+        int songId = (int) getIntent().getExtras().get(SONG_ID);
+        songsDetailFragment.setSongId(songId);
     }
 }

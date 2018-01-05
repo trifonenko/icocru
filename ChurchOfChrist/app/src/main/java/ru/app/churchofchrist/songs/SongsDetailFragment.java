@@ -9,7 +9,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
@@ -34,42 +33,49 @@ import ru.app.churchofchrist.R;
  */
 public class SongsDetailFragment extends Fragment {
 
-    private int songId;//Идентификатор песни, выбранной пользователем.
-    private int temp = 14;
+    private int songId;//Идентификатор песни, выбранная пользователем.
     private TextView songText;
     private TextView songName;
     private TextView songTextId;
-    private List<Song> songs;
-    private SwitchCompat compat;
+    private int temp = 14;
     private DBHelperSongs mDBHelperFavSongs;
-    private SQLiteDatabase mDatabase;
+    private List<Song> songs;
+    private FloatingActionButton fab;
+    private SwitchCompat compat;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        if (savedInstanceState != null) {
+            songId = savedInstanceState.getInt("songId");
+        }
         SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
         temp = sharedPref.getInt("temp", temp);
 
         setHasOptionsMenu(true);
-
-        if (savedInstanceState != null) {
-            songId = savedInstanceState.getInt("songId");
-        }
-
         mDBHelperFavSongs = new DBHelperSongs(getActivity(), "db_songs", 1);
-
         return inflater.inflate(R.layout.fragment_songs_detail, container, false);
     }
 
     @Override
     public void onStart() {
         super.onStart();
+
+        SongsLab songsLab = SongsLab.getInstance(getActivity());
+        songs = songsLab.getSongs();
+        final SQLiteDatabase mDatabase = mDBHelperFavSongs.getWritableDatabase();
+
         final View view = getView();
         if (view != null) {
-            final SongsLab songsLab = SongsLab.getInstance(getActivity());
-            songs = songsLab.getSongs();
             songName = view.findViewById(R.id.song_name);
+            songName.setText(songs.get(songId).getName());
+
             songText = view.findViewById(R.id.song_text);
+            songText.setText(songs.get(songId).getText());
+            songText.setTextSize((float) temp);
+
             songTextId = view.findViewById(R.id.song_id);
+            songTextId.setText(String.valueOf(songs.get(songId).getId()));
+
             compat = view.findViewById(R.id.chords_switch);
             compat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
@@ -81,22 +87,17 @@ public class SongsDetailFragment extends Fragment {
                     }
                 }
             });
-            onRunSong(songId);
-            songText.setTextSize((float) temp);//Размер текста песни.
-
-            mDatabase = mDBHelperFavSongs.getWritableDatabase();
-
-            final FloatingActionButton fab = view.findViewById(R.id.floating_button);
-            fabImageDrawable(fab);
+            fab = view.findViewById(R.id.floating_button);
+            this.fabImageDrawable(fab);
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String str = "";
+                    String str;
                     if (isFavSong()) {
                         mDatabase.delete("FAV_SONGS", "ID = ?", new String[]{String.valueOf(songId + 1)});
                         str = "Песня удалена из избранных";
                     } else {
-                        insertFavSong(mDatabase, songs.get(songId).getId(), songs.get(songId).getName(), songs.get(songId).getText(), songs.get(songId).getChords(), view);
+                        insertFavSong(mDatabase, songs.get(songId).getId(), songs.get(songId).getName(), songs.get(songId).getText(), songs.get(songId).getChords());
                         str = "Песня добавлена в избранные";
                     }
                     Snackbar snackbar = Snackbar.make(view, str, Snackbar.LENGTH_LONG);
@@ -119,13 +120,43 @@ public class SongsDetailFragment extends Fragment {
         editor.apply();
     }
 
+    public void setSongId(int songId) {
+        this.songId = songId;
+    }
+
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
         savedInstanceState.putInt("songId", songId);
     }
 
-    public void setSongId(int songId) {
-        this.songId = songId;
+    //Метод для записи данных в таблицу FAV_SONGS бд.
+    private static void insertFavSong(SQLiteDatabase db, int id, String name, String text, String chords) {
+        ContentValues songValues = new ContentValues();
+        songValues.put("ID", id);
+        songValues.put("NAME", name);
+        songValues.put("TEXT", text);
+        songValues.put("CHORDS", chords);
+        db.insert("FAV_SONGS", null, songValues);
+    }
+
+    //Установка иконки на fab.
+    private void fabImageDrawable(FloatingActionButton fab) {
+        if (isFavSong())
+            fab.setImageDrawable(getActivity().getResources().getDrawable(R.drawable.ic_action_favorites_on));
+        else
+            fab.setImageDrawable(getActivity().getResources().getDrawable(R.drawable.ic_action_favorites_off));
+    }
+
+    //Проверка наличия песни в избранных.
+    private boolean isFavSong() {
+        boolean favoriteSong = false;
+        SongsLab songsLab = SongsLab.getInstance(getActivity());
+        List<Song> favSongs = songsLab.getFavoritesSongs();
+        for (Song song : favSongs) {
+            if (song.getId() == songId + 1) favoriteSong = true;
+        }
+        return favoriteSong;
     }
 
     @Override
@@ -175,48 +206,14 @@ public class SongsDetailFragment extends Fragment {
                 break;
             case R.id.random_song:
                 Random random = new Random();
-                int randomNum = random.nextInt(songs.size() - 1);
-                onRunSong(randomNum);
+                songId = random.nextInt(songs.size());
+                songName.setText(songs.get(songId).getName());
+                songText.setText(songs.get(songId).getText());
+                songTextId.setText(String.valueOf(songs.get(songId).getId()));
+                fabImageDrawable(fab);
                 compat.setChecked(false);
                 break;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @SuppressLint("SetTextI18n")
-    private void onRunSong(int num) {
-        songId = num;
-        songName.setText(songs.get(num).getName());
-        songText.setText(songs.get(num).getText());
-        songTextId.setText(songs.get(num).getId() + "");
-    }
-
-    //Метод для записи данных в таблицу FAV_SONGS бд.
-    private static void insertFavSong(SQLiteDatabase db, int id, String name, String text, String chords, View view) {
-        ContentValues songValues = new ContentValues();
-        songValues.put("ID", id);
-        songValues.put("NAME", name);
-        songValues.put("TEXT", text);
-        songValues.put("CHORDS", chords);
-        db.insert("FAV_SONGS", null, songValues);
-        }
-
-    //Установка иконки на fab.
-    private void fabImageDrawable(FloatingActionButton fab) {
-        if (isFavSong())
-            fab.setImageDrawable(getActivity().getResources().getDrawable(R.drawable.ic_action_favorites_on));
-        else
-            fab.setImageDrawable(getActivity().getResources().getDrawable(R.drawable.ic_action_fav));
-    }
-
-    //Проверка наличия песни в избранных.
-    private boolean isFavSong() {
-        boolean favoriteSong = false;
-        SongsLab songsLab = SongsLab.getInstance(getActivity());
-        List<Song> favSongs = songsLab.getFavoritesSongs();
-        for (Song song : favSongs) {
-            if (song.getId() == songId + 1) favoriteSong = true;
-        }
-        return favoriteSong;
     }
 }

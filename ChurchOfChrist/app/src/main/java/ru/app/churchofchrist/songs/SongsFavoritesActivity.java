@@ -40,13 +40,13 @@ public class SongsFavoritesActivity extends AppCompatActivity {
         adapter.setListener(new SongsListAdapter.Listener() {
             @Override
             public void onClick(int songId) {
-                if (SongsActivity.f) {
+                if (true) {
                     Intent intent = new Intent(SongsFavoritesActivity.this, SongsActivity.class);
-                    intent.putExtra(SongsActivity.fav, songId);
+                    intent.putExtra(SongsDetailActivity.SONG_ID, songId);
                     startActivity(intent);
                 } else {
                     Intent intent = new Intent(SongsFavoritesActivity.this, SongsDetailActivity.class);
-                    intent.putExtra(SongsDetailActivity.EXTRA_WORKOUT_ID, songId);
+                    intent.putExtra(SongsDetailActivity.SONG_ID, songId);
                     startActivity(intent);
                 }
                 }

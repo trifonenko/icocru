@@ -1,5 +1,6 @@
 package ru.app.churchofchrist.songs;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -20,6 +21,7 @@ public class DBHelperSongs extends SQLiteOpenHelper {
     private final Context mContext;
     private boolean mNeedUpdate = false;
 
+    @SuppressLint("SdCardPath")
     DBHelperSongs(Context context, String dbName, int dbVersion) {
         super(context, dbName, null, dbVersion);
 
