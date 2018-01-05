@@ -22,7 +22,6 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 import java.util.Random;
@@ -71,13 +70,17 @@ public class SongsDetailFragment extends Fragment {
             songName.setText(songs.get(songId).getName());
 
             songText = view.findViewById(R.id.song_text);
-            songText.setText(songs.get(songId).getText());
             songText.setTextSize((float) temp);
 
             songTextId = view.findViewById(R.id.song_id);
             songTextId.setText(String.valueOf(songs.get(songId).getId()));
 
             compat = view.findViewById(R.id.chords_switch);
+            if (compat.isChecked()) {
+                songText.setText(songs.get(songId).getChords());
+            } else {
+                songText.setText(songs.get(songId).getText());
+            }
             compat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
