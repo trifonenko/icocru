@@ -28,8 +28,10 @@ public class SongsDetailActivity extends AppCompatActivity {
             }
         });
 
-        SongsDetailFragment songsDetailFragment = (SongsDetailFragment) getFragmentManager().findFragmentById(R.id.fragment_songs_detail);
-        int songId = (int) getIntent().getExtras().get(SONG_ID);
-        songsDetailFragment.setSongId(songId);
+        if (savedInstanceState == null) {
+            SongsDetailFragment songsDetailFragment = (SongsDetailFragment) getFragmentManager().findFragmentById(R.id.fragment_songs_detail);
+            int songId = (int) getIntent().getExtras().get(SONG_ID);
+            songsDetailFragment.setSongId(songId);
+        }
     }
 }
