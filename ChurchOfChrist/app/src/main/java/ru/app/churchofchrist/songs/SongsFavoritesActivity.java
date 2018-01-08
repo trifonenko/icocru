@@ -39,16 +39,20 @@ public class SongsFavoritesActivity extends AppCompatActivity {
             }
         });
 
-        SongsLab lab = SongsLab.getInstance(this);
-        songsFav = lab.getFavoritesSongs();
         DBHelperSongs helperSongs = new DBHelperSongs(this, "db_songs", 1);
         sqLiteDatabase = helperSongs.getWritableDatabase();
-
         recyclerView = findViewById(R.id.recycler_songs_fav);
-        SongsListAdapter adapter = new SongsListAdapter(songsFav);
-        recyclerView.setAdapter(adapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        SongsLab lab = SongsLab.getInstance(this);
+        songsFav = lab.getFavoritesSongs();
+        SongsListAdapter adapter = new SongsListAdapter(songsFav);
+        recyclerView.setAdapter(adapter);
         adapter.setListener(new SongsListAdapter.Listener() {
             @Override
             public void onClick(int songId) {
@@ -65,6 +69,7 @@ public class SongsFavoritesActivity extends AppCompatActivity {
             }
         });
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
