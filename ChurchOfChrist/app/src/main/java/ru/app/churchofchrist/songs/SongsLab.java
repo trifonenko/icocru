@@ -18,7 +18,7 @@ public class SongsLab {
     private SQLiteDatabase mDatabaseFav;
 
     private SongsLab(Context context) {
-        DBHelperSongs helperSongs = new DBHelperSongs(context, "songs.db", 2);
+        DBHelperSongs helperSongs = new DBHelperSongs(context, "songs.db", 3);
         DBHelperSongs helperFavSongs = new DBHelperSongs(context, "db_songs", 1);
         try {
             helperSongs.updateDataBase();
