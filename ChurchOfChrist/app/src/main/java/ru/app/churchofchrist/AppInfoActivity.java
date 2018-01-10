@@ -5,15 +5,16 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class ContactsActivity extends AppCompatActivity {
+public class AppInfoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contacts);
+        setContentView(R.layout.activity_info);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Обратная связь");
+        toolbar.setTitle("О приложении");
+        ///
         toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

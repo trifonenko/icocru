@@ -2,6 +2,7 @@ package ru.app.churchofchrist;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -22,13 +23,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -324,9 +325,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int randomNum = random.nextInt(numVerse);
         randomVerse.setText(String.valueOf(randomVerseArray[randomNum]));
         coordinatesVerse.setText(String.valueOf(coordinatesVerseArray[randomNum]));
-
-        /* End random verse. */
-
     }
 
     @Override
@@ -339,38 +337,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.basic_christ) {
-            Intent intent = new Intent(MainActivity.this, OxActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_contacts) {
-            Intent intent1 = new Intent(MainActivity.this, ContactsActivity.class);
-            startActivity(intent1);
-        } else if (id == R.id.nav_info) {
-            Intent intent2 = new Intent(MainActivity.this, InfoActivity.class);
-            startActivity(intent2);
-        } else if (id == R.id.songs) {
-            Intent intent3 = new Intent(MainActivity.this, SongsActivity.class);
-            startActivity(intent3);
-        } else if (id == R.id.notepad) {
-            Intent intent4 = new Intent(MainActivity.this, ru.app.churchofchrist.notepad.MainActivity.class);
-            startActivity(intent4);
-        } else if (id == R.id.bible) {
-            Intent intent5 = new Intent(MainActivity.this, BibleActivity2.class);
-            startActivity(intent5);
-        } else if (id == R.id.ansver) {
-            Intent intent6 = new Intent(MainActivity.this, ru.app.churchofchrist.ansver.AnsverActivity.class);
-            startActivity(intent6);
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.basic_christ:
+                Intent intent1 = new Intent(MainActivity.this, OxActivity.class);
+                startActivity(intent1);
+                break;
+            case R.id.songs:
+                Intent intent2 = new Intent(MainActivity.this, SongsActivity.class);
+                startActivity(intent2);
+                break;
+            case R.id.notepad:
+                Intent intent3 = new Intent(MainActivity.this, ru.app.churchofchrist.notepad.MainActivity.class);
+                startActivity(intent3);
+                break;
+            case R.id.bible:
+                Intent intent4 = new Intent(MainActivity.this, BibleActivity2.class);
+                startActivity(intent4);
+                break;
+            case R.id.ansver:
+                Intent intent5 = new Intent(MainActivity.this, ru.app.churchofchrist.ansver.AnsverActivity.class);
+                startActivity(intent5);
+                break;
+            case R.id.feedback:
+                Intent intent6 = new Intent(MainActivity.this, FeedbackActivity.class);
+                startActivity(intent6);
+                break;
+            case R.id.app_info:
+                Intent intent7 = new Intent(MainActivity.this, AppInfoActivity.class);
+                startActivity(intent7);
+                break;
         }
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 }
-

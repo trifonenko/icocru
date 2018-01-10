@@ -58,11 +58,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ContactsActivity"
+            android:name=".FeedbackActivity"
             android:label="Контакты"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".InfoActivity"
+            android:name=".AppInfoActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <!--
