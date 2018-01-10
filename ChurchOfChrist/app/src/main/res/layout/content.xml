@@ -90,9 +90,6 @@
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
-
-
-
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
