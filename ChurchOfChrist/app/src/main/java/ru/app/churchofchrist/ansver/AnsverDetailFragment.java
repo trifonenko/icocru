@@ -133,7 +133,7 @@ public class AnsverDetailFragment extends Fragment {
             case R.id.share:
                 final Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
-                String textToSend = (String) ansverText.getText();
+                String textToSend = ansverName.getText()+ "\n\n" + ansverText.getText().toString();
                 intent.putExtra(Intent.EXTRA_TEXT, textToSend);
                 try
                 {
