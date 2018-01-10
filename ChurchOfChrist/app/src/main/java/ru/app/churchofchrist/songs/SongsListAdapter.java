@@ -48,14 +48,16 @@ public class SongsListAdapter extends RecyclerView.Adapter<SongsListAdapter.View
         return new ViewHolder(cv);
     }
 
-    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         CardView cardView = holder.cardView;
-        final TextView text = cardView.findViewById(R.id.song_name_list);
-        final TextView id = cardView.findViewById(R.id.song_id);
-        id.setText("" + mSongs.get(position).getId());
+
+        TextView text = cardView.findViewById(R.id.song_name);
         text.setText(mSongs.get(position).getName());
+
+        TextView id = cardView.findViewById(R.id.song_id);
+        id.setText(String.valueOf(mSongs.get(position).getId()));
+
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

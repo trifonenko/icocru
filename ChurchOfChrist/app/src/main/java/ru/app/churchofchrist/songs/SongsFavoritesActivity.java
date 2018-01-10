@@ -1,16 +1,21 @@
 package ru.app.churchofchrist.songs;
 
+import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -18,11 +23,12 @@ import ru.app.churchofchrist.R;
 
 public class SongsFavoritesActivity extends AppCompatActivity {
 
-    public static boolean i = false;
-    private RecyclerView recyclerView;
-    private List<Song> songsFav;
-    private SQLiteDatabase sqLiteDatabase;
+    private static final String TAG = "myLogs";
 
+    public static boolean i = false;
+    private SongsLab lab;
+    private RecyclerView recyclerView;
+    List<Song> songsFav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,19 +45,20 @@ public class SongsFavoritesActivity extends AppCompatActivity {
             }
         });
 
-        DBHelperSongs helperSongs = new DBHelperSongs(this, "db_songs", 1);
-        sqLiteDatabase = helperSongs.getWritableDatabase();
         recyclerView = findViewById(R.id.recycler_songs_fav);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+
+        lab = SongsLab.getInstance(this);
     }
 
+    @SuppressLint("ShowToast")
     @Override
     public void onStart() {
         super.onStart();
-        SongsLab lab = SongsLab.getInstance(this);
         songsFav = lab.getFavoritesSongs();
         SongsListAdapter adapter = new SongsListAdapter(songsFav);
+
         recyclerView.setAdapter(adapter);
         adapter.setListener(new SongsListAdapter.Listener() {
             @Override
@@ -70,7 +77,6 @@ public class SongsFavoritesActivity extends AppCompatActivity {
         });
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -78,17 +84,39 @@ public class SongsFavoritesActivity extends AppCompatActivity {
         return true;
     }
 
+    @SuppressLint("ShowToast")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.delete_all:
-                for (int i = 0; i < songsFav.size(); i++) {
-                    sqLiteDatabase.delete("FAV_SONGS", "ID = ?", new String[]{String.valueOf(songsFav.get(i).getId())});
+                if (SongsLab.getInstance(this).getFavoritesSongs().size() != 0) {
+                    //DeleteDialogFragment dialogFragment = new DeleteDialogFragment();
+                    //dialogFragment.show(getSupportFragmentManager(), null);
+                    final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.setMessage(R.string.delete_songs)
+                            .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+
+                                    DBHelperSongs helperSongs = new DBHelperSongs(getApplicationContext(), "db_songs", 1);
+                                    SQLiteDatabase database = helperSongs.getWritableDatabase();
+
+                                    for (int i = 0; i < songsFav.size(); i++) {
+                                        database.delete("FAV_SONGS", "ID = ?", new String[]{String.valueOf(songsFav.get(i).getId())});
+                                    }
+                                    songsFav.clear();
+                                    SongsListAdapter adapter = new SongsListAdapter(songsFav);
+                                    recyclerView.setAdapter(adapter);
+
+                                    database.close();
+                                }
+                            })
+                            .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+
+                                }
+                            });
+                    builder.show();
                 }
-                songsFav.clear();
-                sqLiteDatabase.close();
-                SongsListAdapter adapter = new SongsListAdapter(songsFav);
-                recyclerView.setAdapter(adapter);
                 break;
         }
         return super.onOptionsItemSelected(item);

@@ -23,6 +23,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import ru.app.churchofchrist.songs.SongsListFragment;
+
 
 public class BibleActivity extends AppCompatActivity {
     private WebView webView;
@@ -32,7 +34,7 @@ public class BibleActivity extends AppCompatActivity {
     SharedPreferences sPref; // Сохранение
     int knig; // Размер текста
     private boolean isInternetPresent;
-    private ConnectionDetector cd;
+    private SongsListFragment.ConnectionDetector cd;
     private Toolbar toolbar=null;
     private String[] category=null;
     String[] perevod = {"РБО 2015г. Современный", "РБО 1876г. Синодальный"};
@@ -47,7 +49,7 @@ public class BibleActivity extends AppCompatActivity {
 
         //Логическая переменная для статуса соединения
         Boolean isInternetPresent = false;
-        ConnectionDetector cd;
+        SongsListFragment.ConnectionDetector cd;
 
         //Создаем пример класса connection detector:
         /*cd = new ConnectionDetector(getApplicationContext());*/

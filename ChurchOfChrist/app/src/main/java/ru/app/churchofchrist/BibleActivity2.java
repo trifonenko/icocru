@@ -22,13 +22,15 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import ru.app.churchofchrist.songs.SongsListFragment;
+
 public class BibleActivity2 extends AppCompatActivity {
     private WebView webView;
     Menu myMenu = null;
     private ProgressDialog mProgressDialog;
     Handler handler;
     private boolean isInternetPresent;
-    private ConnectionDetector cd;
+    private SongsListFragment.ConnectionDetector cd;
     private Toolbar toolbar=null;
     private String[] category=null;
     String[] perevod = {"РБО 1876г. Синодальный", "РБО 2015г. Современный"};
@@ -44,10 +46,10 @@ public class BibleActivity2 extends AppCompatActivity {
 
         //Логическая переменная для статуса соединения
         Boolean isInternetPresent = false;
-        ConnectionDetector cd;
+        SongsListFragment.ConnectionDetector cd;
 
         //Создаем пример класса connection detector:
-        cd = new ConnectionDetector(getApplicationContext());
+        cd = new SongsListFragment.ConnectionDetector(getApplicationContext());
 
 
         // иниизиализируем кнопку

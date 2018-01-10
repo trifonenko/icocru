@@ -12,7 +12,7 @@ import java.util.List;
  * Синглетный класс.
  */
 
-public class SongsLab {
+class SongsLab {
     private static SongsLab sSongsLab;
     private SQLiteDatabase mDatabase;
     private SQLiteDatabase mDatabaseFav;
@@ -26,7 +26,7 @@ public class SongsLab {
             throw new Error("UnableToUpdateDatabase");
         }
         mDatabase = helperSongs.getWritableDatabase();
-        mDatabaseFav = helperFavSongs.getWritableDatabase();
+        mDatabaseFav = helperFavSongs.getReadableDatabase();
     }
 
     static SongsLab getInstance(Context context) {
@@ -36,7 +36,7 @@ public class SongsLab {
         return sSongsLab;
     }
 
-    public List<Song> getSongs() {
+    List<Song> getSongs() {
         List<Song> songs = new ArrayList<>();
         Cursor cursor = mDatabase.rawQuery("SELECT * FROM songs", null);
         cursor.moveToFirst();
