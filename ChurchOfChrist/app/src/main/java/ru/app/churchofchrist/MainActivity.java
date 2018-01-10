@@ -39,11 +39,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setItemIconTintList(null);
 
         /* Begin random verve. */
-        int numVerse = 138;//Количество отрывков.
+        final int numVerse = 138;//Количество отрывков.
         final TextView randomVerse = findViewById(R.id.random_verse);
         final TextView coordinatesVerse = findViewById(R.id.coordinates_verse);
 
-        String[] randomVerseArray = new String[numVerse];//Массив отрывков.
+        final String[] randomVerseArray = new String[numVerse];//Массив отрывков.
         randomVerseArray[0] = getResources().getString(R.string.excerpt_bt_01_16);
         randomVerseArray[1] = getResources().getString(R.string.excerpt_iov_26_07);
         randomVerseArray[2] = getResources().getString(R.string.excerpt_iov_36_26_29);
@@ -183,7 +183,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         randomVerseArray[136] = getResources().getString(R.string.excerpt_mf_07_21_22);
         randomVerseArray[137] = getResources().getString(R.string.excerpt_kol_03_23_24);
 
-        String[] coordinatesVerseArray = new String[numVerse];//Массив координат отрывков.
+        final String[] coordinatesVerseArray = new String[numVerse];//Массив координат отрывков.
         coordinatesVerseArray[0] = "Бытие 1:16";
         coordinatesVerseArray[1] = "Иов 26:7";
         coordinatesVerseArray[2] = "Иов 36:26-26";
@@ -341,6 +341,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     startActivity(Intent.createChooser(intent, "Описание действия"));
                 }
                 catch (android.content.ActivityNotFoundException ex) {}
+            }
+        });
+
+        ImageView rand = (ImageView) findViewById(R.id.imageView9);
+        rand.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Random random = new Random();
+                int randomNum = random.nextInt(numVerse);
+                randomVerse.setText(String.valueOf(randomVerseArray[randomNum]));
+                coordinatesVerse.setText(String.valueOf(coordinatesVerseArray[randomNum]));
             }
         });
 
