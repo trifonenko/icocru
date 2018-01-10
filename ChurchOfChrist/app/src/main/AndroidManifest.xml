@@ -13,9 +13,9 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:backupAgent="TheBackupAgent">
-        <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIyGfQbECBdvlz0U-UIw0jdDkrjZd6uOoZWEXc8w" />
+        android:theme="@style/AppTheme">
+        <!--android:backupAgent="TheBackupAgent"
+        <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIyGfQbECBdvlz0U-UIw0jdDkrjZd6uOoZWEXc8w" />-->
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

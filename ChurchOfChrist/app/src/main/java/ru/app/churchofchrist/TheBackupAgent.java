@@ -1,3 +1,4 @@
+/*
 package ru.app.churchofchrist;
 
 import android.app.backup.BackupAgentHelper;
@@ -26,3 +27,4 @@ public class TheBackupAgent extends BackupAgentHelper {
     }
 
 }
+*/
