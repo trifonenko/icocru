@@ -67,6 +67,7 @@
                         android:text="Координаты"
                         android:textColor="@color/black"
                         android:textStyle="bold" />
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -88,6 +89,13 @@
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/share"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_action_share" />
 
 
             </LinearLayout>

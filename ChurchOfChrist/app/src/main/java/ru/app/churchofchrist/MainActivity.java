@@ -10,6 +10,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -38,8 +40,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         /* Begin random verve. */
         int numVerse = 138;//Количество отрывков.
-        TextView randomVerse = findViewById(R.id.random_verse);
-        TextView coordinatesVerse = findViewById(R.id.coordinates_verse);
+        final TextView randomVerse = findViewById(R.id.random_verse);
+        final TextView coordinatesVerse = findViewById(R.id.coordinates_verse);
 
         String[] randomVerseArray = new String[numVerse];//Массив отрывков.
         randomVerseArray[0] = getResources().getString(R.string.excerpt_bt_01_16);
@@ -325,6 +327,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int randomNum = random.nextInt(numVerse);
         randomVerse.setText(String.valueOf(randomVerseArray[randomNum]));
         coordinatesVerse.setText(String.valueOf(coordinatesVerseArray[randomNum]));
+
+        ImageView share = (ImageView) findViewById(R.id.share);
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                String textToSend = randomVerse.getText()+ "\n\n" + coordinatesVerse.getText().toString();
+                intent.putExtra(Intent.EXTRA_TEXT, textToSend);
+                try
+                {
+                    startActivity(Intent.createChooser(intent, "Описание действия"));
+                }
+                catch (android.content.ActivityNotFoundException ex) {}
+            }
+        });
+
     }
 
     @Override
