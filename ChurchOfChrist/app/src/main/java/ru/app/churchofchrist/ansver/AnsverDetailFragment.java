@@ -133,15 +133,13 @@ public class AnsverDetailFragment extends Fragment {
             case R.id.share:
                 final Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
-                String textToSend="some text";
+                String textToSend = (String) ansverText.getText();
                 intent.putExtra(Intent.EXTRA_TEXT, textToSend);
                 try
                 {
                     startActivity(Intent.createChooser(intent, "Описание действия"));
                 }
-                catch (android.content.ActivityNotFoundException ex)
-                {
-                }
+                catch (android.content.ActivityNotFoundException ex) {}
                 break;
         }
         return super.onOptionsItemSelected(item);
