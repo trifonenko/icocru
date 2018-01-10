@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -128,6 +129,19 @@ public class AnsverDetailFragment extends Fragment {
                 Random random = new Random();
                 int randomNum = random.nextInt(ansver.size() - 1);
                 onRunAnsver(randomNum);
+                break;
+            case R.id.share:
+                final Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                String textToSend="some text";
+                intent.putExtra(Intent.EXTRA_TEXT, textToSend);
+                try
+                {
+                    startActivity(Intent.createChooser(intent, "Описание действия"));
+                }
+                catch (android.content.ActivityNotFoundException ex)
+                {
+                }
                 break;
         }
         return super.onOptionsItemSelected(item);

@@ -12,4 +12,10 @@
         android:icon="@drawable/ic_action_shuffle"
         android:title="@string/random_song"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/share"
+        android:orderInCategory="3"
+        android:icon="@drawable/ic_action_shuffle"
+        android:title="Поделится"
+        app:showAsAction="ifRoom" />
 </menu>
