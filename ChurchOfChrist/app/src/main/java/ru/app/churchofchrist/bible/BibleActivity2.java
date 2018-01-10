@@ -1,9 +1,8 @@
-package ru.app.churchofchrist;
+package ru.app.churchofchrist.bible;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -23,22 +22,21 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import ru.app.churchofchrist.R;
 import ru.app.churchofchrist.songs.SongsListFragment;
 
-
-public class BibleActivity extends AppCompatActivity {
+public class BibleActivity2 extends AppCompatActivity {
     private WebView webView;
     Menu myMenu = null;
     private ProgressDialog mProgressDialog;
     Handler handler;
-    SharedPreferences sPref; // Сохранение
-    int knig; // Размер текста
     private boolean isInternetPresent;
     private SongsListFragment.ConnectionDetector cd;
     private Toolbar toolbar=null;
     private String[] category=null;
-    String[] perevod = {"РБО 2015г. Современный", "РБО 1876г. Синодальный"};
+    String[] perevod = {"РБО 1876г. Синодальный", "РБО 2015г. Современный"};
     String[] knigi = {"Бытие", "Исход", "Левит", "Числа", "Второзаконие", "Иисус Навин", "Судьи", "Руфь", "1 Царств", "2 Царств", "3 Царств", "4 Царств", "1 Паралипоменон", "2 Паралипоменон", "Ездра", "Неемии", "Есфирь", "Иов", "Псалтирь", "Притчи", "Екклесиаст", "Песня Песней", "Исаия", "Иеремия", "Плач Иеремии", "Иезекииль", "Даниил", "Осия", "Иоиль", "Амос", "Авдий", "Иона", "Михей", "Наум", "Аввакум", "Софония", "Аггей", "Захария", "Малахия", "Матфей", "Марк", "Лука", "Иоанн", "Деяния", "Иаков", "1 Петра", "2 Петра", "1 Иоанна", "2 Иоанна", "3 Иоанна", "Иуда", "Римлянам", "1 Коринфянам", "2 Коринфянам", "Галатам", "Ефесянам", "Филиппийцам", "Колоссянам", "1 Фессалоникийцам", "2 Фессалоникийцам", "1 Тимофею", "2 Тимофею", "Титу", "Филимону", "Евреям", "Откровение"};
+
 
     @SuppressLint("SetJavaScriptEnabled")
     @Override
@@ -52,7 +50,7 @@ public class BibleActivity extends AppCompatActivity {
         SongsListFragment.ConnectionDetector cd;
 
         //Создаем пример класса connection detector:
-        /*cd = new ConnectionDetector(getApplicationContext());*/
+        cd = new SongsListFragment.ConnectionDetector(getApplicationContext());
 
 
         // иниизиализируем кнопку
@@ -99,13 +97,13 @@ public class BibleActivity extends AppCompatActivity {
                         /*Intent intent2 = new Intent(BibleActivity.this, BibleActivity2.class);
                         startActivity(intent2);*/
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText(R.string.nrp);
+                        ((TextView) parent.getChildAt(0)).setText(R.string.synod);
                         break;
                     case 1:
-                        Intent intent3 = new Intent(BibleActivity.this, BibleActivity2.class);
+                        Intent intent3 = new Intent(BibleActivity2.this, BibleActivity.class);
                         startActivity(intent3);
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText(R.string.synod);
+                        ((TextView) parent.getChildAt(0)).setText(R.string.nrp);
                         break;
                 }
             }
@@ -117,8 +115,8 @@ public class BibleActivity extends AppCompatActivity {
         });
 
         // адаптер
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, R.layout.spinner_dropdown_item, knigi);
-        adapter2.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, R.layout.spinner_dropdown_item2, knigi);
+        adapter2.setDropDownViewResource(R.layout.spinner_dropdown_item2);
 
         Spinner spinner2 = findViewById(R.id.knigi);
         spinner2.setAdapter(adapter2);
@@ -132,332 +130,332 @@ public class BibleActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
-                        webView.loadUrl("file:///android_asset/books/01_genesis.html");
+                        webView.loadUrl("file:///android_asset/books_rst/01.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Быт.");
                         break;
                     case 1:
-                        webView.loadUrl("file:///android_asset/books/02_exodus.html");
+                        webView.loadUrl("file:///android_asset/books_rst/02.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Исх.");
                         break;
                     case 2:
-                        webView.loadUrl("file:///android_asset/books/03_leviticus.html");
+                        webView.loadUrl("file:///android_asset/books_rst/03.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Лев.");
                         break;
                     case 3:
-                        webView.loadUrl("file:///android_asset/books/04_numbers.html");
+                        webView.loadUrl("file:///android_asset/books_rst/04.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Числ.");
                         break;
                     case 4:
-                        webView.loadUrl("file:///android_asset/books/05_deuteronomy.html");
+                        webView.loadUrl("file:///android_asset/books_rst/05.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Втор.");
                         break;
                     case 5:
-                        webView.loadUrl("file:///android_asset/books/06_joshua.html");
+                        webView.loadUrl("file:///android_asset/books_rst/06.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("ИсНав.");
                         break;
                     case 6:
-                        webView.loadUrl("file:///android_asset/books/07_judges.html");
+                        webView.loadUrl("file:///android_asset/books_rst/07.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Суд.");
                         break;
                     case 7:
-                        webView.loadUrl("file:///android_asset/books/08_ruth.html");
+                        webView.loadUrl("file:///android_asset/books_rst/08.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Руфь");
                         break;
                     case 8:
-                        webView.loadUrl("file:///android_asset/books/09_1samuel.html");
+                        webView.loadUrl("file:///android_asset/books_rst/09.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("1Цар.");
                         break;
                     case 9:
-                        webView.loadUrl("file:///android_asset/books/10_2samuel.html");
+                        webView.loadUrl("file:///android_asset/books_rst/10.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("2Цар.");
                         break;
                     case 10:
-                        webView.loadUrl("file:///android_asset/books/11_1kings.html");
+                        webView.loadUrl("file:///android_asset/books_rst/11.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("3Цар.");
                         break;
                     case 11:
-                        webView.loadUrl("file:///android_asset/books/12_2kings.html");
+                        webView.loadUrl("file:///android_asset/books_rst/12.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("4Цар.");
                         break;
                     case 12:
-                        webView.loadUrl("file:///android_asset/books/13_1chronicles.html");
+                        webView.loadUrl("file:///android_asset/books_rst/13.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("1Пар.");
                         break;
                     case 13:
-                        webView.loadUrl("file:///android_asset/books/14_2chronicles.html");
+                        webView.loadUrl("file:///android_asset/books_rst/14.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("2Пар.");
                         break;
                     case 14:
-                        webView.loadUrl("file:///android_asset/books/15_ezra.html");
+                        webView.loadUrl("file:///android_asset/books_rst/15.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Ездр.");
                         break;
                     case 15:
-                        webView.loadUrl("file:///android_asset/books/16_nehemiah.html");
+                        webView.loadUrl("file:///android_asset/books_rst/16.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Неем.");
                         break;
                     case 16:
-                        webView.loadUrl("file:///android_asset/books/17_esther.html");
+                        webView.loadUrl("file:///android_asset/books_rst/17.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Есф.");
                         break;
                     case 17:
-                        webView.loadUrl("file:///android_asset/books/18_job.html");
+                        webView.loadUrl("file:///android_asset/books_rst/18.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Иов");
                         break;
                     case 18:
-                        webView.loadUrl("file:///android_asset/books/19_psalms.html");
+                        webView.loadUrl("file:///android_asset/books_rst/19.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Пс.");
                         break;
                     case 19:
-                        webView.loadUrl("file:///android_asset/books/20_proverbs.html");
+                        webView.loadUrl("file:///android_asset/books_rst/20.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Прит.");
                         break;
                     case 20:
-                        webView.loadUrl("file:///android_asset/books/21_ecclesiastes.html");
+                        webView.loadUrl("file:///android_asset/books_rst/21.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Екк.");
                         break;
                     case 21:
-                        webView.loadUrl("file:///android_asset/books/22_songofsolomon.html");
+                        webView.loadUrl("file:///android_asset/books_rst/22.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Песн.");
                         break;
                     case 22:
-                        webView.loadUrl("file:///android_asset/books/23_isaiah.html");
+                        webView.loadUrl("file:///android_asset/books_rst/23.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Исаия");
                         break;
                     case 23:
-                        webView.loadUrl("file:///android_asset/books/24_jeremiah.html");
+                        webView.loadUrl("file:///android_asset/books_rst/24.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Иер.");
                         break;
                     case 24:
-                        webView.loadUrl("file:///android_asset/books/25_lamentations.html");
+                        webView.loadUrl("file:///android_asset/books_rst/25.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("ПлИер.");
                         break;
                     case 25:
-                        webView.loadUrl("file:///android_asset/books/26_ezekiel.html");
+                        webView.loadUrl("file:///android_asset/books_rst/26.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Иез.");
                         break;
                     case 26:
-                        webView.loadUrl("file:///android_asset/books/27_daniel.html");
+                        webView.loadUrl("file:///android_asset/books_rst/27.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Дан.");
                         break;
                     case 27:
-                        webView.loadUrl("file:///android_asset/books/28_hosea.html");
+                        webView.loadUrl("file:///android_asset/books_rst/28.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Осия");
                         break;
                     case 28:
-                        webView.loadUrl("file:///android_asset/books/29_joel.html");
+                        webView.loadUrl("file:///android_asset/books_rst/29.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Иоиль");
                         break;
                     case 29:
-                        webView.loadUrl("file:///android_asset/books/30_amos.html");
+                        webView.loadUrl("file:///android_asset/books_rst/30.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Амос");
                         break;
                     case 30:
-                        webView.loadUrl("file:///android_asset/books/31_obadiah.html");
+                        webView.loadUrl("file:///android_asset/books_rst/31.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Авд.");
                         break;
                     case 31:
-                        webView.loadUrl("file:///android_asset/books/32_jonah.html");
+                        webView.loadUrl("file:///android_asset/books_rst/32.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Иона");
                         break;
                     case 32:
-                        webView.loadUrl("file:///android_asset/books/33_micah.html");
+                        webView.loadUrl("file:///android_asset/books_rst/33.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Мих.");
                         break;
                     case 33:
-                        webView.loadUrl("file:///android_asset/books/34_nahum.html");
+                        webView.loadUrl("file:///android_asset/books_rst/34.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Наум");
                         break;
                     case 34:
-                        webView.loadUrl("file:///android_asset/books/35_habakkuk.html");
+                        webView.loadUrl("file:///android_asset/books_rst/35.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Авв.");
                         break;
                     case 35:
-                        webView.loadUrl("file:///android_asset/books/36_zephaniah.html");
+                        webView.loadUrl("file:///android_asset/books_rst/36.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Соф.");
                         break;
                     case 36:
-                        webView.loadUrl("file:///android_asset/books/37_haggai.html");
+                        webView.loadUrl("file:///android_asset/books_rst/37.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Агг.");
                         break;
                     case 37:
-                        webView.loadUrl("file:///android_asset/books/38_zechariah.html");
+                        webView.loadUrl("file:///android_asset/books_rst/38.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Зах.");
                         break;
                     case 38:
-                        webView.loadUrl("file:///android_asset/books/39_malachi.html");
+                        webView.loadUrl("file:///android_asset/books_rst/39.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Мал.");
                         break;
                     case 39:
-                        webView.loadUrl("file:///android_asset/books/40_matthew.html");
+                        webView.loadUrl("file:///android_asset/books_rst/40.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Матф.");
                         break;
                     case 40:
-                        webView.loadUrl("file:///android_asset/books/41_mark.html");
+                        webView.loadUrl("file:///android_asset/books_rst/41.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Марк.");
                         break;
                     case 41:
-                        webView.loadUrl("file:///android_asset/books/42_luke.html");
+                        webView.loadUrl("file:///android_asset/books_rst/42.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Лук.");
                         break;
                     case 42:
-                        webView.loadUrl("file:///android_asset/books/43_john.html");
+                        webView.loadUrl("file:///android_asset/books_rst/43.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Ин.");
                         break;
                     case 43:
-                        webView.loadUrl("file:///android_asset/books/44_acts.html");
+                        webView.loadUrl("file:///android_asset/books_rst/44.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Деян.");
                         break;
                     case 44:
-                        webView.loadUrl("file:///android_asset/books/45_james.html");
+                        webView.loadUrl("file:///android_asset/books_rst/45.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Иак.");
                         break;
                     case 45:
-                        webView.loadUrl("file:///android_asset/books/46_1peter.html");
+                        webView.loadUrl("file:///android_asset/books_rst/46.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("1Пет.");
                         break;
                     case 46:
-                        webView.loadUrl("file:///android_asset/books/47_2peter.html");
+                        webView.loadUrl("file:///android_asset/books_rst/47.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("2Пет.");
                         break;
                     case 47:
-                        webView.loadUrl("file:///android_asset/books/48_1john.html");
+                        webView.loadUrl("file:///android_asset/books_rst/48.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("1Ин.");
                         break;
                     case 48:
-                        webView.loadUrl("file:///android_asset/books/49_2john.html");
+                        webView.loadUrl("file:///android_asset/books_rst/49.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("2Ин.");
                         break;
                     case 49:
-                        webView.loadUrl("file:///android_asset/books/50_3john.html");
+                        webView.loadUrl("file:///android_asset/books_rst/50.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("3Ин.");
                         break;
                     case 50:
-                        webView.loadUrl("file:///android_asset/books/51_jude.html");
+                        webView.loadUrl("file:///android_asset/books_rst/51.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Иуд.");
                         break;
                     case 51:
-                        webView.loadUrl("file:///android_asset/books/52_romans.html");
+                        webView.loadUrl("file:///android_asset/books_rst/52.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Рим.");
                         break;
                     case 52:
-                        webView.loadUrl("file:///android_asset/books/53_1corinthians.html");
+                        webView.loadUrl("file:///android_asset/books_rst/53.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("1Кор");
                         break;
                     case 53:
-                        webView.loadUrl("file:///android_asset/books/54_2corinthians.html");
+                        webView.loadUrl("file:///android_asset/books_rst/54.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("2Кор");
                         break;
                     case 54:
-                        webView.loadUrl("file:///android_asset/books/55_galatians.html");
+                        webView.loadUrl("file:///android_asset/books_rst/55.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Гал.");
                         break;
                     case 55:
-                        webView.loadUrl("file:///android_asset/books/56_ephesians.html");
+                        webView.loadUrl("file:///android_asset/books_rst/56.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Ефес.");
                         break;
                     case 56:
-                        webView.loadUrl("file:///android_asset/books/57_philippians.html");
+                        webView.loadUrl("file:///android_asset/books_rst/57.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Фил.");
                         break;
                     case 57:
-                        webView.loadUrl("file:///android_asset/books/58_colossians.html");
+                        webView.loadUrl("file:///android_asset/books_rst/58.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Кол.");
                         break;
                     case 58:
-                        webView.loadUrl("file:///android_asset/books/59_1thessalonians.html");
+                        webView.loadUrl("file:///android_asset/books_rst/59.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("1Фес.");
                         break;
                     case 59:
-                        webView.loadUrl("file:///android_asset/books/60_2thessalonians.html");
+                        webView.loadUrl("file:///android_asset/books_rst/60.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("2Фес.");
                         break;
                     case 60:
-                        webView.loadUrl("file:///android_asset/books/61_1timothy.html");
+                        webView.loadUrl("file:///android_asset/books_rst/61.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("1Тим.");
                         break;
                     case 61:
-                        webView.loadUrl("file:///android_asset/books/62_2timothy.html");
+                        webView.loadUrl("file:///android_asset/books_rst/62.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("2Тим.");
                         break;
                     case 62:
-                        webView.loadUrl("file:///android_asset/books/63_titus.html");
+                        webView.loadUrl("file:///android_asset/books_rst/63.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Тит.");
                         break;
                     case 63:
-                        webView.loadUrl("file:///android_asset/books/64_philemon.html");
+                        webView.loadUrl("file:///android_asset/books_rst/64.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Филим.");
                         break;
                     case 64:
-                        webView.loadUrl("file:///android_asset/books/65_hebrews.html");
+                        webView.loadUrl("file:///android_asset/books_rst/65.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Евр.");
                         break;
                     case 65:
-                        webView.loadUrl("file:///android_asset/books/66_revelations.html");
+                        webView.loadUrl("file:///android_asset/books_rst/66.html");
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText("Откр.");
                         break;
@@ -470,6 +468,32 @@ public class BibleActivity extends AppCompatActivity {
             }
         });
 
+        /*SpinnerAdapter spinnerAdapter2 = ArrayAdapter.createFromResource(getApplicationContext(), R.array.book, R.layout.spinner_dropdown_item2);
+        Spinner navigationSpinner2 = new Spinner(getSupportActionBar().getThemedContext());
+        navigationSpinner2.setAdapter(spinnerAdapter2);
+        toolbar.addView(navigationSpinner2, 0);
+
+        navigationSpinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        webView.loadUrl("file:///android_asset/books/01_genesis.html");
+                        break;
+                    case 1:
+                        webView.loadUrl("file:///android_asset/books/02_exodus.html");
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });*/
+
+
+
 
         webView = findViewById(R.id.webViewBible);
 
@@ -479,11 +503,11 @@ public class BibleActivity extends AppCompatActivity {
         // Подключаем для этого элемента поддержку Java скриптов:
         webSettings.setJavaScriptEnabled(true);
 
-       /* //Получаем статус Интернет
-        isInternetPresent = cd.ConnectingToInternet();
+        //Получаем статус Интернет
+        /*isInternetPresent = cd.ConnectingToInternet();*/
 
         //Проверяем Интернет статус:
-        if (isInternetPresent) {
+       /* if (isInternetPresent) {
             *//*mProgressDialog = new ProgressDialog(BibleActivity.this);
             mProgressDialog.setMax(100);
             mProgressDialog.setTitle("Открываем БИБЛИЮ");
@@ -520,7 +544,7 @@ public class BibleActivity extends AppCompatActivity {
             //Интернет соединение есть
             //делаем HTTP запросы:
             // Настраиваем страницу, которая будет загружать при запуске, можете ввести любую:*/
-            webView.loadUrl("file:///android_asset/books/01_genesis.html");
+            webView.loadUrl("file:///android_asset/books_rst/01.html");
             // Настраиваем обозреватель для нашего элемента WebView, подключаем созданный нами выше
             // Веб-клиент, с помощью которого будет проходить просмотр страниц:
             webView.setWebViewClient(new MyWebViewClient());
@@ -528,7 +552,7 @@ public class BibleActivity extends AppCompatActivity {
         /*} else {
             //Интернет соединения нет
             //загружаем оффлайн версию:
-            webView.loadUrl("file:///android_asset/books/01_genesis.html");
+            webView.loadUrl("file:///android_asset/books_rst/01.html");
             // Настраиваем обозреватель для нашего элемента WebView, подключаем созданный нами выше
             // Веб-клиент, с помощью которого будет проходить просмотр страниц:
             webView.setWebViewClient(new MyWebViewClient());
@@ -637,9 +661,8 @@ public class BibleActivity extends AppCompatActivity {
                 webView.loadUrl("https://okbible.ru/books_rst/01");
                 break;*/
             case R.id.zamet_bible:
-                Intent intent2 = new Intent(BibleActivity.this, ru.app.churchofchrist.notepad.MainActivity.class);
+                Intent intent2 = new Intent(BibleActivity2.this, ru.app.churchofchrist.notepad.MainActivity.class);
                 startActivity(intent2);
-                break;
             case R.id.search_bible:
                 webView.loadUrl("https://okbible.ru/extsearch.php");
                 break;
@@ -656,5 +679,4 @@ public class BibleActivity extends AppCompatActivity {
             onNavigateUp();
         }
     }
-
 }

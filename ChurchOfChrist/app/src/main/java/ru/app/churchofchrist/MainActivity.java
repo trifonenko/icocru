@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import java.util.Random;
 
+import ru.app.churchofchrist.bible.BibleActivity2;
 import ru.app.churchofchrist.ox.OxActivity;
 import ru.app.churchofchrist.songs.SongsActivity;
 
