@@ -14,8 +14,8 @@
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/share"
+        android:icon="@android:drawable/ic_menu_send"
         android:orderInCategory="3"
-        android:icon="@drawable/ic_action_shuffle"
         android:title="Поделится"
         app:showAsAction="ifRoom" />
 </menu>
