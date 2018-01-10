@@ -322,6 +322,8 @@ public class UpdateWidgetService extends Service {
 
 
             remoteViews.setOnClickPendingIntent(R.id.imageView9, pendingIntent);
+
+
             appWidgetManager.updateAppWidget(widgetId, remoteViews);
 
 

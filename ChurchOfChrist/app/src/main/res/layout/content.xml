@@ -96,7 +96,7 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="25dp"
                 android:layout_weight="1"
                 android:gravity="bottom"
                 android:orientation="horizontal">
@@ -104,7 +104,7 @@
                 <ImageView
                     android:id="@+id/imageView9"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="25dp"
                     android:layout_weight="1"
                     android:scaleType="fitCenter"
                     android:src="@drawable/ic_action_refrash" />
@@ -112,7 +112,7 @@
                 <ImageView
                     android:id="@+id/share"
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="25dp"
                     android:layout_weight="1"
                     android:baselineAligned="false"
                     android:src="@drawable/ic_action_share" />

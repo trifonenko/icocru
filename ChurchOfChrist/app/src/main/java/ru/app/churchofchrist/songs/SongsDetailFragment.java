@@ -1,14 +1,15 @@
 package ru.app.churchofchrist.songs;
 
 import android.annotation.SuppressLint;
+import android.app.Fragment;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
@@ -216,6 +217,17 @@ public class SongsDetailFragment extends Fragment {
                 songTextId.setText(String.valueOf(songs.get(songId).getId()));
                 fabImageDrawable(fab);
                 compat.setChecked(false);
+                break;
+            case R.id.share:
+                final Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                String textToSend = songName.getText()+ "\n\n" + songText.getText().toString();
+                intent.putExtra(Intent.EXTRA_TEXT, textToSend);
+                try
+                {
+                    startActivity(Intent.createChooser(intent, "Описание действия"));
+                }
+                catch (android.content.ActivityNotFoundException ex) {}
                 break;
         }
         return super.onOptionsItemSelected(item);
