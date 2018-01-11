@@ -329,7 +329,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         randomVerse.setText(String.valueOf(randomVerseArray[randomNum]));
         coordinatesVerse.setText(String.valueOf(coordinatesVerseArray[randomNum]));
 
-        ImageView share = (ImageView) findViewById(R.id.share);
+        ImageView share = findViewById(R.id.share);
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -337,15 +337,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 intent.setType("text/plain");
                 String textToSend = randomVerse.getText()+ "\n\n" + coordinatesVerse.getText().toString();
                 intent.putExtra(Intent.EXTRA_TEXT, textToSend);
-                try
-                {
+                try {
                     startActivity(Intent.createChooser(intent, "Описание действия"));
                 }
-                catch (android.content.ActivityNotFoundException ex) {}
+                catch (android.content.ActivityNotFoundException ignored) {
+                }
             }
         });
 
-        ImageView rand = (ImageView) findViewById(R.id.imageView9);
+        ImageView rand = findViewById(R.id.imageView9);
         rand.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -355,7 +355,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 coordinatesVerse.setText(String.valueOf(coordinatesVerseArray[randomNum]));
             }
         });
-
     }
 
     @Override

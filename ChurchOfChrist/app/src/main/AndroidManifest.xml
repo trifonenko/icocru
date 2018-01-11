@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="ru.app.churchofchrist">
 
-    <uses-permission android:name="android.permission.INTERNET" /> <!-- Разрешение на Интернет -->
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <!-- Разрешение на получения статуса соединения -->
