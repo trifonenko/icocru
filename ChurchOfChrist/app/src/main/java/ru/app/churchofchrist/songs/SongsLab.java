@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import ru.app.churchofchrist.DBHelper;
+
 /**
  * Синглетный класс.
  */
@@ -18,8 +20,8 @@ class SongsLab {
     private SQLiteDatabase mDatabaseFav;
 
     private SongsLab(Context context) {
-        DBHelperSongs helperSongs = new DBHelperSongs(context, "songs.db", 4);
-        DBHelperSongs helperFavSongs = new DBHelperSongs(context, "db_songs", 1);
+        DBHelper helperSongs = new DBHelper(context, "songs.db", 4);
+        DBHelper helperFavSongs = new DBHelper(context, "db_songs", 1);
         try {
             helperSongs.updateDataBase();
         } catch (IOException mIOException) {

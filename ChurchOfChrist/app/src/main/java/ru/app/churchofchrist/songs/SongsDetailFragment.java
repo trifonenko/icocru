@@ -27,6 +27,7 @@ import android.widget.TextView;
 import java.util.List;
 import java.util.Random;
 
+import ru.app.churchofchrist.DBHelper;
 import ru.app.churchofchrist.R;
 
 /**
@@ -39,7 +40,7 @@ public class SongsDetailFragment extends Fragment {
     private TextView songName;
     private TextView songTextId;
     private int temp = 14;
-    private DBHelperSongs mDBHelperFavSongs;
+    private DBHelper mDBHelperFavSongs;
     private List<Song> songs;
     private FloatingActionButton fab;
     private SwitchCompat compat;
@@ -53,7 +54,7 @@ public class SongsDetailFragment extends Fragment {
         temp = sharedPref.getInt("temp", temp);
 
         setHasOptionsMenu(true);
-        mDBHelperFavSongs = new DBHelperSongs(getActivity(), "db_songs", 1);
+        mDBHelperFavSongs = new DBHelper(getActivity(), "db_songs", 1);
         return inflater.inflate(R.layout.fragment_songs_detail, container, false);
     }
 

@@ -1,4 +1,4 @@
-package ru.app.churchofchrist.songs;
+package ru.app.churchofchrist;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,23 +12,22 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class DBHelperSongs extends SQLiteOpenHelper {
+public class DBHelper extends SQLiteOpenHelper {
 
     private static String DB_PATH = "";
 
     private String mDbName;
-    private SQLiteDatabase mDataBase;
+    private SQLiteDatabase mDatabase;
     private final Context mContext;
     private boolean mNeedUpdate = false;
 
-    @SuppressLint("SdCardPath")
-    DBHelperSongs(Context context, String dbName, int dbVersion) {
+     public DBHelper(Context context, String dbName, int dbVersion) {
         super(context, dbName, null, dbVersion);
 
         this.mDbName = dbName;
         this.mContext = context;
 
-        if (dbName.equals("songs.db")) {
+        if (dbName.equals("songs.db") || dbName.equals("lessons.db")) {
             if (android.os.Build.VERSION.SDK_INT >= 17)
                  DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
             else
@@ -39,7 +38,7 @@ public class DBHelperSongs extends SQLiteOpenHelper {
         }
     }
 
-    void updateDataBase() throws IOException {
+    public void updateDataBase() throws IOException {
         if (mNeedUpdate) {
             File dbFile = new File(DB_PATH + mDbName);
             if (dbFile.exists())
@@ -81,14 +80,14 @@ public class DBHelperSongs extends SQLiteOpenHelper {
     }
 
     public boolean openDataBase() throws SQLException {
-        mDataBase = SQLiteDatabase.openDatabase(DB_PATH + mDbName, null, SQLiteDatabase.CREATE_IF_NECESSARY);
-        return mDataBase != null;
+        mDatabase = SQLiteDatabase.openDatabase(DB_PATH + mDbName, null, SQLiteDatabase.CREATE_IF_NECESSARY);
+        return mDatabase != null;
     }
 
     @Override
     public synchronized void close() {
-        if (mDataBase != null)
-            mDataBase.close();
+        if (mDatabase != null)
+            mDatabase.close();
         super.close();
     }
 

@@ -10,15 +10,14 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import java.util.List;
 
+import ru.app.churchofchrist.DBHelper;
 import ru.app.churchofchrist.R;
 
 public class SongsFavoritesActivity extends AppCompatActivity {
@@ -90,14 +89,12 @@ public class SongsFavoritesActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.delete_all:
                 if (SongsLab.getInstance(this).getFavoritesSongs().size() != 0) {
-                    //DeleteDialogFragment dialogFragment = new DeleteDialogFragment();
-                    //dialogFragment.show(getSupportFragmentManager(), null);
                     final AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setMessage(R.string.delete_songs)
                             .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
 
-                                    DBHelperSongs helperSongs = new DBHelperSongs(getApplicationContext(), "db_songs", 1);
+                                    DBHelper helperSongs = new DBHelper(getApplicationContext(), "db_songs", 1);
                                     SQLiteDatabase database = helperSongs.getWritableDatabase();
 
                                     for (int i = 0; i < songsFav.size(); i++) {
