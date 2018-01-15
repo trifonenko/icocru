@@ -29,5 +29,6 @@ public class AnsverDetailActivity extends AppCompatActivity {
         AnsverDetailFragment workoutDetailFragment = (AnsverDetailFragment) getFragmentManager().findFragmentById(R.id.detail_frag);
         int workoutId = (int) getIntent().getExtras().get(EXTRA_WORKOUT_ID);
         workoutDetailFragment.setAnsverId(workoutId);
+
     }
 }
