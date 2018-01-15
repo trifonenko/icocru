@@ -4625,10 +4625,10 @@ o	Поделитесь о своём опыте служения. Когда, к
     <string name="icoc_splash">ICOC</string>
     <string name="ru_splash">RU</string>
     <string name="random_stih">СЛУЧАЙНЫЙ СТИХ ИЗ БИБЛИИ</string>
-    <string name="nrp">НРП</string>
+    <string name="nrp">Совр.</string>
     <string name="coordinat">Координаты</string>
     <string name="random_otr">Случайный отрывок</string>
-    <string name="synod">SYNOD</string>
+    <string name="synod">Синод.</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
