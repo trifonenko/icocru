@@ -97,8 +97,6 @@ public class BibleActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
-                        /*Intent intent2 = new Intent(BibleActivity.this, BibleActivity2.class);
-                        startActivity(intent2);*/
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText(R.string.nrp);
                         break;
@@ -111,13 +109,16 @@ public class BibleActivity extends AppCompatActivity {
                 }
             }
 
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
         });
 
-        // адаптер
+
+
+            // адаптер
         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, R.layout.spinner_dropdown_item, knigi);
         adapter2.setDropDownViewResource(R.layout.spinner_dropdown_item);
 

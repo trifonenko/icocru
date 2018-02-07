@@ -13,6 +13,7 @@ import ru.app.churchofchrist.R;
 
 public class UpdateWidgetService extends Service {
 
+
     @Override
     public void onStart(Intent intent, int startId) {
 

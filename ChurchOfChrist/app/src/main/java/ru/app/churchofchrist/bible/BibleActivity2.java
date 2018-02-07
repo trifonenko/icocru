@@ -81,6 +81,7 @@ public class BibleActivity2 extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_dropdown_item, perevod);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
+
         Spinner spinner = findViewById(R.id.perevod);
         spinner.setAdapter(adapter);
         // заголовок
@@ -94,8 +95,6 @@ public class BibleActivity2 extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
-                        /*Intent intent2 = new Intent(BibleActivity.this, BibleActivity2.class);
-                        startActivity(intent2);*/
                         ((TextView) parent.getChildAt(0)).setTextSize(14);
                         ((TextView) parent.getChildAt(0)).setText(R.string.synod);
                         break;
