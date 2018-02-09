@@ -53,13 +53,13 @@ public class BibleActivity2 extends AppCompatActivity {
         cd = new SongsListFragment.ConnectionDetector(getApplicationContext());
 
 
-        // иниизиализируем кнопку
-        /*Button button2 = (Button) findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
+        /*// иниизиализируем кнопку
+        Button button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ncoc.ru"));
-                startActivity(browserIntent);
+                Intent intent = new Intent(BibleActivity2.this, BibleActivity.class);
+                startActivity(intent);
             }
         });*/
 

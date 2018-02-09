@@ -11,19 +11,6 @@
     tools:showIn="@layout/activity_bible">
 
 
-    <!--<Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autoLink="web"
-        android:text="http://www.ncoc.ru" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />-->
-
     <WebView
         android:id="@+id/webViewBible"
         android:layout_width="match_parent"

@@ -56,13 +56,13 @@ public class BibleActivity extends AppCompatActivity {
         /*cd = new ConnectionDetector(getApplicationContext());*/
 
 
-        // иниизиализируем кнопку
-        /*Button button2 = (Button) findViewById(R.id.button2);
+        /*// иниизиализируем кнопку
+        Button button2 = (Button) findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ncoc.ru"));
-                startActivity(browserIntent);
+                Intent intent = new Intent(BibleActivity.this, BibleActivity2.class);
+                startActivity(intent);
             }
         });*/
 
@@ -115,8 +115,6 @@ public class BibleActivity extends AppCompatActivity {
 
             }
         });
-
-
 
             // адаптер
         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, R.layout.spinner_dropdown_item, knigi);
