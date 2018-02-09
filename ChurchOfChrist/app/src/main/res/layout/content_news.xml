@@ -7,26 +7,17 @@
     android:orientation="vertical"
 
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="ru.app.churchofchrist.NewsActivity"
+    tools:context="ru.app.churchofchrist.news.NewsActivity"
     tools:showIn="@layout/activity_news">
 
-    <!--<Button
-        android:id="@+id/button"
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autoLink="web"
-        android:text="http://www.ncoc.ru" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />-->
-
-    <WebView
-        android:id="@+id/webViewNews"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:id="@+id/news_lv"
+        android:dividerHeight="7dp"
+        android:divider="#dcdcdc"
+        >
+    </ListView>
 
 
 </LinearLayout>

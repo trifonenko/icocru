@@ -26,6 +26,9 @@
             android:id="@+id/ansver"
             android:icon="@drawable/ic_vopros"
             android:title="@string/ansver" />
+        <item
+            android:id="@+id/news"
+            android:title="@string/news" />
     </group>
     <item android:title="">
         <menu>
