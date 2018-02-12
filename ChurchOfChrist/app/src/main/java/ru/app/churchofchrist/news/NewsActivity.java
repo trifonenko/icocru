@@ -1,5 +1,6 @@
 package ru.app.churchofchrist.news;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -27,6 +28,7 @@ public class NewsActivity extends AppCompatActivity {
     private Handler handler;
     private ListView lv;
 
+    @SuppressLint("HandlerLeak")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -20,9 +20,13 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="6dp"
                 android:layout_marginRight="6dp"
+                android:paddingBottom="12dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:paddingTop="6dp"
                 android:text="@string/icoc_ru"
                 android:textAlignment="center"
                 android:textColor="@android:color/darker_gray"
@@ -32,9 +36,12 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="6dp"
                 android:layout_marginRight="6dp"
+                android:paddingBottom="12dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
                 android:text="@string/version"
                 android:textAlignment="textEnd"
                 android:textAllCaps="false"
@@ -45,18 +52,21 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="6dp"
                 android:layout_marginRight="6dp"
+                android:paddingBottom="12dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
                 android:text="@string/copyright"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textIsSelectable="true"
-                android:textSize="14sp" />
+                android:textSize="10sp" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="6dp"
                 android:layout_marginRight="6dp"
                 android:text="@string/razrab"
@@ -67,9 +77,13 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="437dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="6dp"
                 android:layout_marginRight="6dp"
+                android:paddingBottom="12dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:paddingTop="6dp"
                 android:autoLink="web"
                 android:text="@string/name_razr"
                 android:textAlignment="center"

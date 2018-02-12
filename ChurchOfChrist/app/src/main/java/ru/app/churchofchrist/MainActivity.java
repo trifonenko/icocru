@@ -16,11 +16,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.kobakei.ratethisapp.RateThisApp;
+
 import java.io.IOException;
 import java.util.Random;
 
 import ru.app.churchofchrist.bible.BibleActivity2;
-import ru.app.churchofchrist.news.NewsActivity;
 import ru.app.churchofchrist.ox.OxActivity;
 import ru.app.churchofchrist.songs.SongsActivity;
 
@@ -42,6 +43,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
+
+        // Установка пользовательских критериев (необязательно)
+        RateThisApp.init(new RateThisApp.Config(3, 5));
+        // Отслеживать время запуска и интервал от установки
+        RateThisApp.onCreate(this);
+        // Если условие выполнено, будет показано диалоговое окно «Оценить это приложение»
+        RateThisApp.showRateDialogIfNeeded(this);
+
 
         DBHelper dbHelper = new DBHelper(this, "lessons.db", 2);//07.02.2018
         try {
@@ -120,10 +129,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent7 = new Intent(MainActivity.this, AppInfoActivity.class);
                 startActivity(intent7);
                 break;
-            case R.id.news:
+            /*case R.id.news:
                 Intent intent8 = new Intent(MainActivity.this, NewsActivity.class);
                 startActivity(intent8);
-                break;
+                break;*/
         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

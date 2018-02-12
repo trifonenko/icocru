@@ -1,9 +1,11 @@
 package ru.app.churchofchrist;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+
+import com.kobakei.ratethisapp.RateThisApp;
 
 public class AppInfoActivity extends AppCompatActivity {
 
@@ -11,6 +13,8 @@ public class AppInfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
+
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("О приложении");
@@ -22,5 +26,7 @@ public class AppInfoActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+
     }
 }
