@@ -114,8 +114,7 @@
         <!-- * * * -->
 
         <!-- Новости -->
-        <activity android:name=".news.NewsActivity" />
-        <activity android:name=".news.NewsDisplayActvivity" />
+
 
         <!-- Вопросы. -->
         <activity
