@@ -12,7 +12,6 @@ class Song {
         this.text = text;
         this.chords = chords;
     }
-
     int getId() {
         return id;
     }
