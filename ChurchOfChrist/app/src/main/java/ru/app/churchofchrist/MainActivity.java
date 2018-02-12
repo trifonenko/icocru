@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         RateThisApp.showRateDialogIfNeeded(this);
 
 
-        DBHelper dbHelper = new DBHelper(this, "lessons.db", 2);//07.02.2018
+        DBHelper dbHelper = new DBHelper(this, "lessons.db", 2);//07.02.2018 (версия в google 2)
         try {
             dbHelper.updateDataBase();
         } catch (IOException mIOException) {
