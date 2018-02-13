@@ -37,8 +37,11 @@
                 android:id="@+id/ic_launcher"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp"
                 android:src="@mipmap/ic_launcher"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/random_verse_bible"
                 app:layout_constraintTop_toBottomOf="@+id/icon" />
 
             <TextView
@@ -49,6 +52,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/random_verse_bible"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/icon" />
@@ -69,7 +73,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/coordinates_verse"
@@ -81,7 +84,6 @@
                 android:layout_height="25dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_action_refresh"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -95,7 +97,6 @@
                 android:layout_height="24dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1"
                 android:baselineAligned="false"
                 android:src="@drawable/ic_action_share"
                 app:layout_constraintEnd_toEndOf="parent"
