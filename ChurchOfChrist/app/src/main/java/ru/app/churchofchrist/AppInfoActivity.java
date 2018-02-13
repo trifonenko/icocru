@@ -14,7 +14,12 @@ public class AppInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-
+        // Установка пользовательских критериев (необязательно)
+        RateThisApp.init(new RateThisApp.Config(3, 5));
+        // Отслеживать время запуска и интервал от установки
+        RateThisApp.onCreate(this);
+        // Если условие выполнено, будет показано диалоговое окно «Оценить это приложение»
+        RateThisApp.showRateDialogIfNeeded(this);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("О приложении");

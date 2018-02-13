@@ -44,12 +44,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
 
-        // Установка пользовательских критериев (необязательно)
-        RateThisApp.init(new RateThisApp.Config(3, 5));
-        // Отслеживать время запуска и интервал от установки
-        RateThisApp.onCreate(this);
-        // Если условие выполнено, будет показано диалоговое окно «Оценить это приложение»
-        RateThisApp.showRateDialogIfNeeded(this);
+
 
 
         DBHelper dbHelper = new DBHelper(this, "lessons.db", 2);//07.02.2018 (версия в google 2)
