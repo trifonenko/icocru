@@ -16,12 +16,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.kobakei.ratethisapp.RateThisApp;
-
 import java.io.IOException;
 import java.util.Random;
 
-import ru.app.churchofchrist.bible.BibleActivity2;
+import ru.app.churchofchrist.bible.BibleActivityStart;
 import ru.app.churchofchrist.ox.OxActivity;
 import ru.app.churchofchrist.songs.SongsActivity;
 
@@ -109,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent3);
                 break;
             case R.id.bible:
-                Intent intent4 = new Intent(MainActivity.this, BibleActivity2.class);
+                Intent intent4 = new Intent(MainActivity.this, BibleActivityStart.class);
                 startActivity(intent4);
                 break;
             case R.id.ansver:

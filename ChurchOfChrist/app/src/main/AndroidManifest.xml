@@ -14,8 +14,11 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--android:backupAgent="TheBackupAgent"
-        <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIyGfQbECBdvlz0U-UIw0jdDkrjZd6uOoZWEXc8w" />-->
+
+        <!--
+        android:backupAgent="TheBackupAgent"
+        <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIyGfQbECBdvlz0U-UIw0jdDkrjZd6uOoZWEXc8w" />
+        -->
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -67,7 +70,7 @@
             android:name=".bible.BibleActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/bible"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".bible.BibleActivityStart"
             android:theme="@style/AppThemeBible.NoActionBar"
             tools:targetApi="jelly_bean">
 
@@ -80,7 +83,7 @@
             android:name=".bible.BibleActivity2"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/bible"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".bible.BibleActivityStart"
             android:theme="@style/AppThemeBible.NoActionBar"
             tools:targetApi="jelly_bean">
 
@@ -110,8 +113,9 @@
         <activity
             android:name=".songs.SongsFavoritesActivity"
             android:label="@string/favorites_songs"
-            android:theme="@style/ThemeSongs"/>
+            android:theme="@style/ThemeSongs" />
         <!-- * * * -->
+
 
         <!-- Новости -->
 
@@ -139,6 +143,10 @@
 
         <service android:name=".widget.UpdateWidgetService" />
 
+        <activity
+            android:name=".bible.BibleActivityStart"
+            android:label="@string/title_activity_bible_start"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
