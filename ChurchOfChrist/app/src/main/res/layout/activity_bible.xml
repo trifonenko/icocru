@@ -20,13 +20,14 @@
             app:layout_collapseMode="pin"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
-            <Spinner
+            <!--<Spinner
                 android:id="@+id/perevod"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:background="@color/colorPrimaryBible">
 
-            </Spinner>
+            </Spinner>-->
+
 
             <Spinner
                 android:id="@+id/knigi"
@@ -36,6 +37,8 @@
 
             </Spinner>
         </android.support.v7.widget.Toolbar>
+
+
 
 
     </android.support.design.widget.AppBarLayout>

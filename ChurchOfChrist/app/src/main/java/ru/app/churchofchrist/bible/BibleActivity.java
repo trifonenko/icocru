@@ -80,7 +80,7 @@ public class BibleActivity extends AppCompatActivity {
         // Привязываем объявленную переменную типа WebView к созданному нами
         // элементу WebView в файле activity_bible.xml:
 
-        // адаптер
+        /*// адаптер
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_dropdown_item, perevod);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
@@ -114,7 +114,7 @@ public class BibleActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
-        });
+        });*/
 
             // адаптер
         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, R.layout.spinner_dropdown_item, knigi);
