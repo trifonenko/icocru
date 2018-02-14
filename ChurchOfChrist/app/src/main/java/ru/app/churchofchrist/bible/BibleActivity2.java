@@ -34,7 +34,6 @@ public class BibleActivity2 extends AppCompatActivity {
     private SongsListFragment.ConnectionDetector cd;
     private Toolbar toolbar=null;
     private String[] category=null;
-    String[] perevod = {"Синодальный", "Современный"};
     String[] knigi = {"Бытие", "Исход", "Левит", "Числа", "Второзаконие", "Иисус Навин", "Судьи", "Руфь", "1 Царств", "2 Царств", "3 Царств", "4 Царств", "1 Паралипоменон", "2 Паралипоменон", "Ездра", "Неемии", "Есфирь", "Иов", "Псалтирь", "Притчи", "Екклесиаст", "Песня Песней", "Исаия", "Иеремия", "Плач Иеремии", "Иезекииль", "Даниил", "Осия", "Иоиль", "Амос", "Авдий", "Иона", "Михей", "Наум", "Аввакум", "Софония", "Аггей", "Захария", "Малахия", "Матфей", "Марк", "Лука", "Иоанн", "Деяния", "Иаков", "1 Петра", "2 Петра", "1 Иоанна", "2 Иоанна", "3 Иоанна", "Иуда", "Римлянам", "1 Коринфянам", "2 Коринфянам", "Галатам", "Ефесянам", "Филиппийцам", "Колоссянам", "1 Фессалоникийцам", "2 Фессалоникийцам", "1 Тимофею", "2 Тимофею", "Титу", "Филимону", "Евреям", "Откровение"};
 
 
@@ -42,7 +41,7 @@ public class BibleActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bible);
+        setContentView(R.layout.activity_bible2);
         category = getResources().getStringArray(R.array.perevod);
 
         //Логическая переменная для статуса соединения
@@ -662,6 +661,7 @@ public class BibleActivity2 extends AppCompatActivity {
             case R.id.zamet_bible:
                 Intent intent2 = new Intent(BibleActivity2.this, ru.app.churchofchrist.notepad.MainActivity.class);
                 startActivity(intent2);
+                break;
             case R.id.search_bible:
                 webView.loadUrl("https://okbible.ru/extsearch.php");
                 break;

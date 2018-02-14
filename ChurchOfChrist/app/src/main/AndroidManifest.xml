@@ -145,7 +145,7 @@
 
         <activity
             android:name=".bible.BibleActivityStart"
-            android:label="@string/title_activity_bible_start"
+            android:label="@string/bible"
             android:theme="@style/AppTheme"></activity>
     </application>
 
