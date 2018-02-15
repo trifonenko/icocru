@@ -98,7 +98,7 @@ public class BibleActivityStart extends AppCompatActivity {
                 Elements elements = doc.select("p.vers");
                 text = elements.get(0).text();
             } else
-            text = "Требуется подключение к интернету";
+                text = "Требуется подключение к интернету";
 
             return null;
         }
