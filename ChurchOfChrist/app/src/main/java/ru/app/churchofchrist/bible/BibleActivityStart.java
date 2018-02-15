@@ -70,7 +70,7 @@ public class BibleActivityStart extends AppCompatActivity {
                 Elements elements = doc.select("h5.coord");
                 title = elements.get(0).text();
             } else
-                title = "Ошибка";
+                title = "Требуется подключение к интернету";
             return null;
         }
 
@@ -98,7 +98,7 @@ public class BibleActivityStart extends AppCompatActivity {
                 Elements elements = doc.select("p.vers");
                 text = elements.get(0).text();
             } else
-            text = "Ошибка";
+            text = "Требуется подключение к интернету";
 
             return null;
         }
@@ -128,7 +128,7 @@ public class BibleActivityStart extends AppCompatActivity {
                 Elements elements = doc.select("td.content");
                 date = elements.get(0).select("h1").text();
             } else
-                date = "Ошибка";
+                date = "Требуется подключение к интернету";
             return null;
         }
 
@@ -157,7 +157,7 @@ public class BibleActivityStart extends AppCompatActivity {
                 Elements elements = doc.select("span.header-plan-chapters");
                 adr = elements.get(0).text();
             } else
-                adr = "Ошибка";
+                adr = "Требуется подключение к интернету";
             return null;
         }
 

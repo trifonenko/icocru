@@ -20,7 +20,7 @@ class SongsLab {
     private SQLiteDatabase mDatabaseFav;
 
     private SongsLab(Context context) {
-        DBHelper helperSongs = new DBHelper(context, "songs.db", 5);//12.02.2018 требуется обновить в google (версия в google 4)
+        DBHelper helperSongs = new DBHelper(context, "songs.db", 5);//12.02.2018 (версия в google 5)
         DBHelper helperFavSongs = new DBHelper(context, "db_songs", 1);
         try {
             helperSongs.updateDataBase();
