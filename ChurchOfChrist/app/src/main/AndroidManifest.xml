@@ -146,6 +146,7 @@
         <activity
             android:name=".bible.BibleActivityStart"
             android:label="@string/bible"
+            android:configChanges="orientation|screenSize"
             android:theme="@style/AppTheme"></activity>
     </application>
 

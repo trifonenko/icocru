@@ -21,6 +21,7 @@ public class BibleActivityStart extends AppCompatActivity {
     private TextView textViewStih;
     private TextView textViewDate;
     private TextView textViewAdr;
+    private TextView textViewAfor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class BibleActivityStart extends AppCompatActivity {
         textViewStih = (TextView) findViewById(R.id.textViewStih);
         textViewDate = (TextView) findViewById(R.id.textViewDate);
         textViewAdr = (TextView) findViewById(R.id.textViewAdr);
+        textViewAfor = (TextView) findViewById(R.id.textViewAfor);
         MyTask mt = new MyTask();
         mt.execute();
         MyTask2 mt2 = new MyTask2();
@@ -48,9 +50,12 @@ public class BibleActivityStart extends AppCompatActivity {
         mt3.execute();
         MyTask4 mt4 = new MyTask4();
         mt4.execute();
+        /*MyTask5 mt5 = new MyTask5();
+        mt5.execute();*/
+        MyTask6 mt6 = new MyTask6();
+        mt6.execute();
 
     }
-
 
     class MyTask extends AsyncTask<Void, Void, Void> {
 
@@ -66,7 +71,7 @@ public class BibleActivityStart extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            if (doc!=null) {
+            if (doc != null) {
                 Elements elements = doc.select("h5.coord");
                 title = elements.get(0).text();
             } else
@@ -80,6 +85,7 @@ public class BibleActivityStart extends AppCompatActivity {
             textViewKnig.setText(title);
         }
     }
+
     class MyTask2 extends AsyncTask<Void, Void, Void> {
 
         String text;//Тут храним значение заголовка сайта
@@ -94,7 +100,7 @@ public class BibleActivityStart extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            if (doc!=null) {
+            if (doc != null) {
                 Elements elements = doc.select("p.vers");
                 text = elements.get(0).text();
             } else
@@ -124,7 +130,7 @@ public class BibleActivityStart extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            if (doc!=null) {
+            if (doc != null) {
                 Elements elements = doc.select("td.content");
                 date = elements.get(0).select("h1").text();
             } else
@@ -153,7 +159,7 @@ public class BibleActivityStart extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            if (doc!=null) {
+            if (doc != null) {
                 Elements elements = doc.select("span.header-plan-chapters");
                 adr = elements.get(0).text();
             } else
@@ -168,6 +174,100 @@ public class BibleActivityStart extends AppCompatActivity {
         }
     }
 
+    // Загрузка изображения
+    /*private class MyTask5 extends AsyncTask<Void, Void, Void> {
+        Bitmap bitmap;
+
+
+        @Override
+        protected Void doInBackground(Void... params) {
+
+            try {
+                // Connect to the web site
+                Document document = Jsoup.connect("https://servevery.com/").get();
+                // Использование элементов для получения данных класса
+                Elements img = document.select("div[class=hfeed] img[src]");
+                // Найдите атрибут src
+                String imgSrc = img.attr("src");
+                // Download image from URL
+                InputStream input = new java.net.URL(imgSrc).openStream();
+                // Decode Bitmap
+                bitmap = BitmapFactory.decodeStream(input);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            // Set downloaded image into ImageView
+            ImageView logoimg = (ImageView) findViewById(R.id.imageView);
+            logoimg.setImageBitmap(bitmap);
+        }
+    }*/
+
+
+    class MyTask6 extends AsyncTask<Void, Void, Void> {
+
+        String adr;//Тут храним значение заголовка сайта
+
+        @Override
+        protected Void doInBackground(Void... params) {
+
+            Document doc = null;
+            try {
+                doc = Jsoup.connect("http://faithaphorism.ru/").get();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            if (doc != null) {
+                Elements elements = doc.select("div.panel-body");
+                adr = elements.get(0).select("p").text();
+            } else
+                adr = "Требуется подключение к интернету";
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
+            textViewAfor.setText(adr);
+        }
+    }
+
+    //Сообщение пользователю
+    /*class MyTask7 extends AsyncTask<Void, Void, Void> {
+
+        String adr;//Тут храним значение заголовка сайта
+
+        @Override
+        protected Void doInBackground(Void... params) {
+
+            Document doc = null;
+            try {
+                doc = Jsoup.connect("https://raw.githubusercontent.com/trifonenko/icocru/master/info").get();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            if (doc != null) {
+                Elements elements = doc.select("body");
+                adr = elements.get(0).text();
+            } else
+                adr = "Требуется подключение к интернету";
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
+            textViewAfor.setText(adr);
+        }
+    }*/
+
     public void click_sinod(View view) {
         Intent intent = new Intent(BibleActivityStart.this, BibleActivity2.class);
         startActivity(intent);
@@ -177,5 +277,6 @@ public class BibleActivityStart extends AppCompatActivity {
         Intent intent2 = new Intent(BibleActivityStart.this, BibleActivity.class);
         startActivity(intent2);
     }
+
 
 }
