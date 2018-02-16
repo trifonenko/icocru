@@ -237,7 +237,6 @@ public class BibleActivityStart extends AppCompatActivity {
             textViewAfor.setText(adr);
         }
     }
-
     //Сообщение пользователю
     /*class MyTask7 extends AsyncTask<Void, Void, Void> {
 
