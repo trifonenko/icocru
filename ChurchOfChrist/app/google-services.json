@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "203705722671",
+    "firebase_url": "https://churchofchrist-181314.firebaseio.com",
+    "project_id": "churchofchrist-181314",
+    "storage_bucket": "churchofchrist-181314.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:203705722671:android:946e7891213e7321",
+        "android_client_info": {
+          "package_name": "ru.app.churchofchrist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "203705722671-vcnbme5cq5n7sig9nr992a61r4stq4u0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPHuRC-8lBm9bqCD83zrHakFl2wdyxNx4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

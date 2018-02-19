@@ -21,7 +21,7 @@ public class BibleActivityStart extends AppCompatActivity {
     private TextView textViewStih;
     private TextView textViewDate;
     private TextView textViewAdr;
-    private TextView textViewAfor;
+    /*private TextView textViewAfor;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,7 @@ public class BibleActivityStart extends AppCompatActivity {
         textViewStih = (TextView) findViewById(R.id.textViewStih);
         textViewDate = (TextView) findViewById(R.id.textViewDate);
         textViewAdr = (TextView) findViewById(R.id.textViewAdr);
-        textViewAfor = (TextView) findViewById(R.id.textViewAfor);
+        /*textViewAfor = (TextView) findViewById(R.id.textViewAfor);*/
         MyTask mt = new MyTask();
         mt.execute();
         MyTask2 mt2 = new MyTask2();
@@ -52,8 +52,8 @@ public class BibleActivityStart extends AppCompatActivity {
         mt4.execute();
         /*MyTask5 mt5 = new MyTask5();
         mt5.execute();*/
-        MyTask6 mt6 = new MyTask6();
-        mt6.execute();
+       /* MyTask6 mt6 = new MyTask6();
+        mt6.execute();*/
 
     }
 
@@ -208,8 +208,8 @@ public class BibleActivityStart extends AppCompatActivity {
         }
     }*/
 
-
-    class MyTask6 extends AsyncTask<Void, Void, Void> {
+//Афоризм
+   /* class MyTask6 extends AsyncTask<Void, Void, Void> {
 
         String adr;//Тут храним значение заголовка сайта
 
@@ -236,7 +236,7 @@ public class BibleActivityStart extends AppCompatActivity {
             super.onPostExecute(result);
             textViewAfor.setText(adr);
         }
-    }
+    }*/
     //Сообщение пользователю
     /*class MyTask7 extends AsyncTask<Void, Void, Void> {
 
