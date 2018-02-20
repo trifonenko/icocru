@@ -27,9 +27,6 @@ import ru.app.churchofchrist.songs.SongsActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private FirebaseAnalytics mFirebaseAnalytics;
-    String id;
-    String name;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +47,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
-
-
 
 
         DBHelper dbHelper = new DBHelper(this, "lessons.db", 2);//07.02.2018 (версия в google 2)

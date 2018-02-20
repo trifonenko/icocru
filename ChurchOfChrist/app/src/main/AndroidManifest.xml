@@ -15,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+
         <!--
         android:backupAgent="TheBackupAgent"
         <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIyGfQbECBdvlz0U-UIw0jdDkrjZd6uOoZWEXc8w" />
@@ -58,7 +59,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AppInfoActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            />
 
         <!--
             <activity
@@ -148,6 +150,22 @@
             android:label="@string/bible"
             android:configChanges="orientation|screenSize"
             android:theme="@style/AppTheme"></activity>
+
+
+
+        <service android:name=".firebase.FCMInitializationService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".firebase.FCMCallbackService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+
     </application>
 
 </manifest>
