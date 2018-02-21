@@ -1,5 +1,6 @@
 package ru.app.churchofchrist.firebase;
 
+import android.annotation.SuppressLint;
 import android.util.Log;
 
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -11,6 +12,7 @@ import com.google.firebase.iid.FirebaseInstanceIdService;
 public class FCMInitializationService extends FirebaseInstanceIdService {
     private static final String TAG = "FCMInitializationService";
 
+    @SuppressLint("LongLogTag")
     @Override
     public void onTokenRefresh() {
         String fcmToken = FirebaseInstanceId.getInstance().getToken();

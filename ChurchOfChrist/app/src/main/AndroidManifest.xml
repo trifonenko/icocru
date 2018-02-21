@@ -15,7 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-
         <!--
         android:backupAgent="TheBackupAgent"
         <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIyGfQbECBdvlz0U-UIw0jdDkrjZd6uOoZWEXc8w" />
@@ -24,8 +23,7 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar.MainActivity"
-            />
+            android:theme="@style/AppTheme.NoActionBar.MainActivity" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
@@ -60,8 +58,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AppInfoActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
 
         <!--
             <activity
@@ -148,25 +146,32 @@
 
         <activity
             android:name=".bible.BibleActivityStart"
-            android:label="@string/bible"
             android:configChanges="orientation|screenSize"
-            android:theme="@style/AppTheme"></activity>
-
-
+            android:label="@string/bible"
+            android:theme="@style/AppTheme" />
 
         <service android:name=".firebase.FCMInitializationService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-
         <service android:name=".firebase.FCMCallbackService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
+        <activity
+            android:name=".firebase.InfoNewsActivity"
+            android:label="@string/title_activity_info_news"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name=".InfoNewsActivity" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>

@@ -4636,6 +4636,7 @@ o	Поделитесь о своём опыте служения. Когда, к
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_bible_start">BibleActivityStart</string>
+    <string name="title_activity_info_news">Что нового</string>
 
 
 </resources>
