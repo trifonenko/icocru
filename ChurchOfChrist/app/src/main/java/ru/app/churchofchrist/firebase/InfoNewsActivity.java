@@ -71,7 +71,7 @@ public class InfoNewsActivity extends AppCompatActivity {
 
             Document doc = null;
             try {
-                doc = Jsoup.connect("https://raw.githubusercontent.com/trifonenko/icocru/master/ChurchOfChrist/info").get();
+                doc = Jsoup.connect("https://rawcdn.githack.com/trifonenko/icocru/master/ChurchOfChrist/app/src/main/assets/infonews.html").get();
             } catch (IOException e) {
                 e.printStackTrace();
             }
