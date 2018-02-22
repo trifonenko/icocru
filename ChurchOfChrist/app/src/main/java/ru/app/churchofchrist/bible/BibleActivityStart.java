@@ -237,35 +237,6 @@ public class BibleActivityStart extends AppCompatActivity {
             textViewAfor.setText(adr);
         }
     }*/
-    //Сообщение пользователю
-    /*class MyTask7 extends AsyncTask<Void, Void, Void> {
-
-        String adr;//Тут храним значение заголовка сайта
-
-        @Override
-        protected Void doInBackground(Void... params) {
-
-            Document doc = null;
-            try {
-                doc = Jsoup.connect("https://raw.githubusercontent.com/trifonenko/icocru/master/info").get();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            if (doc != null) {
-                Elements elements = doc.select("body");
-                adr = elements.get(0).text();
-            } else
-                adr = "Требуется подключение к интернету";
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            super.onPostExecute(result);
-            textViewAfor.setText(adr);
-        }
-    }*/
 
     public void click_sinod(View view) {
         Intent intent = new Intent(BibleActivityStart.this, BibleActivity2.class);
