@@ -54,7 +54,7 @@ public class InfoNewsActivity extends AppCompatActivity {
 
             Document doc = null;
             try {
-                doc = Jsoup.connect("https://raw.githubusercontent.com/trifonenko/icocru/master/info").get();
+                doc = Jsoup.connect("https://github.com/trifonenko/icocru/blob/master/ChurchOfChrist/info").get();
             } catch (IOException e) {
                 e.printStackTrace();
             }
