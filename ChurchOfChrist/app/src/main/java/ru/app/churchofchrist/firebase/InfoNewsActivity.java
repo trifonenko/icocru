@@ -48,7 +48,7 @@ public class InfoNewsActivity extends AppCompatActivity {
         webSettings.setSavePassword(true);
         webSettings.setSaveFormData(true);
         webSettings.setJavaScriptEnabled(true);
-        webView.loadUrl("https://rawcdn.githack.com/trifonenko/icocru/master/ChurchOfChrist/app/src/main/assets/infonews.html"); //http://raw.githack.com/
+        webView.loadUrl("https://trifonenko.github.io/icocru/ChurchOfChrist/app/src/main/assets/infonews.html");
         webView.setWebViewClient(new MyWebViewClient());
         webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
 
