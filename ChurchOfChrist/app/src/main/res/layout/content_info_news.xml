@@ -13,24 +13,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/info_text2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical|center_horizontal|top"
-            android:paddingBottom="4dp"
-            android:paddingTop="4dp"
-            android:text="Информация"
-            android:textAllCaps="true"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/textViewInfo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="4dp"
-            android:textAlignment="center" />
-
         <WebView
             android:id="@+id/wvinfoapp"
             android:layout_width="match_parent"

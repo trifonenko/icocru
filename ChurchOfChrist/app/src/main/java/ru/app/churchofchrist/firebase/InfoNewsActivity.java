@@ -2,7 +2,6 @@ package ru.app.churchofchrist.firebase;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -10,18 +9,11 @@ import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.TextView;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
-
-import java.io.IOException;
 
 import ru.app.churchofchrist.R;
 
 public class InfoNewsActivity extends AppCompatActivity {
-    private TextView textViewInfo;
+    /*private TextView textViewInfo;*/
     private WebView webView;
 
     @Override
@@ -45,10 +37,10 @@ public class InfoNewsActivity extends AppCompatActivity {
             }
         });
 
-        textViewInfo = (TextView) findViewById(R.id.textViewInfo);
+        /*textViewInfo = (TextView) findViewById(R.id.textViewInfo);
 
         MyInfo mt = new MyInfo();
-        mt.execute();
+        mt.execute();*/
 
         webView = findViewById(R.id.wvinfoapp);
 
@@ -56,12 +48,12 @@ public class InfoNewsActivity extends AppCompatActivity {
         webSettings.setSavePassword(true);
         webSettings.setSaveFormData(true);
         webSettings.setJavaScriptEnabled(true);
-        webView.loadUrl("https://sites.google.com/view/icocruinfoapp/главная?authuser=1");
+        webView.loadUrl("https://rawcdn.githack.com/trifonenko/icocru/master/ChurchOfChrist/app/src/main/assets/infonews.html"); //http://raw.githack.com/
         webView.setWebViewClient(new MyWebViewClient());
         webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
 
     }
-        //Сообщение пользователю
+    /*    //Сообщение пользователю
     class MyInfo extends AsyncTask<Void, Void, Void> {
 
         String adr;//Тут храним значение заголовка сайта
@@ -71,7 +63,7 @@ public class InfoNewsActivity extends AppCompatActivity {
 
             Document doc = null;
             try {
-                doc = Jsoup.connect("https://rawcdn.githack.com/trifonenko/icocru/master/ChurchOfChrist/app/src/main/assets/infonews.html").get();
+                doc = Jsoup.connect("https://raw.githubusercontent.com/trifonenko/icocru/master/ChurchOfChrist/info").get();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -89,13 +81,24 @@ public class InfoNewsActivity extends AppCompatActivity {
             super.onPostExecute(result);
             textViewInfo.setText(adr);
         }
-    }
+    }*/
 
 
+    //Открывать ссылки только на этом сайте
     private class MyWebViewClient extends WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            /*if (url.indexOf(".") <= 0) {
+                // the link is not for a page on my site, so launch another Activity that handles URLs
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(intent);
+                return true;
+            }
+
+            return false;*/
             if(Uri.parse(url).getHost().length() == 0) {
+            /*if(Uri.parse(url).getHost().endsWith(".")) {*/
+            /*if (url.indexOf(".") <= 0) {*/
                 return false;
             }
 
