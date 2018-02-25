@@ -7,8 +7,8 @@ android {
         applicationId "ru.app.churchofchrist"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 20
-        versionName "1.2.0"
+        versionCode 21
+        versionName "1.2.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

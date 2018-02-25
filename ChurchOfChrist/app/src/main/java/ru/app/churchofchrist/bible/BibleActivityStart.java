@@ -17,8 +17,8 @@ import java.io.IOException;
 import ru.app.churchofchrist.R;
 
 public class BibleActivityStart extends AppCompatActivity {
-    private TextView textViewKnig;
-    private TextView textViewStih;
+    /*private TextView textViewKnig;*/
+    /*private TextView textViewStih;*/
     private TextView textViewDate;
     private TextView textViewAdr;
     /*private TextView textViewAfor;*/
@@ -37,15 +37,15 @@ public class BibleActivityStart extends AppCompatActivity {
                 onBackPressed();
             }
         });
-        textViewKnig = (TextView) findViewById(R.id.textViewKnig);
-        textViewStih = (TextView) findViewById(R.id.textViewStih);
+        /*textViewKnig = (TextView) findViewById(R.id.textViewKnig);*/
+        /*textViewStih = (TextView) findViewById(R.id.textViewStih);*/
         textViewDate = (TextView) findViewById(R.id.textViewDate);
         textViewAdr = (TextView) findViewById(R.id.textViewAdr);
         /*textViewAfor = (TextView) findViewById(R.id.textViewAfor);*/
-        MyTask mt = new MyTask();
-        mt.execute();
-        MyTask2 mt2 = new MyTask2();
-        mt2.execute();
+        /*MyTask mt = new MyTask();
+        mt.execute();*/
+        /*MyTask2 mt2 = new MyTask2();
+        mt2.execute();*/
         MyTask3 mt3 = new MyTask3();
         mt3.execute();
         MyTask4 mt4 = new MyTask4();
@@ -57,7 +57,7 @@ public class BibleActivityStart extends AppCompatActivity {
 
     }
 
-    class MyTask extends AsyncTask<Void, Void, Void> {
+    /*class MyTask extends AsyncTask<Void, Void, Void> {
 
         String title;//Тут храним значение заголовка сайта
 
@@ -84,9 +84,9 @@ public class BibleActivityStart extends AppCompatActivity {
             super.onPostExecute(result);
             textViewKnig.setText(title);
         }
-    }
+    }*/
 
-    class MyTask2 extends AsyncTask<Void, Void, Void> {
+   /* class MyTask2 extends AsyncTask<Void, Void, Void> {
 
         String text;//Тут храним значение заголовка сайта
 
@@ -101,7 +101,7 @@ public class BibleActivityStart extends AppCompatActivity {
             }
 
             if (doc != null) {
-                Elements elements = doc.select("p.vers");
+                Elements elements = doc.select("p.vers"+"h5");
                 text = elements.get(0).text();
             } else
                 text = "Требуется подключение к интернету";
@@ -114,7 +114,7 @@ public class BibleActivityStart extends AppCompatActivity {
             super.onPostExecute(result);
             textViewStih.setText(text);
         }
-    }
+    }*/
 
     class MyTask3 extends AsyncTask<Void, Void, Void> {
 
