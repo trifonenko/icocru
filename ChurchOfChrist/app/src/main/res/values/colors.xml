@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- App. -->
     <color name="colorPrimary">#2b8cb0</color>
     <color name="colorPrimaryDark">#007bb3</color>
     <color name="colorAccent">#795548</color>
 
-    <!-- Песни. -->
+    <!-- Songs. -->
     <color name="colorPrimarySongs">#D64541</color>
     <color name="colorPrimaryDarkSongs">#C0392B</color>
     <color name="colorAccentSongs">#049372</color>
     <color name="colorBackgroundSongs">#e7e7e7</color>
-    <!-- * * * -->
-    <!-- Песни. -->
+
+    <!-- Good news. -->
+    <color name="colorPrimaryGoodNews">#03A678</color>
+    <color name="colorPrimaryDarkGoodNews">#019875</color>
+    <color name="colorAccentGoodNews">#EC644B</color>
+    <color name="colorBackgroundGoodNews">#e7e7e7</color>
+
+    <!-- Вопросы-ответы. -->
     <color name="colorPrimaryAnsver">#D64541</color>
     <color name="colorPrimaryDarkAnsver">#C0392B</color>
     <color name="colorAccentAnsver">#049372</color>
     <color name="colorBackgroundAnsver">#e7e7e7</color>
-    <!-- * * * -->
 
     <color name="colorPrimaryBible">#30879d</color>
     <color name="colorPrimaryDarkBible">#30879d</color>

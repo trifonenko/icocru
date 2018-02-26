@@ -5,6 +5,10 @@ import android.os.Bundle;
 
 import ru.app.churchofchrist.R;
 
+/**
+ *
+ */
+
 public class GoodNewsActivity extends AppCompatActivity {
 
     @Override
