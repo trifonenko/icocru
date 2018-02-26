@@ -120,7 +120,7 @@
         <activity
             android:name=".good_news.GoodNewsActivity"
             android:label="@string/label_good_news"
-            android:theme="@style/ThemeSongs" />
+            android:theme="@style/ThemeGoodNews" />
         <!-- * * * -->
 
         <!-- Вопросы. -->

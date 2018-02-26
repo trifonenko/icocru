@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.util.Random;
 
 import ru.app.churchofchrist.bible.BibleActivityStart;
+import ru.app.churchofchrist.good_news.GoodNewsActivity;
 import ru.app.churchofchrist.ox.OxActivity;
 import ru.app.churchofchrist.songs.SongsActivity;
 
@@ -122,10 +123,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent7 = new Intent(MainActivity.this, AppInfoActivity.class);
                 startActivity(intent7);
                 break;
-            /*case R.id.news:
-                Intent intent8 = new Intent(MainActivity.this, NewsActivity.class);
-                startActivity(intent8);
-                break;*/
+            case R.id.good_news:
+                Intent intentGoodNews = new Intent(MainActivity.this, GoodNewsActivity.class);
+                startActivity(intentGoodNews);
+                break;
         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

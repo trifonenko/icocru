@@ -6,4 +6,6 @@
     android:layout_height="match_parent"
     tools:context="ru.app.churchofchrist.good_news.GoodNewsActivity">
 
+    <include layout="@layout/toolbar" />
+
 </android.support.constraint.ConstraintLayout>
