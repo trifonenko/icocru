@@ -15,7 +15,7 @@ import ru.app.churchofchrist.R;
 public class GoodNewsRecyclerAdapter extends RecyclerView.Adapter<GoodNewsRecyclerAdapter.ViewHolder> {
 
     private String[] mCaptions;
-
+    private String[] mNew;
     static class ViewHolder extends RecyclerView.ViewHolder {
         private CardView mCv;
 
@@ -25,8 +25,9 @@ public class GoodNewsRecyclerAdapter extends RecyclerView.Adapter<GoodNewsRecycl
         }
     }
 
-    public GoodNewsRecyclerAdapter(String[] captions) {
+    public GoodNewsRecyclerAdapter(String[] captions, String[] aNew) {
         this.mCaptions = captions;
+        this.mNew = aNew;
     }
 
     @Override
@@ -39,6 +40,9 @@ public class GoodNewsRecyclerAdapter extends RecyclerView.Adapter<GoodNewsRecycl
         CardView cv = holder.mCv;
         TextView caption = cv.findViewById(R.id.captions_good_news);
         caption.setText(mCaptions[position]);
+
+        TextView aNew = cv.findViewById(R.id.body_good_news);
+        aNew.setText(mNew[position]);
     }
 
     @Override

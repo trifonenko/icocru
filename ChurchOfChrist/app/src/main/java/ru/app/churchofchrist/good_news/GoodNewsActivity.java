@@ -48,26 +48,31 @@ public class GoodNewsActivity extends AppCompatActivity {
     class GoodNewsTask extends AsyncTask<Void, Void, Void> {
 
         String[] titles = null;
+        String[] mNew = null;
 
         @Override
         protected Void doInBackground(Void... voids) {
             Document doc = null;
             Elements captions = null;
+            Elements aNew = null;
             try {
 
                 doc = Jsoup.connect("http://www.icocnews.ru/istorii/centralnaya-rossiya").get();
                 Elements div = doc.select("div.featured-summary");
                 Document document = Jsoup.parse(div.html());
                 captions = document.select("a");
-
+                aNew = document.select("p");
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
             if (doc != null) {
                 titles = new String[captions.size()];
+                mNew = new String[aNew.size()];
+
                 for (int i = 0; i < captions.size(); i++) {
                     titles[i] = captions.get(i).html();
+                    mNew[i] = aNew.get(i).html();
                 }
             }
 
@@ -77,7 +82,7 @@ public class GoodNewsActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-            GoodNewsRecyclerAdapter adapter = new GoodNewsRecyclerAdapter(titles);
+            GoodNewsRecyclerAdapter adapter = new GoodNewsRecyclerAdapter(titles, mNew);
             recyclerView.setAdapter(adapter);
         }
     }
