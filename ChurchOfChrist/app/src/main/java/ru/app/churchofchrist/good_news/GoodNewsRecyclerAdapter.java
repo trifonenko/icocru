@@ -1,10 +1,13 @@
 package ru.app.churchofchrist.good_news;
 
+import android.net.Uri;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import ru.app.churchofchrist.R;
 
@@ -16,6 +19,8 @@ public class GoodNewsRecyclerAdapter extends RecyclerView.Adapter<GoodNewsRecycl
 
     private String[] mCaptions;
     private String[] mNew;
+    private String[] mLinksImg;
+
     static class ViewHolder extends RecyclerView.ViewHolder {
         private CardView mCv;
 
@@ -25,9 +30,10 @@ public class GoodNewsRecyclerAdapter extends RecyclerView.Adapter<GoodNewsRecycl
         }
     }
 
-    public GoodNewsRecyclerAdapter(String[] captions, String[] aNew) {
+    GoodNewsRecyclerAdapter(String[] captions, String[] aNew, String[] linksImg) {
         this.mCaptions = captions;
         this.mNew = aNew;
+        this.mLinksImg = linksImg;
     }
 
     @Override
@@ -38,6 +44,11 @@ public class GoodNewsRecyclerAdapter extends RecyclerView.Adapter<GoodNewsRecycl
 
     public void onBindViewHolder(ViewHolder holder, int position) {
         CardView cv = holder.mCv;
+
+        Uri uri = Uri.parse(mLinksImg[position]);
+        SimpleDraweeView draweeView = cv.findViewById(R.id.img);
+        draweeView.setImageURI(uri);
+
         TextView caption = cv.findViewById(R.id.captions_good_news);
         caption.setText(mCaptions[position]);
 
@@ -47,6 +58,6 @@ public class GoodNewsRecyclerAdapter extends RecyclerView.Adapter<GoodNewsRecycl
 
     @Override
     public int getItemCount() {
-        return mCaptions.length;
+        return mLinksImg.length;
     }
 }
