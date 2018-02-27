@@ -1,6 +1,6 @@
-package ru.app.churchofchrist.goodnews;
+package ru.app.churchofchrist.good_news;
 
-import android.support.constraint.ConstraintLayout;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -17,11 +17,11 @@ public class GoodNewsRecyclerAdapter extends RecyclerView.Adapter<GoodNewsRecycl
     private String[] mCaptions;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        private ConstraintLayout mCl;
+        private CardView mCv;
 
-        ViewHolder(ConstraintLayout cl) {
-            super(cl);
-            mCl = cl;
+        ViewHolder(CardView cv) {
+            super(cv);
+            mCv = cv;
         }
     }
 
@@ -31,14 +31,14 @@ public class GoodNewsRecyclerAdapter extends RecyclerView.Adapter<GoodNewsRecycl
 
     @Override
     public GoodNewsRecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        ConstraintLayout cl = (ConstraintLayout) LayoutInflater.from(parent.getContext()).inflate(R.layout.recucler_view_good_news, parent, false);
-        return new ViewHolder(cl);
+        CardView cv = (CardView) LayoutInflater.from(parent.getContext()).inflate(R.layout.recucler_view_good_news, parent, false);
+        return new ViewHolder(cv);
     }
 
     public void onBindViewHolder(ViewHolder holder, int position) {
-        ConstraintLayout cl = holder.mCl;
-        TextView textView = cl.findViewById(R.id.title_good_news);
-        textView.setText(mCaptions[position]);
+        CardView cv = holder.mCv;
+        TextView caption = cv.findViewById(R.id.captions_good_news);
+        caption.setText(mCaptions[position]);
     }
 
     @Override

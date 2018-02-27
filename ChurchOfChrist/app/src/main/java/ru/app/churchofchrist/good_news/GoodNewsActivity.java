@@ -1,7 +1,9 @@
-package ru.app.churchofchrist.goodnews;
+package ru.app.churchofchrist.good_news;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
@@ -27,5 +29,11 @@ public class GoodNewsActivity extends AppCompatActivity {
                 finish();
             }
         });
+        String[] str = {"1", "2", "3"};
+        RecyclerView recyclerView = findViewById(R.id.recycler_good_news);
+        GoodNewsRecyclerAdapter adapter = new GoodNewsRecyclerAdapter(str);
+        recyclerView.setAdapter(adapter);
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(manager);
     }
 }
