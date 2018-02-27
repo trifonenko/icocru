@@ -9,6 +9,9 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+
+import com.facebook.drawee.backends.pipeline.Fresco;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -26,6 +29,8 @@ public class GoodNewsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_good_news);
+
+        Fresco.initialize(this);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -49,12 +54,14 @@ public class GoodNewsActivity extends AppCompatActivity {
 
         String[] titles = null;
         String[] mNew = null;
+        String[] mImg = null;
 
         @Override
         protected Void doInBackground(Void... voids) {
             Document doc = null;
             Elements captions = null;
             Elements aNew = null;
+            Elements img = null;
             try {
 
                 doc = Jsoup.connect("http://www.icocnews.ru/istorii/centralnaya-rossiya").get();
@@ -62,6 +69,11 @@ public class GoodNewsActivity extends AppCompatActivity {
                 Document document = Jsoup.parse(div.html());
                 captions = document.select("a");
                 aNew = document.select("p");
+
+
+                Elements divImg = doc.select("div.featured-media");
+                Document docImg = Jsoup.parse(divImg.html());
+                img = docImg.select("img");
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -69,10 +81,15 @@ public class GoodNewsActivity extends AppCompatActivity {
             if (doc != null) {
                 titles = new String[captions.size()];
                 mNew = new String[aNew.size()];
+                mImg = new String[img.size()];
 
                 for (int i = 0; i < captions.size(); i++) {
                     titles[i] = captions.get(i).html();
                     mNew[i] = aNew.get(i).html();
+                }
+
+                for (int i = 0; i < img.size(); i++) {
+                    mImg[i] = img.get(i).absUrl("src");
                 }
             }
 
@@ -82,7 +99,7 @@ public class GoodNewsActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-            GoodNewsRecyclerAdapter adapter = new GoodNewsRecyclerAdapter(titles, mNew);
+            GoodNewsRecyclerAdapter adapter = new GoodNewsRecyclerAdapter(titles, mNew, mImg);
             recyclerView.setAdapter(adapter);
         }
     }
