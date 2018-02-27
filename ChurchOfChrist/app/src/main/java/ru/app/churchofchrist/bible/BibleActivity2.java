@@ -21,6 +21,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import ru.app.churchofchrist.R;
 import ru.app.churchofchrist.songs.SongsListFragment;
@@ -35,6 +36,7 @@ public class BibleActivity2 extends AppCompatActivity {
     private Toolbar toolbar=null;
     private String[] category=null;
     String[] knigi = {"Бытие", "Исход", "Левит", "Числа", "Второзаконие", "Иисус Навин", "Судьи", "Руфь", "1 Царств", "2 Царств", "3 Царств", "4 Царств", "1 Паралипоменон", "2 Паралипоменон", "Ездра", "Неемии", "Есфирь", "Иов", "Псалтирь", "Притчи", "Екклесиаст", "Песня Песней", "Исаия", "Иеремия", "Плач Иеремии", "Иезекииль", "Даниил", "Осия", "Иоиль", "Амос", "Авдий", "Иона", "Михей", "Наум", "Аввакум", "Софония", "Аггей", "Захария", "Малахия", "Матфей", "Марк", "Лука", "Иоанн", "Деяния", "Иаков", "1 Петра", "2 Петра", "1 Иоанна", "2 Иоанна", "3 Иоанна", "Иуда", "Римлянам", "1 Коринфянам", "2 Коринфянам", "Галатам", "Ефесянам", "Филиппийцам", "Колоссянам", "1 Фессалоникийцам", "2 Фессалоникийцам", "1 Тимофею", "2 Тимофею", "Титу", "Филимону", "Евреям", "Откровение"};
+    private ProgressDialog progressDialog;
 
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -498,81 +500,35 @@ public class BibleActivity2 extends AppCompatActivity {
         WebSettings webSettings = webView.getSettings();
         webSettings.setSavePassword(true);
         webSettings.setSaveFormData(true);
-        // Подключаем для этого элемента поддержку Java скриптов:
         webSettings.setJavaScriptEnabled(true);
+        webView.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY);
+        progressDialog = new ProgressDialog(BibleActivity2.this);
+        progressDialog.setMessage("Загрузка...");
+        progressDialog.show();
+            webView.loadUrl("file:///android_asset/books_rst/01.html");
 
-        //Получаем статус Интернет
-        /*isInternetPresent = cd.ConnectingToInternet();*/
+            webView.setWebViewClient(new MyWebViewClient(){
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                    view.loadUrl(url);
+                    return true;
+                }
 
-        //Проверяем Интернет статус:
-       /* if (isInternetPresent) {
-            *//*mProgressDialog = new ProgressDialog(BibleActivity.this);
-            mProgressDialog.setMax(100);
-            mProgressDialog.setTitle("Открываем БИБЛИЮ");
-            mProgressDialog.setMessage("Пожалуйста подождите...");
-            mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-            mProgressDialog.setIndeterminate(true);
-            mProgressDialog.show();
-            handler = new Handler() {
-                public void handleMessage(Message msg) {
-                    /// и обновляем идикатор, пока шкала не заполнится
-                    if (mProgressDialog.getProgress() < mProgressDialog.getMax()) {
-                        // обновляем индикаторы на 3 пункта за 1 секунду (1000 милисекунд)
-                        mProgressDialog.incrementProgressBy(1);
-                        handler.sendEmptyMessageDelayed(0, 10);
-                    } else {
-                        // когда шкала заполнилась, диалог пропадает
-                        mProgressDialog.dismiss();
-                    }
-                }/
-                    // выключаем анимацию ожидания
-                    mProgressDialog.setIndeterminate(false);
-                    if (mProgressDialog.getProgress() < mProgressDialog.getMax()) {
-                        // увеличиваем значения индикаторов
-                        mProgressDialog.incrementProgressBy(50);
-                        mProgressDialog.incrementSecondaryProgressBy(75);
-                        handler.sendEmptyMessageDelayed(0, 100);
-                    } else {
-                        mProgressDialog.dismiss();
+                @Override
+                public void onPageFinished(WebView view, String url) {
+                    if (progressDialog.isShowing()) {
+                        progressDialog.dismiss();
                     }
                 }
-            };
-            handler.sendEmptyMessageDelayed(0, 2000);*//*
 
-            //Интернет соединение есть
-            //делаем HTTP запросы:
-            // Настраиваем страницу, которая будет загружать при запуске, можете ввести любую:*/
-            webView.loadUrl("file:///android_asset/books_rst/01.html");
-            // Настраиваем обозреватель для нашего элемента WebView, подключаем созданный нами выше
-            // Веб-клиент, с помощью которого будет проходить просмотр страниц:
-            webView.setWebViewClient(new MyWebViewClient());
-            webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
-        /*} else {
-            //Интернет соединения нет
-            //загружаем оффлайн версию:
-            webView.loadUrl("file:///android_asset/books_rst/01.html");
-            // Настраиваем обозреватель для нашего элемента WebView, подключаем созданный нами выше
-            // Веб-клиент, с помощью которого будет проходить просмотр страниц:
-            webView.setWebViewClient(new MyWebViewClient());
-            webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
+                @Override
+                public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+                    Toast.makeText(BibleActivity2.this, "Error:" + description, Toast.LENGTH_SHORT).show();
 
-            *//*AlertDialog alertDialog = new AlertDialog.Builder(BibleActivity.this).create();
-            alertDialog.setTitle("Нет доступа в интернет!");
-            alertDialog.setMessage("Включите моб.данные. В режиме OFFLINE не работает АУДИО и ПОИСК");
-            alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.cancel();
                 }
             });
-            alertDialog.show();*//*
-        }*/
+            webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
 
-    }
-    public void onPageFinished(WebView view, String url) {
-        if ((mProgressDialog != null) && mProgressDialog.isShowing()) {
-            mProgressDialog.dismiss();
-            mProgressDialog = null;
-        }
     }
 
     // Пишем код обработки нажатия кнопки назад на устройстве, что позволит нам при нажатии

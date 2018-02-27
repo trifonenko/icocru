@@ -58,7 +58,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AppInfoActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <!--
             <activity
@@ -101,7 +101,7 @@
             android:label="@string/note"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <!-- Песни. -->
+        <!-- Songs. -->
         <activity
             android:name=".songs.SongsActivity"
             android:label="@string/songs"
@@ -116,9 +116,12 @@
             android:theme="@style/ThemeSongs" />
         <!-- * * * -->
 
-
-        <!-- Новости -->
-
+        <!-- Good news. -->
+        <activity
+            android:name=".good_news.GoodNewsActivity"
+            android:label="@string/label_good_news"
+            android:theme="@style/ThemeGoodNews" />
+        <!-- * * * -->
 
         <!-- Вопросы. -->
         <activity
@@ -162,15 +165,14 @@
 
         <activity
             android:name=".firebase.InfoNewsActivity"
-            android:label="@string/title_activity_info_news"
             android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_info_news"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name=".InfoNewsActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
         </activity>
     </application>
 

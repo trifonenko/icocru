@@ -10,7 +10,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <!-- Песни. -->
+    <!-- Songs. -->
     <style name="ThemeSongs" parent="AppTheme">
         <item name="colorPrimary">@color/colorPrimarySongs</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkSongs</item>
@@ -18,6 +18,16 @@
         <item name="android:windowBackground">@color/colorBackgroundSongs</item>
     </style>
     <!-- * * * -->
+
+    <!-- Good news. -->
+    <style name="ThemeGoodNews" parent="AppTheme">
+        <item name="colorPrimary">@color/colorPrimaryGoodNews</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkGoodNews</item>
+        <item name="colorAccent">@color/colorAccentGoodNews</item>
+        <item name="android:windowBackground">@color/colorBackgroundGoodNews</item>
+    </style>
+    <!-- * * * -->
+
     <!-- Вопрос-Ответ. -->
     <style name="ThemeAnsver" parent="AppTheme">
         <item name="colorPrimary">@color/colorPrimaryAnsver</item>
