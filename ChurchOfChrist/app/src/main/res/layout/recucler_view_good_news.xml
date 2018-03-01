@@ -6,7 +6,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    card_view:cardCornerRadius="@dimen/card_corner_radius"
+    android:layout_marginBottom="6dp"
+    android:layout_marginTop="6dp"
+    card_view:cardCornerRadius="0dp"
     card_view:cardUseCompatPadding="true">
 
     <LinearLayout
@@ -14,20 +16,25 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.facebook.drawee.view.SimpleDraweeView
-            android:id="@+id/img"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            fresco:fadeDuration="300"
-            fresco:roundAsCircle="false" />
-
         <TextView
             android:id="@+id/captions_good_news"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="8dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textColor="#282828"
             android:textSize="16sp"
+            android:textStyle="bold"
             tools:text="Title" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/img"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            fresco:fadeDuration="400" />
 
         <TextView
             android:id="@+id/body_good_news"
@@ -35,6 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:padding="8dp"
+            android:textColor="#494949"
             tools:text="Body" />
 
     </LinearLayout>

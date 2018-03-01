@@ -9,7 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-
 import com.facebook.drawee.backends.pipeline.Fresco;
 
 import org.jsoup.Jsoup;
@@ -28,9 +27,8 @@ public class GoodNewsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_good_news);
-
         Fresco.initialize(this);
+        setContentView(R.layout.activity_good_news);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -41,6 +39,7 @@ public class GoodNewsActivity extends AppCompatActivity {
                 finish();
             }
         });
+
         recyclerView = findViewById(R.id.recycler_good_news);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
@@ -52,54 +51,41 @@ public class GoodNewsActivity extends AppCompatActivity {
     @SuppressLint("StaticFieldLeak")
     class GoodNewsTask extends AsyncTask<Void, Void, Void> {
 
-        String[] titles = null;
-        String[] mNew = null;
-        String[] mImg = null;
+        private String[] titles;
+        private String[] text;
+        private String[] image;
 
         @Override
         protected Void doInBackground(Void... voids) {
-            Document doc = null;
-            Elements captions = null;
-            Elements aNew = null;
-            Elements img = null;
             try {
+                Document document = Jsoup.connect("http://www.icocnews.ru/istorii/centralnaya-rossiya").get();
+                Elements div = document.select("div.content-container");
 
-                doc = Jsoup.connect("http://www.icocnews.ru/istorii/centralnaya-rossiya").get();
-                Elements div = doc.select("div.featured-summary");
-                Document document = Jsoup.parse(div.html());
-                captions = document.select("a");
-                aNew = document.select("p");
+                Document doc = Jsoup.parse(div.html());
+                Elements links = doc.select("h2 > a");
+                titles = new String[links.size()];
 
+                Elements body = doc.select("p");
+                text = new String[body.size()];
 
-                Elements divImg = doc.select("div.featured-media");
-                Document docImg = Jsoup.parse(divImg.html());
-                img = docImg.select("img");
+                Elements img = doc.select("iframe, img");
+                image = new String[img.size()];
+
+                for (int i = 0; i < links.size(); i++) {
+                    titles[i] = links.get(i).text();
+                    text[i] = body.get(i).text();
+                    image[i] = img.get(i).absUrl("src");
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-            if (doc != null) {
-                titles = new String[captions.size()];
-                mNew = new String[aNew.size()];
-                mImg = new String[img.size()];
-
-                for (int i = 0; i < captions.size(); i++) {
-                    titles[i] = captions.get(i).html();
-                    mNew[i] = aNew.get(i).html();
-                }
-
-                for (int i = 0; i < img.size(); i++) {
-                    mImg[i] = img.get(i).absUrl("src");
-                }
-            }
-
             return null;
         }
 
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-            GoodNewsRecyclerAdapter adapter = new GoodNewsRecyclerAdapter(titles, mNew, mImg);
+            GoodNewsRecyclerAdapter adapter = new GoodNewsRecyclerAdapter(titles, text, image);
             recyclerView.setAdapter(adapter);
         }
     }

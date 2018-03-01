@@ -45,9 +45,14 @@ public class GoodNewsRecyclerAdapter extends RecyclerView.Adapter<GoodNewsRecycl
     public void onBindViewHolder(ViewHolder holder, int position) {
         CardView cv = holder.mCv;
 
-        Uri uri = Uri.parse(mLinksImg[position]);
-        SimpleDraweeView draweeView = cv.findViewById(R.id.img);
-        draweeView.setImageURI(uri);
+        Uri uri;
+        if (mLinksImg[position].contains("youtube")) {
+            uri = Uri.parse("http://www.icocnews.ru/wp-content/uploads/2017/11/783636-1200x575.jpg");
+        } else {
+            uri = Uri.parse(mLinksImg[position]);
+        }
+        SimpleDraweeView drawView = cv.findViewById(R.id.img);
+        drawView.setImageURI(uri);
 
         TextView caption = cv.findViewById(R.id.captions_good_news);
         caption.setText(mCaptions[position]);
@@ -58,6 +63,6 @@ public class GoodNewsRecyclerAdapter extends RecyclerView.Adapter<GoodNewsRecycl
 
     @Override
     public int getItemCount() {
-        return mLinksImg.length;
+        return mCaptions.length;
     }
 }
