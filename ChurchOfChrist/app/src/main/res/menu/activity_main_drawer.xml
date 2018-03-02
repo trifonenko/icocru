@@ -28,7 +28,7 @@
             android:title="@string/ansver" />
         <item
             android:id="@+id/good_news"
-            android:icon="@drawable/ic_vopros"
+            android:icon="@drawable/ic_news"
             android:title="@string/label_good_news" />
     </group>
     <item android:title="">
