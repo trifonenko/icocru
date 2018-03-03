@@ -19,6 +19,21 @@
 
     <!-- Good news. -->
     <string name="label_good_news">Хорошие новости</string>
+    <string-array name="spinner_good_news">
+        <item>Хорошие новости</item>
+        <item>Церкви в Центральной России</item>
+        <item>Христианские церкви Юга России</item>
+        <item>Христианские церкви Урала</item>
+        <item>Христианские церкви Сибири</item>
+        <item>Церкви Дальнего Востока</item>
+        <item>Христианские церкви Украины</item>
+        <item>Церкви в Беларуси</item>
+        <item>Ближнее зарубежье</item>
+        <item>Христианские церкви Азии</item>
+        <item>Христианские церкви Америки</item>
+        <item>Христианские церкви Европы</item>
+        <item>Христианские церкви Африки</item>
+    </string-array>
 
     <string name="header">Заголовок</string>
     <string name="note">Заметка</string>
