@@ -47,7 +47,6 @@ public class GoodNewsActivity extends AppCompatActivity {
         });
 
         Spinner spinner = findViewById(R.id.spinner_good_news);
-        //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.spinner_good_news, R.layout.spinner_good_news);
         String[] array = getResources().getStringArray(R.array.spinner_good_news);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_good_news, R.id.title_good, array);
         spinner.setAdapter(adapter);

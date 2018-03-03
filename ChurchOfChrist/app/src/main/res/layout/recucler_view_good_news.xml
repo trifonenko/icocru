@@ -33,7 +33,7 @@
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/img"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="250dp"
             fresco:fadeDuration="400" />
 
         <TextView

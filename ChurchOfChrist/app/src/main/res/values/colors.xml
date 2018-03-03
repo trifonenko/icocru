@@ -12,9 +12,9 @@
     <color name="colorBackgroundSongs">#e7e7e7</color>
 
     <!-- Good news. -->
-    <color name="colorPrimaryGoodNews">#03A678</color>
-    <color name="colorPrimaryDarkGoodNews">#019875</color>
-    <color name="colorAccentGoodNews">#EC644B</color>
+    <color name="colorPrimaryGoodNews">#218c74</color>
+    <color name="colorPrimaryDarkGoodNews">#018667</color>
+    <color name="colorAccentGoodNews">#ec644b</color>
     <color name="colorBackgroundGoodNews">#e7e7e7</color>
 
     <!-- Вопросы-ответы. -->
