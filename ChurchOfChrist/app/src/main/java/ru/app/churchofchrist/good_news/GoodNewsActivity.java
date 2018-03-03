@@ -1,6 +1,7 @@
 package ru.app.churchofchrist.good_news;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ import ru.app.churchofchrist.R;
  */
 
 public class GoodNewsActivity extends AppCompatActivity {
+    public ProgressDialog dialog;
     private RecyclerView recyclerView;
     private String link = "http://www.icocnews.ru/istorii";
 
@@ -107,14 +109,25 @@ public class GoodNewsActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycler_good_news);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
+        dialog = new ProgressDialog(this);
     }
 
     @SuppressLint("StaticFieldLeak")
     class GoodNewsTask extends AsyncTask<Void, Void, Void> {
 
+
+
         private String[] titles;
         private String[] text;
         private String[] image;
+
+        protected void onPreExecute() {
+
+            dialog.setMessage("Загрузка новостей...");
+            dialog.setIndeterminate(true);
+            dialog.setCancelable(true);
+            dialog.show();
+        }
 
         @Override
         protected Void doInBackground(Void... voids) {
@@ -146,6 +159,7 @@ public class GoodNewsActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
+            dialog.dismiss();
             GoodNewsRecyclerAdapter adapter = new GoodNewsRecyclerAdapter(titles, text, image);
             recyclerView.setAdapter(adapter);
         }
