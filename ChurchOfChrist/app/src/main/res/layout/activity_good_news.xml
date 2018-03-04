@@ -17,7 +17,7 @@
         app:titleTextAppearance="@style/Toolbar">
 
         <Spinner
-            android:id="@+id/spinner_good_news"
+            android:id="@+id/spinner_regions_good_news"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="15dp"
