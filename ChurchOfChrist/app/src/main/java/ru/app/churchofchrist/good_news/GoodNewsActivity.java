@@ -1,6 +1,7 @@
 package ru.app.churchofchrist.good_news;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,7 +25,8 @@ import ru.app.churchofchrist.R;
  *
  */
 
-public class GoodNewsActivity extends AppCompatActivity {
+public class GoodNewsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    public ProgressDialog dialog;
     private RecyclerView recyclerView;
     private String link = "http://www.icocnews.ru/istorii";
 
@@ -37,7 +39,6 @@ public class GoodNewsActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar_good_news);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        getSupportActionBar().setSubtitle(R.string.good_news);
         toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,76 +47,30 @@ public class GoodNewsActivity extends AppCompatActivity {
             }
         });
 
-        Spinner spinner = findViewById(R.id.spinner_good_news);
-        //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.spinner_good_news, R.layout.spinner_good_news);
-        String[] array = getResources().getStringArray(R.array.spinner_good_news);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_good_news, R.id.title_good, array);
+        Spinner spinner = findViewById(R.id.spinner_regions_good_news);
+        String[] titles = getResources().getStringArray(R.array.titles_regions_good_news);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_regions_good_news, R.id.title_region_good_new, titles);
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                switch (i) {
-                    case 0:
-                        link = "http://www.icocnews.ru/istorii";
-                        break;
-                    case 1:
-                        link = "http://www.icocnews.ru/istorii/centralnaya-rossiya";
-                        break;
-                    case 2:
-                        link = "http://www.icocnews.ru/istorii/cerkvi-na-yuge-rossii";
-                        break;
-                    case 3:
-                        link = "http://www.icocnews.ru/istorii/ural";
-                        break;
-                    case 4:
-                        link = "http://www.icocnews.ru/istorii/cerkvi-v-sibiri";
-                        break;
-                    case 5:
-                        link = "http://www.icocnews.ru/istorii/dalnij-vostok";
-                        break;
-                    case 6:
-                        link = "http://www.icocnews.ru/istorii/cerkvi-v-ukraine";
-                        break;
-                    case 7:
-                        link = "http://www.icocnews.ru/istorii/cerkvi-v-belarusi";
-                        break;
-                    case 8:
-                        link = "http://www.icocnews.ru/istorii/blizhnee-zarubezhe";
-                        break;
-                    case 9:
-                        link = "http://www.icocnews.ru/istorii/aziatsko-tixookeanskij-region";
-                        break;
-                    case 10:
-                        link = "http://www.icocnews.ru/istorii/america";
-                        break;
-                    case 11:
-                        link = "http://www.icocnews.ru/istorii/evropa";
-                        break;
-                    case 12:
-                        link = "http://www.icocnews.ru/istorii/cerkvi-v-afrike";
-                        break;
-                }
-                GoodNewsTask task = new GoodNewsTask();
-                task.execute();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
 
         recyclerView = findViewById(R.id.recycler_good_news);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
+
+        dialog = new ProgressDialog(this);
     }
 
     @SuppressLint("StaticFieldLeak")
     class GoodNewsTask extends AsyncTask<Void, Void, Void> {
-
         private String[] titles;
-        private String[] text;
-        private String[] image;
+        private String[] texts;
+        private String[] images;
+
+        protected void onPreExecute() {
+            dialog.setMessage("Загрузка новостей...");
+            dialog.setIndeterminate(true);
+            dialog.setCancelable(true);
+            dialog.show();
+        }
 
         @Override
         protected Void doInBackground(Void... voids) {
@@ -128,15 +83,15 @@ public class GoodNewsActivity extends AppCompatActivity {
                 titles = new String[links.size()];
 
                 Elements body = doc.select("p");
-                text = new String[body.size()];
+                texts = new String[body.size()];
 
                 Elements img = doc.select("iframe, img");
-                image = new String[img.size()];
+                images = new String[img.size()];
 
                 for (int i = 0; i < links.size(); i++) {
                     titles[i] = links.get(i).text();
-                    text[i] = body.get(i).text();
-                    image[i] = img.get(i).absUrl("src");
+                    texts[i] = body.get(i).text();
+                    images[i] = img.get(i).absUrl("src");
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -147,8 +102,61 @@ public class GoodNewsActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-            GoodNewsRecyclerAdapter adapter = new GoodNewsRecyclerAdapter(titles, text, image);
+            dialog.dismiss();
+            GoodNewsRecyclerAdapter adapter = new GoodNewsRecyclerAdapter(titles, texts, images);
             recyclerView.setAdapter(adapter);
         }
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        switch (i) {
+            case 0:
+                link = "http://www.icocnews.ru/istorii";
+                break;
+            case 1:
+                link = "http://www.icocnews.ru/istorii/centralnaya-rossiya";
+                break;
+            case 2:
+                link = "http://www.icocnews.ru/istorii/cerkvi-na-yuge-rossii";
+                break;
+            case 3:
+                link = "http://www.icocnews.ru/istorii/ural";
+                break;
+            case 4:
+                link = "http://www.icocnews.ru/istorii/cerkvi-v-sibiri";
+                break;
+            case 5:
+                link = "http://www.icocnews.ru/istorii/dalnij-vostok";
+                break;
+            case 6:
+                link = "http://www.icocnews.ru/istorii/cerkvi-v-ukraine";
+                break;
+            case 7:
+                link = "http://www.icocnews.ru/istorii/cerkvi-v-belarusi";
+                break;
+            case 8:
+                link = "http://www.icocnews.ru/istorii/blizhnee-zarubezhe";
+                break;
+            case 9:
+                link = "http://www.icocnews.ru/istorii/aziatsko-tixookeanskij-region";
+                break;
+            case 10:
+                link = "http://www.icocnews.ru/istorii/america";
+                break;
+            case 11:
+                link = "http://www.icocnews.ru/istorii/evropa";
+                break;
+            case 12:
+                link = "http://www.icocnews.ru/istorii/cerkvi-v-afrike";
+                break;
+        }
+        GoodNewsTask task = new GoodNewsTask();
+        task.execute();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }

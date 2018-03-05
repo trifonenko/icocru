@@ -19,7 +19,7 @@
 
     <!-- Good news. -->
     <string name="label_good_news">Хорошие новости</string>
-    <string-array name="spinner_good_news">
+    <string-array name="titles_regions_good_news">
         <item>Хорошие новости</item>
         <item>Церкви в Центральной России</item>
         <item>Христианские церкви Юга России</item>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App. -->
-    <color name="colorPrimary">#2b8cb0</color>
-    <color name="colorPrimaryDark">#007bb3</color>
-    <color name="colorAccent">#795548</color>
+    <color name="colorPrimary">#d7a61e</color>
+    <color name="colorPrimaryDark">#c86a28</color>
+    <color name="colorAccent">#2893a9</color>
 
     <!-- Songs. -->
     <color name="colorPrimarySongs">#D64541</color>
@@ -12,9 +12,9 @@
     <color name="colorBackgroundSongs">#e7e7e7</color>
 
     <!-- Good news. -->
-    <color name="colorPrimaryGoodNews">#03A678</color>
-    <color name="colorPrimaryDarkGoodNews">#019875</color>
-    <color name="colorAccentGoodNews">#EC644B</color>
+    <color name="colorPrimaryGoodNews">#218c74</color>
+    <color name="colorPrimaryDarkGoodNews">#018667</color>
+    <color name="colorAccentGoodNews">#ec644b</color>
     <color name="colorBackgroundGoodNews">#e7e7e7</color>
 
     <!-- Вопросы-ответы. -->
@@ -40,7 +40,7 @@
     <color name="color0">#ffffff</color>
     <color name="color1">#e4c6d3</color>
     <color name="color2">#cfc7e3</color>
-    <color name="color3">#c3daef</color>
+    <color name="color3">#069473</color>
     <color name="color4">#c4d8dc</color>
     <color name="color5">#cfe4c8</color>
     <color name="color6">#ffeec0</color>
