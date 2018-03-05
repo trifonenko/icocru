@@ -41,7 +41,7 @@
                 android:layout_marginTop="8dp"
                 android:paddingLeft="8dp"
                 android:text="@string/random_verse_bible"
-                android:textColor="@color/color3"
+                android:textColor="@color/ic_launcher_background"
                 android:textSize="16sp"
                 app:layout_constraintTop_toBottomOf="@+id/icon"
                 tools:layout_editor_absoluteX="0dp" />
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:paddingLeft="8dp"
-                android:textColor="@color/black"
+                android:textColor="@color/ic_launcher_background"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/random_verse_bible"
                 app:layout_constraintTop_toBottomOf="@+id/random_verse_bible"
