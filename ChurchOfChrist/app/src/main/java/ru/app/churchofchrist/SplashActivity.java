@@ -20,7 +20,6 @@ public class SplashActivity extends AppCompatActivity {
         TextView text = findViewById(R.id.text);
         TextView text2 = findViewById(R.id.text2);
         ImageView image = findViewById(R.id.imageView3);
-        ImageView image2 = findViewById(R.id.imageView4);
         Typeface CF2 = Typeface.createFromAsset(getAssets(), "fonts/CODE Light.otf");
         Typeface CF = Typeface.createFromAsset(getAssets(), "fonts/CODE Bold.otf");
         text.setTypeface(CF);
@@ -28,8 +27,6 @@ public class SplashActivity extends AppCompatActivity {
 
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.translate);
         image.startAnimation(anim);
-        Animation anim3 = AnimationUtils.loadAnimation(this, R.anim.translate3);
-        image2.startAnimation(anim3);
         Animation anim2 = AnimationUtils.loadAnimation(this, R.anim.translate2);
         text.startAnimation(anim2);
         text2.startAnimation(anim2);
