@@ -16,5 +16,5 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:src="@mipmap/ic_launcher_round" />
+        android:src="@drawable/web_hi_res_512" />
 </LinearLayout>
