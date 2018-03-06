@@ -28,7 +28,7 @@ import ru.app.churchofchrist.R;
 public class GoodNewsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     public ProgressDialog dialog;
     private RecyclerView recyclerView;
-    private String link = "http://www.icocnews.ru/istorii";
+    private String link;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +48,7 @@ public class GoodNewsActivity extends AppCompatActivity implements AdapterView.O
         });
 
         Spinner spinner = findViewById(R.id.spinner_regions_good_news);
+        spinner.setOnItemSelectedListener(this);
         String[] titles = getResources().getStringArray(R.array.titles_regions_good_news);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_regions_good_news, R.id.title_region_good_new, titles);
         spinner.setAdapter(adapter);
