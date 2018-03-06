@@ -14,7 +14,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <!--
         android:backupAgent="TheBackupAgent"
         <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIyGfQbECBdvlz0U-UIw0jdDkrjZd6uOoZWEXc8w" />
@@ -59,13 +58,6 @@
         <activity
             android:name=".AppInfoActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
-        <!--
-            <activity
-            android:name=".scripture.ScriptureActivity"
-            android:label="@string/scripture"
-            android:theme="@style/AppThemeChristianSongs.NoActionBar" />
-        -->
         <activity
             android:name=".bible.BibleActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -73,8 +65,6 @@
             android:parentActivityName=".bible.BibleActivityStart"
             android:theme="@style/AppThemeBible.NoActionBar"
             tools:targetApi="jelly_bean">
-
-            <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
@@ -86,8 +76,6 @@
             android:parentActivityName=".bible.BibleActivityStart"
             android:theme="@style/AppThemeBible.NoActionBar"
             tools:targetApi="jelly_bean">
-
-            <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
@@ -101,7 +89,7 @@
             android:label="@string/note"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <!-- Songs. -->
+        <!-- Песни. -->
         <activity
             android:name=".songs.SongsActivity"
             android:label="@string/songs"
@@ -116,14 +104,14 @@
             android:theme="@style/ThemeSongs" />
         <!-- * * * -->
 
-        <!-- Good news. -->
+        <!-- Хорошие новости. -->
         <activity
             android:name=".good_news.GoodNewsActivity"
             android:label="@string/label_good_news"
             android:theme="@style/ThemeGoodNews" />
         <!-- * * * -->
 
-        <!-- Вопросы. -->
+        <!-- Вопросы-Ответы. -->
         <activity
             android:name=".ansver.AnsverActivity"
             android:label="@string/ansver"
@@ -132,19 +120,18 @@
             android:name=".ansver.AnsverDetailActivity"
             android:label="@string/ansver"
             android:theme="@style/ThemeAnsver" />
-        <!-- * * * -->
+
         <!-- Виджет. -->
         <receiver android:name=".widget.MyWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
-
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_info" />
         </receiver>
-
         <service android:name=".widget.UpdateWidgetService" />
+        <!-- * * * -->
 
         <activity
             android:name=".bible.BibleActivityStart"

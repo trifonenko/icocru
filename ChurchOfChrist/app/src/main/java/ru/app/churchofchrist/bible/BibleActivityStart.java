@@ -7,13 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
-
 import java.io.IOException;
-
 import ru.app.churchofchrist.R;
 
 public class BibleActivityStart extends AppCompatActivity {
@@ -54,7 +51,6 @@ public class BibleActivityStart extends AppCompatActivity {
         mt5.execute();*/
        /* MyTask6 mt6 = new MyTask6();
         mt6.execute();*/
-
     }
 
     /*class MyTask extends AsyncTask<Void, Void, Void> {
