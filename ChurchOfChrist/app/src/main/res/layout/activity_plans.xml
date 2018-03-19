@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ru.app.churchofchrist.PlansActivity">
+    tools:context="ru.app.churchofchrist.plans.PlansActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
@@ -15,23 +15,32 @@
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
             app:layout_collapseMode="pin"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <!--<Spinner
+                android:id="@+id/perevod"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryBible">
+
+            </Spinner>-->
+
+
+            <Spinner
+                android:id="@+id/city"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryBible">
+
+            </Spinner>
+        </android.support.v7.widget.Toolbar>
 
 
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_plans" />
-    <!--
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/fab_margin"
-        app:layout_anchor="@id/app_bar"
-        app:layout_anchorGravity="bottom|end"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
-    -->
+
 </android.support.design.widget.CoordinatorLayout>

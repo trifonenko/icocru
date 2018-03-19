@@ -7,70 +7,15 @@
     android:orientation="vertical"
 
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="ru.app.churchofchrist.PlansActivity"
-    tools:showIn="@layout/activity_plans">
+    tools:context="ru.app.churchofchrist.plans.PlansActivity"
+    tools:showIn="@layout/activity_bible">
 
 
-    <TabHost xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/tabHost"
+    <WebView
+        android:id="@+id/webViewPlans"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal">
+        android:layout_height="match_parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
 
-            <TabWidget
-                android:id="@android:id/tabs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </TabWidget>
-
-            <FrameLayout
-                android:id="@android:id/tabcontent"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:id="@+id/linearLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <WebView
-                        android:id="@+id/webViewPlansUg"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearLayout2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <WebView
-                        android:id="@+id/webViewPlansZapad"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearLayout3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <WebView
-                        android:id="@+id/webViewPlansVostok"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-                </LinearLayout>
-            </FrameLayout>
-        </LinearLayout>
-    </TabHost>
 
 </LinearLayout>

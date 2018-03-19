@@ -161,6 +161,18 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".plans.PlansActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/bible"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppThemeBible.NoActionBar"
+            tools:targetApi="jelly_bean">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
     </application>
 
 </manifest>

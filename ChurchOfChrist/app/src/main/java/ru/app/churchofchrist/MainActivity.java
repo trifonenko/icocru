@@ -22,6 +22,7 @@ import java.util.Random;
 import ru.app.churchofchrist.bible.BibleActivityStart;
 import ru.app.churchofchrist.good_news.GoodNewsActivity;
 import ru.app.churchofchrist.ox.OxActivity;
+import ru.app.churchofchrist.plans.PlansActivity;
 import ru.app.churchofchrist.songs.SongsActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -126,6 +127,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.good_news:
                 Intent intentGoodNews = new Intent(MainActivity.this, GoodNewsActivity.class);
                 startActivity(intentGoodNews);
+                break;
+            case R.id.plans:
+                Intent intentPlans = new Intent(MainActivity.this, PlansActivity.class);
+                startActivity(intentPlans);
                 break;
         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
