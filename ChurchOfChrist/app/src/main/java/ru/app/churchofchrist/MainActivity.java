@@ -44,9 +44,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
 
-
-
-
         DBHelper dbHelper = new DBHelper(this, "lessons.db", 2);//07.02.2018 (версия в google 2)
         try {
             dbHelper.updateDataBase();

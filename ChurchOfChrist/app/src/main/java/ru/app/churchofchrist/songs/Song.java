@@ -4,7 +4,7 @@ class Song {
     private int id;//Идентификатор.
     private String name;//Название.
     private String text;//Текст.
-    private String chords;//Аккорды.
+    private String chords;
 
     Song(int id, String name, String text, String chords) {
         this.id = id;
