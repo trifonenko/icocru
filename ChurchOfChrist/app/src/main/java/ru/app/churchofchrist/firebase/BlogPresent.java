@@ -12,7 +12,7 @@ import android.webkit.WebViewClient;
 
 import ru.app.churchofchrist.R;
 
-public class InfoNewsActivity extends AppCompatActivity {
+public class BlogPresent extends AppCompatActivity {
     private WebView webView;
 
     @Override
@@ -40,7 +40,7 @@ public class InfoNewsActivity extends AppCompatActivity {
         webSettings.setSavePassword(true);
         webSettings.setSaveFormData(true);
         webSettings.setJavaScriptEnabled(true);
-        webView.loadUrl("https://trifonenko.github.io/icocru/ChurchOfChrist/app/src/main/assets/infonews.html");
+        webView.loadUrl("https://trifonenko.github.io/icocru/ChurchOfChrist/app/src/main/assets/blog_present/index.html");
         webView.setWebViewClient(new MyWebViewClient());
         webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
 
