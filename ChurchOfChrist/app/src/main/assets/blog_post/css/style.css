@@ -12,7 +12,7 @@ body {
 }
 #card-container {
 	width: 90%;
-	margin: 100px auto 100px auto;
+	margin: auto auto auto auto;
 	box-shadow: 0 8px 20px -6px #000;
  }
 /* SECTION PHOTO */
@@ -21,7 +21,6 @@ body {
 	background-image: url('http://www.icocnews.ru/wp-content/uploads/2018/03/837676-1200x575.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: 0% 0%;
 	z-index: 1;
 }
 .text-photo{
