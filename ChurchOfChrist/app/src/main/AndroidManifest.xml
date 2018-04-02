@@ -161,28 +161,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".firebase.BlogPost"
-            android:configChanges="orientation|screenSize"
-            android:label="@string/title_activity_info_news"
-            android:theme="@style/AppTheme">
-            <intent-filter>
-                <action android:name=".BlogPost" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".firebase.BlogPresent"
-            android:configChanges="orientation|screenSize"
-            android:label="@string/title_activity_info_news"
-            android:theme="@style/AppTheme">
-            <intent-filter>
-                <action android:name=".BlogPresent" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
 
         <activity
             android:name=".plans.PlansActivity"
