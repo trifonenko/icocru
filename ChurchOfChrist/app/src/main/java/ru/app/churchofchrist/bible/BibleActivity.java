@@ -461,7 +461,6 @@ public class BibleActivity extends AppCompatActivity {
     // на кнопку "Назад" перейти к предыдущей странице, а не просто закрывать приложения.
     // Оно будет закрываться кнопкой "Назад" лишь в том случае, если мы находимся на стартовой
     // странице, которую указали выше:
-
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (event.getAction() == KeyEvent.ACTION_DOWN) {
@@ -474,7 +473,6 @@ public class BibleActivity extends AppCompatActivity {
                     }
                     return true;
             }
-
         }
         return super.onKeyDown(keyCode, event);
     }
@@ -495,11 +493,9 @@ public class BibleActivity extends AppCompatActivity {
         //При невозможности открыть какую либо страницу, открывает html файл с уведомлением
         @Override
         public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-     /*остановка загрузки и отображение страницы error.html из папки “assets”*/
             view.stopLoading();
             view.loadUrl("file:///android_asset/error.html");
         }
-
     }
 
     @Override
@@ -523,7 +519,6 @@ public class BibleActivity extends AppCompatActivity {
                 webView.loadUrl("https://okbible.ru/rndvers.php");
                 break;
         }
-
         return true;
     }
     @Override
@@ -532,6 +527,4 @@ public class BibleActivity extends AppCompatActivity {
             onNavigateUp();
         }
     }
-
-
 }
