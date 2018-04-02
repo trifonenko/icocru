@@ -17,7 +17,7 @@ body {
  }
 /* SECTION PHOTO */
 .photo {
-	height: 500px;
+	height: auto;
 	background-image: url('http://www.icocnews.ru/wp-content/uploads/2018/03/837676-1200x575.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
