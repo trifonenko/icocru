@@ -29,10 +29,6 @@
 
     <color name="colorStatusBar">#00ffffff</color><!-- Цвет StatusBar в MainActivity. -->
 
-    <color name="md_teal_500_primary">#009688</color>
-    <color name="md_teal_700">#00796B</color>
-    <color name="md_teal_900">#004D40</color>
-
     <color name="colorPrimaryText">#212121</color>
     <color name="colorSecondaryText">#757575</color>
 

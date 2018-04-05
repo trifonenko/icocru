@@ -47,7 +47,9 @@
             android:text="@string/new_text"
             android:textAlignment="textEnd"
             android:textColor="@color/color0"
-            android:textSize="10sp" />
+            android:textSize="10sp"
+            android:gravity="end"
+            android:layout_marginEnd="6dp" />
 
 
     </android.support.design.widget.AppBarLayout>

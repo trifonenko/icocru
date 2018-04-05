@@ -53,6 +53,7 @@ public class BibleActivityStart extends AppCompatActivity {
     }
 
 
+    @SuppressLint("StaticFieldLeak")
     class MyTask extends AsyncTask<Void, Void, Void> {
 
         String adr;

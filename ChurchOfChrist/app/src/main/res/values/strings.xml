@@ -61,8 +61,6 @@
     <string name="songs">Песни</string>
     <string name="ansver">Вопрос-Ответ</string>
     <string name="news">Хорошие новости</string>
-    <string name="plans_church">Планы церкви</string>
-    <string name="good_news">Хорошие новости</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -70,10 +68,6 @@
     <string-array name="perevod">
         <item>НРП</item>
         <item>SYNOD</item>
-    </string-array>
-    <string-array name="perevod2">
-        <item>SYNOD</item>
-        <item>НРП</item>
     </string-array>
 
 
@@ -4603,23 +4597,6 @@ o	Поделитесь о своём опыте служения. Когда, к
             Проведите время чтения Библии весело, фокусируясь на духовном.<br>
     ]]></string><!-- Христианская семья: родители и дети -->
 
-    <string name="title_activity_plans">Планы Церкви</string>
-    <string name="title_activity_news">Хорошие новости</string>
-
-    <string name="text_song_no_acc">
-        К сожалению,\n
-        к этой песне аккордов в нашей базе нет.\n
-        Если они у Вас есть,\n
-        просим прислать их на наш \n
-        email: <b>nskcoc@gmail.com</b>
-    </string><!-- Нет аккордов. -->
-    <string name="text_song_no_vid">
-        К сожалению,\n
-        к этой песне видео в нашей базе нет.\n
-        Если оно у Вас есть,\n
-        просим прислать его на наш \n
-        email: <b>nskcoc@gmail.com</b>
-    </string><!-- Нет видео. -->
 
     <string name="name_razr">
         Сергей Гапонов\n
@@ -4644,17 +4621,11 @@ o	Поделитесь о своём опыте служения. Когда, к
     <string name="info_app">О приложении</string>
     <string name="icoc_splash">ICOC</string>
     <string name="ru_splash">RU</string>
-    <string name="random_stih">СЛУЧАЙНЫЙ СТИХ ИЗ БИБЛИИ</string>
-    <string name="nrp">Совр.</string>
-    <string name="coordinat">Координаты</string>
     <string name="random_otr">Случайный отрывок</string>
-    <string name="synod">Синод.</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_bible_start">BibleActivityStart</string>
+
     <string name="title_activity_info_news">Что нового</string>
-    <string name="title_activity_bible_oglav">Книги</string>
     <string name="share">Поделится</string>
     <string name="plans">Планы</string>
     <string name="message">Сообщение:</string>
@@ -4664,10 +4635,10 @@ o	Поделитесь о своём опыте служения. Когда, к
     <string name="new_text">Современный перевод</string>
     <string name="title">Заголовок</string>
     <string name="date">Дата</string>
-    <string name="random_otr">Случайный отрывок</string>
     <string name="koordinats">Координаты</string>
     <string name="stih">Отрывок</string>
-    <string name="bible">Библия</string>
+    <string name="stih_bible_glav">Ведь Слово Бога живет и действует...</string>
+    <string name="evr_4_12">Евр. 4:12</string>
 
 
 </resources>

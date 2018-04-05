@@ -79,7 +79,9 @@
             android:textColor="@android:color/black"
             android:textIsSelectable="true"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:gravity="start"
+            android:layout_gravity="start" />
 
         <ImageView
             android:id="@+id/imageEmail"
@@ -102,7 +104,9 @@
             android:textColor="@android:color/black"
             android:textIsSelectable="true"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:gravity="start"
+            android:layout_gravity="start" />
 
     </LinearLayout>
 
