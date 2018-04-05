@@ -2,6 +2,7 @@ package ru.app.churchofchrist.ox;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -16,7 +17,7 @@ import ru.app.churchofchrist.R;
 public class Tab4Fragment extends Fragment {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         String[] arrayTitles = new String[Lesson.LessonYoungStudents.length];
         for (int i = 0; i < arrayTitles.length; i++) {
             arrayTitles[i] = Lesson.LessonYoungStudents[i].getName();

@@ -3,6 +3,7 @@ package ru.app.churchofchrist.ox;
 /* Адаптер RecyclerView. */
 
 import android.annotation.SuppressLint;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -38,14 +39,15 @@ class OxAdapterRecyclerView extends RecyclerView.Adapter<OxAdapterRecyclerView.V
         this.listener = listener;
     }
 
+    @NonNull
     @Override
-    public OxAdapterRecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public OxAdapterRecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         CardView cardView = (CardView) LayoutInflater.from(parent.getContext()).inflate(R.layout.card_item_list, parent, false);
         return new ViewHolder(cardView);
     }
 
     @Override
-    public void onBindViewHolder(OxAdapterRecyclerView.ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
+    public void onBindViewHolder(@NonNull OxAdapterRecyclerView.ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         CardView cardView = holder.cardView;
         TextView textView = cardView.findViewById(R.id.name_title);
         textView.setText(titles[position]);

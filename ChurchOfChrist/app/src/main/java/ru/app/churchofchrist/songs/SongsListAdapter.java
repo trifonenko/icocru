@@ -1,6 +1,7 @@
 package ru.app.churchofchrist.songs;
 
 import android.annotation.SuppressLint;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -42,14 +43,15 @@ public class SongsListAdapter extends RecyclerView.Adapter<SongsListAdapter.View
         this.listener = listener;
     }
 
+    @NonNull
     @Override
-    public SongsListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public SongsListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         CardView cv = (CardView) LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_songs, parent, false);
         return new ViewHolder(cv);
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         CardView cardView = holder.cardView;
 
         TextView text = cardView.findViewById(R.id.song_name);

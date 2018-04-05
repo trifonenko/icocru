@@ -1,6 +1,7 @@
 package ru.app.churchofchrist.good_news;
 
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -36,13 +37,14 @@ public class GoodNewsRecyclerAdapter extends RecyclerView.Adapter<GoodNewsRecycl
         this.mLinksImg = linksImg;
     }
 
+    @NonNull
     @Override
-    public GoodNewsRecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public GoodNewsRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         CardView cv = (CardView) LayoutInflater.from(parent.getContext()).inflate(R.layout.recucler_view_good_news, parent, false);
         return new ViewHolder(cv);
     }
 
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         CardView cv = holder.mCv;
 
         Uri uri;

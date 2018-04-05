@@ -128,6 +128,7 @@ public class BibleActivity2 extends AppCompatActivity {
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
                 switch (position) {
                     case 0:
                         webView.loadUrl("file:///android_asset/books_rst/01.html");
