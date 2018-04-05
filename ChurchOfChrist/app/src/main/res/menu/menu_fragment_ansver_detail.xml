@@ -16,6 +16,6 @@
         android:id="@+id/share"
         android:icon="@drawable/ic_action_share2"
         android:orderInCategory="3"
-        android:title="Поделится"
+        android:title="@string/share"
         app:showAsAction="ifRoom" />
 </menu>

@@ -21,6 +21,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private final Context mContext;
     private boolean mNeedUpdate = false;
 
+     @SuppressLint("SdCardPath")
      public DBHelper(Context context, String dbName, int dbVersion) {
         super(context, dbName, null, dbVersion);
 

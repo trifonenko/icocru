@@ -33,7 +33,7 @@
         <item
             android:id="@+id/plans"
             android:icon="@drawable/ic_news"
-            android:title="Планы" />
+            android:title="@string/plans" />
     </group>
     <item android:title="">
         <menu>

@@ -18,4 +18,11 @@
         android:title="@string/note_color_theme"
         app:showAsAction="always" />
 
+    <item
+        android:id="@+id/note_save"
+        android:icon="@drawable/ic_action_save"
+        android:orderInCategory="3"
+        android:title="@string/note_save"
+        app:showAsAction="always" />
+
 </menu>

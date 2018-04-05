@@ -16,7 +16,7 @@
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp"
         android:paddingBottom="12dp"
-        android:text="Библия"
+        android:text="@string/bible"
         android:textAlignment="center"
         android:textSize="24sp" />
 
@@ -89,7 +89,8 @@
                     android:backgroundTint="@color/colorPrimaryBible"
                     android:onClick="click_sovr"
                     android:text="Читать и слушать"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    tools:targetApi="lollipop" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -137,7 +138,8 @@
                     android:backgroundTint="@color/colorPrimaryBible"
                     android:onClick="click_sinod"
                     android:text="Читать и слушать"
-                    android:textColor="@android:color/background_light" />
+                    android:textColor="@android:color/background_light"
+                    tools:targetApi="lollipop" />
 
 
             </LinearLayout>

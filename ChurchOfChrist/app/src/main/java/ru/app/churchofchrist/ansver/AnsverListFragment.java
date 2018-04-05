@@ -20,9 +20,7 @@ import java.util.regex.Pattern;
 
 import ru.app.churchofchrist.R;
 
-/**
- * Список песен.
- */
+
 public class AnsverListFragment extends Fragment {
 
     interface AnsverListListener {

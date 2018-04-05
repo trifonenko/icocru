@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="6dp"
             android:layout_weight="1"
-            android:text="Современный перевод"
+            android:text="@string/new_text"
             android:textAlignment="textEnd"
             android:textColor="@color/color0"
             android:textSize="10sp" />

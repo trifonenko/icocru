@@ -14,6 +14,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <!--
         android:backupAgent="TheBackupAgent"
         <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIyGfQbECBdvlz0U-UIw0jdDkrjZd6uOoZWEXc8w" />
@@ -104,12 +105,14 @@
             android:theme="@style/ThemeSongs" />
         <!-- * * * -->
 
+
         <!-- Хорошие новости. -->
         <activity
             android:name=".good_news.GoodNewsActivity"
             android:label="@string/label_good_news"
             android:theme="@style/ThemeGoodNews" />
         <!-- * * * -->
+
 
         <!-- Вопросы-Ответы. -->
         <activity
@@ -126,10 +129,12 @@
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
+
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_info" />
         </receiver>
+
         <service android:name=".widget.UpdateWidgetService" />
         <!-- * * * -->
 
@@ -161,7 +166,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".plans.PlansActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"

@@ -10,7 +10,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -75,16 +74,6 @@ public class NoteActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onBackPressed();
-            }
-        });
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        // Нажатие кнопки
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                insertOrUpdateNote(); //Добавить/Обновить
             }
         });
 
@@ -434,6 +423,11 @@ public class NoteActivity extends AppCompatActivity {
 
         }
 
+        // Save
+        else if (id == R.id.note_save) {
+            insertOrUpdateNote(); //Добавить/Обновить
+
+        }
         return super.onOptionsItemSelected(item);
     }
 

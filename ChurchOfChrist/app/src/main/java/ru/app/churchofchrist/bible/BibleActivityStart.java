@@ -1,5 +1,6 @@
 package ru.app.churchofchrist.bible;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ public class BibleActivityStart extends AppCompatActivity {
     private TextView textViewDate;
     private TextView textViewAdr;
 
+    @SuppressLint({"SimpleDateFormat", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

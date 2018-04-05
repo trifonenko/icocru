@@ -31,14 +31,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Случайный отрывок" />
+                android:text="@string/random_otr" />
 
             <TextView
                 android:id="@+id/textView11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Координаты"
+                android:text="@string/koordinats"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -57,7 +57,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scrollbars="vertical"
-            android:text="Отрывок"
+            android:text="@string/stih"
             android:textAlignment="viewStart"
             android:textAllCaps="false"
             android:textColor="@color/black"

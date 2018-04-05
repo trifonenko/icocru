@@ -38,8 +38,8 @@ public class OxActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new Tab1Fragment(), "Основы");
-        adapter.addFragment(new Tab2Fragment(), "Вернуть веру");
+        adapter.addFragment(new Tab1Fragment(), "Основы Христианства");
+        adapter.addFragment(new Tab2Fragment(), "Возвращение");
         adapter.addFragment(new Tab3Fragment(), "Характер Иисуса");
         adapter.addFragment(new Tab4Fragment(), "Молодые ученики");
         viewPager.setAdapter(adapter);
