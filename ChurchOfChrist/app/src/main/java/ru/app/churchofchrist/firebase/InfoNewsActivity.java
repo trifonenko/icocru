@@ -24,7 +24,7 @@ public class InfoNewsActivity extends AppCompatActivity {
         if (bundle != null) {
         }
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

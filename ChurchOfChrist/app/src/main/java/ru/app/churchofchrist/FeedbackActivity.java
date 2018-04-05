@@ -31,8 +31,8 @@ public class FeedbackActivity extends AppCompatActivity {
         });
 
         // Наши поля и кнопка
-        send = (Button) findViewById(R.id.emailsendbutton);
-        emailtext = (EditText) findViewById(R.id.emailtext);
+        send = findViewById(R.id.emailsendbutton);
+        emailtext = findViewById(R.id.emailtext);
 
         send.setOnClickListener(new View.OnClickListener() {
             @Override

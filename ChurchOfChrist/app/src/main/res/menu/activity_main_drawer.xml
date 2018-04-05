@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- Меню, используемое в DrawerLayout. -->
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="none">
         <item
             android:id="@+id/basic_christ"

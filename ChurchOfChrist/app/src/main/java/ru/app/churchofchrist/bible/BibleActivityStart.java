@@ -29,7 +29,7 @@ public class BibleActivityStart extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bible_start);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -39,8 +39,8 @@ public class BibleActivityStart extends AppCompatActivity {
             }
         });
 
-        textViewDate = (TextView) findViewById(R.id.textViewDate);
-        textViewAdr = (TextView) findViewById(R.id.textViewAdr);
+        textViewDate = findViewById(R.id.textViewDate);
+        textViewAdr = findViewById(R.id.textViewAdr);
 
         MyTask mt = new MyTask();
         mt.execute();
