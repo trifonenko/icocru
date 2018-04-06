@@ -50,75 +50,23 @@ public class BibleActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_bible2);
         category = getResources().getStringArray(R.array.perevod);
 
-        //Логическая переменная для статуса соединения
         Boolean isInternetPresent = false;
         SongsListFragment.ConnectionDetector cd;
 
         //Создаем пример класса connection detector:
         cd = new SongsListFragment.ConnectionDetector(getApplicationContext());
 
-
-        /*// иниизиализируем кнопку
-        Button button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(BibleActivity2.this, BibleActivity.class);
-                startActivity(intent);
-            }
-        });*/
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);//устанавливаем на панель инструментов навигационную кнопку назад
-        //вешаем обработчик на навигационную кнопку назад, при нажатии которой действующая активность закрывается
+        toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
-        // Привязываем объявленную переменную типа WebView к созданному нами
-        // элементу WebView в файле activity_bible.xml:
 
-        /*// адаптер
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_dropdown_item, perevod);
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
-
-
-        Spinner spinner = findViewById(R.id.perevod);
-        spinner.setAdapter(adapter);
-        // заголовок
-        spinner.setPrompt("Перевод");
-        // выделяем элемент
-        spinner.setSelection(0);
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                switch (position) {
-                    case 0:
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText(R.string.synod);
-                        break;
-                    case 1:
-                        Intent intent3 = new Intent(BibleActivity2.this, BibleActivity.class);
-                        startActivity(intent3);
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText(R.string.nrp);
-                        break;
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });*/
-
-        // адаптер
         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, R.layout.spinner_dropdown_item2, knigi);
         adapter2.setDropDownViewResource(R.layout.spinner_dropdown_item2);
 
@@ -477,33 +425,6 @@ public class BibleActivity2 extends AppCompatActivity {
             }
         });
 
-        /*SpinnerAdapter spinnerAdapter2 = ArrayAdapter.createFromResource(getApplicationContext(), R.array.book, R.layout.spinner_dropdown_item2);
-        Spinner navigationSpinner2 = new Spinner(getSupportActionBar().getThemedContext());
-        navigationSpinner2.setAdapter(spinnerAdapter2);
-        toolbar.addView(navigationSpinner2, 0);
-
-        navigationSpinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                switch (position) {
-                    case 0:
-                        webView.loadUrl("file:///android_asset/books/01_genesis.html");
-                        break;
-                    case 1:
-                        webView.loadUrl("file:///android_asset/books/02_exodus.html");
-                        break;
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });*/
-
-
-
-
         webView = findViewById(R.id.webViewBible);
 
         WebSettings webSettings = webView.getSettings();
@@ -538,11 +459,6 @@ public class BibleActivity2 extends AppCompatActivity {
 
     }
 
-    // Пишем код обработки нажатия кнопки назад на устройстве, что позволит нам при нажатии
-    // на кнопку "Назад" перейти к предыдущей странице, а не просто закрывать приложения.
-    // Оно будет закрываться кнопкой "Назад" лишь в том случае, если мы находимся на стартовой
-    // странице, которую указали выше:
-
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (event.getAction() == KeyEvent.ACTION_DOWN) {
@@ -560,21 +476,10 @@ public class BibleActivity2 extends AppCompatActivity {
         return super.onKeyDown(keyCode, event);
     }
 
-    //Открывать ссылки только на этом сайте
     private class MyWebViewClient extends WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            /*if (url.indexOf(".") <= 0) {
-                // the link is not for a page on my site, so launch another Activity that handles URLs
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                startActivity(intent);
-                return true;
-            }
-
-            return false;*/
             if(Uri.parse(url).getHost().length() == 0) {
-            /*if(Uri.parse(url).getHost().endsWith(".")) {*/
-            /*if (url.indexOf(".") <= 0) {*/
                 return false;
             }
 
@@ -583,17 +488,11 @@ public class BibleActivity2 extends AppCompatActivity {
             return true;
         }
 
-
-
-
-        //При невозможности открыть какую либо страницу, открывает html файл с уведомлением
         @Override
         public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-     /*остановка загрузки и отображение страницы error.html из папки “assets”*/
             view.stopLoading();
             view.loadUrl("file:///android_asset/error.html");
         }
-
     }
 
     @Override
@@ -606,21 +505,6 @@ public class BibleActivity2 extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            /*case R.id.offsinod:
-                webView.loadUrl("file:///android_asset/books_rst/01.html");
-*//*                Toast toast = Toast.makeText(getApplicationContext(),
-                        "В режиме OFFLINE не работает АУДИО и ПОИСК", Toast.LENGTH_LONG);
-                toast.show();*//*
-                break;
-            case R.id.offsovr:
-                webView.loadUrl("file:///android_asset/books/01_genesis.html");
-*//*                Toast toast2 = Toast.makeText(getApplicationContext(),
-                        "В режиме OFFLINE не работает АУДИО и ПОИСК", Toast.LENGTH_LONG);
-                toast2.show();*//*
-                break;*/
-/*            case R.id.sinod:
-                webView.loadUrl("https://okbible.ru/books_rst/01");
-                break;*/
             case R.id.zamet_bible:
                 Intent intent2 = new Intent(BibleActivity2.this, ru.app.churchofchrist.notepad.MainActivity.class);
                 startActivity(intent2);

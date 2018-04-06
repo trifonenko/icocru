@@ -1,10 +1,13 @@
 package ru.app.churchofchrist.good_news;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -17,7 +20,7 @@ import ru.app.churchofchrist.R;
  */
 
 public class GoodNewsRecyclerAdapter extends RecyclerView.Adapter<GoodNewsRecyclerAdapter.ViewHolder> {
-
+    private Activity mActivity;
     private String[] mCaptions;
     private String[] mNew;
     private String[] mLinksImg;
@@ -31,7 +34,8 @@ public class GoodNewsRecyclerAdapter extends RecyclerView.Adapter<GoodNewsRecycl
         }
     }
 
-    GoodNewsRecyclerAdapter(String[] captions, String[] aNew, String[] linksImg) {
+    GoodNewsRecyclerAdapter(Activity mActivity, String[] captions, String[] aNew, String[] linksImg) {
+        this.mActivity = mActivity;
         this.mCaptions = captions;
         this.mNew = aNew;
         this.mLinksImg = linksImg;
@@ -47,6 +51,7 @@ public class GoodNewsRecyclerAdapter extends RecyclerView.Adapter<GoodNewsRecycl
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         CardView cv = holder.mCv;
 
+
         Uri uri;
         if (mLinksImg[position].contains("youtube")) {
             uri = Uri.parse("http://www.icocnews.ru/wp-content/uploads/2017/11/783636-1200x575.jpg");
@@ -61,6 +66,13 @@ public class GoodNewsRecyclerAdapter extends RecyclerView.Adapter<GoodNewsRecycl
 
         TextView aNew = cv.findViewById(R.id.body_good_news);
         aNew.setText(mNew[position]);
+        holder.mCv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mActivity.startActivity(new Intent(mActivity, DetailTopicActivity.class));
+
+            }
+        });
     }
 
     @Override

@@ -3,8 +3,8 @@ package ru.app.churchofchrist.good_news;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -28,7 +28,7 @@ import ru.app.churchofchrist.R;
 public class GoodNewsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     public ProgressDialog dialog;
     private RecyclerView recyclerView;
-    private String link;
+    public String link;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +58,8 @@ public class GoodNewsActivity extends AppCompatActivity implements AdapterView.O
         recyclerView.setLayoutManager(manager);
 
         dialog = new ProgressDialog(this);
+
+
     }
 
     @SuppressLint("StaticFieldLeak")
@@ -104,8 +106,9 @@ public class GoodNewsActivity extends AppCompatActivity implements AdapterView.O
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
             dialog.dismiss();
-            GoodNewsRecyclerAdapter adapter = new GoodNewsRecyclerAdapter(titles, texts, images);
+            GoodNewsRecyclerAdapter adapter = new GoodNewsRecyclerAdapter(GoodNewsActivity.this, titles, texts, images);
             recyclerView.setAdapter(adapter);
+
         }
     }
 

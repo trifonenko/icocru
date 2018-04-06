@@ -177,6 +177,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+
+        <activity
+            android:name=".good_news.DetailTopicActivity"
+            android:label="@string/ansver"
+            android:theme="@style/ThemeAnsver" />
     </application>
 
 </manifest>
