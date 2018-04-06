@@ -3,6 +3,7 @@ package ru.app.churchofchrist.plans;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -25,6 +26,10 @@ import ru.app.churchofchrist.songs.SongsListFragment;
 
 
 public class PlansActivity extends AppCompatActivity {
+    private SharedPreferences prefs;
+    private String prefName = "spinner_plans";
+    int id=0;
+
     private WebView webView;
     Menu myMenu = null;
     private Toolbar toolbar = null;
@@ -57,19 +62,24 @@ public class PlansActivity extends AppCompatActivity {
             }
         });
 
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, R.layout.spinner_dropdown_item, city);
-        adapter2.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, R.layout.spinner_dropdown_item_plans, city);
+        adapter2.setDropDownViewResource(R.layout.spinner_dropdown_item_plans);
 
         Spinner spinner2 = findViewById(R.id.city);
         spinner2.setAdapter(adapter2);
-        // заголовок
-        spinner2.setPrompt("Город");
-        // выделяем элемент
-        spinner2.setSelection(0);
+
+        prefs = getSharedPreferences(prefName, MODE_PRIVATE);
+        id=prefs.getInt("last_val_plans",0);
+        spinner2.setSelection(id);
 
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                prefs = getSharedPreferences(prefName, MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putInt("last_val_plans", position);
+                editor.commit();
+
                 switch (position) {
                     case 0:
                         webView.loadUrl("file:///android_asset/plans/nsk_yug.html");
@@ -104,7 +114,6 @@ public class PlansActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(PlansActivity.this);
         progressDialog.setMessage("Загрузка...");
         progressDialog.show();
-        webView.loadUrl("file:///android_asset/plans/nsk_yug.html");
         webView.setWebViewClient(new MyWebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {

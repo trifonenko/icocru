@@ -3,6 +3,7 @@ package ru.app.churchofchrist.bible;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -27,6 +28,9 @@ import ru.app.churchofchrist.R;
 import ru.app.churchofchrist.songs.SongsListFragment;
 
 public class BibleActivity2 extends AppCompatActivity {
+    private SharedPreferences prefs;
+    private String prefName = "spinner_value";
+    int id=0;
     private WebView webView;
     Menu myMenu = null;
     private ProgressDialog mProgressDialog;
@@ -120,14 +124,18 @@ public class BibleActivity2 extends AppCompatActivity {
 
         Spinner spinner2 = findViewById(R.id.knigi);
         spinner2.setAdapter(adapter2);
-        // заголовок
-        spinner2.setPrompt("Книги");
-        // выделяем элемент
-        spinner2.setSelection(0);
+
+        prefs = getSharedPreferences(prefName, MODE_PRIVATE);
+        id=prefs.getInt("last_val",0);
+        spinner2.setSelection(id);
 
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                prefs = getSharedPreferences(prefName, MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putInt("last_val", position);
+                editor.commit();
 
                 switch (position) {
                     case 0:
@@ -506,8 +514,6 @@ public class BibleActivity2 extends AppCompatActivity {
         progressDialog = new ProgressDialog(BibleActivity2.this);
         progressDialog.setMessage("Загрузка...");
         progressDialog.show();
-            webView.loadUrl("file:///android_asset/books_rst/01.html");
-
             webView.setWebViewClient(new MyWebViewClient(){
                 @Override
                 public boolean shouldOverrideUrlLoading(WebView view, String url) {

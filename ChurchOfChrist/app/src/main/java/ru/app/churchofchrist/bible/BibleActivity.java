@@ -29,6 +29,10 @@ import ru.app.churchofchrist.songs.SongsListFragment;
 
 
 public class BibleActivity extends AppCompatActivity {
+    private SharedPreferences prefs;
+    private String prefName = "spinner_value";
+    int id=0;
+
     private WebView webView;
     Menu myMenu = null;
     private ProgressDialog mProgressDialog;
@@ -69,14 +73,19 @@ public class BibleActivity extends AppCompatActivity {
 
         Spinner spinner2 = findViewById(R.id.knigi);
         spinner2.setAdapter(adapter2);
-        // заголовок
-        spinner2.setPrompt("Книги");
-        // выделяем элемент
-        spinner2.setSelection(0);
+
+        prefs = getSharedPreferences(prefName, MODE_PRIVATE);
+        id=prefs.getInt("last_val",0);
+        spinner2.setSelection(id);
 
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                prefs = getSharedPreferences(prefName, MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putInt("last_val", position);
+                editor.commit();
+
                 switch (position) {
                     case 0:
                         webView.loadUrl("file:///android_asset/books/01_genesis.html");
@@ -426,7 +435,6 @@ public class BibleActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(BibleActivity.this);
         progressDialog.setMessage("Загрузка...");
         progressDialog.show();
-            webView.loadUrl("file:///android_asset/books/01_genesis.html");
             webView.setWebViewClient(new MyWebViewClient(){
                 @Override
                 public boolean shouldOverrideUrlLoading(WebView view, String url) {
