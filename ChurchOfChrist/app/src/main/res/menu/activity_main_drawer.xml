@@ -25,14 +25,14 @@
             android:id="@+id/ansver"
             android:icon="@drawable/ic_vopros"
             android:title="@string/ansver" />
-        <item
+        <!--<item
             android:id="@+id/good_news"
             android:icon="@drawable/ic_news"
             android:title="@string/label_good_news" />
         <item
             android:id="@+id/plans"
             android:icon="@drawable/ic_news"
-            android:title="@string/plans" />
+            android:title="@string/plans" />-->
     </group>
     <item android:title="">
         <menu>

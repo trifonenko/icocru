@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -33,6 +35,7 @@ public class AnsverDetailFragment extends Fragment {
     private TextView ansverText;
     private TextView ansverName;
     private TextView ansverTextId;
+    private ImageView ansverImage;
     private List<Ansver> ansver;
 
     @Override
@@ -56,6 +59,7 @@ public class AnsverDetailFragment extends Fragment {
             ansverName = view.findViewById(R.id.ansver_name);
             ansverText = view.findViewById(R.id.ansver_text);
             ansverTextId = view.findViewById(R.id.ansver_id);
+            ansverImage = view.findViewById(R.id.imageView);
             onRunAnsver(ansverId);
             ansverText.setTextSize((float) temp);//Размер текста песни.
 
@@ -150,5 +154,7 @@ public class AnsverDetailFragment extends Fragment {
         ansverName.setText(ansver.get(num).getName());
         ansverText.setText(ansver.get(num).getText());
         ansverTextId.setText(ansver.get(num).getId() + "");
+        String img = (ansver.get(num).getImage() + "");
+        ansverImage.setImageURI(Uri.parse(img));
     }
 }
