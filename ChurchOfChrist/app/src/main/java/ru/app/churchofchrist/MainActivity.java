@@ -1,5 +1,6 @@
 package ru.app.churchofchrist;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -24,6 +25,7 @@ import ru.app.churchofchrist.ox.OxActivity;
 import ru.app.churchofchrist.songs.SongsActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,10 +74,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 try {
                     startActivity(Intent.createChooser(intent, "Описание действия"));
                 }
-                catch (android.content.ActivityNotFoundException ignored) {
+                catch (ActivityNotFoundException ignored) {
                 }
             }
         });
+
     }
 
     @Override
@@ -147,4 +150,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         cursor.close();
     }
+
+
 }
