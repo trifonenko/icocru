@@ -2,6 +2,7 @@ package ru.app.churchofchrist.ansver;
 
 import android.annotation.SuppressLint;
 import android.app.Fragment;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -15,9 +16,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
 import java.util.Random;
@@ -32,36 +34,49 @@ public class AnsverDetailFragment extends Fragment {
     private int ansverId;//Идентификатор песни, выбранной пользователем.
     private int temp = 14;
     public static final String APP_PREFERENCES = "mysettingss";
+    private SimpleDraweeView draweeView;
     private TextView ansverText;
     private TextView ansverName;
     private TextView ansverTextId;
-    private ImageView ansverImage;
+    public ProgressDialog dialog;
     private List<Ansver> ansver;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+
         temp = sharedPref.getInt("temp", temp);
         setHasOptionsMenu(true);
         if (savedInstanceState != null) {
             ansverId = savedInstanceState.getInt("ansverId");
         }
         return inflater.inflate(R.layout.fragment_ansver_text, container, false);
+
     }
+
+
 
     @Override
     public void onStart() {
         super.onStart();
+
+
         View view = getView();
+
         if (view != null) {
             AnsverLab ansverLab = AnsverLab.getInstance(getActivity());
             ansver = ansverLab.getAnsver();
+            draweeView = view.findViewById(R.id.imageView);
             ansverName = view.findViewById(R.id.ansver_name);
             ansverText = view.findViewById(R.id.ansver_text);
             ansverTextId = view.findViewById(R.id.ansver_id);
-            ansverImage = view.findViewById(R.id.imageView);
+
             onRunAnsver(ansverId);
             ansverText.setTextSize((float) temp);//Размер текста песни.
+
+
 
         }
     }
@@ -88,6 +103,8 @@ public class AnsverDetailFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_fragment_ansver_detail, menu);
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -133,6 +150,7 @@ public class AnsverDetailFragment extends Fragment {
                 Random random = new Random();
                 int randomNum = random.nextInt(ansver.size() - 1);
                 onRunAnsver(randomNum);
+
                 break;
             case R.id.share:
                 final Intent intent = new Intent(Intent.ACTION_SEND);
@@ -149,12 +167,18 @@ public class AnsverDetailFragment extends Fragment {
         return super.onOptionsItemSelected(item);
     }
 
+
+
+
     @SuppressLint("SetTextI18n")
     private void onRunAnsver(int num) {
+        String url = (ansver.get(num).getImage() + "");
+
+        draweeView.setImageURI(Uri.parse(url));
         ansverName.setText(ansver.get(num).getName());
         ansverText.setText(ansver.get(num).getText());
         ansverTextId.setText(ansver.get(num).getId() + "");
-        String img = (ansver.get(num).getImage() + "");
-        ansverImage.setImageURI(Uri.parse(img));
+
+
     }
 }

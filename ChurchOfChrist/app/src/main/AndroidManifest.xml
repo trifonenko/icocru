@@ -15,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+
         <!--
         android:backupAgent="TheBackupAgent"
         <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIyGfQbECBdvlz0U-UIw0jdDkrjZd6uOoZWEXc8w" />
