@@ -1,29 +1,3 @@
- $(document).ready(function(){
-    $(".swipe_menu").swipe({
-              swipeStatus:function(event, phase, direction, distance, duration, fingers)
-                  {
-                      if (phase=="move" && direction =="right") {
-                           $('.menu-hide').addClass('show');
-                            $('.menu_tab').addClass('active');
-                           return false;
-                      }
-                      if (phase=="move" && direction =="left") {
-                            $('.menu-hide').removeClass('show');
-                            $('.menu_tab').removeClass('active');
-                           return false;
-                      }
-                  }
-          }); 
-// Open and close menu
-  $('.menu_tab').click(function(){
-    $('.menu-hide').toggleClass('show');
-    $('.menu_tab').toggleClass('active');
-  });
-  $('a').click(function(){
-    $('.menu-hide').removeClass('show');
-    $('.menu_tab').removeClass('active');
-  });
-});
 
 // Hide menu icon on scroll down
 var senseSpeed = 3;

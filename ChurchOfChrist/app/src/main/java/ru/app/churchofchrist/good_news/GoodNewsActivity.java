@@ -21,10 +21,6 @@ import org.jsoup.select.Elements;
 
 import ru.app.churchofchrist.R;
 
-/**
- *
- */
-
 public class GoodNewsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     public ProgressDialog dialog;
     private RecyclerView recyclerView;

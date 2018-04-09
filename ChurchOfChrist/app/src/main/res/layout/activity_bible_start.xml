@@ -66,7 +66,7 @@
                     android:layout_marginRight="6dp"
                     android:paddingBottom="10dp"
                     android:paddingTop="4dp"
-                    android:text="Современный Русский Перевод"
+                    android:text="Современный Перевод"
                     android:textAlignment="center"
                     android:textSize="14sp" />
 
@@ -116,7 +116,7 @@
                     android:layout_marginRight="6dp"
                     android:paddingBottom="10dp"
                     android:paddingTop="4dp"
-                    android:text="Русский Синодальный Перевод"
+                    android:text="Синодальный Перевод"
                     android:textAlignment="center"
                     android:textSize="14sp" />
 
