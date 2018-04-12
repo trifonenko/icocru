@@ -26,7 +26,7 @@ public class UpdateWidgetService extends Service {
         for (int widgetId : allWidgetIds) {
 
 
-        DBHelper dbHelper = new DBHelper(this, "lessons.db", 2);//09.04.2018 (версия в google 0)
+        DBHelper dbHelper = new DBHelper(this, "lessons.db", 3);//10.04.2018 (версия в google 0)
         try {
             dbHelper.updateDataBase();
         } catch (IOException mIOException) {
