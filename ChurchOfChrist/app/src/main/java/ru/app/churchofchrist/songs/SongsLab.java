@@ -39,12 +39,14 @@ class SongsLab {
     }
 
     List<Song> getSongs() {
+        int i = 1;
         List<Song> songs = new ArrayList<>();
         Cursor cursor = mDatabase.rawQuery("SELECT * FROM songs", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            songs.add(new Song(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(4)));
+            songs.add(new Song(i, cursor.getString(1), cursor.getString(2), cursor.getString(4)));
             cursor.moveToNext();
+            i++;
         }
         cursor.close();
         return songs;
