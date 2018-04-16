@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
 
 android {
     compileSdkVersion 27
@@ -35,8 +36,11 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:12.0.1'
     implementation 'com.google.firebase:firebase-messaging:12.0.1'
     implementation 'com.facebook.fresco:fresco:1.8.1'
+    compile 'com.crashlytics.sdk.android:crashlytics:2.9.1'
 }
 
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.google.gms.google-services'
+
+
