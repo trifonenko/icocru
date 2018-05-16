@@ -21,7 +21,6 @@ import android.webkit.WebViewClient;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import ru.app.churchofchrist.R;
@@ -88,333 +87,201 @@ public class BibleActivity2 extends AppCompatActivity {
                 switch (position) {
                     case 0:
                         webView.loadUrl("file:///android_asset/books_rst/01.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Быт.");
                         break;
                     case 1:
                         webView.loadUrl("file:///android_asset/books_rst/02.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Исх.");
                         break;
                     case 2:
                         webView.loadUrl("file:///android_asset/books_rst/03.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Лев.");
                         break;
                     case 3:
                         webView.loadUrl("file:///android_asset/books_rst/04.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Числ.");
                         break;
                     case 4:
                         webView.loadUrl("file:///android_asset/books_rst/05.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Втор.");
                         break;
                     case 5:
                         webView.loadUrl("file:///android_asset/books_rst/06.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("ИсНав.");
                         break;
                     case 6:
                         webView.loadUrl("file:///android_asset/books_rst/07.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Суд.");
                         break;
                     case 7:
                         webView.loadUrl("file:///android_asset/books_rst/08.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Руфь");
                         break;
                     case 8:
                         webView.loadUrl("file:///android_asset/books_rst/09.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("1Цар.");
                         break;
                     case 9:
                         webView.loadUrl("file:///android_asset/books_rst/10.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("2Цар.");
                         break;
                     case 10:
                         webView.loadUrl("file:///android_asset/books_rst/11.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("3Цар.");
                         break;
                     case 11:
                         webView.loadUrl("file:///android_asset/books_rst/12.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("4Цар.");
                         break;
                     case 12:
                         webView.loadUrl("file:///android_asset/books_rst/13.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("1Пар.");
                         break;
                     case 13:
                         webView.loadUrl("file:///android_asset/books_rst/14.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("2Пар.");
                         break;
                     case 14:
                         webView.loadUrl("file:///android_asset/books_rst/15.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Ездр.");
                         break;
                     case 15:
                         webView.loadUrl("file:///android_asset/books_rst/16.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Неем.");
                         break;
                     case 16:
                         webView.loadUrl("file:///android_asset/books_rst/17.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Есф.");
                         break;
                     case 17:
                         webView.loadUrl("file:///android_asset/books_rst/18.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Иов");
                         break;
                     case 18:
                         webView.loadUrl("file:///android_asset/books_rst/19.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Пс.");
                         break;
                     case 19:
                         webView.loadUrl("file:///android_asset/books_rst/20.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Прит.");
                         break;
                     case 20:
                         webView.loadUrl("file:///android_asset/books_rst/21.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Екк.");
                         break;
                     case 21:
                         webView.loadUrl("file:///android_asset/books_rst/22.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Песн.");
                         break;
                     case 22:
                         webView.loadUrl("file:///android_asset/books_rst/23.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Исаия");
                         break;
                     case 23:
                         webView.loadUrl("file:///android_asset/books_rst/24.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Иер.");
                         break;
                     case 24:
                         webView.loadUrl("file:///android_asset/books_rst/25.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("ПлИер.");
                         break;
                     case 25:
                         webView.loadUrl("file:///android_asset/books_rst/26.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Иез.");
                         break;
                     case 26:
                         webView.loadUrl("file:///android_asset/books_rst/27.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Дан.");
                         break;
                     case 27:
                         webView.loadUrl("file:///android_asset/books_rst/28.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Осия");
                         break;
                     case 28:
                         webView.loadUrl("file:///android_asset/books_rst/29.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Иоиль");
                         break;
                     case 29:
                         webView.loadUrl("file:///android_asset/books_rst/30.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Амос");
                         break;
                     case 30:
                         webView.loadUrl("file:///android_asset/books_rst/31.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Авд.");
                         break;
                     case 31:
                         webView.loadUrl("file:///android_asset/books_rst/32.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Иона");
                         break;
                     case 32:
                         webView.loadUrl("file:///android_asset/books_rst/33.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Мих.");
                         break;
                     case 33:
                         webView.loadUrl("file:///android_asset/books_rst/34.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Наум");
                         break;
                     case 34:
                         webView.loadUrl("file:///android_asset/books_rst/35.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Авв.");
                         break;
                     case 35:
                         webView.loadUrl("file:///android_asset/books_rst/36.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Соф.");
                         break;
                     case 36:
                         webView.loadUrl("file:///android_asset/books_rst/37.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Агг.");
                         break;
                     case 37:
                         webView.loadUrl("file:///android_asset/books_rst/38.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Зах.");
                         break;
                     case 38:
                         webView.loadUrl("file:///android_asset/books_rst/39.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Мал.");
                         break;
                     case 39:
                         webView.loadUrl("file:///android_asset/books_rst/40.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Матф.");
                         break;
                     case 40:
                         webView.loadUrl("file:///android_asset/books_rst/41.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Марк.");
                         break;
                     case 41:
                         webView.loadUrl("file:///android_asset/books_rst/42.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Лук.");
                         break;
                     case 42:
                         webView.loadUrl("file:///android_asset/books_rst/43.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Ин.");
                         break;
                     case 43:
                         webView.loadUrl("file:///android_asset/books_rst/44.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Деян.");
                         break;
                     case 44:
                         webView.loadUrl("file:///android_asset/books_rst/45.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Иак.");
                         break;
                     case 45:
                         webView.loadUrl("file:///android_asset/books_rst/46.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("1Пет.");
                         break;
                     case 46:
                         webView.loadUrl("file:///android_asset/books_rst/47.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("2Пет.");
                         break;
                     case 47:
                         webView.loadUrl("file:///android_asset/books_rst/48.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("1Ин.");
                         break;
                     case 48:
                         webView.loadUrl("file:///android_asset/books_rst/49.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("2Ин.");
                         break;
                     case 49:
                         webView.loadUrl("file:///android_asset/books_rst/50.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("3Ин.");
                         break;
                     case 50:
                         webView.loadUrl("file:///android_asset/books_rst/51.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Иуд.");
                         break;
                     case 51:
                         webView.loadUrl("file:///android_asset/books_rst/52.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Рим.");
                         break;
                     case 52:
                         webView.loadUrl("file:///android_asset/books_rst/53.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("1Кор");
                         break;
                     case 53:
                         webView.loadUrl("file:///android_asset/books_rst/54.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("2Кор");
                         break;
                     case 54:
                         webView.loadUrl("file:///android_asset/books_rst/55.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Гал.");
                         break;
                     case 55:
                         webView.loadUrl("file:///android_asset/books_rst/56.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Ефес.");
                         break;
                     case 56:
                         webView.loadUrl("file:///android_asset/books_rst/57.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Фил.");
                         break;
                     case 57:
                         webView.loadUrl("file:///android_asset/books_rst/58.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Кол.");
                         break;
                     case 58:
                         webView.loadUrl("file:///android_asset/books_rst/59.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("1Фес.");
                         break;
                     case 59:
                         webView.loadUrl("file:///android_asset/books_rst/60.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("2Фес.");
                         break;
                     case 60:
                         webView.loadUrl("file:///android_asset/books_rst/61.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("1Тим.");
                         break;
                     case 61:
                         webView.loadUrl("file:///android_asset/books_rst/62.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("2Тим.");
                         break;
                     case 62:
                         webView.loadUrl("file:///android_asset/books_rst/63.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Тит.");
                         break;
                     case 63:
                         webView.loadUrl("file:///android_asset/books_rst/64.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Филим.");
                         break;
                     case 64:
                         webView.loadUrl("file:///android_asset/books_rst/65.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Евр.");
                         break;
                     case 65:
                         webView.loadUrl("file:///android_asset/books_rst/66.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Откр.");
                         break;
                 }
             }

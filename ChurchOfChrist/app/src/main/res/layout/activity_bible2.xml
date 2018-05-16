@@ -13,13 +13,26 @@
         android:fitsSystemWindows="false"
         android:theme="@style/AppTheme.AppBarOverlay">
 
+
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
-            android:layout_width="wrap_content"
-            android:layout_height="42dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
             app:layout_collapseMode="pin"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:layout_marginRight="6dp"
+                android:gravity="end"
+                android:text="@string/sinod_text"
+                android:textAlignment="textStart"
+                android:textColor="@color/color0"
+                android:textSize="10sp"
+                tools:ignore="RtlCompat" />
             <!--<Spinner
                 android:id="@+id/perevod"
                 android:layout_width="60dp"
@@ -29,27 +42,21 @@
             </Spinner>-->
 
 
+        </android.support.v7.widget.Toolbar>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
             <Spinner
                 android:id="@+id/knigi"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimaryBible">
+                android:layout_marginStart="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp" />
 
-            </Spinner>
-        </android.support.v7.widget.Toolbar>
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="6dp"
-            android:layout_weight="1"
-            android:text="@string/sinod_text"
-            android:textAlignment="textEnd"
-            android:textColor="@color/color0"
-            android:textSize="10sp"
-            android:gravity="end"
-            android:layout_marginEnd="6dp" />
+        </LinearLayout>
 
 
     </android.support.design.widget.AppBarLayout>
