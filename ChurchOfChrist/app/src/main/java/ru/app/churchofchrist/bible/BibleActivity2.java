@@ -88,8 +88,7 @@ public class BibleActivity2 extends AppCompatActivity {
                 switch (position) {
                     case 0:
                         webView.loadUrl("file:///android_asset/books_rst/01.html");
-                        ((TextView) parent.getChildAt(0)).setTextSize(14);
-                        ((TextView) parent.getChildAt(0)).setText("Быт.");
+
                         break;
                     case 1:
                         webView.loadUrl("file:///android_asset/books_rst/02.html");
