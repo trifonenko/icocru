@@ -65,5 +65,6 @@ public class InfoNewsActivity extends AppCompatActivity {
             view.loadUrl("file:///android_asset/error.html");
         }
     }
+
 }
 
