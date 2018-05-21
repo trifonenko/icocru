@@ -9,7 +9,7 @@
     <color name="colorPrimarySongs">#D64541</color>
     <color name="colorPrimaryDarkSongs">#C0392B</color>
     <color name="colorAccentSongs">#049372</color>
-    <color name="colorBackgroundSongs">#e7e7e7</color>
+    <color name="colorBackgroundSongs">#efefef</color>
 
     <!-- Good news. -->
     <color name="colorPrimaryGoodNews">#218c74</color>
