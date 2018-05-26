@@ -20,11 +20,12 @@
         android:backupAgent="TheBackupAgent"
         <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIyGfQbECBdvlz0U-UIw0jdDkrjZd6uOoZWEXc8w" />
         -->
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar.MainActivity" />
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
@@ -36,7 +37,7 @@
         </activity>
         <activity
             android:name=".ox.OxActivity"
-            android:label="@string/ox"
+            android:label="@string/basic_christ"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ox.OxDetail1Activity"
@@ -118,11 +119,11 @@
         <!-- Вопросы-Ответы. -->
         <activity
             android:name=".ansver.AnsverActivity"
-            android:label="@string/ansver"
+            android:label="@string/answer"
             android:theme="@style/ThemeAnsver" />
         <activity
             android:name=".ansver.AnsverDetailActivity"
-            android:label="@string/ansver"
+            android:label="@string/answer"
             android:theme="@style/ThemeAnsver" />
 
         <!-- Виджет. -->
@@ -181,7 +182,7 @@
 
         <activity
             android:name=".good_news.DetailTopicActivity"
-            android:label="@string/ansver"
+            android:label="@string/answer"
             android:theme="@style/ThemeAnsver" />
     </application>
 
