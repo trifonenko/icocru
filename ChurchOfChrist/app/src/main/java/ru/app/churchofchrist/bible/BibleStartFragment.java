@@ -89,5 +89,7 @@ public class BibleStartFragment extends Fragment {
             super.onPostExecute(result);
             textViewAdr.setText(adr);
         }
+
+
     }
 }
