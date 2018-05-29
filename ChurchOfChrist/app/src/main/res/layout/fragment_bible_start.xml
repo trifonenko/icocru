@@ -21,7 +21,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp"
-        android:onClick="otr_start"
         android:paddingBottom="15dp"
         android:text="@string/evr_4_12"
         android:textAlignment="center"
@@ -76,7 +75,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/colorPrimaryBible"
-                    android:onClick="click_sovr"
                     android:text="Читать и слушать"
                     android:textColor="@color/white"
                     tools:targetApi="lollipop" />
@@ -126,7 +124,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/colorPrimaryBible"
-                    android:onClick="click_sinod"
                     android:text="Читать и слушать"
                     android:textColor="@android:color/background_light"
                     tools:targetApi="lollipop" />

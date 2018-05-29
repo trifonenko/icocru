@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         final FragmentManager manager = getSupportFragmentManager();
         Fragment fragment = manager.findFragmentById(R.id.frame_container);
         if (fragment == null) {
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.main:
+                    case R.id.home:
                         Fragment mainFragment = new BottomNavigationMainFragment();
                         manager.beginTransaction().replace(R.id.frame_container, mainFragment).commit();
                         break;
@@ -48,10 +47,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
                 return true;
-
             }
         });
-
     }
-
 }

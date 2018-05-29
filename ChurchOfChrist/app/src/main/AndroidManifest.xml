@@ -35,7 +35,7 @@
         </activity>
         <activity
             android:name=".ox.OxActivity"
-            android:label="@string/basic_christ"
+            android:label="@string/basic_christian"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ox.OxDetail1Activity"
@@ -137,12 +137,6 @@
 
         <service android:name=".widget.UpdateWidgetService" />
         <!-- * * * -->
-
-        <activity
-            android:name=".bible.BibleActivityStart"
-            android:configChanges="orientation|screenSize"
-            android:label="@string/bible"
-            android:theme="@style/AppTheme" />
 
         <service android:name=".firebase.FCMInitializationService">
             <intent-filter>
