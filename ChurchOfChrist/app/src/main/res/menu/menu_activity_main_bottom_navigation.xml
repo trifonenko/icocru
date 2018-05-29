@@ -2,22 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/main"
-        android:icon="@android:drawable/ic_dialog_map"
+        android:icon="@drawable/ic_home"
         android:title="@string/main" />
     <item
         android:id="@+id/bible"
-        android:icon="@android:drawable/ic_dialog_email"
+        android:icon="@drawable/ic_bookthree"
         android:title="@string/bible" />
     <item
         android:id="@+id/basic_christ"
-        android:icon="@android:drawable/ic_dialog_dialer"
+        android:icon="@drawable/ic_christian"
         android:title="@string/basic_christ" />
     <item
         android:id="@+id/songs"
-        android:icon="@android:drawable/ic_popup_reminder"
+        android:icon="@drawable/ic_song"
         android:title="@string/songs" />
     <item
         android:id="@+id/further"
-        android:icon="@android:drawable/ic_popup_disk_full"
+        android:icon="@drawable/ic_statii"
         android:title="@string/further" />
 </menu>
