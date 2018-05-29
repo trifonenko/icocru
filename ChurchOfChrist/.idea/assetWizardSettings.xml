@@ -80,7 +80,8 @@
                         <option name="values">
                           <map>
                             <entry key="color" value="7f7f7f" />
-                            <entry key="outputName" value="ic_view_day_black_24dp" />
+                            <entry key="outputName" value="ic_glav" />
+                            <entry key="overrideSize" value="true" />
                             <entry key="sourceFile" value="C:\Users\Админ" />
                           </map>
                         </option>
