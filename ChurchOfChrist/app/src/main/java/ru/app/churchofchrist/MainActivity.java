@@ -1,6 +1,7 @@
 package ru.app.churchofchrist;
 
 import android.annotation.SuppressLint;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -19,7 +20,6 @@ import ru.app.churchofchrist.ox.BasicChristianFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,11 +37,16 @@ public class MainActivity extends AppCompatActivity {
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            toggle.getDrawerArrowDrawable().setColor(getColor(R.color.colorPrimaryDark));
+        } else {
+            toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.colorPrimaryDark));
+        }
+
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
                 DrawerLayout drawer = findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
                 return true;
