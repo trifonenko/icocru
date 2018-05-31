@@ -797,7 +797,6 @@ public class AnotherActivity extends Activity {
         builder.setPositiveButton("OK", dioclOK);
         builder.setCancelable(false);
         builder.create().show();
-
     }
 
     private DialogInterface.OnClickListener dioclOK = new DialogInterface.OnClickListener() {
