@@ -1,6 +1,6 @@
 package ru.app.churchofchrist;
 
-import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,6 +17,7 @@ import android.view.MenuItem;
 
 import ru.app.churchofchrist.bible.BibleStartFragment;
 import ru.app.churchofchrist.ox.BasicChristianFragment;
+import ru.app.churchofchrist.songs.SongsActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,10 +29,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-
-        @SuppressLint("ResourceType") DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        final DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -47,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                DrawerLayout drawer = findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
                 return true;
             }
@@ -76,6 +73,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.basic_christian:
                         Fragment basicChristianFragment = new BasicChristianFragment();
                         manager.beginTransaction().replace(R.id.frame_container, basicChristianFragment).commit();
+                        break;
+                    case R.id.songs:
+                        Intent intent = new Intent(MainActivity.this, SongsActivity.class);
+                        startActivity(intent);
                         break;
                     case R.id.further:
                         Fragment furtherFragment = new BottomNavigationFurtherFragment();

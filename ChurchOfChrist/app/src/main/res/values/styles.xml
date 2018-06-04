@@ -10,15 +10,6 @@
         <item name="android:windowBackground">@color/gray_light</item>
     </style>
 
-    <!-- Songs. -->
-    <style name="ThemeSongs" parent="AppTheme">
-        <item name="colorPrimary">@color/colorPrimarySongs</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDarkSongs</item>
-        <item name="colorAccent">@color/colorAccentSongs</item>
-        <item name="android:windowBackground">@color/colorBackgroundSongs</item>
-    </style>
-    <!-- * * * -->
-
     <!-- Good news. -->
     <style name="ThemeGoodNews" parent="AppTheme">
         <item name="colorPrimary">@color/colorPrimaryGoodNews</item>
