@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="ru.app.churchofchrist.ansver.AnsverActivity">
+    tools:context="ru.app.church_of_christ.ansver.AnsverActivity">
 
     <include layout="@layout/toolbar" />
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/detail_frag"
         android:layout_margin="4dp"
-        class="ru.app.churchofchrist.ansver.AnsverDetailFragment"
+        class="ru.app.church_of_christ.ansver.AnsverDetailFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

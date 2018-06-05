@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="ru.app.churchofchrist.notepad.MainActivity">
+    tools:context="ru.app.church_of_christ.notepad.MainActivity">
 
     <!--<item
         android:id="@+id/main_about"

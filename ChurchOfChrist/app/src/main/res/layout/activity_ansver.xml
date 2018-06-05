@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="ru.app.churchofchrist.ansver.AnsverActivity">
+    tools:context="ru.app.church_of_christ.ansver.AnsverActivity">
 
     <include layout="@layout/toolbar" />
 
     <fragment
         android:id="@+id/list_frag"
-        class="ru.app.churchofchrist.ansver.AnsverListFragment"
+        class="ru.app.church_of_christ.ansver.AnsverListFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

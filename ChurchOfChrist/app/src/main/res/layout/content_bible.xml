@@ -7,7 +7,7 @@
     android:orientation="vertical"
 
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="ru.app.churchofchrist.bible.BibleActivity"
+    tools:context="ru.app.church_of_christ.bible.BibleActivity"
     tools:showIn="@layout/activity_bible">
 
 

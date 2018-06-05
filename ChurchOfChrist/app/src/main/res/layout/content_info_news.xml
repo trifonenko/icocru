@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="ru.app.churchofchrist.firebase.InfoNewsActivity"
+    tools:context="ru.app.church_of_christ.firebase.InfoNewsActivity"
     tools:showIn="@layout/activity_info_news">
 
     <LinearLayout
