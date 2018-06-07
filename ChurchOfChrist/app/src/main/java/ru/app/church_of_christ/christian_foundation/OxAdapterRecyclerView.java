@@ -1,4 +1,4 @@
-package ru.app.church_of_christ.сhristian_foundations;
+package ru.app.church_of_christ.christian_foundation;
 
 import android.annotation.SuppressLint;
 import android.support.annotation.NonNull;
@@ -45,7 +45,7 @@ class OxAdapterRecyclerView extends RecyclerView.Adapter<OxAdapterRecyclerView.V
     @Override
     public void onBindViewHolder(@NonNull OxAdapterRecyclerView.ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         CardView cardView = holder.cardView;
-        TextView textView = cardView.findViewById(R.id.name_title);
+        TextView textView = cardView.findViewById(R.id.title_lesson);
         textView.setText(titles[position]);
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override

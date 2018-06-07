@@ -16,7 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import ru.app.church_of_christ.bible.BibleStartFragment;
-import ru.app.church_of_christ.сhristian_foundations.BasicChristianFragment;
+import ru.app.church_of_christ.christian_foundation.BasicChristianFragment;
 import ru.app.church_of_christ.songs.SongsActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                         Fragment bibleFragment = new BibleStartFragment();
                         manager.beginTransaction().replace(R.id.frame_container, bibleFragment).commit();
                         break;
-                    case R.id.basic_christian:
+                    case R.id.basic:
                         Fragment basicChristianFragment = new BasicChristianFragment();
                         manager.beginTransaction().replace(R.id.frame_container, basicChristianFragment).commit();
                         break;

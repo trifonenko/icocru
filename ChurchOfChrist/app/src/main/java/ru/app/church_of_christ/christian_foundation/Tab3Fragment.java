@@ -1,4 +1,4 @@
-package ru.app.church_of_christ.сhristian_foundations;
+package ru.app.church_of_christ.christian_foundation;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,17 +13,17 @@ import android.view.ViewGroup;
 import ru.app.church_of_christ.OnClickListenerAdapter;
 import ru.app.church_of_christ.R;
 
-/* Возвращение. */
+/* Характер Иисуса. */
 
-public class Tab2Fragment extends Fragment {
+public class Tab3Fragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        String[] arrayTitles = new String[Lesson.lessonReturn.length];
+        String[] arrayTitles = new String[Lesson.lessonCharacterJesus.length];
         for (int i = 0; i < arrayTitles.length; i++) {
-            arrayTitles[i] = Lesson.lessonReturn[i].getName();
+            arrayTitles[i] = Lesson.lessonCharacterJesus[i].getName();
         }
-        RecyclerView recycler = (RecyclerView) inflater.inflate(R.layout.fragment_tab2, container, false);
+        RecyclerView recycler = (RecyclerView) inflater.inflate(R.layout.fragment_tab3, container, false);
         OxAdapterRecyclerView adapter = new OxAdapterRecyclerView(arrayTitles);
         recycler.setAdapter(adapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
@@ -31,7 +31,7 @@ public class Tab2Fragment extends Fragment {
         adapter.setOnClickListenerAdapter(new OnClickListenerAdapter() {
             public void onClickItemAdapter(int position) {
                 Intent intent = new Intent(getActivity(), OxDetail1Activity.class);
-                intent.putExtra(OxDetail1Activity.KEY2, position);
+                intent.putExtra(OxDetail1Activity.KEY3, position);
                 getActivity().startActivity(intent);
             }
         });

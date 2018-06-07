@@ -34,9 +34,9 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".сhristian_foundations.OxDetail1Activity"
+            android:name=".christian_foundation.OxDetail1Activity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".сhristian_foundations.AnotherActivity">
+        <activity android:name=".christian_foundation.AnotherActivity">
             <intent-filter>
                 <data
                     android:host="AnotherActivityHost"

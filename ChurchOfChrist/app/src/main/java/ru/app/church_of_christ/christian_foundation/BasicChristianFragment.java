@@ -1,4 +1,4 @@
-package ru.app.church_of_christ.сhristian_foundations;
+package ru.app.church_of_christ.christian_foundation;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -29,7 +29,7 @@ public class BasicChristianFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_basic_christian, container, false);
 
-        ViewPager viewPager = view.findViewById(R.id.viewpager);
+        ViewPager viewPager = view.findViewById(R.id.view_pager);
         setupViewPager(viewPager);
 
         TabLayout tabLayout = view.findViewById(R.id.tab_layout);

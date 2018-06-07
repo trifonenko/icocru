@@ -1,4 +1,4 @@
-package ru.app.church_of_christ.сhristian_foundations;
+package ru.app.church_of_christ.christian_foundation;
 
 import ru.app.church_of_christ.R;
 
