@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="ru.app.church_of_christ.good_news.GoodNewsActivity">
+    tools:context="ru.app.churchofchrist.good_news.GoodNewsActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_good_news"

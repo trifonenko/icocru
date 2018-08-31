@@ -6,13 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="ru.app.church_of_christ.songs.SongsDetailActivity">
+    tools:context="ru.app.churchofchrist.songs.SongsDetailActivity">
 
     <include layout="@layout/toolbar" />
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/fragment_songs_detail"
-        class="ru.app.church_of_christ.songs.SongsDetailFragment"
+        class="ru.app.churchofchrist.songs.SongsDetailFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="4dp" />

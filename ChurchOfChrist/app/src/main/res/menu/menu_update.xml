@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="ru.app.church_of_christ.notepad.NoteActivity">
+    tools:context="ru.app.churchofchrist.notepad.NoteActivity">
 
     <item
         android:id="@+id/note_delete"

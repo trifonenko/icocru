@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
 
-    tools:context="ru.app.church_of_christ.сhristian_foundations.OxDetail1Activity">
+    tools:context="ru.app.churchofchrist.ox.OxDetail1Activity">
 
     <include layout="@layout/toolbar" />
 

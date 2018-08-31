@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="ru.app.church_of_christ.bible.BibleActivity">
+    tools:context="ru.app.churchofchrist.bible.BibleActivity">
 
     <include layout="@layout/toolbar_bible" />
 

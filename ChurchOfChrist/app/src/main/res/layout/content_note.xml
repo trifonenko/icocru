@@ -8,7 +8,7 @@
     android:background="#F5F5F5"
     android:focusableInTouchMode="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="ru.app.church_of_christ.notepad.NoteActivity"
+    tools:context="ru.app.churchofchrist.notepad.NoteActivity"
     tools:showIn="@layout/activity_note">
 
     <!--Здесь для того, чтобы поднималась кнопка над клавиатурой-->

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="ru.app.church_of_christ.bible.BibleStartFragment">
+    tools:context="ru.app.churchofchrist.bible.BibleStartFragment">
 
     <TextView
         android:layout_width="match_parent"
