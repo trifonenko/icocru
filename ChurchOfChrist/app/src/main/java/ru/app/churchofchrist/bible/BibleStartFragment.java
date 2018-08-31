@@ -1,13 +1,11 @@
 package ru.app.churchofchrist.bible;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,19 +20,11 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import ru.app.churchofchrist.MainActivity;
 import ru.app.churchofchrist.R;
 
 public class BibleStartFragment extends Fragment {
     private TextView textViewDate;
     private TextView textViewAdr;
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        Toolbar toolbar = ((MainActivity) context).findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.bible);
-    }
 
     @SuppressLint({"SetTextI18n", "SimpleDateFormat"})
     @Override
