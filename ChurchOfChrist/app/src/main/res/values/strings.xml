@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- App. -->
     <string name="app_name">Церковь Христа</string>
     <string name="action_settings">Настройки</string>
     <string name="search">Поиск</string>
-
-    <!-- Menu bottom navigation view. -->
-    <string name="main">Главная</string>
+    <string name="ox">Основы христианства</string>
     <string name="bible">Библия</string>
-    <string name="basic_christ">Основы христианства</string>
-    <string name="songs">Песни</string>
-    <string name="further">Далее</string>
     <string name="notepad">Блокнот</string>
-    <string name="answer">Вопрос-Ответ</string>
+    <string name="random_verse_bible">Случайный стих из Библии</string>
 
     <!-- Songs. -->
     <string name="random_song">Случайная песня</string>
@@ -62,8 +56,10 @@
     <string name="note_save">Сохранить</string>
 
 
-    <!-- Пункты меню menu_activity_main_bottom_navigation. -->
-
+    <!-- Пункты меню activity_main_drawer. -->
+    <string name="basic_christ">Основы христианства</string>
+    <string name="songs">Песни</string>
+    <string name="ansver">Вопрос-Ответ</string>
     <string name="news">Хорошие новости</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
