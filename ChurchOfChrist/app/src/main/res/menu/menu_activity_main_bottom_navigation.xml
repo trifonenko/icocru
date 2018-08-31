@@ -18,6 +18,6 @@
         android:title="@string/songs" />
     <item
         android:id="@+id/further"
-        android:icon="@drawable/ic_menu"
+        android:icon="@drawable/ic_statii"
         android:title="@string/further" />
 </menu>
