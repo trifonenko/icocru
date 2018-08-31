@@ -13,6 +13,7 @@
 
         <include layout="@layout/toolbar" /><!-- Подключаем Toolbar. -->
 
+
         <android.support.design.widget.TabLayout
             android:id="@+id/tablayout"
             android:layout_width="match_parent"
