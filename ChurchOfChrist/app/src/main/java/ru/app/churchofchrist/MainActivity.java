@@ -10,7 +10,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import ru.app.churchofchrist.bible.BibleStartFragment;
-import ru.app.churchofchrist.ox.BasicChristianFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,10 +40,6 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.bible:
                         Fragment bibleFragment = new BibleStartFragment();
                         manager.beginTransaction().replace(R.id.frame_container, bibleFragment).commit();
-                        break;
-                    case R.id.basic_christian:
-                        Fragment basicChristianFragment = new BasicChristianFragment();
-                        manager.beginTransaction().replace(R.id.frame_container, basicChristianFragment).commit();
                         break;
                     case R.id.further:
                         Fragment furtherFragment = new BottomNavigationFurtherFragment();
