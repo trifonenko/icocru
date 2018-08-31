@@ -6,12 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
     app:cardCornerRadius="4dp"
-    tools:context=".BottomNavigationFurtherFragment">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Далее"/>
+    tools:context=".FurtherFragment">
 
     <ListView
         android:id="@+id/menu_list"
