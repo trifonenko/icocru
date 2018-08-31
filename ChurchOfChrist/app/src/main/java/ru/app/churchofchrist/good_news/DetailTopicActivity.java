@@ -1,7 +1,7 @@
 package ru.app.churchofchrist.good_news;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import ru.app.churchofchrist.R;
 

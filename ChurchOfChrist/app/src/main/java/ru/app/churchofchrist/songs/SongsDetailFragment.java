@@ -10,10 +10,10 @@ import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.SwitchCompat;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.widget.SwitchCompat;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -108,7 +108,7 @@ public class SongsDetailFragment extends Fragment {
                     }
                     Snackbar snackbar = Snackbar.make(view, str, Snackbar.LENGTH_LONG);
                     View snackView = snackbar.getView();
-                    TextView snackTextView = snackView.findViewById(android.support.design.R.id.snackbar_text);
+                    TextView snackTextView = snackView.findViewById(com.google.android.material.R.id.snackbar_text);
                     snackTextView.setTextColor(Color.WHITE);
                     snackbar.show();
                     fabImageDrawable(fab);
