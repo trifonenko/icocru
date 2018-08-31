@@ -1,4 +1,4 @@
-package ru.app.church_of_christ.christian_foundation;
+package ru.app.church_of_christ.сhristian_foundations;
 import android.text.style.ClickableSpan;
 import android.view.View;
 

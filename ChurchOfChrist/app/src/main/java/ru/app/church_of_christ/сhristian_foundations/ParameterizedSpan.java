@@ -1,4 +1,4 @@
-package ru.app.church_of_christ.christian_foundation;
+package ru.app.church_of_christ.сhristian_foundations;
 import android.graphics.Color;
 import android.text.TextPaint;
 import android.text.style.CharacterStyle;
