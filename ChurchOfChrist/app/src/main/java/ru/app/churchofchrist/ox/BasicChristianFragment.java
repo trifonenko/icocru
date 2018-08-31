@@ -41,7 +41,7 @@ public class BasicChristianFragment extends Fragment {
     public void onStart() {
         super.onStart();
         Toolbar toolbar = ((MainActivity) context).findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.basic_christian_full);
+        toolbar.setTitle(R.string.basic_christian);
     }
 
     private void setupViewPager(ViewPager viewPager) {

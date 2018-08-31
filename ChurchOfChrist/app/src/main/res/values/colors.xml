@@ -3,7 +3,7 @@
     <!-- App. -->
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#858585</color>
+    <color name="colorAccent">#FFFFFF</color>
 
     <!-- Songs. -->
     <color name="colorPrimarySongs">#D64541</color>
