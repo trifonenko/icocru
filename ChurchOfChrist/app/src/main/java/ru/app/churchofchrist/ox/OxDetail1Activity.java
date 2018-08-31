@@ -64,7 +64,7 @@ public class OxDetail1Activity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);//Объект Toolbar.
         setSupportActionBar(toolbar);
 
-        toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back_dark);//Кнопка "back" на Toolbar, активируется установкой иконки.
+        toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);//Кнопка "back" на Toolbar, активируется установкой иконки.
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {//Слушатель кнопки "back".
             @Override
             public void onClick(View v) {
