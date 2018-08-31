@@ -11,6 +11,7 @@ class Ansver {
         this.name = name;
         this.text = text;
         this.image = image;
+
     }
 
     public int getId() {
