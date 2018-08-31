@@ -48,7 +48,7 @@ public class BibleActivityStart extends AppCompatActivity {
         Date currentDate = new Date();
         SimpleDateFormat dateFormat = null;
         dateFormat = new SimpleDateFormat("dd MMMM");
-        textViewDate.setText("Чтение на сегодня (" + dateFormat.format(currentDate) + ")");
+        textViewDate.setText("Чтение на сегодня (" + dateFormat.format( currentDate ) + ")");
 
     }
 
