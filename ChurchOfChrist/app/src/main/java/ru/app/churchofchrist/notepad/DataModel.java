@@ -1,5 +1,5 @@
 package ru.app.churchofchrist.notepad;
-//Блокнот разработан неизвестным специалистом из GitHub. Доработан trifonenko
+
 
 public class DataModel {
 

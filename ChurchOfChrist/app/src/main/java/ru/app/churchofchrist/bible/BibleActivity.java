@@ -52,7 +52,6 @@ public class BibleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bible);
         category = getResources().getStringArray(R.array.perevod);
 
-
         //Логическая переменная для статуса соединения
         Boolean isInternetPresent = false;
         SongsListFragment.ConnectionDetector cd;
@@ -395,7 +394,6 @@ public class BibleActivity extends AppCompatActivity {
                 webView.loadUrl("https://okbible.ru/rndvers.php");
                 break;
         }
-
         return true;
     }
     @Override

@@ -1,5 +1,4 @@
 package ru.app.churchofchrist.notepad;
-//Блокнот разработан неизвестным специалистом из GitHub. Доработан trifonenko
 
 import android.content.DialogInterface;
 import android.content.SharedPreferences;

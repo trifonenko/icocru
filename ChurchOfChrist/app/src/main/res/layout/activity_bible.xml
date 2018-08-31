@@ -61,10 +61,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-
-    <include
-        android:id="@+id/include"
-        layout="@layout/content_bible" />
-
+    <include layout="@layout/content_bible" />
 
 </android.support.design.widget.CoordinatorLayout>
