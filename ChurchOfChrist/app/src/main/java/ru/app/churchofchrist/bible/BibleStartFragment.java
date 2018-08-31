@@ -69,6 +69,9 @@ public class BibleStartFragment extends Fragment {
         dateFormat = new SimpleDateFormat("dd MMMM");
         textViewDate.setText("Чтение на сегодня (" + dateFormat.format( currentDate ) + ")");
         return view;
+
+        //Alertdialog start stih
+
     }
 
     @SuppressLint("StaticFieldLeak")
@@ -99,5 +102,7 @@ public class BibleStartFragment extends Fragment {
             super.onPostExecute(result);
             textViewAdr.setText(adr);
         }
+
+
     }
 }

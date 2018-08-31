@@ -5,7 +5,19 @@
     android:layout_height="match_parent"
     android:layout_weight="1"
     android:orientation="vertical"
-    tools:context="ru.app.churchofchrist.bible.BibleStartFragment">
+    tools:context="ru.app.churchofchrist.bible.BibleActivityStart">
+
+    <include layout="@layout/toolbar" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:paddingBottom="12dp"
+        android:text="@string/bible"
+        android:textAlignment="center"
+        android:textSize="24sp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -21,7 +33,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp"
-        android:onClick="otr_start"
         android:paddingBottom="15dp"
         android:text="@string/evr_4_12"
         android:textAlignment="center"
@@ -37,10 +48,10 @@
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="6dp"
-            android:layout_marginEnd="3dp"
             android:layout_marginRight="3dp"
-            android:layout_weight="1">
+            android:layout_marginBottom="6dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="3dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -55,7 +66,7 @@
                     android:layout_marginRight="6dp"
                     android:paddingBottom="10dp"
                     android:paddingTop="4dp"
-                    android:text="Современный\n Перевод"
+                    android:text="Современный Перевод"
                     android:textAlignment="center"
                     android:textSize="14sp" />
 
@@ -87,10 +98,10 @@
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="6dp"
             android:layout_marginLeft="3dp"
-            android:layout_marginStart="3dp"
-            android:layout_weight="1">
+            android:layout_marginBottom="6dp"
+            android:layout_weight="1"
+            android:layout_marginStart="3dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -105,7 +116,7 @@
                     android:layout_marginRight="6dp"
                     android:paddingBottom="10dp"
                     android:paddingTop="4dp"
-                    android:text="Синодальный\n Перевод"
+                    android:text="Синодальный Перевод"
                     android:textAlignment="center"
                     android:textSize="14sp" />
 
@@ -136,6 +147,8 @@
         </android.support.v7.widget.CardView>
 
 
+
+
     </LinearLayout>
 
     <ScrollView
@@ -145,7 +158,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical" >
 
             <ImageView
                 android:id="@+id/imageView"
@@ -192,6 +205,49 @@
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
+
+            <!--<android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="6dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/info_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal|top"
+                        android:paddingBottom="4dp"
+                        android:paddingTop="4dp"
+                        android:text="Случайный стих из библии"
+                        android:textAllCaps="true"
+                        android:textSize="14sp" />
+
+                    &lt;!&ndash;<TextView
+                        android:id="@+id/textViewKnig"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="4dp"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />&ndash;&gt;
+
+                    <TextView
+                        android:id="@+id/textViewStih"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="4dp"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>-->
+
+
         </LinearLayout>
     </ScrollView>
 
