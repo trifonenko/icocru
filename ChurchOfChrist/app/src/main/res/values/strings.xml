@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- App. -->
     <string name="app_name">Церковь Христа</string>
+
+
+
     <string name="action_settings">Настройки</string>
     <string name="search">Поиск</string>
-
-    <!-- MainActivity. -->
-    <string-array name="main_activity_menu">
-        <item>Основы христианства</item>
-        <item>Песни</item>
-        <item>Библия</item>
-        <item>Блокнот</item>
-        <item>Вопрос-ответ</item>
-    </string-array>
+    <string name="ox">Основы христианства</string>
+    <string name="bible">Библия</string>
+    <string name="notepad">Блокнот</string>
+    <string name="random_verse_bible">Случайный стих из Библии</string>
 
     <!-- Songs. -->
-    <string name="songs">Песни</string>
     <string name="random_song">Случайная песня</string>
     <string name="chords">Аккорды</string>
     <string name="favorites_songs">Избранные песни</string>
@@ -23,12 +19,6 @@
     <string name="cancel">Отмена</string>
     <string name="delete_songs">Удалить все песни?</string>
     <string name="yes">Да</string>
-
-    <!-- Feedback. -->
-    <string name="feedback">Обратная связь</string>
-
-    <!-- App info. -->
-    <string name="app_info">О приложении</string>
 
     <!-- Good news. -->
     <string name="label_good_news">Хорошие новости</string>
@@ -47,8 +37,6 @@
         <item>Христианские церкви Европы</item>
         <item>Христианские церкви Африки</item>
     </string-array>
-
-
 
     <string name="header">Заголовок</string>
     <string name="note">Заметка</string>
@@ -71,6 +59,12 @@
     <string name="note_save">Сохранить</string>
 
 
+    <!-- Пункты меню activity_main_drawer. -->
+    <string name="basic_christ">Основы христианства</string>
+    <string name="songs">Песни</string>
+    <string name="ansver">Вопрос-Ответ</string>
+    <string name="news">Хорошие новости</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
@@ -79,10 +73,6 @@
         <item>SYNOD</item>
     </string-array>
 
-    <string name="ox">Основы христианства</string>
-    <string name="bible">Библия</string>
-    <string name="notepad">Блокнот</string>
-    <string name="ansver">Вопрос-ответ</string>
 
     <!-- Отрывки из Библии. -->
     <string name="excerpt_bt_01_01">
@@ -4630,8 +4620,8 @@ o	Поделитесь о своём опыте служения. Когда, к
     <string name="version">Версия 1.2.2</string>
     <string name="copyright">Copyright © ICOC RU Church of Christ 2017–2018. All rights reserved</string>
     <string name="razrab">В разработке участвовали:</string>
-
-
+    <string name="obrat_svyz">Обратная связь</string>
+    <string name="info_app">О приложении</string>
     <string name="icoc_splash">ICOC</string>
     <string name="ru_splash">RU</string>
     <string name="random_otr">Случайный отрывок</string>
