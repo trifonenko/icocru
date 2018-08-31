@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App. -->
-    <color name="colorPrimary">#FFFFFF</color>
-    <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#FFFFFF</color>
+    <color name="colorPrimary">#1abc9c</color>
+    <color name="colorPrimaryDark">#1abc9c</color>
+    <color name="colorAccent">#9b59b6</color>
 
     <!-- Songs. -->
     <color name="colorPrimarySongs">#D64541</color>

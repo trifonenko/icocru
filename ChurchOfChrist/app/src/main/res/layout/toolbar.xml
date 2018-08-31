@@ -10,5 +10,4 @@
     android:background="?attr/colorPrimary"
     android:theme="@style/AppTheme.ToolbarOverlay"
     app:popupTheme="@style/AppTheme.PopupOverlay"
-    android:elevation="4dp"
     app:titleTextAppearance="@style/Toolbar"/>
