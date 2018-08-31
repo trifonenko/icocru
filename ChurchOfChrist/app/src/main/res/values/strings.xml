@@ -6,9 +6,9 @@
     <string name="search">Поиск</string>
 
     <!-- Menu bottom navigation view. -->
-    <string name="main">Домой</string>
+    <string name="main">Главная</string>
     <string name="bible">Библия</string>
-    <string name="basic_christ">Основы</string>
+    <string name="basic_christ">Основы христианства</string>
     <string name="songs">Песни</string>
     <string name="further">Далее</string>
     <string name="notepad">Блокнот</string>
