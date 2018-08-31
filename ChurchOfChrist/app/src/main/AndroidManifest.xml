@@ -12,7 +12,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
+        android:theme="@style/AppTheme">
 
 
         <!--
@@ -59,6 +59,7 @@
             android:name=".bible.BibleActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/bible"
+            android:parentActivityName=".bible.BibleActivityStart"
             android:theme="@style/AppThemeBible.NoActionBar"
             tools:targetApi="jelly_bean">
             <meta-data
@@ -69,6 +70,7 @@
             android:name=".bible.BibleActivity2"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/bible"
+            android:parentActivityName=".bible.BibleActivityStart"
             android:theme="@style/AppThemeBible.NoActionBar"
             tools:targetApi="jelly_bean">
             <meta-data
@@ -84,16 +86,21 @@
             android:label="@string/note"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <!-- Songs. -->
+        <!-- Песни. -->
         <activity
             android:name=".songs.SongsActivity"
-            android:label="@string/songs" />
+            android:label="@string/songs"
+            android:theme="@style/ThemeSongs" />
         <activity
             android:name=".songs.SongsDetailActivity"
-            android:label="@string/songs" />
+            android:label="@string/songs"
+            android:theme="@style/ThemeSongs" />
         <activity
             android:name=".songs.SongsFavoritesActivity"
-            android:label="@string/favorites_songs" />
+            android:label="@string/favorites_songs"
+            android:theme="@style/ThemeSongs" />
+        <!-- * * * -->
+
 
         <!-- Хорошие новости. -->
         <activity
