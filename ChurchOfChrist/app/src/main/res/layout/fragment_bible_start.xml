@@ -12,6 +12,16 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp"
+        android:paddingBottom="12dp"
+        android:text="@string/bible"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
         android:baselineAligned="false"
         android:text="@string/stih_bible_glav"
         android:textAlignment="center" />
@@ -21,7 +31,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp"
-        android:onClick="otr_start"
         android:paddingBottom="15dp"
         android:text="@string/evr_4_12"
         android:textAlignment="center"
