@@ -8,8 +8,11 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,6 +49,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         navigationView.setItemIconTintList(null);
+
+        String[] captions = getResources().getStringArray(R.array.main_activity_menu);
+        int[] imageIds = {R.drawable.ic_feedback, R.drawable.ic_action_icons8, R.drawable.ic_feedback, R.drawable.ic_feedback, R.drawable.ic_feedback};
+        RecyclerView recyclerView = findViewById(R.id.recycler_main_activity);
+        RecyclerAdapterMainActivity adapter = new RecyclerAdapterMainActivity(captions, imageIds);
+        recyclerView.setAdapter(adapter);
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(manager);
     }
 
     @Override
