@@ -10,6 +10,12 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <!-- Splash screen. -->
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/background_splash_screen</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
     <!-- Songs. -->
     <style name="ThemeSongs" parent="AppTheme">
         <item name="colorPrimary">@color/colorPrimarySongs</item>
@@ -55,11 +61,6 @@
 
     <style name="AppTheme.NoActionBar.MainActivity">
         <item name="android:statusBarColor" tools:targetApi="lollipop">@color/colorStatusBar</item>
-    </style>
-
-    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowBackground">@drawable/background_splash_screen</item>
-        <item name="android:windowFullscreen">true</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
