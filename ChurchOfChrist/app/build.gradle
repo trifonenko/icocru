@@ -40,6 +40,7 @@ dependencies {
 
     implementation 'com.crashlytics.sdk.android:crashlytics:2.9.5'
     implementation 'io.github.kobakei:ratethisapp:1.2.0'
+    implementation 'android.arch.navigation:navigation-fragment:1.0.0-alpha05'
 }
 
 apply plugin: 'kotlin-android'

@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".SplashActivity"
+            android:name=".splash_screen.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +30,7 @@
         <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIyGfQbECBdvlz0U-UIw0jdDkrjZd6uOoZWEXc8w" />
         -->
         <activity
-            android:name=".MainActivity"
+            android:name=".main.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.MainActivity" />
@@ -70,7 +70,7 @@
             tools:targetApi="jelly_bean">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".main.MainActivity" />
         </activity>
         <activity
             android:name=".bible.BibleActivity2"
@@ -81,7 +81,7 @@
             tools:targetApi="jelly_bean">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".main.MainActivity" />
         </activity>
         <activity
             android:name=".notepad.MainActivity"
@@ -172,12 +172,12 @@
             android:name=".plans.PlansActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/bible"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".main.MainActivity"
             android:theme="@style/AppThemeBible.NoActionBar"
             tools:targetApi="jelly_bean">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".main.MainActivity" />
         </activity>
 
         <activity

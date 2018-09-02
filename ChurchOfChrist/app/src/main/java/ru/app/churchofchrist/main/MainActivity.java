@@ -1,4 +1,4 @@
-package ru.app.churchofchrist;
+package ru.app.churchofchrist.main;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -20,6 +20,10 @@ import android.widget.TextView;
 import java.io.IOException;
 import java.util.Random;
 
+import ru.app.churchofchrist.AppInfoActivity;
+import ru.app.churchofchrist.DBHelper;
+import ru.app.churchofchrist.FeedbackActivity;
+import ru.app.churchofchrist.R;
 import ru.app.churchofchrist.bible.BibleActivityStart;
 import ru.app.churchofchrist.ox.OxActivity;
 import ru.app.churchofchrist.songs.SongsActivity;
@@ -44,40 +48,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
 
-        DBHelper dbHelper = new DBHelper(this, "lessons.db", 3);//10.04.2018 (версия в google 2)
-        try {
-            dbHelper.updateDataBase();
-        } catch (IOException mIOException) {
-            throw new Error("UnableToUpdateDatabase");
-        }
-        final SQLiteDatabase database = dbHelper.getReadableDatabase();
-        this.randomVerse(database);
 
-        ImageView random = findViewById(R.id.imageView9);
-        random.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                randomVerse(database);
-            }
-        });
-
-        ImageView share = findViewById(R.id.share);
-        share.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.setType("text/plain");
-                TextView verse = findViewById(R.id.random_verse);
-                TextView coordinatesVerse = findViewById(R.id.coordinates_verse);
-                String textToSend = verse.getText()+ "\n\n" + coordinatesVerse.getText().toString();
-                intent.putExtra(Intent.EXTRA_TEXT, textToSend);
-                try {
-                    startActivity(Intent.createChooser(intent, "Описание действия"));
-                }
-                catch (ActivityNotFoundException ignored) {
-                }
-            }
-        });
 
 
     }
@@ -137,20 +108,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    //Случайный отрывок.
-    private void randomVerse(SQLiteDatabase database) {
-        Cursor cursor = database.rawQuery("SELECT * FROM bible_verse_s", null);
-        Random random = new Random();
-        int randomNum = random.nextInt(cursor.getCount());
-        cursor.moveToPosition(randomNum);
 
-        TextView verse = findViewById(R.id.random_verse);
-        verse.setText(cursor.getString(0));
-        TextView coordinatesVerse = findViewById(R.id.coordinates_verse);
-        coordinatesVerse.setText(cursor.getString(1));
-
-        cursor.close();
-    }
 
 
 }
