@@ -18,5 +18,13 @@
             android:layout_height="wrap_content"
             tools:layout="@layout/fragment_random_verse" />
 
+        <fragment
+            android:layout_margin="8dp"
+            android:id="@+id/idNewsFragment"
+            class="ru.app.churchofchrist.news.NewsFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_news" />
+
     </LinearLayout>
 </ScrollView>
