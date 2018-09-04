@@ -55,6 +55,7 @@ public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerVi
             titleNews.setText(news.getTitle());
             Picasso.get()
                     .load(news.getImageUri())
+                    .placeholder(R.drawable.bg_card)
                     .into(imageNews);
         }
     }

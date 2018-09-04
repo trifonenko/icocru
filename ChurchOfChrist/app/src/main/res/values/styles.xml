@@ -16,6 +16,11 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
+    <style name="titleModule">
+        <item name="android:textSize">14sp</item>
+        <item name ="android:textStyle">bold</item>
+    </style>
+
     <!-- Songs. -->
     <style name="ThemeSongs" parent="AppTheme">
         <item name="colorPrimary">@color/colorPrimarySongs</item>
