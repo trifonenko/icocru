@@ -24,15 +24,9 @@
             </intent-filter>
         </activity>
 
-
-        <!--
-        android:backupAgent="TheBackupAgent"
-        <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIyGfQbECBdvlz0U-UIw0jdDkrjZd6uOoZWEXc8w" />
-        -->
         <activity
             android:name=".main.MainActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.MainActivity" />
 
         <activity
