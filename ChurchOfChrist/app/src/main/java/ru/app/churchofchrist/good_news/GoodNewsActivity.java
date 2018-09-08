@@ -35,7 +35,7 @@ public class GoodNewsActivity extends AppCompatActivity implements AdapterView.O
         Toolbar toolbar = findViewById(R.id.toolbar_good_news);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

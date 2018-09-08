@@ -4637,14 +4637,14 @@ o	Поделитесь о своём опыте служения. Когда, к
     <string name="date">Дата</string>
     <string name="koordinats">Координаты</string>
     <string name="stih">Отрывок</string>
-    <string name="stih_bible_glav">Ведь Слово Бога живет и действует...</string>
+    <string name="stih_bible_glav">Ведь Слово Бога живет и действует…</string>
     <string name="evr_4_12">Евр. 4:12</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="label_news">Новости</string>
     <string name="description">Описание</string>
-    <string name="label_progress_bar">Загрузка...</string>
+    <string name="label_progress_bar">Загрузка…</string>
 
 
 </resources>

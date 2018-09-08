@@ -7,7 +7,7 @@
     tools:context="ru.app.churchofchrist.songs.SongsFavoritesActivity">
 
     <include
-        android:id="@+id/toolbar"
+        android:id="@+id/idToolbar"
         layout="@layout/toolbar" />
 
     <androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -16,6 +16,6 @@
         android:layout_height="wrap_content"
         android:padding="4dp"
         android:scrollbars="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/idToolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

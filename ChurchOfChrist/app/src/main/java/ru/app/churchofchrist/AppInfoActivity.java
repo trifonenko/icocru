@@ -22,10 +22,10 @@ public class AppInfoActivity extends AppCompatActivity {
         // Если условие выполнено, будет показано диалоговое окно «Оценить это приложение»
         RateThisApp.showRateDialogIfNeeded(this);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.idToolbar);
         toolbar.setTitle("О приложении");
         ///
-        toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

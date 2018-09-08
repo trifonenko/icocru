@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_notepad);
         appDBHelper = DBHelper.getInstance(this);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.idToolbar);
         setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);//устанавливаем на панель инструментов навигационную кнопку назад
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);//устанавливаем на панель инструментов навигационную кнопку назад
         //вешаем обработчик на навигационную кнопку назад, при нажатии которой действующая активность закрывается
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

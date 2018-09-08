@@ -51,10 +51,10 @@ public class PlansActivity extends AppCompatActivity {
         SongsListFragment.ConnectionDetector cd;
         text = (TextView) findViewById(R.id.text);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.idToolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);//устанавливаем на панель инструментов навигационную кнопку назад
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);//устанавливаем на панель инструментов навигационную кнопку назад
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

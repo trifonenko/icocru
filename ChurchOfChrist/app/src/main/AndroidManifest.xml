@@ -14,21 +14,19 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".splash_screen.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".main.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar.MainActivity" />
-
         <activity
             android:name=".ox.OxActivity"
             android:label="@string/ox"
@@ -173,11 +171,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".main.MainActivity" />
         </activity>
-
         <activity
             android:name=".good_news.DetailTopicActivity"
             android:label="@string/ansver"
             android:theme="@style/ThemeAnsver" />
+        <activity android:name=".news.NewsDetailActivity"></activity>
     </application>
 
 </manifest>

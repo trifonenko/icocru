@@ -8,11 +8,9 @@
 
     <include layout="@layout/toolbar" />
 
-    <fragment
+    <FrameLayout
+        android:id="@+id/id_fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        class="ru.app.churchofchrist.HomeFragment"
-        android:id="@+id/idHomeFragment"
-        tools:layout="@layout/fragment_home" />
+        android:layout_height="match_parent" />
 
 </LinearLayout>

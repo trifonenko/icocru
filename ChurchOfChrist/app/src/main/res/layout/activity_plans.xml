@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/idToolbar"
             android:layout_width="wrap_content"
             android:layout_height="42dp"
             app:layout_collapseMode="pin"
