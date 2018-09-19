@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import ru.app.churchofchrist.AppInfoActivity;
 import ru.app.churchofchrist.FeedbackActivity;
+import ru.app.churchofchrist.HomeFragment;
 import ru.app.churchofchrist.R;
 import ru.app.churchofchrist.bible.BibleActivityStart;
 import ru.app.churchofchrist.news.NewsFragment;
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = fragmentManager.findFragmentById(R.id.id_fragment_container);
         if (fragment == null) {
-            fragment = new NewsFragment();
+            fragment = new HomeFragment();
             fragmentManager.beginTransaction()
                            .add(R.id.id_fragment_container, fragment)
                            .commit();
