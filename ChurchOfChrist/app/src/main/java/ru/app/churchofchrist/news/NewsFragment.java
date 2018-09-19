@@ -61,6 +61,7 @@ public class NewsFragment extends Fragment implements IContract.IView, OnClickIt
     @Override
     public void onClickItemListener(int index) {
         Intent intent = new Intent(getActivity(), NewsDetailActivity.class);
+        intent.putExtra(NewsDetailActivity.KEY_INTENT_INDEX_LIST_NEWS, index);
         startActivity(intent);
     }
 }
