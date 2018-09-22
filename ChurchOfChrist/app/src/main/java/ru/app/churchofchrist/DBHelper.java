@@ -28,11 +28,8 @@ public class DBHelper extends SQLiteOpenHelper {
         this.mDbName = dbName;
         this.mContext = context;
 
-        if (dbName.equals("songs.db") || dbName.equals("lessons.db")) {
-            if (android.os.Build.VERSION.SDK_INT >= 17)
-                 DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
-            else
-                DB_PATH = "/data/data/" + context.getPackageName() + "/databases/";
+        if (dbName.equals("icoc.db")) {
+            DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
 
             copyDataBase();
             this.getReadableDatabase();

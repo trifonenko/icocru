@@ -17,6 +17,7 @@ import ru.app.churchofchrist.FeedbackActivity;
 import ru.app.churchofchrist.HomeFragment;
 import ru.app.churchofchrist.R;
 import ru.app.churchofchrist.bible.BibleActivityStart;
+import ru.app.churchofchrist.foundations_of_christianity.FoundationOfChristianityFragment;
 import ru.app.churchofchrist.news.NewsFragment;
 import ru.app.churchofchrist.ox.OxActivity;
 import ru.app.churchofchrist.songs.SongsActivity;
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = fragmentManager.findFragmentById(R.id.id_fragment_container);
         if (fragment == null) {
-            fragment = new HomeFragment();
+            fragment = new FoundationOfChristianityFragment();
             fragmentManager.beginTransaction()
                            .add(R.id.id_fragment_container, fragment)
                            .commit();

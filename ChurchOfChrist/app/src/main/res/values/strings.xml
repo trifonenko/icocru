@@ -8,6 +8,12 @@
     <string name="notepad">Блокнот</string>
     <string name="random_verse_bible">Случайный стих из Библии</string>
 
+    <!-- Основы христианства. -->
+    <string name="foundationOfChristianity">Основы христианства</string>
+    <string name="retrieval">Возвращение</string>
+    <string name="characterOfJesus">Характер Иисуса</string>
+    <string name="youngStudents">Молодые ученики</string>
+
     <!-- Songs. -->
     <string name="random_song">Случайная песня</string>
     <string name="chords">Аккорды</string>

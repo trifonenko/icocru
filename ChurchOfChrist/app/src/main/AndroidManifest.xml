@@ -100,15 +100,6 @@
             android:theme="@style/ThemeSongs" />
         <!-- * * * -->
 
-
-        <!-- Хорошие новости. -->
-        <activity
-            android:name=".good_news.GoodNewsActivity"
-            android:label="@string/label_good_news"
-            android:theme="@style/ThemeGoodNews" />
-        <!-- * * * -->
-
-
         <!-- Вопросы-Ответы. -->
         <activity
             android:name=".ansver.AnsverActivity"
@@ -172,11 +163,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".main.MainActivity" />
         </activity>
-        <activity
-            android:name=".good_news.DetailTopicActivity"
-            android:label="@string/ansver"
-            android:theme="@style/ThemeAnsver" />
-        <activity android:name=".news.NewsDetailActivity"></activity>
-    </application>
 
+        <activity android:name=".news.NewsDetailActivity" />
+
+    </application>
 </manifest>
