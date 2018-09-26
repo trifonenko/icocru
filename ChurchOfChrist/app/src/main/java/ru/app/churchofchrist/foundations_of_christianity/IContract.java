@@ -5,10 +5,15 @@ import java.util.List;
 interface IContract {
 
     interface IView {
-        void showLessons(List<Lesson> lessonList);
+        void showListLessons(List<String> titlesLessons);
+    }
+
+    interface IPresenter {
+
+        void onTabSelected(CharSequence contentDescription);
     }
 
     interface IModel {
-        List<Lesson> getListLessons();
+        List<Lesson> getListLessons(String nameTable);
     }
 }

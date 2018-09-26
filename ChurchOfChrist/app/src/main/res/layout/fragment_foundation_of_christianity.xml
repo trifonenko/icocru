@@ -13,6 +13,7 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
         <com.google.android.material.tabs.TabLayout
+            android:id="@+id/idTabLayoutFoundationOfChristianity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabMode="scrollable">
@@ -20,22 +21,32 @@
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="lessons_foundation_of_christianity"
                 android:text="@string/foundationOfChristianity" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="lessons_retrieval"
                 android:text="@string/retrieval" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="lessons_character_of_jesus"
                 android:text="@string/characterOfJesus" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="lesson_young_students"
                 android:text="@string/youngStudents" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="lessons_milk_end_honey"
+                android:text="@string/milkAndHoney" />
         </com.google.android.material.tabs.TabLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -43,6 +54,6 @@
     <ListView
         android:id="@+id/idListViewLessons"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

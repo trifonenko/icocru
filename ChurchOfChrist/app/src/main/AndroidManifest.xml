@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <!-- Разрешение на получения статуса соединения -->
     <application
         android:allowBackup="true"
         android:fullBackupContent="@xml/backup_descriptor"
@@ -14,6 +13,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".foundations_of_christianity.LessonDetailActivity">
+
+        </activity>
         <activity
             android:name=".splash_screen.SplashActivity"
             android:theme="@style/SplashTheme">
@@ -26,7 +28,6 @@
         <activity
             android:name=".main.MainActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.MainActivity" />
         <activity
             android:name=".ox.OxActivity"
@@ -83,9 +84,7 @@
         <activity
             android:name=".notepad.NoteActivity"
             android:label="@string/note"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <!-- Песни. -->
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- Песни. -->
         <activity
             android:name=".songs.SongsActivity"
             android:label="@string/songs"
@@ -97,9 +96,7 @@
         <activity
             android:name=".songs.SongsFavoritesActivity"
             android:label="@string/favorites_songs"
-            android:theme="@style/ThemeSongs" />
-        <!-- * * * -->
-
+            android:theme="@style/ThemeSongs" /> <!-- * * * -->
         <!-- Вопросы-Ответы. -->
         <activity
             android:name=".ansver.AnsverActivity"
@@ -108,9 +105,7 @@
         <activity
             android:name=".ansver.AnsverDetailActivity"
             android:label="@string/ansver"
-            android:theme="@style/ThemeAnsver" />
-
-        <!-- Виджет. -->
+            android:theme="@style/ThemeAnsver" /> <!-- Виджет. -->
         <receiver android:name=".widget.MyWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -121,9 +116,7 @@
                 android:resource="@xml/widget_info" />
         </receiver>
 
-        <service android:name=".widget.UpdateWidgetService" />
-        <!-- * * * -->
-
+        <service android:name=".widget.UpdateWidgetService" /> <!-- * * * -->
         <activity
             android:name=".bible.BibleActivityStart"
             android:configChanges="orientation|screenSize"
@@ -163,8 +156,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".main.MainActivity" />
         </activity>
-
         <activity android:name=".news.NewsDetailActivity" />
-
     </application>
+
 </manifest>
