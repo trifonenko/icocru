@@ -1,6 +1,7 @@
 package ru.app.churchofchrist.foundations_of_christianity;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 class Lesson {

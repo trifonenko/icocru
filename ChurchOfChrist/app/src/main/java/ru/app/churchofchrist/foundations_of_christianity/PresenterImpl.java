@@ -4,8 +4,6 @@ import android.content.Context;
 
 import java.util.List;
 
-import io.reactivex.Observable;
-
 class PresenterImpl implements IContract.IPresenter {
 
     private IContract.IView mIView;
@@ -17,12 +15,7 @@ class PresenterImpl implements IContract.IPresenter {
     }
 
     @Override
-    public void onTabSelected(CharSequence contentDescription) {
-
-        List<String> titlesLessons = Observable.fromIterable(mIModel.getListLessons((String) contentDescription))
-                                               .map(Lesson::getTitle)
-                                               .toList()
-                                               .blockingGet();
-        mIView.showListLessons(titlesLessons);
+    public List<Lesson> getListLessons(String nameTable) {
+        return mIModel.getListLessons(nameTable);
     }
 }
