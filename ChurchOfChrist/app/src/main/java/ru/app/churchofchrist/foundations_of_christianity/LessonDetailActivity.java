@@ -1,6 +1,7 @@
 package ru.app.churchofchrist.foundations_of_christianity;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -13,8 +14,14 @@ public class LessonDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_detail);
 
+        Lesson lesson = getIntent().getParcelableExtra("lesson");
+
         Toolbar toolbar = findViewById(R.id.idToolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
         toolbar.setNavigationOnClickListener(v -> onBackPressed());
+        toolbar.setTitle(lesson.getTitle());
+
+        TextView lessonTextView = findViewById(R.id.idLessonTextView);
+        lessonTextView.setText(lesson.getLessonText());
     }
 }

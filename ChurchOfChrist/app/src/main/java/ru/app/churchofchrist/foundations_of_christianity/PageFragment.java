@@ -1,9 +1,13 @@
 package ru.app.churchofchrist.foundations_of_christianity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -12,6 +16,8 @@ import androidx.fragment.app.ListFragment;
 import io.reactivex.Observable;
 
 public class PageFragment extends ListFragment implements IContract.IView {
+
+    private List<Lesson> lessons;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -24,8 +30,8 @@ public class PageFragment extends ListFragment implements IContract.IView {
             position = bundle.getInt("position");
         }
 
+        //TODO Это можно сделать как то чище
         String nameTable = "";
-
         switch (position) {
             case 0:
                 nameTable = "lessons_foundation_of_christianity";
@@ -42,7 +48,9 @@ public class PageFragment extends ListFragment implements IContract.IView {
         }
 
         PresenterImpl presenter = new PresenterImpl(getActivity(), this);
-        List<String> titlesLessons = Observable.fromIterable(presenter.getListLessons(nameTable))
+        lessons = presenter.getListLessons(nameTable);
+
+        List<String> titlesLessons = Observable.fromIterable(lessons)
                                                .map(Lesson::getTitle)
                                                .toList()
                                                .blockingGet();
@@ -52,5 +60,13 @@ public class PageFragment extends ListFragment implements IContract.IView {
                 titlesLessons
         );
         setListAdapter(adapter);
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        Intent intent = new Intent(getActivity(), LessonDetailActivity.class);
+        intent.putExtra("lesson", lessons.get(position));
+        startActivity(intent);
     }
 }
