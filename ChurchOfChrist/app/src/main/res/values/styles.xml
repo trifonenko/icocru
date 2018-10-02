@@ -16,9 +16,18 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
+    <!-- Foundation of christianity. -->
+    <style name="ActivityDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
     <style name="titleModule">
         <item name="android:textSize">14sp</item>
-        <item name ="android:textStyle">bold</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <!-- Songs. -->

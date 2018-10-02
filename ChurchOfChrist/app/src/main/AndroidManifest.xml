@@ -13,9 +13,22 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".foundations_of_christianity.LessonDetailActivity">
 
+        <!-- FoundationOfChristianity -->
+        <activity
+            android:name=".foundations_of_christianity.VerseDialogActivity"
+            android:theme="@style/ActivityDialogTheme">
+            <intent-filter>
+                <data
+                    android:host="AnotherActivityHost"
+                    android:scheme="activity-run"
+                    tools:ignore="AppLinkUrlError" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
+
+        <activity android:name=".foundations_of_christianity.LessonDetailActivity"></activity>
         <activity
             android:name=".splash_screen.SplashActivity"
             android:theme="@style/SplashTheme">
@@ -36,18 +49,11 @@
         <activity
             android:name=".ox.OxDetail1Activity"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity android:name=".ox.AnotherActivity">
-            <intent-filter>
-                <data
-                    android:host="AnotherActivityHost"
-                    android:scheme="activity-run"
-                    tools:ignore="AppLinkUrlError" />
 
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
         </activity>
+
         <activity
             android:name=".FeedbackActivity"
             android:label="Контакты"
