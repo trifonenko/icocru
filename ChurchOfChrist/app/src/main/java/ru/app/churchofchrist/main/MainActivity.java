@@ -14,12 +14,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import ru.app.churchofchrist.AppInfoActivity;
 import ru.app.churchofchrist.FeedbackActivity;
-import ru.app.churchofchrist.HomeFragment;
+
 import ru.app.churchofchrist.R;
 import ru.app.churchofchrist.bible.BibleActivityStart;
 import ru.app.churchofchrist.foundations_of_christianity.FoundationOfChristianityFragment;
-import ru.app.churchofchrist.news.NewsFragment;
-import ru.app.churchofchrist.ox.OxActivity;
+
 import ru.app.churchofchrist.songs.SongsActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -41,10 +40,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(menuItem -> {
             switch (menuItem.getItemId()) {
-                case R.id.basic_christ:
-                    Intent intent1 = new Intent(MainActivity.this, OxActivity.class);
-                    startActivity(intent1);
-                    break;
                 case R.id.songs:
                     Intent intent2 = new Intent(MainActivity.this, SongsActivity.class);
                     startActivity(intent2);
