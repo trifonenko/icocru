@@ -4,6 +4,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="none">
         <item
+            android:id="@+id/main"
+            android:title="@string/main"
+            android:icon="@drawable/ic_main"/>
+        <item
             android:id="@+id/basic_christ"
             android:checkable="false"
             android:checked="false"

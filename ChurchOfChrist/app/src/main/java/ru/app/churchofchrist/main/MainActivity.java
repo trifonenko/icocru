@@ -12,13 +12,13 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import ru.app.churchofchrist.AppInfoActivity;
 import ru.app.churchofchrist.FeedbackActivity;
-
+import ru.app.churchofchrist.HomeFragment;
 import ru.app.churchofchrist.R;
 import ru.app.churchofchrist.bible.BibleActivityStart;
 import ru.app.churchofchrist.foundations_of_christianity.FoundationOfChristianityFragment;
-
 import ru.app.churchofchrist.songs.SongsActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,9 +37,25 @@ public class MainActivity extends AppCompatActivity {
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        Fragment fragment = fragmentManager.findFragmentById(R.id.id_fragment_container);
+        if (fragment == null) {
+            fragment = new FoundationOfChristianityFragment();
+            fragmentManager.beginTransaction()
+                           .add(R.id.id_fragment_container, fragment)
+                           .commit();
+        }
+
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(menuItem -> {
             switch (menuItem.getItemId()) {
+                case R.id.main:
+                    Fragment homeFragment = new HomeFragment();
+                    FragmentTransaction fragmentTransaction = getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.id_fragment_container, homeFragment)
+                            .addToBackStack(null);
+                    fragmentTransaction.commit();
                 case R.id.songs:
                     Intent intent2 = new Intent(MainActivity.this, SongsActivity.class);
                     startActivity(intent2);
@@ -69,15 +85,6 @@ public class MainActivity extends AppCompatActivity {
             return true;
         });
         navigationView.setItemIconTintList(null);
-
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        Fragment fragment = fragmentManager.findFragmentById(R.id.id_fragment_container);
-        if (fragment == null) {
-            fragment = new FoundationOfChristianityFragment();
-            fragmentManager.beginTransaction()
-                           .add(R.id.id_fragment_container, fragment)
-                           .commit();
-        }
     }
 
     @Override
