@@ -31,7 +31,7 @@ public class RandomVerseFragment extends Fragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_random_verse, container, false);
 
-        DBHelper dbHelper = new DBHelper(getActivity(), "lessons.db", 3);//10.04.2018 (версия в google 2)
+        DBHelper dbHelper = new DBHelper(getActivity(), "lessons.db", 4);//10.04.2018 (версия в google 2)
         try {
             dbHelper.updateDataBase();
         } catch (IOException mIOException) {

@@ -25,7 +25,7 @@ public class LessonDetailActivity extends AppCompatActivity {
 
         TextView lessonTextView = findViewById(R.id.idLessonTextView);
 
-        lessonTextView.setText(Html.fromHtml(getString(R.string.test)));
+        lessonTextView.setText(Html.fromHtml(lesson.getLessonText()));
 
         lessonTextView.setMovementMethod(LinkMovementMethod.getInstance());
     }

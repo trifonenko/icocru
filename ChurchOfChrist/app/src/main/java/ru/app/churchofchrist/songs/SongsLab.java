@@ -20,7 +20,7 @@ class SongsLab {
     private SQLiteDatabase mDatabaseFav;
 
     private SongsLab(Context context) {
-        DBHelper helperSongs = new DBHelper(context, "icoc.db", 5);//12.02.2018 (версия в google 5)
+        DBHelper helperSongs = new DBHelper(context, "icoc.db", 9);//12.02.2018 (версия в google 5)
         DBHelper helperFavSongs = new DBHelper(context, "db_songs", 1);
         try {
             helperSongs.updateDataBase();
@@ -41,7 +41,7 @@ class SongsLab {
     List<Song> getSongs() {
         int i = 1;
         List<Song> songs = new ArrayList<>();
-        Cursor cursor = mDatabase.rawQuery("SELECT * FROM songs ORDER BY title", null);
+        Cursor cursor = mDatabase.rawQuery("SELECT * FROM songs", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             songs.add(new Song(i, cursor.getString(1), cursor.getString(2), cursor.getString(4)));

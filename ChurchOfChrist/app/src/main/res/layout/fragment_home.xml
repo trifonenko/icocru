@@ -10,13 +10,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <fragment
-            android:id="@+id/idRandomVerseFragment"
-            class="ru.app.churchofchrist.random_verse.RandomVerseFragment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            tools:layout="@layout/fragment_random_verse" />
+        <!--<fragment-->
+            <!--android:id="@+id/idRandomVerseFragment"-->
+            <!--class="ru.app.churchofchrist.random_verse.RandomVerseFragment"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="8dp"-->
+            <!--tools:layout="@layout/fragment_random_verse" />-->
 
         <fragment
             android:id="@+id/idNewsFragment"
