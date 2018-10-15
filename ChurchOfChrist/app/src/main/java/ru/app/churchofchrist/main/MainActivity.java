@@ -2,7 +2,6 @@ package ru.app.churchofchrist.main;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -18,7 +17,7 @@ import ru.app.churchofchrist.FeedbackActivity;
 import ru.app.churchofchrist.HomeFragment;
 import ru.app.churchofchrist.R;
 import ru.app.churchofchrist.bible.BibleActivityStart;
-import ru.app.churchofchrist.foundations_of_christianity.FoundationOfChristianityFragment;
+import ru.app.churchofchrist.foundations_of_christianity.lessons_list.LessonsListFragment;
 import ru.app.churchofchrist.songs.SongsActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -56,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
                     Fragment homeFragment = fragmentManager.findFragmentByTag(HOME_FRAGMENT_TAG);
                     if (homeFragment == null) {
                         homeFragment = new HomeFragment();
-                        Toast.makeText(this, "home", Toast.LENGTH_SHORT)
-                             .show();
                     }
 
                     getSupportFragmentManager().beginTransaction()
@@ -71,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.foundations_of_christianity:
                     Fragment foundationOfChristianityFragment = fragmentManager.findFragmentByTag(FOUNDATION_OF_CHRISTIANITY_FRAGMENT_TAG);
                     if (foundationOfChristianityFragment == null) {
-                        foundationOfChristianityFragment = new FoundationOfChristianityFragment();
-                        Toast.makeText(this, "ox", Toast.LENGTH_SHORT).show();
+                        foundationOfChristianityFragment = new LessonsListFragment();
+
                     }
 
                     getSupportFragmentManager().beginTransaction()

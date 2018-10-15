@@ -15,13 +15,13 @@ import androidx.annotation.Nullable;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static String sDbPath;
-    private static final String DB_NAME = "icoc.db";
+    private static final String DB_NAME = "icoc.SQLite3";
     private Context mContext;
     private boolean mNeedUpdate = false;
     private SQLiteDatabase mDatabase;
 
     public DatabaseHelper(@Nullable Context context) {
-        super(context, DatabaseHelper.DB_NAME, null, 12);
+        super(context, DatabaseHelper.DB_NAME, null, 13);
         if (context != null) sDbPath = context.getApplicationInfo().dataDir + "/databases/";
         this.mContext = context;
         copyDatabase();

@@ -6,11 +6,11 @@ import android.os.Parcelable;
 import lombok.Getter;
 
 @Getter
-class Lesson implements Parcelable {
+public class Lesson implements Parcelable {
     private String title;
     private String lessonText;
 
-    Lesson(String title, String lessonText) {
+    public Lesson(String title, String lessonText) {
         this.title = title;
         this.lessonText = lessonText;
     }
