@@ -3,6 +3,9 @@ package ru.app.churchofchrist.foundations_of_christianity.detailing_lesson;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,7 +29,15 @@ public class LessonDetailActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(v -> onBackPressed());
         toolbar.setTitle(titleLesson);
 
+        String text = presenter.getLessonText(titleLesson);
+
+        SpannableString spannableString = new SpannableString(Html.fromHtml(text));
+        spannableString.setSpan(new VerseClickableSpan(this), text.indexOf("Бытие 1:1"), text.indexOf("Бытие 1:1") + String
+                .valueOf("Бытие 1:1")
+                .length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
         TextView lessonTextView = findViewById(R.id.idLessonTextView);
-        lessonTextView.setText(Html.fromHtml(presenter.getLessonText(titleLesson)));
+        lessonTextView.setText(spannableString);
+        lessonTextView.setMovementMethod(LinkMovementMethod.getInstance());
     }
 }
