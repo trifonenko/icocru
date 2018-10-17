@@ -9,7 +9,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 public class PagerAdapter extends FragmentPagerAdapter {
 
-    private PresenterPagerAdapter presenterPagerAdapter;
+    private IContract.IPresenter presenterPagerAdapter;
 
     public PagerAdapter(FragmentManager fm, Context context) {
         super(fm);

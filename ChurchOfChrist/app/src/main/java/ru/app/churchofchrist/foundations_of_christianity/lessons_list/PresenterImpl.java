@@ -26,9 +26,4 @@ public class PresenterImpl implements IContract.IPresenter {
     public List<String> loadListTitles(String topicLessons) {
         return mIModel.titlesLessons(topicLessons);
     }
-
-    @Override
-    public List<Lesson> getListLessons(String nameTable) {
-        return mIModel.getListLessons(nameTable);
-    }
 }

@@ -1,4 +1,4 @@
-package ru.app.churchofchrist.foundations_of_christianity.lessons_list;
+package ru.app.churchofchrist.foundations_of_christianity;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,12 +15,13 @@ import androidx.viewpager.widget.ViewPager;
 import ru.app.churchofchrist.R;
 import ru.app.churchofchrist.foundations_of_christianity.pager_adapter.PagerAdapter;
 
-public class LessonsListFragment extends Fragment {
+public class LessonsFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_foundation_of_christianity, container, false);
 
         PagerAdapter pagerAdapter = new PagerAdapter(

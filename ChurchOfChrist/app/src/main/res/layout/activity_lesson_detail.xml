@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".foundations_of_christianity.LessonDetailActivity">
+    tools:context=".foundations_of_christianity.detailing_lesson.LessonDetailActivity">
 
     <include layout="@layout/toolbar" />
 

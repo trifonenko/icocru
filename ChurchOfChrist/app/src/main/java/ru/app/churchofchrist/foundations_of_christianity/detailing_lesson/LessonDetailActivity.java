@@ -1,8 +1,8 @@
-package ru.app.churchofchrist.foundations_of_christianity;
+package ru.app.churchofchrist.foundations_of_christianity.detailing_lesson;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
-import android.text.method.LinkMovementMethod;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,17 +16,17 @@ public class LessonDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_detail);
 
-        Lesson lesson = getIntent().getParcelableExtra("lesson");
+        IContract.IPresenterLessonDetail presenter = new PresenterLessonDetail(this);
+
+        Intent intent = getIntent();
+        String titleLesson = intent.getStringExtra("lesson");
 
         Toolbar toolbar = findViewById(R.id.idToolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
         toolbar.setNavigationOnClickListener(v -> onBackPressed());
-        toolbar.setTitle(lesson.getTitle());
+        toolbar.setTitle(titleLesson);
 
         TextView lessonTextView = findViewById(R.id.idLessonTextView);
-
-        lessonTextView.setText(Html.fromHtml(lesson.getLessonText()));
-
-        lessonTextView.setMovementMethod(LinkMovementMethod.getInstance());
+        lessonTextView.setText(Html.fromHtml(presenter.getLessonText(titleLesson)));
     }
 }

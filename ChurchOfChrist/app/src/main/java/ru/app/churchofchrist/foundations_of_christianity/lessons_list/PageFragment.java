@@ -12,27 +12,24 @@ import java.util.Objects;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.ListFragment;
-import ru.app.churchofchrist.foundations_of_christianity.LessonDetailActivity;
+import ru.app.churchofchrist.foundations_of_christianity.detailing_lesson.LessonDetailActivity;
 
 public class PageFragment extends ListFragment implements IContract.IView {
 
     private List<String> titlesLessons;
-    private List<String> list;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
         Bundle bundle = getArguments();
-        int topicLessons = 0;
+        String topicLesson = "";
         if (bundle != null) {
-            topicLessons = bundle.getInt("position");
+            topicLesson = bundle.getString("topicLesson");
         }
 
-        PresenterImpl presenter = new PresenterImpl(getActivity(), this);
-        list = presenter.getTopics();
-
-        titlesLessons = presenter.loadListTitles(presenter.getTopics().get(topicLessons));
+        IContract.IPresenter presenter = new PresenterImpl(getActivity(), this);
+        titlesLessons = presenter.loadListTitles(topicLesson);
 
         ListAdapter adapter = new ArrayAdapter<>(
                 Objects.requireNonNull(getActivity()),

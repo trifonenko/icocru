@@ -11,7 +11,7 @@ import java.util.List;
 import ru.app.churchofchrist.foundations_of_christianity.lessons_list.IContract;
 import ru.app.churchofchrist.main.DatabaseHelper;
 
-public class ModelImpl implements IContract.IModel {
+public class ModelImpl implements IContract.IModel, ru.app.churchofchrist.foundations_of_christianity.detailing_lesson.IContract.IModelLessonDetail {
 
     private Context mContext;
     private SQLiteDatabase database;
@@ -81,5 +81,15 @@ public class ModelImpl implements IContract.IModel {
         }
         cursor.close();
         return requestData;
+    }
+
+    @Override
+    public String loadLessonText(String titleLesson) {
+        String sqlQuery = "SELECT text FROM lessons WHERE title = ?;";
+        Cursor cursor = database.rawQuery(sqlQuery, new String[]{titleLesson});
+        cursor.moveToFirst();
+        String lessonTest = cursor.getString(0);
+        cursor.close();
+        return lessonTest;
     }
 }

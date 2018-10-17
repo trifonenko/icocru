@@ -14,7 +14,7 @@ public class PresenterPagerAdapter implements IContract.IPresenter {
 
     private List<String> topicsLessons;
 
-    public PresenterPagerAdapter(Context context) {
+    PresenterPagerAdapter(Context context) {
         IModel model = new ModelImpl(context);
         this.topicsLessons = model.loadTopicsLessons();
     }
@@ -22,7 +22,7 @@ public class PresenterPagerAdapter implements IContract.IPresenter {
     public Fragment getItem(int position) {
         Fragment fragment = new PageFragment();
         Bundle bundle = new Bundle();
-        bundle.putInt("position", position);
+        bundle.putString("topicLesson", topicsLessons.get(position));
         fragment.setArguments(bundle);
         return fragment;
     }

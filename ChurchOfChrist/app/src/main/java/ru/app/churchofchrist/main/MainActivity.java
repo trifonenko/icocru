@@ -17,7 +17,7 @@ import ru.app.churchofchrist.FeedbackActivity;
 import ru.app.churchofchrist.HomeFragment;
 import ru.app.churchofchrist.R;
 import ru.app.churchofchrist.bible.BibleActivityStart;
-import ru.app.churchofchrist.foundations_of_christianity.lessons_list.LessonsListFragment;
+import ru.app.churchofchrist.foundations_of_christianity.LessonsFragment;
 import ru.app.churchofchrist.songs.SongsActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.foundations_of_christianity:
                     Fragment foundationOfChristianityFragment = fragmentManager.findFragmentByTag(FOUNDATION_OF_CHRISTIANITY_FRAGMENT_TAG);
                     if (foundationOfChristianityFragment == null) {
-                        foundationOfChristianityFragment = new LessonsListFragment();
+                        foundationOfChristianityFragment = new LessonsFragment();
 
                     }
 

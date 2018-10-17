@@ -20,8 +20,6 @@ public interface IContract {
         List<String> getTopics();
 
         List<String> loadListTitles(String topicLessons);
-
-        List<Lesson> getListLessons(String nameTable);
     }
 
     interface IModel {

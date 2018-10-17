@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".foundations_of_christianity.LessonDetailActivity"></activity>
+        <activity android:name=".foundations_of_christianity.detailing_lesson.LessonDetailActivity"></activity>
         <activity
             android:name=".splash_screen.SplashActivity"
             android:theme="@style/SplashTheme">
