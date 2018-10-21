@@ -13,11 +13,11 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:linksClickable="true"
             android:id="@+id/idLessonTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:linksClickable="true"
             android:textIsSelectable="true"
             android:textSize="14sp" />
 

@@ -29,13 +29,13 @@ public class ExcerptDialogActivity extends AppCompatActivity {
 
         Uri uri = getIntent().getData();
 
-        if (uri != null) {
-            String coordinatesExcerpt = uri.getQueryParameter("coordinatesExcerpt");
-            String textExcerpt = uri.getQueryParameter("textExcerpt");
-            Objects.requireNonNull(getSupportActionBar())
-                   .setTitle(coordinatesExcerpt);
-            textView.setText(Html.fromHtml(textExcerpt));
-        }
+//        if (uri != null) {
+//            String coordinatesExcerpt = uri.getQueryParameter("coordinatesExcerpt");
+//            String textExcerpt = uri.getQueryParameter("textExcerpt");
+//            Objects.requireNonNull(getSupportActionBar())
+//                   .setTitle(coordinatesExcerpt);
+//            textView.setText(Html.fromHtml(textExcerpt));
+//        }
     }
 
     @Override

@@ -21,7 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private SQLiteDatabase mDatabase;
 
     public DatabaseHelper(@Nullable Context context) {
-        super(context, DatabaseHelper.DB_NAME, null, 13);
+        super(context, DatabaseHelper.DB_NAME, null, 15);
         if (context != null) sDbPath = context.getApplicationInfo().dataDir + "/databases/";
         this.mContext = context;
         copyDatabase();
