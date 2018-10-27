@@ -30,7 +30,7 @@ public class ModelImpl implements IContract.IModel, ru.app.churchofchrist.founda
 
     @Override
     public List<String> loadTopicsLessons() {
-        String sqlQuery = "SELECT DISTINCT topic FROM lessons;";
+        String sqlQuery = "SELECT DISTINCT topic FROM lessons";
         return makeRequest(sqlQuery, null);
     }
 
@@ -85,7 +85,7 @@ public class ModelImpl implements IContract.IModel, ru.app.churchofchrist.founda
 
     @Override
     public String loadLessonText(String titleLesson) {
-        String sqlQuery = "SELECT text FROM lessons WHERE title = ?;";
+        String sqlQuery = "SELECT text FROM lessons WHERE title = ?";
         Cursor cursor = database.rawQuery(sqlQuery, new String[]{titleLesson});
         cursor.moveToFirst();
         String lessonTest = cursor.getString(0);

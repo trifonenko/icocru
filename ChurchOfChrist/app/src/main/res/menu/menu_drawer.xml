@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- Меню, используемое в DrawerLayout. -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="none">
         <item
@@ -9,8 +8,6 @@
             android:icon="@drawable/ic_main"/>
         <item
             android:id="@+id/foundations_of_christianity"
-            android:checkable="false"
-            android:checked="false"
             android:icon="@drawable/ic_book"
             android:title="@string/basic_christ" />
         <item
@@ -29,14 +26,7 @@
             android:id="@+id/ansver"
             android:icon="@drawable/ic_vopros"
             android:title="@string/ansver" />
-        <!--<item
-            android:id="@+id/good_news"
-            android:icon="@drawable/ic_news"
-            android:title="@string/label_good_news" />
-        <item
-            android:id="@+id/plans"
-            android:icon="@drawable/ic_news"
-            android:title="@string/plans" />-->
+
     </group>
     <item android:title="">
         <menu>

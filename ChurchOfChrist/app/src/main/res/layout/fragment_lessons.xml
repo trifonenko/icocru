@@ -8,13 +8,13 @@
     tools:context=".foundations_of_christianity.LessonsFragment">
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/idViewPagerFoundationOfChristianity"
+        android:id="@+id/idViewPagerLessons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.google.android.material.tabs.TabLayout
             android:theme="@style/ThemeOverlay.AppCompat.Dark"
-            android:id="@+id/idTabLayoutFoundationOfChristianity"
+            android:id="@+id/idTabLayoutLessons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"

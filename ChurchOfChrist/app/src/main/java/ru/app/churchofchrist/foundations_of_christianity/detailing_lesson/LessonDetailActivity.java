@@ -2,6 +2,7 @@ package ru.app.churchofchrist.foundations_of_christianity.detailing_lesson;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
@@ -30,13 +31,13 @@ public class LessonDetailActivity extends AppCompatActivity {
 
         String text = presenter.getLessonText(titleLesson);
 
-        SpannableString spannableString = new SpannableString(text);
+        SpannableString spannableString = new SpannableString(Html.fromHtml(text));
 
-        String[] strings = new String[]{"Иов 26:8", "Иов 36:26-29"};
-        for (String itemVerse : strings) {
-            spannableString.setSpan(new VerseClickableSpan(this), text.indexOf(itemVerse), text.indexOf(itemVerse) +
-                    itemVerse.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        }
+//        String[] strings = new String[]{"Иов 26:8", "Иов 36:26-29"};
+//        for (String itemVerse : strings) {
+//            spannableString.setSpan(new VerseClickableSpan(this), text.indexOf(itemVerse), text.indexOf(itemVerse) +
+//                    itemVerse.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+//        }
 
         TextView lessonTextView = findViewById(R.id.idLessonTextView);
         lessonTextView.setText(spannableString, TextView.BufferType.SPANNABLE);

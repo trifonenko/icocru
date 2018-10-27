@@ -22,10 +22,6 @@ import ru.app.churchofchrist.songs.SongsActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String FOUNDATION_OF_CHRISTIANITY_FRAGMENT_TAG = "foundation_of_christianity_fragment_tag";
-    private static final String HOME_FRAGMENT_TAG = "home_fragment_tag";
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,45 +36,31 @@ public class MainActivity extends AppCompatActivity {
         toggle.syncState();
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-//        Fragment fragment = fragmentManager.findFragmentById(R.id.id_fragment_container);
-//        if (fragment == null) {
-//            fragment = new HomeFragment();
-//            fragmentManager.beginTransaction()
-//                           .add(R.id.id_fragment_container, fragment)
-//                           .commit();
-//        }
+        Fragment fragment = new HomeFragment();
+        fragmentManager.beginTransaction()
+                       .add(R.id.id_fragment_container, fragment, "home_fragment_tag")
+                       .commit();
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(menuItem -> {
             switch (menuItem.getItemId()) {
                 case R.id.main:
-                    Fragment homeFragment = fragmentManager.findFragmentByTag(HOME_FRAGMENT_TAG);
+                    Fragment homeFragment = fragmentManager.findFragmentByTag("home_fragment_tag");
                     if (homeFragment == null) {
                         homeFragment = new HomeFragment();
                     }
-
-                    getSupportFragmentManager().beginTransaction()
-                                               .replace(
-                                                       R.id.id_fragment_container,
-                                                       homeFragment,
-                                                       HOME_FRAGMENT_TAG
-                                               )
-                                               .commit();
+                        fragmentManager.beginTransaction()
+                                       .replace(R.id.id_fragment_container, homeFragment, "home_fragment_tag")
+                                       .commit();
                     break;
                 case R.id.foundations_of_christianity:
-                    Fragment foundationOfChristianityFragment = fragmentManager.findFragmentByTag(FOUNDATION_OF_CHRISTIANITY_FRAGMENT_TAG);
-                    if (foundationOfChristianityFragment == null) {
-                        foundationOfChristianityFragment = new LessonsFragment();
-
+                    Fragment lessonsFragment = fragmentManager.findFragmentByTag("lessons_fragment_tag");
+                    if (lessonsFragment == null) {
+                        lessonsFragment = new LessonsFragment();
                     }
-
-                    getSupportFragmentManager().beginTransaction()
-                                               .replace(
-                                                       R.id.id_fragment_container,
-                                                       foundationOfChristianityFragment,
-                                                       FOUNDATION_OF_CHRISTIANITY_FRAGMENT_TAG
-                                               )
-                                               .commit();
+                    fragmentManager.beginTransaction()
+                                   .replace(R.id.id_fragment_container, lessonsFragment, "lessons_fragment_tag")
+                                   .commit();
                     break;
                 case R.id.songs:
                     Intent intent2 = new Intent(MainActivity.this, SongsActivity.class);

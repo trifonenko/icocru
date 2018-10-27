@@ -22,17 +22,17 @@ public class LessonsFragment extends Fragment {
                              ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_foundation_of_christianity, container, false);
+        View view = inflater.inflate(R.layout.fragment_lessons, container, false);
 
         PagerAdapter pagerAdapter = new PagerAdapter(
                 Objects.requireNonNull(getActivity())
-                        .getSupportFragmentManager(), getActivity()
+                        .getSupportFragmentManager(), getActivity().getApplicationContext()
         );
 
-        ViewPager viewPager = view.findViewById(R.id.idViewPagerFoundationOfChristianity);
+        ViewPager viewPager = view.findViewById(R.id.idViewPagerLessons);
         viewPager.setAdapter(pagerAdapter);
 
-        TabLayout tabLayout = view.findViewById(R.id.idTabLayoutFoundationOfChristianity);
+        TabLayout tabLayout = view.findViewById(R.id.idTabLayoutLessons);
         tabLayout.setupWithViewPager(viewPager);
 
         return view;
