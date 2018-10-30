@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App. -->
-    <color name="colorPrimary">#d7a61e</color>
-    <color name="colorPrimaryDark">#c86a28</color>
-    <color name="colorAccent">#2893a9</color>
+    <color name="colorPrimary">#26A69A</color>
+    <color name="colorPrimaryDark">#26A69A</color>
+    <color name="colorAccent">#AB47BC</color>
+    <color name="colorPrimaryText">#515151</color>
+
+
+
+
 
     <!-- Songs. -->
     <color name="colorPrimarySongs">#D64541</color>
@@ -29,7 +34,7 @@
 
     <color name="colorStatusBar">#00ffffff</color><!-- Цвет StatusBar в MainActivity. -->
 
-    <color name="colorPrimaryText">#212121</color>
+    <color name="colorPrimaryText1">#212121</color>
     <color name="colorSecondaryText">#757575</color>
 
 

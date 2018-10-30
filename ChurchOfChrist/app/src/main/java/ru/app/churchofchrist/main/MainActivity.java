@@ -1,11 +1,12 @@
 package ru.app.churchofchrist.main;
 
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
+
 import android.os.Bundle;
 import androidx.annotation.NonNull;
+
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.navigation.NavigationView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -13,15 +14,9 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import java.io.IOException;
-import java.util.Random;
 
 import ru.app.churchofchrist.AppInfoActivity;
-import ru.app.churchofchrist.DBHelper;
 import ru.app.churchofchrist.FeedbackActivity;
 import ru.app.churchofchrist.R;
 import ru.app.churchofchrist.bible.BibleActivityStart;
@@ -29,7 +24,6 @@ import ru.app.churchofchrist.ox.OxActivity;
 import ru.app.churchofchrist.songs.SongsActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +42,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
 
+       final CollapsingToolbarLayout collapsingToolbar = findViewById(R.id.CollapsingToolbarLayout);
+        AppBarLayout appBarLayout = findViewById(R.id.id_app_bar);
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            boolean isShow = false;
+            int scrollRange = -1;
 
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if (scrollRange == -1) {
+                    scrollRange = appBarLayout.getTotalScrollRange();
+                }
+                if (scrollRange + verticalOffset == 0) {
+                    collapsingToolbar.setTitle("Церковь Христа");
+                    isShow = true;
+                } else if (isShow) {
+                    collapsingToolbar.setTitle("");
+                    isShow = false;
+                }
+            }
+        });
 
 
     }
@@ -107,8 +120,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
-
-
 }

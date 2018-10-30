@@ -138,8 +138,8 @@ public class NoteActivity extends AppCompatActivity {
             constr1.setBackgroundResource(R.color.black);
         }
         else if (colorTheme == 0) {
-            editText1.setTextColor(ContextCompat.getColor(this, R.color.colorPrimaryText));
-            editText2.setTextColor(ContextCompat.getColor(this, R.color.colorPrimaryText));
+            editText1.setTextColor(ContextCompat.getColor(this, R.color.colorPrimaryText1));
+            editText2.setTextColor(ContextCompat.getColor(this, R.color.colorPrimaryText1));
             editText1.setBackgroundResource(R.color.white);
             editText2.setBackgroundResource(R.color.white);
             constr1.setBackgroundResource(R.color.gray_light);
@@ -413,8 +413,8 @@ public class NoteActivity extends AppCompatActivity {
                 colorTheme++;
             }
             else if (colorTheme == 3) {
-                editText1.setTextColor(ContextCompat.getColor(this, R.color.colorPrimaryText));
-                editText2.setTextColor(ContextCompat.getColor(this, R.color.colorPrimaryText));
+                editText1.setTextColor(ContextCompat.getColor(this, R.color.colorPrimaryText1));
+                editText2.setTextColor(ContextCompat.getColor(this, R.color.colorPrimaryText1));
                 editText1.setBackgroundResource(R.color.white);
                 editText2.setBackgroundResource(R.color.white);
                 constr1.setBackgroundResource(R.color.gray_light);

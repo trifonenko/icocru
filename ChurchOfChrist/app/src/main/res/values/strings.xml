@@ -8,6 +8,8 @@
     <string name="notepad">Блокнот</string>
     <string name="random_verse_bible">Случайный стих из Библии</string>
 
+    <string name="description_image_view">Description image view</string>
+
     <!-- Songs. -->
     <string name="random_song">Случайная песня</string>
     <string name="chords">Аккорды</string>
@@ -4642,6 +4644,4 @@ o	Поделитесь о своём опыте служения. Когда, к
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
-
 </resources>

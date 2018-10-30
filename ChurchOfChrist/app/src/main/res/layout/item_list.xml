@@ -28,7 +28,7 @@
             android:layout_marginTop="0dp"
             android:gravity="center|start"
             android:text="@string/title"
-            android:textColor="@color/colorPrimaryText"
+            android:textColor="@color/colorPrimaryText1"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
