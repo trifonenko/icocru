@@ -9,6 +9,7 @@
         android:id="@+id/id_app_bar"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:elevation="4dp"
         android:fitsSystemWindows="true"
         android:theme="@style/AppTheme.AppBarOverlay">
 
@@ -25,14 +26,13 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:contentDescription="@string/description_image_view"
+                android:contentDescription="@string/content_description"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/image_drawer" />
+                android:src="@drawable/main_lllll" />
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
-
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:theme="@style/AppTheme.ToolbarOverlay"
@@ -47,10 +47,12 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <fragment
+            android:id="@+id/TODO"
+            class="ru.app.churchofchrist.verse_of_day.VerseOfDayFragment"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp" />
+            android:layout_margin="8dp" />
 
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

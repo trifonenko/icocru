@@ -4,4 +4,4 @@
     android:layout_height="@dimen/nav_header_height"
     android:scaleType="centerCrop"
     android:src="@drawable/image_drawer"
-    android:contentDescription="@string/description_image_view" />
+    android:contentDescription="@string/content_description" />

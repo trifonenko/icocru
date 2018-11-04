@@ -1,21 +1,19 @@
 package ru.app.churchofchrist.main;
 
 import android.content.Intent;
-
 import android.os.Bundle;
-import androidx.annotation.NonNull;
+import android.view.MenuItem;
 
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.navigation.NavigationView;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import android.view.MenuItem;
-
-
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import ru.app.churchofchrist.AppInfoActivity;
 import ru.app.churchofchrist.FeedbackActivity;
 import ru.app.churchofchrist.R;
@@ -42,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
 
-       final CollapsingToolbarLayout collapsingToolbar = findViewById(R.id.CollapsingToolbarLayout);
+        final CollapsingToolbarLayout collapsingToolbar = findViewById(R.id.CollapsingToolbarLayout);
         AppBarLayout appBarLayout = findViewById(R.id.id_app_bar);
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             boolean isShow = false;
@@ -62,8 +60,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             }
         });
-
-
     }
 
     @Override
@@ -107,14 +103,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent7 = new Intent(MainActivity.this, AppInfoActivity.class);
                 startActivity(intent7);
                 break;
-            /*case R.id.good_news:
-                Intent intentGoodNews = new Intent(MainActivity.this, GoodNewsActivity.class);
-                startActivity(intentGoodNews);
-                break;
-            case R.id.plans:
-                Intent intentPlans = new Intent(MainActivity.this, PlansActivity.class);
-                startActivity(intentPlans);
-                break;*/
         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
