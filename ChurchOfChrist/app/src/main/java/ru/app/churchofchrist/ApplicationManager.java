@@ -10,7 +10,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 import androidx.room.Room;
-import ru.app.churchofchrist.verse_of_day.AppDatabase;
+import ru.app.churchofchrist.room_helper_database.AppDatabase;
 
 public class ApplicationManager extends Application {
 
@@ -56,8 +56,7 @@ public class ApplicationManager extends Application {
 
     private void copyDatabaseFile() throws IOException {
         InputStream mInput = getAssets().open(ApplicationManager.DATABASE_NAME);
-        databaseFile.getParentFile().mkdir();
-        if (databaseFile.createNewFile()) {
+        if (databaseFile.getParentFile().mkdir()) {
             OutputStream mOutput = new FileOutputStream(DATABASE_PATH + DATABASE_NAME);
             byte[] mBuffer = new byte[1024];
             int mLength;

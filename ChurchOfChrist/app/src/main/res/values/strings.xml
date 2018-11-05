@@ -10,7 +10,7 @@
 
     <string name="content_description">Content description</string>
 
-    <!-- Verse of day. -->
+    <!-- VerseOfDay of day. -->
     <string name="label_verse_of_day">Случайный отрывок</string>
 
     <!-- Songs. -->

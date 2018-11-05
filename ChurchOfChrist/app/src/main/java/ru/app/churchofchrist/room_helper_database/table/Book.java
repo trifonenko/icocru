@@ -1,4 +1,4 @@
-package ru.app.churchofchrist.verse_of_day;
+package ru.app.churchofchrist.room_helper_database.table;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

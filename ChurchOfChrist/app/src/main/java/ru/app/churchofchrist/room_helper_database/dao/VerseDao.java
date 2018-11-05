@@ -1,7 +1,8 @@
-package ru.app.churchofchrist.verse_of_day;
+package ru.app.churchofchrist.room_helper_database.dao;
 
 import androidx.room.Dao;
 import androidx.room.Query;
+import ru.app.churchofchrist.room_helper_database.table.Verse;
 
 @Dao
 public interface VerseDao {

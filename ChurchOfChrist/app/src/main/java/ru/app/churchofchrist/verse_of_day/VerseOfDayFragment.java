@@ -16,9 +16,12 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import ru.app.churchofchrist.ApplicationManager;
 import ru.app.churchofchrist.R;
+import ru.app.churchofchrist.room_helper_database.AppDatabase;
+import ru.app.churchofchrist.room_helper_database.dao.BookDao;
+import ru.app.churchofchrist.room_helper_database.dao.VerseDao;
+import ru.app.churchofchrist.room_helper_database.table.Verse;
 
 public class VerseOfDayFragment extends Fragment {
-
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -32,9 +35,9 @@ public class VerseOfDayFragment extends Fragment {
         Verse verse = verseDao.getVerse();
 
         BookDao bookDao = db.bookDao();
-        Book book = bookDao.getBook(verse.getBoolNumber());
+        BookName bookName = new BookName(bookDao.getBookShortName(verse.getBoolNumber()));
 
-        StringBuilder stringBuilder = new StringBuilder().append(book.getShortName())
+        StringBuilder stringBuilder = new StringBuilder().append(bookName.getShortName())
                                                          .append(" ")
                                                          .append(verse.getChapter())
                                                          .append(":")
