@@ -29,7 +29,7 @@
                 android:contentDescription="@string/content_description"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/main_lllll" />
+                android:src="@drawable/image_main" />
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"

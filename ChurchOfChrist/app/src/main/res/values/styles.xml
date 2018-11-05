@@ -9,12 +9,17 @@
         <item name="android:textColor">@color/colorPrimaryText</item>
     </style>
 
-    <!-- Activities. -->
-    <style name="AppTheme.NoActionBar">
+    <!-- Activity. -->
+    <style name="AppTheme.Activity">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Main activity. -->
+    <style name="ThemeMainActivity" parent="AppTheme.Activity">
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+
 
     <!-- Splash screen. -->
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
@@ -23,15 +28,14 @@
     </style>
 
 
-
-
-
     <!-- Songs. -->
     <style name="ThemeSongs" parent="AppTheme">
         <item name="colorPrimary">@color/colorPrimarySongs</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkSongs</item>
         <item name="colorAccent">@color/colorAccentSongs</item>
         <item name="android:windowBackground">@color/colorBackgroundSongs</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
     <!-- * * * -->
 
@@ -41,6 +45,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDarkGoodNews</item>
         <item name="colorAccent">@color/colorAccentGoodNews</item>
         <item name="android:windowBackground">@color/colorBackgroundGoodNews</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
     <!-- * * * -->
 
@@ -50,6 +56,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDarkAnsver</item>
         <item name="colorAccent">@color/colorAccentAnsver</item>
         <item name="android:windowBackground">@color/colorBackgroundAnsver</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
     <!-- * * * -->
 
@@ -57,6 +65,8 @@
         <item name="colorPrimary">@color/colorPrimaryBible</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkBible</item>
         <item name="colorAccent">@color/colorAccentBible</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
     <style name="AppThemeBible.NoActionBar">

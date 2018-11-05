@@ -25,7 +25,7 @@ public class AnsverActivity extends AppCompatActivity implements AnsverListFragm
         mAnsver = mAnsverLab.getAnsver();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-
+        setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
